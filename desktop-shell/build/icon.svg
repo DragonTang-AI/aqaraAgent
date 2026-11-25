@@ -1,0 +1,15 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Aqara 空间智能 · 图标（黑白极简）
+       立方体 = 空间 / 数字孪生；顶面光点 = 智能节点 -->
+  <rect x="0" y="0" width="1024" height="1024" rx="228" fill="#0b0b0b"/>
+  <g transform="translate(512 512) scale(1.18) translate(-512 -512)">
+    <g fill="none" stroke="#ffffff" stroke-width="20" stroke-linejoin="round" stroke-linecap="round" opacity="0.92">
+      <path d="M282 423 L512 290 L742 423 L512 556 Z"/>
+      <path d="M282 423 L282 689"/>
+      <path d="M742 423 L742 689"/>
+      <path d="M512 556 L512 822"/>
+      <path d="M282 689 L512 822 L742 689"/>
+    </g>
+    <circle cx="512" cy="423" r="52" fill="#ffffff"/>
+  </g>
+</svg>

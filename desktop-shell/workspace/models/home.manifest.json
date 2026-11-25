@@ -1,0 +1,3422 @@
+{
+  "format": "smart-space-studio/scene-package",
+  "version": 1,
+  "runtimeProfile": "house-preview-v1",
+  "packageId": "5fc4a5fa-c1f1-4145-ad27-1ee5849b2cc8",
+  "createdAt": "2026-10-23T12:09:41.760Z",
+  "project": {
+    "id": "model-house-second",
+    "name": "长庭亲子之家",
+    "sourceScope": "studio:[\"UAT\",\"TEST\",\"27\",\"lumi3.85fbfe83e7039c41\"]"
+  },
+  "coordinates": {
+    "units": "metres",
+    "upAxis": "Y",
+    "handedness": "right",
+    "transform": "already-baked"
+  },
+  "render": {
+    "toneMapping": "ACESFilmic",
+    "exposure": 0.95,
+    "background": "#e9eeeb"
+  },
+  "controls": [
+    {
+      "id": "living-floor-lamp",
+      "name": "客厅球形落地灯",
+      "kind": "light",
+      "channels": [
+        "living-floor-lamp"
+      ]
+    },
+    {
+      "id": "living-table-lamp",
+      "name": "客厅边几台灯",
+      "kind": "light",
+      "channels": [
+        "living-table-lamp"
+      ]
+    },
+    {
+      "id": "dining-pendant",
+      "name": "餐厅岛台桌面水晶灯",
+      "kind": "light",
+      "channels": [
+        "dining-pendant"
+      ]
+    },
+    {
+      "id": "sofa-main-strip",
+      "name": "客厅长沙发底灯带",
+      "kind": "light",
+      "channels": [
+        "sofa-main-strip"
+      ]
+    },
+    {
+      "id": "sofa-return-strip",
+      "name": "客厅转角沙发底灯带",
+      "kind": "light",
+      "channels": [
+        "sofa-return-strip"
+      ]
+    },
+    {
+      "id": "bedside-north-lamp",
+      "name": "主卧床头灯（阅读区侧）",
+      "kind": "light",
+      "channels": [
+        "bedside-north-lamp"
+      ]
+    },
+    {
+      "id": "bedside-south-lamp",
+      "name": "主卧床头灯（婴儿床侧）",
+      "kind": "light",
+      "channels": [
+        "bedside-south-lamp"
+      ]
+    },
+    {
+      "id": "bedroom-floor-lamp",
+      "name": "主卧阅读区落地灯",
+      "kind": "light",
+      "channels": [
+        "bedroom-floor-lamp"
+      ]
+    },
+    {
+      "id": "garden-floor-1",
+      "name": "庭院落地灯（入户门侧）",
+      "kind": "light",
+      "channels": [
+        "garden-floor-1"
+      ]
+    },
+    {
+      "id": "garden-floor-2",
+      "name": "庭院落地灯（外侧出口旁）",
+      "kind": "light",
+      "channels": [
+        "garden-floor-2"
+      ]
+    },
+    {
+      "id": "garden-path-1",
+      "name": "庭院地灯 1（从入户门到出口）",
+      "kind": "light",
+      "channels": [
+        "garden-path-1"
+      ]
+    },
+    {
+      "id": "garden-path-2",
+      "name": "庭院地灯 2（从入户门到出口）",
+      "kind": "light",
+      "channels": [
+        "garden-path-2"
+      ]
+    },
+    {
+      "id": "garden-path-3",
+      "name": "庭院地灯 3（从入户门到出口）",
+      "kind": "light",
+      "channels": [
+        "garden-path-3"
+      ]
+    },
+    {
+      "id": "garden-path-4",
+      "name": "庭院地灯 4（从入户门到出口）",
+      "kind": "light",
+      "channels": [
+        "garden-path-4"
+      ]
+    },
+    {
+      "id": "living-fill",
+      "name": "客餐厨天花灯带",
+      "kind": "light",
+      "channels": [
+        "living-fill"
+      ]
+    },
+    {
+      "id": "bedroom-fill",
+      "name": "主卧天花灯带",
+      "kind": "light",
+      "channels": [
+        "bedroom-fill"
+      ]
+    },
+    {
+      "id": "bathroom-fill",
+      "name": "卫生间天花灯带",
+      "kind": "light",
+      "channels": [
+        "bathroom-fill"
+      ]
+    },
+    {
+      "id": "entry-fill",
+      "name": "玄关天花灯带",
+      "kind": "light",
+      "channels": [
+        "entry-fill"
+      ]
+    },
+    {
+      "id": "entry-wall-north",
+      "name": "玄关壁灯（靠外墙）",
+      "kind": "light",
+      "channels": [
+        "entry-wall-north"
+      ]
+    },
+    {
+      "id": "entry-wall-south",
+      "name": "玄关壁灯（靠入户门）",
+      "kind": "light",
+      "channels": [
+        "entry-wall-south"
+      ]
+    },
+    {
+      "id": "living-floor-ring",
+      "name": "客厅地面发光灯（隐藏灯体）",
+      "kind": "light",
+      "channels": [
+        "living-floor-ring"
+      ]
+    },
+    {
+      "id": "coffee-strip",
+      "name": "客厅茶几底灯带",
+      "kind": "light",
+      "channels": [
+        "coffee-strip"
+      ]
+    },
+    {
+      "id": "tv-back-strip",
+      "name": "电视背景墙灯带",
+      "kind": "light",
+      "channels": [
+        "tv-back-strip"
+      ]
+    },
+    {
+      "id": "tv-wall-lamp",
+      "name": "客厅电视背景墙壁灯",
+      "kind": "light",
+      "channels": [
+        "tv-wall-lamp"
+      ]
+    },
+    {
+      "id": "island-strip",
+      "name": "餐厅岛台下方灯带",
+      "kind": "light",
+      "channels": [
+        "island-strip"
+      ]
+    },
+    {
+      "id": "kitchen-strip",
+      "name": "橱柜下方灯带",
+      "kind": "light",
+      "channels": [
+        "kitchen-strip"
+      ]
+    },
+    {
+      "id": "bedhead-strip",
+      "name": "主卧床头灯带",
+      "kind": "light",
+      "channels": [
+        "bedhead-strip"
+      ]
+    },
+    {
+      "id": "wardrobe-strip",
+      "name": "主卧衣柜灯带",
+      "kind": "light",
+      "channels": [
+        "wardrobe-strip"
+      ]
+    },
+    {
+      "id": "bed-base-strip",
+      "name": "主卧床底灯带",
+      "kind": "light",
+      "channels": [
+        "bed-base-strip"
+      ]
+    },
+    {
+      "id": "bath-platform-strip",
+      "name": "浴室地台灯带",
+      "kind": "light",
+      "channels": [
+        "bath-platform-strip"
+      ]
+    },
+    {
+      "id": "tv-power",
+      "name": "电视开关示意",
+      "kind": "switch",
+      "channels": [
+        "tv-power"
+      ]
+    },
+    {
+      "id": "entrance-switch",
+      "name": "玄关大门开合示意",
+      "kind": "switch",
+      "channels": [
+        "entrance-switch"
+      ]
+    },
+    {
+      "id": "living-curtain",
+      "name": "客厅庭院侧窗帘",
+      "kind": "curtain",
+      "channels": [
+        "living-curtain"
+      ]
+    },
+    {
+      "id": "bedroom-curtain",
+      "name": "主卧阅读区窗帘",
+      "kind": "curtain",
+      "channels": [
+        "bedroom-curtain"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "source-0",
+      "deviceId": "lumi.54ef4410018b8abd",
+      "name": "客厅窗帘",
+      "kind": "curtain",
+      "origin": "saved",
+      "endpointId": 2,
+      "direction": "opening",
+      "directionConfirmed": false,
+      "positionBasis": "switch-indication",
+      "openValue": true
+    },
+    {
+      "id": "source-1",
+      "deviceId": "lumi.54ef44100172180a",
+      "name": "客厅沙发落地灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-2",
+      "deviceId": "lumi.54ef44100171ff77",
+      "name": "客厅台灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-3",
+      "deviceId": "lumi.54ef44100171e1ee",
+      "name": "餐厅岛台桌面水晶灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-4",
+      "deviceId": "lumi.54ef441001741b87",
+      "name": "沙发下方茶几下方灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-5",
+      "deviceId": "lumi.54ef441001720075",
+      "name": "卧室床头台灯-左",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-6",
+      "deviceId": "lumi.54ef44100171e21b",
+      "name": "卧室床头台灯-右",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-7",
+      "deviceId": "lumi.54ef4410017219fa",
+      "name": "卧室休闲沙发落地灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-8",
+      "deviceId": "lumi.54ef44100171ff40",
+      "name": "庭院路灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-9",
+      "deviceId": "lumi.54ef441001720065",
+      "name": "庭院地灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-10",
+      "deviceId": "lumi.54ef4410017428d4",
+      "name": "客厅天花灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-11",
+      "deviceId": "lumi.54ef441001743702",
+      "name": "卧室天花灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-12",
+      "deviceId": "lumi.54ef441001741f70",
+      "name": "浴室天花灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-13",
+      "deviceId": "lumi.54ef441001743031",
+      "name": "玄关天花灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-14",
+      "deviceId": "lumi.54ef4410013b8613",
+      "name": "卧室窗帘",
+      "kind": "curtain",
+      "origin": "saved",
+      "endpointId": 2,
+      "direction": "opening",
+      "directionConfirmed": false,
+      "positionBasis": "switch-indication",
+      "openValue": true
+    },
+    {
+      "id": "source-15",
+      "deviceId": "lumi.54ef441001743b9c",
+      "name": "电视背景墙灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-16",
+      "deviceId": "lumi.54ef441001742aba",
+      "name": "岛台下方橱柜下方灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-17",
+      "deviceId": "lumi.54ef441001743792",
+      "name": "卧室床头灯带衣柜灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-18",
+      "deviceId": "lumi.54ef441001742441",
+      "name": "卧室床底灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-19",
+      "deviceId": "lumi.54ef441001741e87",
+      "name": "浴室地台灯带",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": null,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-20",
+      "deviceId": "lumi.54ef441001720068",
+      "name": "客厅电视背景墙壁灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-21",
+      "deviceId": "lumi.54ef4410018b8ae7",
+      "name": "电视",
+      "kind": "switch",
+      "origin": "saved",
+      "endpointId": 2,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage",
+      "indication": "relay-only"
+    },
+    {
+      "id": "source-22",
+      "deviceId": "lumi.54ef4410018b8aa8",
+      "name": "玄关大门",
+      "kind": "switch",
+      "origin": "saved",
+      "endpointId": 2,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage",
+      "indication": "relay-only"
+    },
+    {
+      "id": "source-23",
+      "deviceId": "lumi.54ef44100171ff82",
+      "name": "玄关壁灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 3,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    },
+    {
+      "id": "source-24",
+      "deviceId": "lumi.54ef44100174260d",
+      "name": "地面发光灯",
+      "kind": "light",
+      "origin": "saved",
+      "endpointId": 2,
+      "direction": null,
+      "directionConfirmed": false,
+      "positionBasis": "percentage"
+    }
+  ],
+  "bindings": [
+    {
+      "sourceId": "source-0",
+      "targetId": "living-curtain"
+    },
+    {
+      "sourceId": "source-1",
+      "targetId": "living-floor-lamp"
+    },
+    {
+      "sourceId": "source-2",
+      "targetId": "living-table-lamp"
+    },
+    {
+      "sourceId": "source-3",
+      "targetId": "dining-pendant"
+    },
+    {
+      "sourceId": "source-4",
+      "targetId": "sofa-main-strip"
+    },
+    {
+      "sourceId": "source-4",
+      "targetId": "sofa-return-strip"
+    },
+    {
+      "sourceId": "source-4",
+      "targetId": "coffee-strip"
+    },
+    {
+      "sourceId": "source-5",
+      "targetId": "bedside-north-lamp"
+    },
+    {
+      "sourceId": "source-6",
+      "targetId": "bedside-south-lamp"
+    },
+    {
+      "sourceId": "source-7",
+      "targetId": "bedroom-floor-lamp"
+    },
+    {
+      "sourceId": "source-8",
+      "targetId": "garden-floor-1"
+    },
+    {
+      "sourceId": "source-8",
+      "targetId": "garden-floor-2"
+    },
+    {
+      "sourceId": "source-9",
+      "targetId": "garden-path-1"
+    },
+    {
+      "sourceId": "source-9",
+      "targetId": "garden-path-2"
+    },
+    {
+      "sourceId": "source-9",
+      "targetId": "garden-path-3"
+    },
+    {
+      "sourceId": "source-9",
+      "targetId": "garden-path-4"
+    },
+    {
+      "sourceId": "source-10",
+      "targetId": "living-fill"
+    },
+    {
+      "sourceId": "source-11",
+      "targetId": "bedroom-fill"
+    },
+    {
+      "sourceId": "source-12",
+      "targetId": "bathroom-fill"
+    },
+    {
+      "sourceId": "source-13",
+      "targetId": "entry-fill"
+    },
+    {
+      "sourceId": "source-14",
+      "targetId": "bedroom-curtain"
+    },
+    {
+      "sourceId": "source-15",
+      "targetId": "tv-back-strip"
+    },
+    {
+      "sourceId": "source-16",
+      "targetId": "island-strip"
+    },
+    {
+      "sourceId": "source-16",
+      "targetId": "kitchen-strip"
+    },
+    {
+      "sourceId": "source-17",
+      "targetId": "bedhead-strip"
+    },
+    {
+      "sourceId": "source-17",
+      "targetId": "wardrobe-strip"
+    },
+    {
+      "sourceId": "source-18",
+      "targetId": "bed-base-strip"
+    },
+    {
+      "sourceId": "source-19",
+      "targetId": "bath-platform-strip"
+    },
+    {
+      "sourceId": "source-20",
+      "targetId": "tv-wall-lamp"
+    },
+    {
+      "sourceId": "source-21",
+      "targetId": "tv-power"
+    },
+    {
+      "sourceId": "source-22",
+      "targetId": "entrance-switch"
+    },
+    {
+      "sourceId": "source-23",
+      "targetId": "entry-wall-north"
+    },
+    {
+      "sourceId": "source-23",
+      "targetId": "entry-wall-south"
+    },
+    {
+      "sourceId": "source-24",
+      "targetId": "living-floor-ring"
+    }
+  ],
+  "materials": [
+    {
+      "nodes": [
+        "node-255"
+      ],
+      "channels": [
+        "kitchen-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-258"
+      ],
+      "channels": [
+        "island-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-259"
+      ],
+      "channels": [
+        "island-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-260"
+      ],
+      "channels": [
+        "island-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-261"
+      ],
+      "channels": [
+        "island-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-345"
+      ],
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-346"
+      ],
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-347"
+      ],
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-348"
+      ],
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-356"
+      ],
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-357"
+      ],
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-358"
+      ],
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-359"
+      ],
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-361"
+      ],
+      "channels": [
+        "coffee-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-362"
+      ],
+      "channels": [
+        "coffee-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-363"
+      ],
+      "channels": [
+        "coffee-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-364"
+      ],
+      "channels": [
+        "coffee-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-397"
+      ],
+      "channels": [
+        "tv-back-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-398"
+      ],
+      "channels": [
+        "tv-back-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-400"
+      ],
+      "channels": [
+        "tv-wall-lamp"
+      ],
+      "baseColor": [
+        0.85499260812105,
+        0.8148465722120952,
+        0.7304607400847158
+      ],
+      "defaultColor": [
+        1,
+        0.6375968739867731,
+        0.25818285291079235
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-402"
+      ],
+      "channels": [
+        "bed-base-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-403"
+      ],
+      "channels": [
+        "bed-base-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-404"
+      ],
+      "channels": [
+        "bed-base-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-405"
+      ],
+      "channels": [
+        "bed-base-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-406"
+      ],
+      "channels": [
+        "bedhead-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-466"
+      ],
+      "channels": [
+        "wardrobe-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-589"
+      ],
+      "channels": [
+        "bedside-north-lamp"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.7529422167708612,
+        0.6795424696265424
+      ],
+      "defaultColor": [
+        1,
+        0.6104955708001716,
+        0.25818285291079235
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-595"
+      ],
+      "channels": [
+        "bedside-south-lamp"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.7529422167708612,
+        0.6795424696265424
+      ],
+      "defaultColor": [
+        1,
+        0.6104955708001716,
+        0.25818285291079235
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-601"
+      ],
+      "channels": [
+        "bedroom-floor-lamp"
+      ],
+      "baseColor": [
+        0.8148465722120952,
+        0.8387990117372213,
+        0.8069522576650873
+      ],
+      "defaultColor": [
+        1,
+        0.6375968739867731,
+        0.21586050010324417
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-605"
+      ],
+      "channels": [
+        "living-floor-lamp"
+      ],
+      "baseColor": [
+        0.8148465722120952,
+        0.8387990117372213,
+        0.8069522576650873
+      ],
+      "defaultColor": [
+        1,
+        0.6375968739867731,
+        0.21586050010324417
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-613"
+      ],
+      "channels": [
+        "living-table-lamp"
+      ],
+      "baseColor": [
+        0.85499260812105,
+        0.8069522576650873,
+        0.7230551289161951
+      ],
+      "defaultColor": [
+        1,
+        0.6514056374127929,
+        0.28314874041918053
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-673"
+      ],
+      "channels": [
+        "garden-path-1"
+      ],
+      "baseColor": [
+        0.7156935005005721,
+        0.76052450467022,
+        0.7230551289161951
+      ],
+      "defaultColor": [
+        1,
+        0.775822218312646,
+        0.37626212298046485
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-675"
+      ],
+      "channels": [
+        "garden-path-2"
+      ],
+      "baseColor": [
+        0.7156935005005721,
+        0.76052450467022,
+        0.7230551289161951
+      ],
+      "defaultColor": [
+        1,
+        0.775822218312646,
+        0.37626212298046485
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-677"
+      ],
+      "channels": [
+        "garden-path-3"
+      ],
+      "baseColor": [
+        0.7156935005005721,
+        0.76052450467022,
+        0.7230551289161951
+      ],
+      "defaultColor": [
+        1,
+        0.775822218312646,
+        0.37626212298046485
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-679"
+      ],
+      "channels": [
+        "garden-path-4"
+      ],
+      "baseColor": [
+        0.7156935005005721,
+        0.76052450467022,
+        0.7230551289161951
+      ],
+      "defaultColor": [
+        1,
+        0.775822218312646,
+        0.37626212298046485
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-683"
+      ],
+      "channels": [
+        "garden-floor-1"
+      ],
+      "baseColor": [
+        0.8148465722120952,
+        0.8387990117372213,
+        0.8069522576650873
+      ],
+      "defaultColor": [
+        1,
+        0.6375968739867731,
+        0.21586050010324417
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-687"
+      ],
+      "channels": [
+        "garden-floor-2"
+      ],
+      "baseColor": [
+        0.8148465722120952,
+        0.8387990117372213,
+        0.8069522576650873
+      ],
+      "defaultColor": [
+        1,
+        0.6375968739867731,
+        0.21586050010324417
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-690"
+      ],
+      "channels": [
+        "dining-pendant"
+      ],
+      "baseColor": [
+        0.8879231178794776,
+        0.913098651791473,
+        0.9046611743890203
+      ],
+      "defaultColor": [
+        1,
+        0.6375968739867731,
+        0.25818285291079235
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-694"
+      ],
+      "channels": [
+        "bath-platform-strip"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-698",
+        "node-701",
+        "node-704",
+        "node-707"
+      ],
+      "channels": [
+        "living-fill"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 1.1,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-711",
+        "node-714",
+        "node-717",
+        "node-720"
+      ],
+      "channels": [
+        "bedroom-fill"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-724",
+        "node-727",
+        "node-730",
+        "node-733"
+      ],
+      "channels": [
+        "bathroom-fill"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-737",
+        "node-740",
+        "node-743",
+        "node-746"
+      ],
+      "channels": [
+        "entry-fill"
+      ],
+      "baseColor": [
+        0.7912979403281551,
+        0.8069522576650873,
+        0.7835377915215659
+      ],
+      "defaultColor": [
+        1,
+        0.6038273388475408,
+        0.19806931954941637
+      ],
+      "strength": 0.75,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-760"
+      ],
+      "channels": [
+        "entry-wall-north"
+      ],
+      "baseColor": [
+        0.7991027380100881,
+        0.7991027380100881,
+        0.7379104087672317
+      ],
+      "defaultColor": [
+        1,
+        0.6583748172725346,
+        0.3231432091022285
+      ],
+      "strength": 1.2,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    },
+    {
+      "nodes": [
+        "node-765"
+      ],
+      "channels": [
+        "entry-wall-south"
+      ],
+      "baseColor": [
+        0.7991027380100881,
+        0.7991027380100881,
+        0.7379104087672317
+      ],
+      "defaultColor": [
+        1,
+        0.6583748172725346,
+        0.3231432091022285
+      ],
+      "strength": 1.2,
+      "curve": "linear",
+      "display": "house",
+      "toneMapped": true
+    }
+  ],
+  "lights": [
+    {
+      "channels": [
+        "kitchen-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        0.081,
+        -3.7499999999999996
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.66,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "island-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -0.8,
+        0.6759999999999999,
+        -1.85
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 2.62,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "island-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -0.8,
+        0.6759999999999999,
+        -2.65
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 2.62,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "island-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -2.125,
+        0.6759999999999999,
+        -2.25
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 0.77,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "island-strip"
+      ],
+      "kind": "area",
+      "position": [
+        0.5250000000000001,
+        0.6759999999999999,
+        -2.25
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 0.77,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1.4,
+        0.111,
+        1.025
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 2.42,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1.4,
+        0.111,
+        0.175
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 2.42,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -2.625,
+        0.111,
+        0.6
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 0.8200000000000001,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-main-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -0.17499999999999982,
+        0.111,
+        0.6
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 0.8200000000000001,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "kind": "area",
+      "position": [
+        0.3,
+        0.111,
+        1.975
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.8200000000000001,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "kind": "area",
+      "position": [
+        0.3,
+        0.111,
+        0.2250000000000001
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.8200000000000001,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -0.125,
+        0.111,
+        1.1
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 1.72,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "sofa-return-strip"
+      ],
+      "kind": "area",
+      "position": [
+        0.725,
+        0.111,
+        1.1
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 1.72,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "coffee-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        0.366,
+        2.5250000000000004
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1.47,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "coffee-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        0.366,
+        1.8750000000000002
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1.47,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "coffee-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1.75,
+        0.366,
+        2.2
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 0.62,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "coffee-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -0.25,
+        0.366,
+        2.2
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 0.62,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "tv-back-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        0.251,
+        4.220000000000001
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.29,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "tv-back-strip"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        2.3760000000000003,
+        4.24
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.29,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "tv-wall-lamp"
+      ],
+      "kind": "point",
+      "position": [
+        0.3799999999999999,
+        1.43,
+        4.04
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 2.8000000000000003,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bed-base-strip"
+      ],
+      "kind": "area",
+      "position": [
+        3.975,
+        0.05600000000000001,
+        -0.7499999999999998
+      ],
+      "quaternion": [
+        -0.5,
+        -0.5,
+        -0.4999999999999999,
+        0.5000000000000001
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1.42,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bed-base-strip"
+      ],
+      "kind": "area",
+      "position": [
+        5.925,
+        0.05600000000000001,
+        -0.7500000000000002
+      ],
+      "quaternion": [
+        -0.5,
+        -0.5,
+        -0.4999999999999999,
+        0.5000000000000001
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1.42,
+      "height": 0.045,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bed-base-strip"
+      ],
+      "kind": "area",
+      "position": [
+        4.95,
+        0.05600000000000001,
+        -1.475
+      ],
+      "quaternion": [
+        -0.5,
+        -0.5,
+        -0.4999999999999999,
+        0.5000000000000001
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 1.92,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bed-base-strip"
+      ],
+      "kind": "area",
+      "position": [
+        4.95,
+        0.05600000000000001,
+        -0.025000000000000022
+      ],
+      "quaternion": [
+        -0.5,
+        -0.5,
+        -0.4999999999999999,
+        0.5000000000000001
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 1.92,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedhead-strip"
+      ],
+      "kind": "area",
+      "position": [
+        6.03,
+        1.1,
+        -0.7500000000000002
+      ],
+      "quaternion": [
+        0,
+        -0.7071067811865475,
+        0,
+        0.7071067811865476
+      ],
+      "power": 20,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1.58,
+      "height": 0.04,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "wardrobe-strip"
+      ],
+      "kind": "area",
+      "position": [
+        5.3,
+        2.1860000000000004,
+        1.75
+      ],
+      "quaternion": [
+        -4.3297802811774664e-17,
+        0.7071067811865476,
+        0.7071067811865475,
+        4.329780281177467e-17
+      ],
+      "power": 20,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1.7799999999999998,
+      "height": 0.05,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedside-north-lamp"
+      ],
+      "kind": "point",
+      "position": [
+        5.7,
+        1,
+        -1.95
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 3.3600000000000003,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedside-south-lamp"
+      ],
+      "kind": "point",
+      "position": [
+        5.7,
+        1,
+        0.45
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 3.3600000000000003,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedroom-floor-lamp"
+      ],
+      "kind": "point",
+      "position": [
+        4.6,
+        1.65,
+        -3.8
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 5.040000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "living-floor-lamp"
+      ],
+      "kind": "point",
+      "position": [
+        0.92,
+        1.65,
+        0.5
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 5.040000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "living-table-lamp"
+      ],
+      "kind": "point",
+      "position": [
+        -2.62,
+        0.95,
+        1.25
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 3.3600000000000003,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "garden-path-1"
+      ],
+      "kind": "point",
+      "position": [
+        -5.1,
+        0.37,
+        -1.4
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 1.4000000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "garden-path-2"
+      ],
+      "kind": "point",
+      "position": [
+        -4.05,
+        0.37,
+        -0.5
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 1.4000000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "garden-path-3"
+      ],
+      "kind": "point",
+      "position": [
+        -5.25,
+        0.37,
+        1.5
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 1.4000000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "garden-path-4"
+      ],
+      "kind": "point",
+      "position": [
+        -4.03,
+        0.37,
+        3.4
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 1.4000000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "garden-floor-1"
+      ],
+      "kind": "point",
+      "position": [
+        -6.1,
+        1.45,
+        -1.4
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 5.040000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "garden-floor-2"
+      ],
+      "kind": "point",
+      "position": [
+        -6.1,
+        1.45,
+        3.4
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 5.040000000000001,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "dining-pendant"
+      ],
+      "kind": "point",
+      "position": [
+        -0.45,
+        1.03,
+        -2.25
+      ],
+      "quaternion": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "power": 3.9200000000000004,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 1,
+      "height": 1,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bath-platform-strip"
+      ],
+      "kind": "area",
+      "position": [
+        5,
+        0.061,
+        3.3
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 12,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.045,
+      "height": 1.94,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "living-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        2.7,
+        -4.225
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 40,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.65,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "living-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -1,
+        2.7,
+        4.225
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 40,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.65,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "living-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -3.325,
+        2.7,
+        0
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 40,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 8.45,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "living-fill"
+      ],
+      "kind": "area",
+      "position": [
+        1.3250000000000002,
+        2.7,
+        0
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 40,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 8.45,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        4,
+        2.7,
+        -4.225
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.25,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        4,
+        2.7,
+        1.825
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.25,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        1.875,
+        2.7,
+        -1.2
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 6.05,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bedroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        6.125,
+        2.7,
+        -1.2
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 6.05,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bathroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        4,
+        2.7,
+        2.375
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.25,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bathroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        4,
+        2.7,
+        4.225
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 4.25,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bathroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        1.875,
+        2.7,
+        3.3
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 1.85,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "bathroom-fill"
+      ],
+      "kind": "area",
+      "position": [
+        6.125,
+        2.7,
+        3.3
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 1.85,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "entry-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -5,
+        2.7,
+        -4.225
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 2.25,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "entry-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -5,
+        2.7,
+        -2.575
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 2.25,
+      "height": 0.055,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "entry-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -6.125,
+        2.7,
+        -3.4
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 1.65,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "entry-fill"
+      ],
+      "kind": "area",
+      "position": [
+        -3.875,
+        2.7,
+        -3.4
+      ],
+      "quaternion": [
+        -0.7071067811865475,
+        0,
+        0,
+        0.7071067811865476
+      ],
+      "power": 24,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.055,
+      "height": 1.65,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "entry-wall-north"
+      ],
+      "kind": "area",
+      "position": [
+        -5.6499999999999995,
+        1.97,
+        -4.13
+      ],
+      "quaternion": [
+        0,
+        -0.7071067811865476,
+        0,
+        0.7071067811865475
+      ],
+      "power": 10,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.16,
+      "height": 0.4,
+      "distance": 5
+    },
+    {
+      "channels": [
+        "entry-wall-south"
+      ],
+      "kind": "area",
+      "position": [
+        -5.6499999999999995,
+        1.97,
+        -2.67
+      ],
+      "quaternion": [
+        0,
+        -0.7071067811865476,
+        0,
+        0.7071067811865475
+      ],
+      "power": 10,
+      "color": [
+        1,
+        0.7011018919268015,
+        0.33245153633549385
+      ],
+      "curve": "linear",
+      "useColor": true,
+      "width": 0.16,
+      "height": 0.4,
+      "distance": 5
+    }
+  ],
+  "curtains": [
+    {
+      "node": "node-749",
+      "channel": "living-curtain",
+      "half": 2.975,
+      "side": -1,
+      "position": [
+        -1.4875,
+        1.4,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "node": "node-750",
+      "channel": "living-curtain",
+      "half": 2.975,
+      "side": 1,
+      "position": [
+        1.4875,
+        1.4,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "node": "node-753",
+      "channel": "bedroom-curtain",
+      "half": 1.725,
+      "side": -1,
+      "position": [
+        -0.8625,
+        1.4,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "node": "node-754",
+      "channel": "bedroom-curtain",
+      "half": 1.725,
+      "side": 1,
+      "position": [
+        0.8625,
+        1.4,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "glows": [
+    {
+      "node": "node-769",
+      "channel": "living-floor-ring",
+      "color": [
+        1,
+        0.6583748172725346,
+        0.3231432091022285
+      ],
+      "opacity": 0.35,
+      "exponent": 0.5,
+      "whiteMix": 0.72
+    }
+  ],
+  "visibility": [
+    {
+      "node": "node-396",
+      "channel": "tv-power"
+    }
+  ],
+  "rotations": [
+    {
+      "node": "node-160",
+      "channel": "entrance-switch",
+      "closed": 0,
+      "open": -1.5707963267948966
+    }
+  ],
+  "warnings": [
+    "亲子之家动态场景包：灯光、窗帘、电视亮屏和入户门开合示意；不含导航碰撞、语音和自动化执行。",
+    "电视与大门仅按继电器开关示意；Aqara 为固定开机画面，不代表真实播放内容、门磁或锁舌状态。",
+    "包含地面柔光和线形面光源；阴影及环境补光与原页面可能存在差异。"
+  ],
+  "asset": {
+    "file": "scene.glb",
+    "bytes": 3964864,
+    "sha256": "f646945d849c0b21a8bf0d41989e00c95917164945a0835af797638139549c59"
+  }
+}

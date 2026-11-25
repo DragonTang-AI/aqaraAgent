@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>Aqara 空间工作台</title>
+<style>
+  :root[data-theme="dark"]{
+    --ink:#0b0b0b; --panel:#0e0e0e; --panel2:#121212; --line:#262626; --line2:#333;
+    --fg:#f2f2f2; --muted:#8a8a8a; --dim:#5c5c5c; --chip:#151515; --active:#f2f2f2; --active-fg:#0b0b0b;
+    --stage: radial-gradient(120% 90% at 50% 10%, #181818 0%, #0b0b0b 72%);
+  }
+  :root[data-theme="light"]{
+    --ink:#f5f5f5; --panel:#ffffff; --panel2:#fafafa; --line:#e4e4e4; --line2:#d5d5d5;
+    --fg:#141414; --muted:#707070; --dim:#a6a6a6; --chip:#f0f0f0; --active:#111; --active-fg:#fff;
+    --stage: radial-gradient(120% 90% at 50% 10%, #ffffff 0%, #eef0f2 72%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;background:var(--ink);color:var(--fg);overflow:hidden;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",system-ui,sans-serif;
+    user-select:none;-webkit-user-select:none;cursor:default;}
+  .workarea{height:100%;display:flex;flex-direction:column;background:var(--ink);}
+
+  /* 标签栏 */
+  .tabbar{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line);
+    background:var(--panel2);position:relative;flex:none;}
+  .tabs{display:flex;gap:4px;overflow-x:auto;flex:1;scrollbar-width:none;}
+  .tabs::-webkit-scrollbar{display:none;}
+  .tab{display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:8px;font-size:12.5px;
+    color:var(--muted);border:1px solid transparent;white-space:nowrap;cursor:pointer;}
+  .tab:hover{background:var(--chip);}
+  .tab.active{background:var(--active);color:var(--active-fg);font-weight:700;}
+  .tab .x{font-size:13px;opacity:.6;padding:0 2px;}
+  .tab .x:hover{opacity:1;}
+  .tabadd,.tabmore{width:28px;height:28px;border:1px solid var(--line);border-radius:8px;background:var(--panel);
+    color:var(--fg);font-size:15px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;flex:none;}
+  .tabadd:hover,.tabmore:hover{background:var(--chip);}
+  .menu{position:absolute;top:44px;right:10px;background:var(--panel);border:1px solid var(--line2);border-radius:10px;
+    padding:6px;display:none;min-width:150px;box-shadow:0 8px 30px rgba(0,0,0,.35);z-index:20;}
+  .menu.open{display:block;}
+  .menu .mi{padding:8px 10px;border-radius:7px;font-size:12.5px;color:var(--fg);cursor:pointer;display:flex;justify-content:space-between;gap:10px;}
+  .menu .mi:hover{background:var(--chip);}
+  .menu .mi .k{color:var(--dim);font-size:11px;}
+
+  /* 内容区 */
+  .content{flex:1;position:relative;overflow:hidden;}
+  .panel{position:absolute;inset:0;display:none;flex-direction:column;overflow:auto;}
+  .panel.active{display:flex;}
+
+  .pad{padding:14px 14px 20px;}
+  .sec-title{font-size:10.5px;letter-spacing:.16em;color:var(--dim);font-family:ui-monospace,Menlo,monospace;margin:14px 0 8px;}
+  .sec-title:first-child{margin-top:2px;}
+  .row{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;background:var(--panel);}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--fg);flex:none;box-shadow:0 0 8px currentColor;opacity:.85;}
+  .row .name{font-size:13px;flex:1;} .row .loc{font-size:11px;color:var(--muted);} .row .st{font-size:10.5px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:11.5px;border:1px solid var(--line);border-radius:99px;padding:5px 11px;color:var(--fg);background:var(--panel);cursor:pointer;}
+  .chip:hover{border-color:var(--line2);}
+
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  .card{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 11px;}
+  .card .t{font-size:12px;font-weight:700;}
+  .card .d{font-size:11px;color:var(--muted);margin-top:2px;}
+
+  .file{display:flex;align-items:center;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;background:var(--panel);}
+  .file .ic{width:26px;height:26px;border:1px solid var(--line2);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--muted);flex:none;}
+  .file .fn{font-size:12.5px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .file .fs{font-size:10.5px;color:var(--dim);font-family:ui-monospace,Menlo,monospace;}
+
+  .board{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;}
+  .col{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px;}
+  .col .h{font-size:11px;color:var(--muted);letter-spacing:.08em;margin-bottom:8px;}
+  .task{border:1px solid var(--line);border-radius:8px;padding:7px 8px;font-size:11.5px;margin-bottom:6px;background:var(--panel2);}
+  .task .g{font-size:10px;color:var(--dim);margin-top:3px;}
+
+  .browser-bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);}
+  .browser-bar input{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 10px;color:var(--fg);font-size:12px;outline:none;}
+  .browser-bar button{border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:8px;padding:0 12px;cursor:pointer;font-size:12px;}
+  .browser-frame{flex:1;border:none;background:#fff;}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px;}
+  .btn{border:1px solid var(--line);background:var(--panel);color:var(--fg);border-radius:8px;padding:9px 10px;font-size:12.5px;text-align:center;cursor:pointer;}
+  .btn:hover{background:var(--chip);}
+  .btn.primary{background:var(--active);color:var(--active-fg);border-color:var(--active);font-weight:700;}
+
+  /* 3D */
+  .stage{position:relative;flex:1;min-height:300px;background:var(--stage);}
+  #view{position:absolute;inset:0;}
+  .stage .tag{position:absolute;top:10px;left:12px;font-size:10px;letter-spacing:.14em;color:var(--dim);font-family:ui-monospace,Menlo,monospace;z-index:2;}
+  .stage .hint{position:absolute;bottom:8px;right:12px;font-size:10.5px;color:var(--dim);z-index:2;}
+  .vctl{position:absolute;display:flex;gap:5px;z-index:6;}
+  .vctl.tl{top:10px;left:12px;} .vctl.tr{top:10px;right:12px;flex-wrap:wrap;justify-content:flex-end;max-width:60%;}
+  .vctl button{font-size:11px;padding:5px 9px;border:1px solid var(--line2);background:var(--panel);color:var(--muted);border-radius:7px;cursor:pointer;white-space:nowrap;}
+  .vctl button:hover{color:var(--fg);}
+  .vctl button.on{background:var(--active);color:var(--active-fg);border-color:var(--active);font-weight:700;}
+  .param{position:absolute;left:12px;bottom:12px;z-index:6;background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:9px 11px;font-size:11px;color:var(--muted);min-width:232px;}
+  .param .ph{color:var(--fg);font-weight:700;font-size:11.5px;margin-bottom:6px;}
+  .param .pr{display:flex;align-items:center;gap:6px;margin:5px 0;}
+  .param .pr span{color:var(--dim);}
+  .param .pr b{color:var(--fg);font-weight:700;}
+  .param .pr input[type=range]{flex:1;accent-color:var(--fg);height:14px;min-width:60px;}
+  .param .pr i{font-style:normal;color:var(--fg);font-size:10.5px;min-width:36px;text-align:right;}
+
+  /* 设备控制抽屉（3D 场景内 34 路灯光/窗帘/开关） */
+  .devctl{position:absolute;right:12px;top:52px;bottom:12px;width:252px;z-index:7;background:var(--panel);
+    border:1px solid var(--line2);border-radius:12px;display:none;flex-direction:column;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.35);}
+  .devctl.open{display:flex;}
+  .devctl .dhead{display:flex;align-items:center;justify-content:space-between;padding:9px 11px;border-bottom:1px solid var(--line);font-size:11.5px;font-weight:700;}
+  .devctl .dhead .cnt{color:var(--dim);font-weight:400;font-family:ui-monospace,Menlo,monospace;font-size:10.5px;}
+  .devctl .dbody{overflow:auto;padding:4px 8px 10px;}
+  .devctl .dgrp{font-size:10px;letter-spacing:.12em;color:var(--dim);font-family:ui-monospace,Menlo,monospace;margin:9px 4px 4px;}
+  .devctl .dhint{padding:14px 8px;font-size:11px;color:var(--dim);text-align:center;}
+  .ctl{display:flex;align-items:center;gap:8px;padding:6px;border-radius:8px;font-size:11.5px;cursor:pointer;}
+  .ctl:hover{background:var(--chip);}
+  .ctl .cn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .ctl .sw{width:34px;height:18px;border-radius:99px;background:var(--line2);position:relative;flex:none;transition:background .15s;}
+  .ctl .sw::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .15s;}
+  .ctl.on .sw{background:var(--active);}
+  .ctl.on .sw::after{left:18px;background:var(--active-fg);}
+
+  /* 执行中 / 完成 回填 */
+  [data-send]{transition:opacity .2s, box-shadow .2s;}
+  [data-send].is-sending{opacity:.45;animation:sendpulse 1s infinite;}
+  @keyframes sendpulse{0%,100%{opacity:.4;}50%{opacity:.8;}}
+  [data-send].is-done{box-shadow:inset 0 0 0 1.5px var(--fg);}
+  .aq-toast{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);background:var(--active);color:var(--active-fg);
+    font-size:12px;padding:7px 14px;border-radius:99px;z-index:50;opacity:.96;pointer-events:none;white-space:nowrap;max-width:90%;overflow:hidden;text-overflow:ellipsis;}
+
+  /* 上下文条 + 选中态 */
+  .ctxbar{padding:7px 12px;border-bottom:1px solid var(--line);font-size:11.5px;color:var(--muted);
+    display:flex;gap:6px;align-items:center;background:var(--panel2);flex:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .ctxbar b{color:var(--fg);font-weight:700;}
+  .ctxbar .sel{color:var(--fg);}
+  [data-send].selected{box-shadow:inset 0 0 0 1.5px var(--fg) !important;}
+
+  /* 预览区 展开 / 收起 控制 */
+  .tsep{width:1px;height:18px;background:var(--line2);margin:0 2px;flex:none;}
+  .tabadd.ico{font-size:14px;}
+  .tabadd.ico.on{background:var(--active);color:var(--active-fg);border-color:var(--active);}
+
+  /* 收起后的窄条 */
+  .rail{display:none;height:100%;width:46px;flex-direction:column;align-items:center;gap:12px;
+    padding:12px 0;background:var(--panel2);border-left:1px solid var(--line);}
+  body.collapsed .workarea{display:none;}
+  body.collapsed .rail{display:flex;}
+  .rail-btn{display:flex;flex-direction:column;align-items:center;gap:8px;border:1px solid var(--line2);
+    background:var(--panel);color:var(--fg);border-radius:9px;padding:10px 6px;cursor:pointer;}
+  .rail-btn:hover{background:var(--chip);}
+  .rail-btn .ric{font-size:15px;line-height:1;}
+  .rail-btn .rtx{writing-mode:vertical-rl;font-size:11.5px;letter-spacing:.14em;color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="workarea">
+  <div class="tabbar">
+    <div class="tabs" id="tabs"></div>
+    <button class="tabadd" id="projmore" title="切换 / 新建项目">▦</button>
+    <button class="tabadd" id="tabadd" title="新建标签">+</button>
+    <button class="tabmore" id="tabmore" title="更多">⋯</button>
+    <span class="tsep"></span>
+    <button class="tabadd ico" id="btnMax" title="展开面板" aria-label="展开面板">⤢</button>
+    <button class="tabadd ico" id="btnCollapse" title="收起面板" aria-label="收起面板">▤</button>
+    <div class="menu" id="menu"></div>
+    <div class="menu" id="projmenu"></div>
+  </div>
+  <div class="ctxbar" id="ctxbar"></div>
+  <div class="content" id="content"></div>
+</div>
+
+<!-- 收起预览区后的窄条（提供「展开」入口，对应 ArkWork 收起后的再展开） -->
+<div class="rail" id="rail">
+  <button class="rail-btn" id="railOpen" title="展开工作台" aria-label="展开工作台">
+    <span class="ric">⤡</span>
+    <span class="rtx">展开工作台</span>
+  </button>
+</div>
+
+<script src="./lib/three.min.js"></script>
+<script src="./lib/GLTFLoader.js"></script>
+<script>
+(function () {
+  // ---------- 主题 ----------
+  const THEME = {
+    dark:  { bg:0x0b0b0b, line:0xcfcfcf, grid1:0x2a2a2a, grid2:0x1a1a1a, node:0xffffff, floor:0xffffff, link:0x6a6a6a },
+    light: { bg:0xf5f5f5, line:0x333333, grid1:0xcccccc, grid2:0xdddddd, node:0x111111, floor:0x000000, link:0x8a8a8a },
+  };
+  let theme = 'dark';
+  let state = { rooms: [], devices: [], scenes: [], automations: [], files: [], board: { todo: [], doing: [], done: [] }, tasks: [], project: {} };
+  let refs = null; // three.js refs for theme updates
+  let glbControls = []; // 34 路设备控制（灯光/窗帘/开关）
+
+  function applyTheme(t) {
+    theme = (t === 'light') ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    if (refs) recolor();
+  }
+
+  // ---------- 标签定义 ----------
+  const DEFS = {
+    twin:    { title: '数字孪生' },
+    devices: { title: '设备' },
+    scenes:  { title: '场景' },
+    files:   { title: '文件' },
+    board:   { title: '看板' },
+    browser: { title: '浏览器' },
+    tasks:   { title: '子任务' },
+  };
+  let seq = 0;
+  const tabs = []; // {id, type}
+  let activeId = null;
+  const panelEls = {}; // id -> element
+
+  const $tabs = document.getElementById('tabs');
+  const $content = document.getElementById('content');
+  const $menu = document.getElementById('menu');
+
+  function nextId() { return 't' + (++seq); }
+
+  function addTab(type, activate) {
+    const id = nextId();
+    tabs.push({ id, type });
+    const panel = document.createElement('div');
+    panel.className = 'panel';
+    panel.id = 'p-' + id;
+    $content.appendChild(panel);
+    panelEls[id] = panel;
+    buildPanel(panel, type);
+    renderTabs();
+    if (activate !== false) activateTab(id);
+    return id;
+  }
+
+  function closeTab(id) {
+    const i = tabs.findIndex(t => t.id === id);
+    if (i < 0) return;
+    tabs.splice(i, 1);
+    const el = panelEls[id]; if (el) el.remove();
+    delete panelEls[id];
+    if (activeId === id) {
+      const nt = tabs[Math.max(0, i - 1)] || tabs[0];
+      activeId = nt ? nt.id : null;
+    }
+    renderTabs();
+    if (activeId) activateTab(activeId, false);
+  }
+
+  function activateTab(id, rerender) {
+    activeId = id;
+    Object.keys(panelEls).forEach(k => panelEls[k].classList.toggle('active', k === id));
+    if (rerender !== false) renderTabs();
+    if (tabs.find(t => t.id === id && t.type === 'twin') && refs) resize3D();
+  }
+
+  function renderTabs() {
+    $tabs.innerHTML = '';
+    tabs.forEach(t => {
+      const el = document.createElement('div');
+      el.className = 'tab' + (t.id === activeId ? ' active' : '');
+      el.innerHTML = `<span>${DEFS[t.type].title}</span><span class="x" title="关闭">×</span>`;
+      el.addEventListener('click', (e) => {
+        if (e.target.classList.contains('x')) { closeTab(t.id); }
+        else activateTab(t.id);
+      });
+      $tabs.appendChild(el);
+    });
+  }
+
+  // ---------- 菜单（+ / ⋯）----------
+  function toggleMenu() {
+    const open = $menu.classList.contains('open');
+    $menu.innerHTML = '';
+    if (!open) {
+      Object.keys(DEFS).forEach(type => {
+        const mi = document.createElement('div');
+        mi.className = 'mi';
+        mi.innerHTML = `<span>${DEFS[type].title}</span><span class="k">新建</span>`;
+        mi.addEventListener('click', () => { addTab(type); $menu.classList.remove('open'); });
+        $menu.appendChild(mi);
+      });
+    }
+    $menu.classList.toggle('open');
+  }
+  document.getElementById('tabadd').addEventListener('click', toggleMenu);
+  document.getElementById('tabmore').addEventListener('click', toggleMenu);
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#tabadd') && !e.target.closest('#tabmore') && !e.target.closest('#menu')) {
+      $menu.classList.remove('open');
+    }
+  });
+
+  // ---------- 项目管理（切换 / 新建）----------
+  const $projmenu = document.getElementById('projmenu');
+  let projects = [];
+  let currentProj = '';
+  async function loadProjects() {
+    try {
+      if (!window.aqara || !window.aqara.listProjects) return;
+      const r = await window.aqara.listProjects();
+      projects = (r && r.projects) || [];
+      currentProj = (r && r.current) || '';
+    } catch (_) {}
+  }
+  document.getElementById('projmore').addEventListener('click', (e) => {
+    e.stopPropagation();
+    $menu.classList.remove('open');
+    const isOpen = $projmenu.classList.contains('open');
+    $projmenu.innerHTML = '';
+    if (isOpen) { $projmenu.classList.remove('open'); return; }
+    (projects || []).forEach((p) => {
+      const mi = document.createElement('div');
+      mi.className = 'mi';
+      mi.innerHTML = '<span>' + (p === currentProj ? '● ' : '') + p + '</span><span class="k">' + (p === currentProj ? '当前' : '') + '</span>';
+      mi.addEventListener('click', async () => {
+        $projmenu.classList.remove('open');
+        if (window.aqara && window.aqara.switchProject) {
+          const r = await window.aqara.switchProject(p);
+          if (r && r.ok) { currentProj = p; showToast('已切换项目：' + p); }
+        }
+      });
+      $projmenu.appendChild(mi);
+    });
+    const sep = document.createElement('div');
+    sep.style.cssText = 'height:1px;background:var(--line);margin:6px 0;';
+    $projmenu.appendChild(sep);
+    const nw = document.createElement('div');
+    nw.className = 'mi';
+    nw.innerHTML = '<span>＋ 新建项目</span><span class="k">自动命名</span>';
+    nw.addEventListener('click', async () => {
+      $projmenu.classList.remove('open');
+      if (!window.aqara || !window.aqara.newProject) return;
+      const name = '新项目' + ((projects ? projects.length : 0) + 1);
+      const r = await window.aqara.newProject(name);
+      if (r && r.ok) {
+        projects = r.projects || projects;
+        const s = await window.aqara.switchProject(name);
+        if (s && s.ok) { currentProj = name; showToast('已新建并切换到：' + name); }
+      } else {
+        showToast('新建失败：' + (r && r.reason));
+      }
+    });
+    $projmenu.appendChild(nw);
+    $projmenu.classList.add('open');
+  });
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#projmore') && !e.target.closest('#projmenu')) {
+      $projmenu.classList.remove('open');
+    }
+  });
+
+  // 轻量 toast
+  function showToast(txt) {
+    const d = document.createElement('div');
+    d.className = 'aq-toast';
+    d.textContent = txt;
+    document.body.appendChild(d);
+    setTimeout(() => d.remove(), 2000);
+  }
+
+  // 上下文：当前选中项（设备/场景/动作/文件）
+  let selected = null;
+  function itemLabel(el) {
+    if (el.classList.contains('row')) { const n = el.querySelector('.name'); return n ? n.textContent.trim() : el.textContent.trim(); }
+    if (el.classList.contains('file')) { const n = el.querySelector('.fn'); return n ? n.textContent.trim() : el.textContent.trim(); }
+    return (el.textContent || '').trim().slice(0, 30);
+  }
+  function renderCtx() {
+    const bar = document.getElementById('ctxbar');
+    if (!bar) return;
+    const proj = (state && state.project && state.project.name) || '当前项目';
+    bar.innerHTML = '📍 <b>' + proj + '</b>' + (selected ? (' · <span class="sel">选中：' + selected + '</span>') : ' · <span>未选中</span>');
+  }
+  function reHighlight() {
+    document.querySelectorAll('[data-send].selected').forEach((x) => x.classList.remove('selected'));
+    if (!selected) return;
+    for (const el of document.querySelectorAll('[data-send]')) {
+      if (itemLabel(el) === selected) { el.classList.add('selected'); break; }
+    }
+  }
+
+  // 工作区 → 对话 + 执行回填（带上下文）
+  let pendingEl = null;
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-send]');
+    if (!el) return;
+    const raw = el.getAttribute('data-send');
+    if (!raw || !window.aqara || !window.aqara.send) return;
+    selected = itemLabel(el);
+    reHighlight();
+    renderCtx();
+    const proj = (state && state.project && state.project.name) || '当前项目';
+    const msg = '【工作区上下文】项目：' + proj + (selected ? ('；当前选中：' + selected) : '') + '\n【指令】' + raw;
+    window.aqara.send(msg);
+    if (pendingEl && pendingEl !== el) pendingEl.classList.remove('is-sending');
+    pendingEl = el;
+    el.classList.remove('is-done');
+    el.classList.add('is-sending');
+    showToast('→ 已发送给 Agent（含上下文）');
+  });
+
+  // Agent 执行完成 → 回填该动作状态
+  if (window.aqara && window.aqara.onActionDone) {
+    window.aqara.onActionDone(() => {
+      if (pendingEl) {
+        pendingEl.classList.remove('is-sending');
+        pendingEl.classList.add('is-done');
+        pendingEl = null;
+      }
+      showToast('✓ Agent 执行完成，工作区已更新');
+    });
+  }
+
+  // ---------- 各标签内容 ----------
+  function buildPanel(panel, type) {
+    if (type === 'twin') {
+      panel.innerHTML = `
+        <div class="stage"><div id="view"></div>
+          <div class="vctl tl" id="modes">
+            <button data-mode="3d" class="on">3D</button>
+            <button data-mode="plan">平面图</button>
+            <button data-mode="walk">漫游</button>
+          </div>
+          <div class="vctl tr" id="vopts">
+            <button id="btnFurn" class="on">家具</button>
+            <button id="btnWire">线框</button>
+            <button id="btnCeil">顶吊</button>
+            <button id="btnDay">☀︎ 白天</button>
+            <button id="btnDev">设备</button>
+          </div>
+          <div class="param" id="param">
+            <div class="ph">房间参数 · <span id="p-name">未选</span></div>
+            <div class="pr"><span>面积</span><b id="p-area">—</b><span>尺寸</span><b id="p-size">—</b></div>
+            <div class="pr"><span>层高</span><input type="range" id="p-h" min="2.2" max="3.4" step="0.1" value="2.6"><i id="p-hv">2.6m</i></div>
+            <div class="pr"><span>光照</span><input type="range" id="p-time" min="6" max="21" step="1" value="12"><i id="p-tv">12:00</i></div>
+          </div>
+          <div class="hint">拖拽旋转 · 点房间进入 · 点设备开关</div>
+          <div class="devctl" id="devctl">
+            <div class="dhead"><span>设备控制</span><span class="cnt" id="devcnt">加载中</span></div>
+            <div class="dbody" id="devbody"><div class="dhint">模型加载中…</div></div>
+          </div>
+        </div>
+        <div class="pad">
+          <div class="sec-title">快捷动作 / ACTIONS</div>
+          <div class="actions">
+            <div class="btn primary" data-send="为当前户型生成一份空间方案（含设备选型与点位设计）">生成空间方案</div>
+            <div class="btn" data-send="导出当前户型的数字孪生文件（GLB 格式）">导出数字孪生</div>
+            <div class="btn" data-send="对全屋设备做一次巡检，列出异常项与建议">全屋巡检</div>
+            <div class="btn" data-send="基于当前空间与设备，给出智能化改进建议">智能建议</div>
+          </div>
+        </div>`;
+      init3D(panel.querySelector('#view'), panel);
+    } else if (type === 'devices') {
+      panel.innerHTML = `<div class="pad">
+        <div class="sec-title">设备点位 / DEVICES</div>
+        ${(state.devices || []).map(d => `<div class="row" data-send="查看并说明「${d.name}」当前状态"><span class="dot"></span><span class="name">${d.name}</span><span class="loc">${d.room}</span><span class="st">${d.status}</span></div>`).join('')}
+      </div>`;
+    } else if (type === 'scenes') {
+      panel.innerHTML = `<div class="pad">
+        <div class="sec-title">场景 / SCENES</div>
+        <div class="chips">${(state.scenes || []).map(s => `<span class="chip" data-send="应用场景：${s}">${s}</span>`).join('')}</div>
+        <div class="sec-title">自动化 / AUTOMATIONS</div>
+        <div class="cards">${(state.automations || []).map(a => `<div class="card"><div class="t">${a.title}</div><div class="d">${a.detail}</div></div>`).join('')}</div>
+      </div>`;
+    } else if (type === 'files') {
+      panel.innerHTML = `<div class="pad">
+        <div class="sec-title">方案文件 / FILES</div>
+        ${(state.files || []).map(f => `<div class="file" data-send="打开并说明文件：${f.name}"><span class="ic">${f.type}</span><span class="fn">${f.name}</span><span class="fs">${f.size}</span></div>`).join('')}
+      </div>`;
+    } else if (type === 'board') {
+      const b = state.board || { todo: [], doing: [], done: [] };
+      const col = (title, arr) => `<div class="col"><div class="h">${title}</div>${(arr || []).map(x => `<div class="task">${x.t}<div class="g">${x.g}</div></div>`).join('')}</div>`;
+      panel.innerHTML = `<div class="pad">
+        <div class="sec-title">方案进度 / BOARD</div>
+        <div class="board">${col('待办', b.todo)}${col('进行中', b.doing)}${col('已完成', b.done)}</div>
+      </div>`;
+    } else if (type === 'browser') {
+      panel.innerHTML = `
+        <div class="browser-bar"><input id="url-${panel.id}" placeholder="输入网址，如 https://www.aqara.com" /><button>打开</button></div>
+        <iframe class="browser-frame" src="about:blank"></iframe>`;
+      const input = panel.querySelector('input');
+      const btn = panel.querySelector('button');
+      const frame = panel.querySelector('iframe');
+      const go = () => {
+        let u = input.value.trim();
+        if (!u) return;
+        if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
+        frame.src = u;
+      };
+      btn.addEventListener('click', go);
+      input.addEventListener('keydown', (e) => { if (e.key === 'Enter') go(); });
+    } else if (type === 'tasks') {
+      panel.innerHTML = `<div class="pad">
+        <div class="sec-title">子任务 / SUBTASKS</div>
+        ${(state.tasks || []).map(t => `<div class="row"><span class="dot"></span><span class="name">${t.name}</span><span class="st">${t.status}</span></div>`).join('')}
+      </div>`;
+    }
+  }
+
+  // ---------- 3D ----------
+  let animId = null;
+  function dispose3D() {
+    if (!refs) return;
+    try {
+      if (animId) cancelAnimationFrame(animId);
+      animId = null;
+      refs.renderer.dispose();
+      const c = refs.renderer.domElement;
+      if (c && c.parentElement) c.parentElement.removeChild(c);
+    } catch (_) {}
+    refs = null;
+  }
+
+  function init3D(host, panel) {
+    dispose3D();
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xdbe4ec);
+
+    const camera = new THREE.PerspectiveCamera(45, 1, 0.05, 200);
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.NoToneMapping;
+    host.appendChild(renderer.domElement);
+
+    // 光照
+    const hemi = new THREE.HemisphereLight(0xffffff, 0x8a8f99, 0.5);
+    scene.add(hemi);
+    const sun = new THREE.DirectionalLight(0xfff3e0, 0.85);
+    sun.position.set(7, 13, 9);
+    sun.castShadow = true;
+    sun.shadow.mapSize.set(1024, 1024);
+    sun.shadow.camera.near = 1; sun.shadow.camera.far = 45;
+    sun.shadow.camera.left = -14; sun.shadow.camera.right = 14;
+    sun.shadow.camera.top = 14; sun.shadow.camera.bottom = -14;
+    scene.add(sun);
+    const amb = new THREE.AmbientLight(0xffffff, 0.18);
+    scene.add(amb);
+
+    const root = new THREE.Group(); scene.add(root);
+    const shells = new THREE.Group(); root.add(shells);
+    const walls = new THREE.Group(); root.add(walls);
+    const models = new THREE.Group(); root.add(models);
+    const deviceGroup = new THREE.Group(); root.add(deviceGroup);
+
+    // 材质
+    const M = {
+      floor: new THREE.MeshStandardMaterial({ color: 0xc9a878, roughness: 0.92 }),
+      wall: new THREE.MeshStandardMaterial({ color: 0xe4dccc, roughness: 0.95 }),
+      wood: new THREE.MeshStandardMaterial({ color: 0xb98a5a, roughness: 0.7 }),
+      fabric: new THREE.MeshStandardMaterial({ color: 0xe9e4dc, roughness: 1 }),
+      dark: new THREE.MeshStandardMaterial({ color: 0x2b2b2b, roughness: 0.8 }),
+      metal: new THREE.MeshStandardMaterial({ color: 0xcfd2d6, roughness: 0.4, metalness: 0.55 }),
+      green: new THREE.MeshStandardMaterial({ color: 0x6b8f5a, roughness: 0.9 }),
+      rug: new THREE.MeshStandardMaterial({ color: 0xcbbfa9, roughness: 1 }),
+      bed: new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 1 }),
+    };
+    const allMats = Object.values(M);
+
+    const rooms = (state.rooms && state.rooms.length) ? state.rooms : [
+      { name: '客厅', c: [0, 1], w: 6, d: 4 },
+      { name: '主卧', c: [-1.5, -2.5], w: 3, d: 3 },
+      { name: '厨房', c: [1.5, -2.5], w: 3, d: 3 },
+    ];
+    const WALL_H = 1.25, WALL_T = 0.14;
+    const floorMeshes = [];
+
+    // 地板 + 半高墙（dollhouse 视角）
+    rooms.forEach((r) => {
+      const fl = new THREE.Mesh(new THREE.BoxGeometry(r.w, 0.08, r.d), M.floor);
+      fl.position.set(r.c[0], -0.04, r.c[1]); fl.receiveShadow = true; fl.userData.room = r; shells.add(fl); floorMeshes.push(fl);
+      const mk = (w, d, x, z) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, WALL_H, d), M.wall); m.position.set(x, WALL_H / 2, z); m.castShadow = true; m.receiveShadow = true; walls.add(m); };
+      mk(r.w, WALL_T, r.c[0], r.c[1] - r.d / 2);
+      mk(r.w, WALL_T, r.c[0], r.c[1] + r.d / 2);
+      mk(WALL_T, r.d, r.c[0] - r.w / 2, r.c[1]);
+      mk(WALL_T, r.d, r.c[0] + r.w / 2, r.c[1]);
+    });
+
+    // 家具
+    const box = (w, h, d, x, y, z, mat) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); m.position.set(x, y, z); m.castShadow = true; m.receiveShadow = true; models.add(m); return m; };
+    const cyl = (rt, rb, h, x, y, z, mat) => { const m = new THREE.Mesh(new THREE.CylinderGeometry(rt, rb, h, 14), mat); m.position.set(x, y, z); m.castShadow = true; models.add(m); return m; };
+    rooms.forEach((r) => {
+      const cx = r.c[0], cz = r.c[1], nm = r.name || '';
+      if (nm.includes('客厅')) {
+        box(1.9, 0.55, 0.9, cx - 0.9, 0.3, cz + 1.1, M.fabric);
+        box(1.9, 0.28, 0.22, cx - 0.9, 0.72, cz + 1.5, M.fabric);
+        box(1.0, 0.28, 0.6, cx + 0.6, 0.16, cz + 0.4, M.wood);
+        box(1.7, 0.5, 0.35, cx + 1.5, 0.25, cz - 1.2, M.dark);
+        box(1.4, 0.8, 0.06, cx + 1.5, 1.0, cz - 1.32, M.metal);
+        const rug = box(2.6, 0.04, 1.9, cx - 0.5, 0.03, cz + 0.6, M.rug); rug.castShadow = false;
+        cyl(0.18, 0.22, 0.5, cx + 2.2, 0.25, cz + 1.3, M.dark);
+        cyl(0.2, 0.16, 0.4, cx - 2.3, 0.2, cz + 1.3, M.dark);
+        const leaf = new THREE.Mesh(new THREE.SphereGeometry(0.36, 12, 12), M.green); leaf.position.set(cx - 2.3, 0.7, cz + 1.3); leaf.castShadow = true; models.add(leaf);
+      } else if (nm.includes('卧')) {
+        box(1.9, 0.42, 2.0, cx, 0.25, cz - 0.2, M.wood);
+        box(1.75, 0.2, 1.3, cx, 0.55, cz - 0.5, M.bed);
+        box(0.5, 0.5, 0.42, cx - 1.15, 0.25, cz - 1.0, M.wood);
+        box(0.5, 0.5, 0.42, cx + 1.15, 0.25, cz - 1.0, M.wood);
+        box(1.3, 1.15, 0.5, cx, 0.57, cz + 1.25, M.wood);
+      } else if (nm.includes('厨')) {
+        box(2.2, 0.8, 0.5, cx, 0.4, cz - 1.05, M.wood);
+        box(2.2, 0.05, 0.55, cx, 0.82, cz - 1.05, M.dark);
+        box(0.62, 1.6, 0.62, cx - 1.4, 0.8, cz + 0.8, M.metal);
+      } else {
+        box(1.2, 0.5, 0.6, cx, 0.25, cz, M.wood);
+      }
+    });
+
+    // 吊顶（可切换）
+    const ceilingGroup = new THREE.Group(); ceilingGroup.visible = false; root.add(ceilingGroup);
+    rooms.forEach((r) => {
+      const c = new THREE.Mesh(new THREE.BoxGeometry(r.w, 0.06, r.d), M.wall);
+      c.position.set(r.c[0], 0, r.c[1]); ceilingGroup.add(c);
+    });
+    let wallH = 1.25, showCeiling = false;
+    function applyWallH() {
+      walls.scale.y = wallH / WALL_H;
+      ceilingGroup.position.y = wallH;
+      ceilingGroup.visible = showCeiling;
+    }
+    applyWallH();
+
+    // 真实 GLB 家具（three.js 官方示例 PBR 模型）
+    function placeModel(buf, targetW, px, pz, ry) {
+      try {
+        new THREE.GLTFLoader().parse(buf, '', (g) => {
+          const obj = g.scene;
+          const bb = new THREE.Box3().setFromObject(obj);
+          const size = bb.getSize(new THREE.Vector3());
+          const s = targetW / Math.max(size.x, size.z || 0.001, 0.001);
+          obj.scale.setScalar(s);
+          const b2 = new THREE.Box3().setFromObject(obj);
+          obj.position.set(px - (b2.min.x + b2.max.x) / 2, -b2.min.y, pz - (b2.min.z + b2.max.z) / 2);
+          obj.rotation.y = ry || 0;
+          obj.traverse((o) => {
+            if (o.isMesh) {
+              o.castShadow = true; o.receiveShadow = true;
+              o.material = new THREE.MeshStandardMaterial({ color: 0xcbbfa8, roughness: 0.55, metalness: 0.05 });
+            }
+          });
+          models.add(obj);
+          console.log('[3D] GLB 已加载');
+        }, (e) => console.error('[3D] GLB 加载失败', e));
+      } catch (_) {}
+    }
+    async function loadGlb(name) {
+      try {
+        if (window.aqara && window.aqara.loadModel) {
+          const buf = await window.aqara.loadModel(name);
+          if (buf) return buf.buffer ? buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength) : buf;
+        } else {
+          const r = await fetch('./models/' + name + '?v=' + Date.now()); return await r.arrayBuffer();
+        }
+      } catch (_) {}
+      return null;
+    }
+    // 真实 GLB 家具：预留接口（把兼容的 .glb 放进 workspace/models/ 并在此启用即可）
+    // 注：three.js 官方示例模型用了 r137 不支持的扩展，暂不自动加载。
+    void placeModel; void loadGlb;
+
+    // 设备（可点击开关）
+    const devList = (state.devices || []).filter((d) => Array.isArray(d.pos));
+    const deviceObjs = [];
+    const ON = 0xffd27a, OFF = 0x8a8f99;
+    devList.forEach((d) => {
+      const g = new THREE.Group();
+      g.position.set(d.pos[0], d.pos[1], d.pos[2]);
+      const core = new THREE.Mesh(new THREE.SphereGeometry(0.1, 14, 14), new THREE.MeshBasicMaterial({ color: ON }));
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.022, 8, 22), new THREE.MeshBasicMaterial({ color: ON, transparent: true, opacity: 0.6 }));
+      ring.rotation.x = Math.PI / 2;
+      g.add(core); g.add(ring);
+      g.userData = { on: true, core, ring };
+      deviceGroup.add(g); deviceObjs.push(g);
+    });
+
+    // 房间标签（房名 + 面积）
+    function makeLabel(text) {
+      const cv = document.createElement('canvas'); cv.width = 256; cv.height = 64;
+      const ctx = cv.getContext('2d');
+      if (ctx.roundRect) { ctx.fillStyle = 'rgba(20,20,20,0.62)'; ctx.beginPath(); ctx.roundRect(6, 12, 244, 40, 10); ctx.fill(); }
+      else { ctx.fillStyle = 'rgba(20,20,20,0.62)'; ctx.fillRect(6, 12, 244, 40); }
+      ctx.fillStyle = '#fff'; ctx.font = 'bold 26px -apple-system,sans-serif'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText(text, 128, 33);
+      const tex = new THREE.CanvasTexture(cv);
+      const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }));
+      sp.scale.set(2.1, 0.52, 1);
+      return sp;
+    }
+    const labelSprites = [];
+    rooms.forEach((r) => {
+      const sp = makeLabel((r.name || '房间') + ' ' + (r.w * r.d).toFixed(1) + '㎡');
+      sp.position.set(r.c[0], 0.35, r.c[1]);
+      shells.add(sp); labelSprites.push(sp);
+    });
+
+    // 相机模式：3d / plan / walk
+    let mode = '3d', theta = 0.7, phi = 0.82, radius = 13;
+    let walkYaw = Math.PI, walkPitch = -0.1;
+    const center = new THREE.Vector3(0, 0.3, -0.4);
+    const eye = new THREE.Vector3(0, 1.55, 2.7);
+    let usingGlb = false;
+    const glbTarget = new THREE.Vector3(0, 0.8, 0);
+    let glbFit = 13;
+    function applyCam() {
+      camera.up.set(0, 1, 0);
+      const tgt = usingGlb ? glbTarget : center;
+      if (mode === '3d') {
+        camera.position.set(tgt.x + radius * Math.sin(phi) * Math.sin(theta), tgt.y + radius * Math.cos(phi), tgt.z + radius * Math.sin(phi) * Math.cos(theta));
+        camera.lookAt(tgt);
+      } else if (mode === 'plan') {
+        camera.up.set(0, 0, -1);
+        camera.position.set(tgt.x, radius * 1.2, tgt.z + 0.0001);
+        camera.lookAt(tgt.x, 0, tgt.z);
+      } else {
+        const e = usingGlb ? new THREE.Vector3(tgt.x, 1.55, tgt.z + Math.min(4.2, glbFit * 0.2)) : eye;
+        camera.position.copy(e);
+        const dir = new THREE.Vector3(Math.sin(walkYaw) * Math.cos(walkPitch), Math.sin(walkPitch), Math.cos(walkYaw) * Math.cos(walkPitch));
+        camera.lookAt(e.clone().add(dir));
+      }
+    }
+
+    let drag = false, lx = 0, ly = 0;
+    const el = renderer.domElement;
+    el.addEventListener('pointerdown', (e) => { drag = true; lx = e.clientX; ly = e.clientY; });
+    window.addEventListener('pointerup', () => { drag = false; });
+    window.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      const dx = e.clientX - lx, dy = e.clientY - ly; lx = e.clientX; ly = e.clientY;
+      if (mode === '3d') { theta -= dx * 0.006; phi = Math.max(0.2, Math.min(1.45, phi - dy * 0.005)); }
+      else if (mode === 'walk') { walkYaw -= dx * 0.005; walkPitch = Math.max(-0.85, Math.min(0.7, walkPitch - dy * 0.004)); }
+      applyCam();
+    });
+    el.addEventListener('wheel', (e) => { e.preventDefault(); if (mode === 'walk') return; radius = Math.max(7, Math.min(22, radius + e.deltaY * 0.01)); applyCam(); }, { passive: false });
+
+    // 点击：设备开关 / 点房间进入漫游
+    const ray = new THREE.Raycaster();
+    function selectRoom(rm) {
+      if (panel) {
+        const n = panel.querySelector('#p-name'); if (n) n.textContent = rm.name || '房间';
+        const a = panel.querySelector('#p-area'); if (a) a.textContent = (rm.w * rm.d).toFixed(1) + '㎡';
+        const s = panel.querySelector('#p-size'); if (s) s.textContent = rm.w + '×' + rm.d + 'm';
+      }
+      eye.set(rm.c[0], 1.55, rm.c[1] + rm.d / 2 - 0.4);
+      walkYaw = Math.PI; walkPitch = -0.05;
+      wallH = 2.6; showCeiling = false; applyWallH();
+      labelSprites.forEach((s) => { s.visible = false; });
+      mode = 'walk';
+      if (panel) panel.querySelectorAll('#modes button').forEach((x) => x.classList.toggle('on', x.getAttribute('data-mode') === 'walk'));
+      applyCam();
+    }
+    el.addEventListener('click', (e) => {
+      const r = el.getBoundingClientRect();
+      const ndc = new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+      ray.setFromCamera(ndc, camera);
+      const dh = ray.intersectObjects(deviceObjs, true);
+      if (dh.length) {
+        let g = dh[0].object; while (g && g.userData.on === undefined) g = g.parent;
+        if (g && g.userData.core) {
+          g.userData.on = !g.userData.on;
+          const c = g.userData.on ? ON : OFF;
+          g.userData.core.material.color.setHex(c); g.userData.ring.material.color.setHex(c);
+        }
+        return;
+      }
+      const fh = ray.intersectObjects(floorMeshes, false);
+      if (fh.length && fh[0].object.userData.room) selectRoom(fh[0].object.userData.room);
+    });
+
+    let hostEl = host;
+    function resize() {
+      const w = hostEl.clientWidth, h = hostEl.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h);
+      camera.aspect = w / h; camera.updateProjectionMatrix();
+      if (!usingGlb) {
+        const fov = camera.fov * Math.PI / 180;
+        const need = (7.0 / 2) / (Math.tan(fov / 2) * Math.max(0.35, camera.aspect));
+        radius = Math.max(9, Math.min(20, need));
+      }
+      applyCam();
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    // 控件
+    if (panel) {
+      panel.querySelectorAll('#modes button').forEach((b) => b.addEventListener('click', () => {
+        mode = b.getAttribute('data-mode');
+        panel.querySelectorAll('#modes button').forEach((x) => x.classList.toggle('on', x === b));
+        if (mode === 'walk') { walkYaw = Math.PI; walkPitch = -0.1; wallH = 2.6; showCeiling = false; }
+        else { wallH = 1.25; showCeiling = false; }
+        applyWallH();
+        labelSprites.forEach((s) => { s.visible = mode !== 'walk'; });
+        applyCam();
+      }));
+      const bf = panel.querySelector('#btnFurn');
+      if (bf) bf.addEventListener('click', () => { models.visible = !models.visible; bf.classList.toggle('on', models.visible); });
+      const bw = panel.querySelector('#btnWire');
+      if (bw) { let wire = false; bw.addEventListener('click', () => { wire = !wire; allMats.forEach((m) => { m.wireframe = wire; }); bw.classList.toggle('on', wire); }); }
+      const bd = panel.querySelector('#btnDay');
+      let isDay = true;
+      const applyDayNight = () => {
+        if (isDay) { scene.background.setHex(0xdbe4ec); sun.intensity = 0.95; sun.color.setHex(0xfff3e0); hemi.intensity = 0.55; hemi.color.setHex(0xffffff); hemi.groundColor.setHex(0x8a8f99); amb.intensity = 0.25; }
+        else { scene.background.setHex(0x0e1420); sun.intensity = 0.4; sun.color.setHex(0x9fb6d6); hemi.intensity = 0.35; hemi.color.setHex(0x33405a); hemi.groundColor.setHex(0x0a0e16); amb.intensity = 0.22; }
+      };
+      applyDayNight();
+      if (bd) bd.addEventListener('click', () => { isDay = !isDay; applyDayNight(); bd.textContent = isDay ? '☀︎ 白天' : '☾ 夜晚'; });
+
+      const bc = panel.querySelector('#btnCeil');
+      if (bc) bc.addEventListener('click', () => {
+        showCeiling = !showCeiling;
+        if (showCeiling && wallH < 2.2) wallH = 2.6;
+        applyWallH();
+        bc.classList.toggle('on', showCeiling);
+        bc.textContent = showCeiling ? '半墙' : '顶吊';
+      });
+      const bdev = panel.querySelector('#btnDev');
+      const devctlEl = panel.querySelector('#devctl');
+      if (bdev && devctlEl) bdev.addEventListener('click', () => {
+        const open = devctlEl.classList.toggle('open');
+        bdev.classList.toggle('on', open);
+      });
+      const phEl = panel.querySelector('#p-h');
+      if (phEl) phEl.addEventListener('input', () => {
+        wallH = parseFloat(phEl.value);
+        if (wallH >= 2.2) showCeiling = true;
+        applyWallH();
+        const v = panel.querySelector('#p-hv'); if (v) v.textContent = wallH.toFixed(1) + 'm';
+      });
+      const ptEl = panel.querySelector('#p-time');
+      if (ptEl) ptEl.addEventListener('input', () => {
+        const h = parseFloat(ptEl.value);
+        const t = Math.max(0.06, Math.sin(((h - 6) / 15) * Math.PI));
+        sun.position.set(((h - 6) / 15) * 20 - 10, 3 + t * 13, 9);
+        sun.intensity = 0.3 + t * 1.0;
+        const v = panel.querySelector('#p-tv'); if (v) v.textContent = Math.round(h) + ':00';
+      });
+    }
+
+    refs = { renderer, scene };
+    function loop() {
+      animId = requestAnimationFrame(loop);
+      if (mode === '3d' && !drag) { theta += 0.0012; applyCam(); }
+      renderer.render(scene, camera);
+    }
+    loop();
+
+    // 把 manifest 的 34 路控制（灯光/窗帘/开关）绑定到真实 GLB 节点
+    async function setupControls(gltf, root) {
+      let man = null;
+      try {
+        man = (window.aqara && window.aqara.loadManifest)
+          ? await window.aqara.loadManifest('home.manifest.json') : null;
+      } catch (_) {}
+      const body = panel && panel.querySelector('#devbody');
+      const cnt = panel && panel.querySelector('#devcnt');
+      if (!man) { if (body) body.innerHTML = '<div class="dhint">未找到场景清单</div>'; return; }
+
+      const gltfNodes = (gltf.parser && gltf.parser.json && gltf.parser.json.nodes) || [];
+      const nameOf = (id) => {
+        const m = /^node-(\d+)$/.exec(String(id || ''));
+        if (!m) return null;
+        const n = gltfNodes[+m[1]];
+        return n ? (n.name || null) : null;
+      };
+      const byName = new Map();
+      root.traverse((o) => { if (o.name) byName.set(o.name, o); });
+      const getObj = (id) => { const nm = nameOf(id); return nm ? byName.get(nm) : null; };
+
+      // 灯光：材质自发光（按通道聚合）
+      const matByCh = {};
+      (man.materials || []).forEach((e) => {
+        const objs = (e.nodes || []).map(getObj).filter(Boolean);
+        const mats = [];
+        objs.forEach((o) => {
+          const arr = o.material ? (Array.isArray(o.material) ? o.material : [o.material]) : [];
+          arr.forEach((m) => { if (m && m.emissive !== undefined) mats.push(m); });
+        });
+        if (!mats.length) return;
+        const rec = { mats, color: e.defaultColor || [1, 1, 1], strength: e.strength == null ? 1 : e.strength };
+        (e.channels || []).forEach((ch) => { (matByCh[ch] = matByCh[ch] || []).push(rec); });
+      });
+      // 灯光：独立光源（按 manifest.lights 的位置/颜色/功率近似）
+      const lightByCh = {};
+      (man.lights || []).forEach((l) => {
+        const L = new THREE.PointLight();
+        if (l.color) L.color.setRGB(l.color[0], l.color[1], l.color[2]);
+        L.position.set(l.position[0], l.position[1], l.position[2]);
+        L.distance = l.distance || 6;
+        L.userData.baseIntensity = Math.max(2, (l.power || 10) * 0.35);
+        L.intensity = 0; L.visible = false;
+        root.add(L);
+        (l.channels || []).forEach((ch) => { (lightByCh[ch] = lightByCh[ch] || []).push(L); });
+      });
+      const lightApply = (chs) => (on) => {
+        const seen = new Set();
+        chs.forEach((ch) => {
+          (matByCh[ch] || []).forEach((rec) => rec.mats.forEach((m) => {
+            if (seen.has(m)) return; seen.add(m);
+            if (on) { m.emissive = new THREE.Color(rec.color[0], rec.color[1], rec.color[2]); m.emissiveIntensity = rec.strength; }
+            else { m.emissiveIntensity = 0; }
+          }));
+          (lightByCh[ch] || []).forEach((L) => { L.visible = on; L.intensity = on ? L.userData.baseIntensity : 0; });
+        });
+      };
+
+      // 窗帘：节点横向滑开 / 复位
+      const curtainByCh = {};
+      (man.curtains || []).forEach((c) => {
+        const o = getObj(c.node); if (!o) return;
+        (curtainByCh[c.channel] = curtainByCh[c.channel] || []).push(
+          { o, base: o.position.clone(), half: c.half || 1, side: c.side || 1 });
+      });
+      const curtainApply = (ch) => (open) => {
+        (curtainByCh[ch] || []).forEach((r) => {
+          if (open) r.o.position.x = r.base.x + r.side * r.half * 0.92;
+          else r.o.position.set(r.base.x, r.base.y, r.base.z);
+        });
+      };
+
+      // 开关：可见性 / 旋转
+      const visByCh = {}, rotByCh = {};
+      (man.visibility || []).forEach((v) => {
+        const o = getObj(v.node); if (!o) return;
+        (visByCh[v.channel] = visByCh[v.channel] || []).push(o);
+      });
+      (man.rotations || []).forEach((r) => {
+        const o = getObj(r.node); if (!o) return;
+        (rotByCh[r.channel] = rotByCh[r.channel] || []).push(
+          { o, baseY: o.rotation.y, closed: r.closed || 0, open: r.open || 0 });
+      });
+
+      const ctrls = [];
+      (man.controls || []).forEach((c) => {
+        const chs = c.channels || [];
+        let apply = null;
+        if (c.kind === 'light') apply = lightApply(chs);
+        else if (c.kind === 'curtain') apply = curtainApply(chs[0]);
+        else if (c.kind === 'switch') {
+          if (visByCh[chs[0]]) { const objs = visByCh[chs[0]]; apply = (on) => objs.forEach((o) => { o.visible = on; }); }
+          else if (rotByCh[chs[0]]) { const rs = rotByCh[chs[0]]; apply = (on) => rs.forEach((r) => { r.o.rotation.y = r.baseY + (on ? r.open : r.closed); }); }
+        }
+        if (!apply) return;
+        ctrls.push({ id: c.id, name: c.name, kind: c.kind, channels: chs, on: false, apply });
+      });
+      ctrls.forEach((ct) => { try { ct.apply(ct.on); } catch (_) {} });
+
+      if (body) {
+        body.innerHTML = '';
+        [['light', '灯光 · LIGHTS'], ['curtain', '窗帘 · CURTAINS'], ['switch', '开关 · SWITCHES']].forEach(([k, label]) => {
+          const list = ctrls.filter((c) => c.kind === k);
+          if (!list.length) return;
+          const h = document.createElement('div'); h.className = 'dgrp'; h.textContent = label + ' · ' + list.length;
+          body.appendChild(h);
+          list.forEach((ct) => {
+            const row = document.createElement('div');
+            row.className = 'ctl' + (ct.on ? ' on' : '');
+            row.innerHTML = '<span class="cn"></span><span class="sw"></span>';
+            row.querySelector('.cn').textContent = ct.name; // 防注入
+            row.addEventListener('click', () => {
+              ct.on = !ct.on;
+              try { ct.apply(ct.on); } catch (_) {}
+              row.classList.toggle('on', ct.on);
+            });
+            body.appendChild(row);
+          });
+        });
+        if (!ctrls.length) body.innerHTML = '<div class="dhint">该场景暂无可控设备</div>';
+      }
+      if (cnt) cnt.textContent = ctrls.length + ' 路';
+      glbControls = ctrls;
+      console.log('[3D] 设备控制已就绪：', ctrls.length, '路（灯光/窗帘/开关）');
+    }
+
+    // 加载设计师真实 GLB 场景（home.glb）：成功则替代程序化场景
+    (async () => {
+      const buf = await loadGlb('home.glb');
+      if (!buf) return;
+      try {
+        new THREE.GLTFLoader().parse(buf, '', (g) => {
+          const g2 = g.scene || (g.scenes && g.scenes[0]);
+          g2.traverse((o) => {
+            if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; }
+            const nm = (o.name || '');
+            if (/天花|吊顶|顶板|roof|ceiling/i.test(nm)) o.visible = false;
+          });
+          const bb = new THREE.Box3().setFromObject(g2);
+          const c = bb.getCenter(new THREE.Vector3());
+          const size = bb.getSize(new THREE.Vector3());
+          g2.position.x -= c.x; g2.position.z -= c.z; g2.position.y -= bb.min.y;
+          scene.add(g2);
+          shells.visible = false; walls.visible = false; ceilingGroup.visible = false;
+          models.visible = false; deviceGroup.visible = false;
+          labelSprites.forEach((s) => { s.visible = false; });
+          usingGlb = true;
+          glbTarget.set(0, Math.min(size.y * 0.45, 1.4), 0);
+          glbFit = Math.hypot(size.x, size.z) * 1.08;
+          radius = glbFit;
+          try { scene.background = new THREE.Color(0xe9eeeb); } catch (_) {}
+          applyCam();
+          console.log('[3D] 真实 GLB 场景已加载', size.x.toFixed(1), 'x', size.z.toFixed(1), 'm');
+          setupControls(g, g2);
+        }, (e) => console.error('[3D] GLB 解析失败', e));
+      } catch (e) { console.error('[3D] GLB 加载异常', e); }
+    })();
+  }
+
+  function recolor() { /* 3D 配色由「昼夜」控制；主题只影响 UI */ }
+
+
+  function resize3D() { /* 由各 init3D 内部的 resize 处理；这里触发一次窗口事件 */ window.dispatchEvent(new Event('resize')); }
+
+  // ---------- 启动 ----------
+  window.__aqaraSetTheme = applyTheme; // 便于调试 / 测试
+
+  // ---------- 预览区 展开 / 收起（对齐 ArkWork 交互）----------
+  (function initPanelModes() {
+    const api = window.aqara || {};
+    const btnMax = document.getElementById('btnMax');
+    const btnCollapse = document.getElementById('btnCollapse');
+    const railOpen = document.getElementById('railOpen');
+    let mode = 'normal';
+
+    function applyMode(m) {
+      mode = m || 'normal';
+      document.body.classList.toggle('collapsed', mode === 'hidden');
+      if (btnMax) {
+        const isMax = mode === 'max';
+        btnMax.classList.toggle('on', isMax);
+        btnMax.textContent = isMax ? '⤡' : '⤢';
+        const label = isMax ? '还原面板' : '展开面板';
+        btnMax.title = label; btnMax.setAttribute('aria-label', label);
+      }
+      // 宽度变化后让 3D 画布重算尺寸
+      setTimeout(() => window.dispatchEvent(new Event('resize')), 60);
+    }
+
+    if (btnMax) btnMax.addEventListener('click', () => {
+      if (api.setPanelMode) api.setPanelMode(mode === 'max' ? 'normal' : 'max');
+    });
+    if (btnCollapse) btnCollapse.addEventListener('click', () => {
+      if (api.setPanelMode) api.setPanelMode('hidden');
+    });
+    if (railOpen) railOpen.addEventListener('click', () => {
+      if (api.setPanelMode) api.setPanelMode('normal');
+    });
+    if (api.onPanelMode) api.onPanelMode(applyMode);
+    applyMode('normal');
+  })();
+
+  function renderAll() {
+    tabs.forEach((t) => { const p = panelEls[t.id]; if (p) buildPanel(p, t.type); });
+    if (activeId) activateTab(activeId, false);
+    renderCtx();
+    reHighlight();
+  }
+
+  // 主题：读取 + 订阅
+  (async () => {
+    try {
+      if (window.aqara && window.aqara.getTheme) applyTheme(await window.aqara.getTheme());
+      if (window.aqara && window.aqara.onTheme) window.aqara.onTheme((t) => applyTheme(t));
+    } catch (_) {}
+  })();
+
+  // 工作区数据：读取 state.json + 订阅变化（Agent 改了 → 自动重渲染）
+  (async () => {
+    try {
+      if (window.aqara && window.aqara.getState) {
+        const s = await window.aqara.getState();
+        if (s) state = s;
+      }
+    } catch (_) {}
+    loadProjects();
+    addTab('twin', true);
+    addTab('devices', false);
+    addTab('files', false);
+    renderCtx();
+    if (window.aqara && window.aqara.onState) {
+      window.aqara.onState((s) => {
+        if (!s) return;
+        state = s;
+        renderAll();
+        showToast('⟳ 工作区已更新（state.json 变化）');
+      });
+    }
+  })();
+
+  // 自检（AQARA_AUTOTEST_SEND=1 时启用）：切换项目，验证多项目
+  if (location.search.includes('autotest=1')) {
+    setTimeout(() => {
+      const btn = document.getElementById('projmore');
+      if (btn) btn.click();
+      setTimeout(() => {
+        const items = [...document.querySelectorAll('#projmenu .mi')];
+        const target = items.find((x) => !/当前|新建/.test(x.textContent));
+        if (target) target.click();
+      }, 600);
+    }, 9000);
+  }
+})();
+</script>
+</body>
+</html>

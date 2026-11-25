@@ -1,0 +1,14 @@
+{
+  "name": "aqara-desktop-shell",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Aqara 空间智能桌面端外壳 — Electron 壳加载 DeepSeek Harness Web UI",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "start:log": "electron . --enable-logging"
+  },
+  "devDependencies": {
+    "electron": "^45.4.1"
+  }
+}
