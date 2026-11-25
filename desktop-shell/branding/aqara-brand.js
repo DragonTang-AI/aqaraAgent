@@ -1,6 +1,10 @@
 /* Aqara 品牌注入 —— 在 dsh Web UI 加载后，把 DeepSeek 品牌元素替换为 Aqara。
  * 由 Electron 主进程读取本文件、填入 __LOGO_DATA_URL__（字标）与 __MARK_DATA_URL__（图标）后注入。
- * 设计：不修改 dsh 源码；用 MutationObserver + 兜底定时适配 SPA 重渲染；随主题自动切换配色。 */
+ *
+ * ⚠️ 关键约束：dsh 是 React 应用。**绝不能删除/替换 React 管理的 DOM 节点**
+ *    （早期用 svg.replaceWith(img) 会破坏 React 虚拟 DOM，导致点击侧栏按钮后整块渲染空白）。
+ *    因此本脚本只做两件"无害"的事：注入一段 <style> + 在 <html> 上加一个主题类。
+ */
 (() => {
   const BRAND_NAME = 'Aqara 空间智能';
   const HERO_TEXT = '让空间自己思考';
@@ -14,7 +18,7 @@
     }
   };
 
-  // 当前是否浅色主题（按页面背景亮度判断，兼容 dsh 主题变量）
+  // 是否浅色主题（按页面背景亮度判断，兼容 dsh 主题变量）
   const isLight = () => {
     try {
       const bg = getComputedStyle(document.body).backgroundColor;
@@ -25,51 +29,31 @@
     } catch (_) { return false; }
   };
 
-  // 字标（白色）浅色下变黑；图标（黑底）深色下反相为白底，保证两种主题都清晰可见
-  const applyLogoTheme = () => {
-    const light = isLight();
-    document.querySelectorAll('[data-aqara-logo="wordmark"]').forEach((el) => {
-      el.style.filter = light ? 'brightness(0)' : 'none';
-    });
-    document.querySelectorAll('[data-aqara-logo="mark"]').forEach((el) => {
-      el.style.filter = light ? 'none' : 'invert(1)';
-    });
-  };
-  window.__aqaraApplyLogoTheme = applyLogoTheme;
-
-  const makeImg = (src, kind, h) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = BRAND_NAME;
-    img.draggable = false;
-    img.setAttribute('data-aqara-logo', kind);
-    if (h) img.style.height = h + 'px';
-    img.style.width = 'auto';
-    img.style.display = 'block';
-    return img;
+  // 用样式表把 logo 换成 Aqara：收起态用图标、展开态用字标；随主题自动换色
+  const ensureStyle = () => {
+    if (document.getElementById('aqara-brand-style')) return;
+    const st = document.createElement('style');
+    st.id = 'aqara-brand-style';
+    st.textContent = [
+      // 隐藏 DeepSeek 鲸鱼（收起态图标 / hero 图标）
+      '[class*="railFish"]{display:none !important;}',
+      '[class*="fishHitbox"]{display:none !important;}',
+      // 收起态：把侧栏切换按钮的图标换成 Aqara 图标（作背景，不改 DOM）
+      'button[class*="MbFrua_toggle"]{background-image:url("' + MARK + '");background-repeat:no-repeat;background-position:center;background-size:20px 20px;}',
+      'html.aqara-light button[class*="MbFrua_toggle"]{filter:invert(1);}',
+      // 展开态：把品牌字标换成 Aqara 字标（隐藏原 svg + 作背景）
+      'button[class*="MbFrua_brand"] svg{display:none !important;}',
+      'button[class*="MbFrua_brand"]{background-image:url("' + LOGO + '");background-repeat:no-repeat;background-position:left center;background-size:auto 22px;min-width:96px;min-height:26px;}',
+      'html.aqara-light button[class*="MbFrua_brand"]{filter:brightness(0);}',
+    ].join('\n');
+    document.head.appendChild(st);
   };
 
-  // 左上角品牌：展开态把字标 <svg> 换成 Aqara 字标；收起态把鲸鱼图标换成 Aqara 图标
-  const swapLogo = () => {
-    document.querySelectorAll('svg').forEach((svg) => {
-      const vb = (svg.getAttribute('viewBox') || '').trim().split(/\s+/);
-      const vbW = parseFloat(vb[2] || '0');
-      const svgCls = String((svg.classList && svg.classList.value) || svg.className || '');
-      const parentCls = svg.parentElement ? String(svg.parentElement.className || '') : '';
-
-      // 收起态：鲸鱼（railFish）→ Aqara 图标
-      if (/railFish/i.test(svgCls)) {
-        svg.replaceWith(makeImg(MARK, 'mark', 20));
-        return;
-      }
-      // 展开态：宽字标（parent 含 brand）→ Aqara 字标
-      if (vbW > 100 && /brand/i.test(parentCls)) {
-        svg.replaceWith(makeImg(LOGO, 'wordmark', 22));
-      }
-    });
+  const applyThemeClass = () => {
+    document.documentElement.classList.toggle('aqara-light', isLight());
   };
 
-  // 文案：欢迎语 + 预览徽标
+  // 文案：欢迎语 + 预览徽标（仅改文本内容，不增删节点）
   const swapTexts = () => {
     const walk = (el) => {
       for (const n of el.childNodes) {
@@ -85,29 +69,10 @@
     walk(document.body);
   };
 
-  // 隐藏 hero 标题前的 DeepSeek 鲸鱼图标
-  const hideFish = () => {
-    document.querySelectorAll('[class*="fishHitbox"]').forEach((el) => {
-      if (el.style.display !== 'none') el.style.display = 'none';
-    });
-  };
-
   const apply = () => {
-    try { setTitle(); swapLogo(); swapTexts(); hideFish(); applyLogoTheme(); } catch (_) {}
-  };
-
-  let queued = false;
-  const schedule = () => {
-    if (queued) return;
-    queued = true;
-    requestAnimationFrame(() => { queued = false; apply(); });
+    try { setTitle(); ensureStyle(); applyThemeClass(); swapTexts(); } catch (_) {}
   };
 
   apply();
-  try {
-    new MutationObserver(schedule).observe(document.documentElement, {
-      childList: true, subtree: true, characterData: true,
-    });
-  } catch (_) {}
   setInterval(apply, 1200);
 })();

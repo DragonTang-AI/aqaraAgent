@@ -210,12 +210,6 @@ function startThemeSync() {
       if (splitterView && !splitterView.webContents.isDestroyed()) {
         splitterView.webContents.send('aqara:theme', t);
       }
-      // 左栏品牌配色随主题切换（白字标 ↔ 黑字标 / 图标反相）
-      if (dshView && !dshView.webContents.isDestroyed()) {
-        dshView.webContents
-          .executeJavaScript('window.__aqaraApplyLogoTheme && window.__aqaraApplyLogoTheme()')
-          .catch(() => {});
-      }
     }
   }, 1500);
 }
