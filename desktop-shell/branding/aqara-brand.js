@@ -64,11 +64,11 @@
     st.id = 'aqara-nav-style';
     st.textContent = [
       '#aqara-nav{position:fixed;z-index:2147482000;display:flex;flex-direction:column;gap:2px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;}',
-      '#aqara-nav button{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;padding:8px 10px;border:none;background:transparent;border-radius:8px;cursor:pointer;font:inherit;font-size:12.5px;text-align:left;color:#c9c9c9;}',
-      '#aqara-nav button:hover{background:rgba(127,127,127,.18);}',
-      '#aqara-nav .an-ic{width:18px;height:18px;flex:none;display:flex;align-items:center;justify-content:center;}',
-      '#aqara-nav .an-lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}',
-      '#aqara-nav.collapsed button{justify-content:center;padding:8px 0;}',
+      '#aqara-nav button{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;padding:10px 12px;border:none;background:transparent;border-radius:9px;cursor:pointer;font:inherit;font-size:14px;font-weight:700;text-align:left;color:#cfcfcf;}',
+      '#aqara-nav button:hover{background:rgba(127,127,127,.2);}',
+      '#aqara-nav .an-ic{width:20px;height:20px;flex:none;display:flex;align-items:center;justify-content:center;}',
+      '#aqara-nav .an-lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;letter-spacing:.01em;}',
+      '#aqara-nav.collapsed button{justify-content:center;padding:9px 0;}',
       '#aqara-nav.collapsed .an-lb{display:none;}',
       'html.aqara-light #aqara-nav button{color:#333;}',
     ].join('\n');
@@ -99,7 +99,7 @@
     const sr = sa ? sa.getBoundingClientRect() : null;
     const w = collapsed ? 40 : Math.max(120, cr.width - 16);
     const left = collapsed ? 8 : (cr.left + 8);
-    const top = sr ? (sr.top - 82) : (window.innerHeight - 132);
+    const top = sr ? (sr.top - 92) : (window.innerHeight - 142);
     box.classList.toggle('collapsed', collapsed);
     box.style.left = left + 'px';
     box.style.top = Math.max(cr.top + 60, top) + 'px';

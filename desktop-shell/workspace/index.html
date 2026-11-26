@@ -180,6 +180,15 @@
   .lib-bar.show{display:flex;}
   .lib-bar .btn{border:none;padding:6px 10px;font-size:12px;}
   .lib-bar .btn.ghost{background:transparent;color:inherit;}
+  /* 检索结果 */
+  .lib-hit{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:9px;margin-bottom:8px;background:var(--panel);cursor:pointer;}
+  .lib-hit:hover{border-color:var(--line2);}
+  .lib-hit-ck{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--line2);margin-top:2px;flex:none;}
+  .lib-hit-ck.on{background:var(--active);border-color:var(--active);}
+  .lib-hit-main{flex:1;min-width:0;}
+  .lib-hit-name{font-size:12.5px;font-weight:700;}
+  .lib-hit-snip{font-size:11px;color:var(--muted);margin-top:3px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;}
+  .lib-hit-kind{font-size:10px;color:var(--dim);font-family:ui-monospace,Menlo,monospace;}
 
   /* 执行中 / 完成 回填 */
   [data-send]{transition:opacity .2s, box-shadow .2s;}
@@ -1001,12 +1010,61 @@
     panel.querySelectorAll('.lib-side-item').forEach((el) => el.addEventListener('click', () => {
       sub = el.getAttribute('data-sub');
       panel.querySelectorAll('.lib-side-item').forEach((x) => x.classList.toggle('on', x === el));
-      sel.clear(); updateBar(); render();
+      sel.clear(); updateBar(); if (q) doSearch(q); else render();
     }));
-    $('#lib-q').addEventListener('input', () => { q = $('#lib-q').value.trim(); render(); });
+    // 知识检索：对资料库做内容级检索
+    let lastHits = [];
+    async function doSearch(k) {
+      const r = (window.aqara && window.aqara.librarySearch) ? await window.aqara.librarySearch(k) : null;
+      const res = (r && r.ok) ? r.results : [];
+      lastHits = res;
+      if (!res.length) { $groups.innerHTML = '<div class="sec-title">未检索到与「' + k + '」相关的内容</div>'; return; }
+      let html = '<div class="lib-g" style="display:flex;align-items:center;justify-content:space-between;">' +
+        '<span>检索结果 <span style="font-size:11px;color:var(--dim);font-weight:400;">(' + res.length + ')</span></span>' +
+        '<span class="btn" id="lib-send-hits" style="padding:5px 10px;font-size:11.5px;">把检索结果发给 Agent</span></div>';
+      for (const it of res) {
+        html += '<div class="lib-hit" data-rel="' + it.rel + '">' +
+          '<div class="lib-hit-ck' + (sel.has(it.rel) ? ' on' : '') + '"></div>' +
+          '<div class="lib-hit-main"><div class="lib-hit-name">' + it.name + '</div>' +
+          '<div class="lib-hit-snip">' + (it.snippet || '（文件名匹配）') + '</div></div>' +
+          '<div class="lib-hit-kind">' + (it.ext || '').toUpperCase() + '</div></div>';
+      }
+      $groups.innerHTML = html;
+      $groups.querySelectorAll('.lib-hit').forEach((row) => {
+        const rel = row.getAttribute('data-rel');
+        row.addEventListener('click', (e) => {
+          if (e.target.closest('.lib-hit-ck')) {
+            if (sel.has(rel)) sel.delete(rel); else sel.add(rel);
+            row.querySelector('.lib-hit-ck').classList.toggle('on', sel.has(rel));
+            updateBar();
+            return;
+          }
+          if (window.aqara && window.aqara.openLibraryItem) window.aqara.openLibraryItem(rel);
+        });
+      });
+      const sendBtn = $('#lib-send-hits');
+      if (sendBtn) sendBtn.addEventListener('click', async () => {
+        const top = lastHits.slice(0, 8);
+        if (!top.length) return;
+        const proj = (state && state.project && state.project.name) || '当前项目';
+        const lines = top.map((h, i) => (i + 1) + '. ' + h.name + (h.snippet ? ('：' + h.snippet) : ''));
+        if (window.aqara && window.aqara.send) {
+          window.aqara.send('【工作区上下文】项目：' + proj + '\n【资料库检索】关键词：' + k + '\n' + lines.join('\n') + '\n【指令】请基于以上资料库检索结果完成任务；如需读取原文件请说明。');
+          showToast('→ 已把 ' + top.length + ' 条检索结果发给 Agent');
+        }
+      });
+    }
+
+    let searchTimer = null;
+    $('#lib-q').addEventListener('input', () => {
+      q = $('#lib-q').value.trim();
+      clearTimeout(searchTimer);
+      if (!q) { render(); return; }
+      searchTimer = setTimeout(() => doSearch(q), 250);
+    });
     $('#lib-upload').addEventListener('click', async () => {
       const r = (window.aqara && window.aqara.importLibrary) ? await window.aqara.importLibrary() : null;
-      if (r && r.ok) { await load(); await render(); showToast('✓ 已上传到资料库'); }
+      if (r && r.ok) { await load(); if (q) await doSearch(q); else await render(); showToast('✓ 已上传到资料库'); }
       else if (r && !r.canceled) showToast(r.reason || '上传失败');
     });
     $('#lib-open-dir').addEventListener('click', () => { if (window.aqara && window.aqara.revealLibrary) window.aqara.revealLibrary(); });

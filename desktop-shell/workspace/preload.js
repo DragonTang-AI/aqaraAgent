@@ -49,6 +49,8 @@ contextBridge.exposeInMainWorld('aqara', {
   revealLibrary: () => ipcRenderer.invoke('aqara:reveal-library'),
   deleteLibraryItem: (rel) => ipcRenderer.invoke('aqara:delete-library-item', rel),
   libraryToChat: (rels) => ipcRenderer.invoke('aqara:library-to-chat', rels),
+  librarySearch: (q) => ipcRenderer.invoke('aqara:library-search', q),
+  libraryReindex: () => ipcRenderer.invoke('aqara:library-reindex'),
   // 扫码上传（临时 HTTP + 二维码）
   qrStart: () => ipcRenderer.invoke('aqara:qr-start'),
   qrStop: () => ipcRenderer.invoke('aqara:qr-stop'),

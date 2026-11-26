@@ -379,6 +379,40 @@ function startStateSync() {
   };
   const libAbs = (rel) => path.join(LIBRARY_DIR, String(rel || '').replace(/\.\.(\/|\\)/g, ''));
 
+  // 知识检索：为资料库建立索引（文本类读正文，其它仅索引元数据）
+  let libIndex = null;
+  const LIB_TEXT_EXT = new Set(['.txt', '.md', '.markdown', '.json', '.csv', '.log', '.yml', '.yaml', '.html', '.htm', '.xml', '.js', '.ts', '.css', '.py']);
+  const buildLibraryIndex = () => {
+    const files = walkLibrary();
+    libIndex = {
+      builtAt: Date.now(),
+      files: files.map((f) => {
+        let text = '';
+        if (LIB_TEXT_EXT.has('.' + f.ext)) { try { text = fs.readFileSync(libAbs(f.rel), 'utf8').slice(0, 20000); } catch (_) {} }
+        return { rel: f.rel, name: f.name, ext: f.ext, kind: f.kind, date: f.date, text };
+      }),
+    };
+    return libIndex;
+  };
+  const searchLibrary = (q) => {
+    const k = String(q || '').trim().toLowerCase();
+    if (!k) return [];
+    if (!libIndex) buildLibraryIndex();
+    const out = [];
+    for (const f of libIndex.files) {
+      const inName = f.name.toLowerCase().includes(k);
+      let snippet = '', hit = 0;
+      if (f.text) {
+        const low = f.text.toLowerCase();
+        const i = low.indexOf(k);
+        if (i >= 0) { hit = 1; const s = Math.max(0, i - 30); snippet = f.text.slice(s, Math.min(f.text.length, i + k.length + 80)).replace(/\s+/g, ' ').trim(); }
+      }
+      if (inName || hit) out.push({ rel: f.rel, name: f.name, ext: f.ext, kind: f.kind, date: f.date, score: (inName ? 2 : 0) + hit, snippet });
+    }
+    out.sort((a, b) => b.score - a.score);
+    return out.slice(0, 50);
+  };
+
   ipcMain.handle('aqara:list-library', () => {
     try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); } catch (_) {}
     const files = walkLibrary();
@@ -390,12 +424,20 @@ function startStateSync() {
       generated: files.filter((f) => f.isGenerated).length,
     };
   });
+  // 知识检索：重建索引 / 内容检索
+  ipcMain.handle('aqara:library-reindex', () => {
+    try { const i = buildLibraryIndex(); return { ok: true, count: i.files.length, indexed: i.files.filter((f) => f.text).length }; }
+    catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:library-search', (_e, q) => {
+    try { return { ok: true, results: searchLibrary(q) }; }
+    catch (e) { return { ok: false, reason: e && e.message }; }
+  });
   ipcMain.handle('aqara:import-library', async () => {
     try {
       const r = await dialog.showOpenDialog({ title: '上传到资料库', properties: ['openFile', 'multiSelections'] });
       if (r.canceled || !r.filePaths.length) return { ok: false, canceled: true };
-      fs.mkdirSync(LIBRARY_DIR, { recursive: true });
-      for (const src of r.filePaths) {
+      fs.mkdirSync(LIBRARY_DIR, { recursive: true });      for (const src of r.filePaths) {
         let name = path.basename(src);
         let dest = path.join(LIBRARY_DIR, name);
         if (fs.existsSync(dest)) {
@@ -407,6 +449,7 @@ function startStateSync() {
         fs.copyFileSync(src, dest);
       }
       console.log('[shell] 资料库导入', r.filePaths.length, '个文件');
+      libIndex = null;
       return { ok: true, files: walkLibrary() };
     } catch (e) { return { ok: false, reason: e && e.message }; }
   });
@@ -424,7 +467,7 @@ function startStateSync() {
   ipcMain.handle('aqara:open-library-item', (_e, rel) => { try { shell.openPath(libAbs(rel)); } catch (_) {} return { ok: true }; });
   ipcMain.handle('aqara:reveal-library', () => { try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); shell.openPath(LIBRARY_DIR); } catch (_) {} return { ok: true, dir: LIBRARY_DIR }; });
   ipcMain.handle('aqara:delete-library-item', (_e, rel) => {
-    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); return { ok: true, files: walkLibrary() }; }
+    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); libIndex = null; return { ok: true, files: walkLibrary() }; }
     catch (e) { return { ok: false, reason: e && e.message }; }
   });
   // 把选中的资料库文件复制进当前项目工作区（Agent 可读）→ 返回工作区相对路径
