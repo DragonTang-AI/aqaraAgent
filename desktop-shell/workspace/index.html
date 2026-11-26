@@ -916,6 +916,7 @@
         <div class="lib-side">
           <div class="lib-side-item on" data-sub="uploads">上传历史 <span class="n" id="lib-n1">0</span></div>
           <div class="lib-side-item" data-sub="generated">生成资产 <span class="n" id="lib-n2">0</span></div>
+          <div class="lib-side-item" id="lib-reindex" style="margin-top:10px;color:var(--dim);font-size:11.5px;">⟳ 重建知识索引</div>
         </div>
         <div class="lib-main">
           <div class="lib-top">
@@ -1007,28 +1008,42 @@
       });
     }
 
-    panel.querySelectorAll('.lib-side-item').forEach((el) => el.addEventListener('click', () => {
+    panel.querySelectorAll('.lib-side-item[data-sub]').forEach((el) => el.addEventListener('click', () => {
       sub = el.getAttribute('data-sub');
-      panel.querySelectorAll('.lib-side-item').forEach((x) => x.classList.toggle('on', x === el));
+      panel.querySelectorAll('.lib-side-item[data-sub]').forEach((x) => x.classList.toggle('on', x === el));
       sel.clear(); updateBar(); if (q) doSearch(q); else render();
     }));
+    const reEl = $('#lib-reindex');
+    if (reEl) reEl.addEventListener('click', async () => {
+      const r = (window.aqara && window.aqara.libraryVecIndex) ? await window.aqara.libraryVecIndex() : null;
+      if (r && r.ok) showToast('✓ 索引已重建：' + r.chunks + ' 个片段 / ' + r.files + ' 个文件');
+      else showToast((r && r.reason) || '索引失败');
+    });
     // 知识检索：对资料库做内容级检索
     let lastHits = [];
     async function doSearch(k) {
-      const r = (window.aqara && window.aqara.librarySearch) ? await window.aqara.librarySearch(k) : null;
-      const res = (r && r.ok) ? r.results : [];
+      let res = [];
+      // 优先语义向量检索
+      const sem = (window.aqara && window.aqara.librarySemanticSearch) ? await window.aqara.librarySemanticSearch(k) : null;
+      if (sem && sem.ok) res = sem.results || [];
+      // 无向量结果则回退关键词检索
+      if (!res.length) {
+        const r = (window.aqara && window.aqara.librarySearch) ? await window.aqara.librarySearch(k) : null;
+        if (r && r.ok) res = r.results || [];
+      }
       lastHits = res;
       if (!res.length) { $groups.innerHTML = '<div class="sec-title">未检索到与「' + k + '」相关的内容</div>'; return; }
       let html = '<div class="lib-g" style="display:flex;align-items:center;justify-content:space-between;">' +
-        '<span>检索结果 <span style="font-size:11px;color:var(--dim);font-weight:400;">(' + res.length + ')</span></span>' +
+        '<span>语义检索结果 <span style="font-size:11px;color:var(--dim);font-weight:400;">(' + res.length + ')</span></span>' +
         '<span class="btn" id="lib-send-hits" style="padding:5px 10px;font-size:11.5px;">把检索结果发给 Agent</span></div>';
-      for (const it of res) {
+      res.forEach((it, i) => {
+        const meta = (it.score != null) ? ('相似度 ' + it.score) : ((it.ext || '').toUpperCase());
         html += '<div class="lib-hit" data-rel="' + it.rel + '">' +
           '<div class="lib-hit-ck' + (sel.has(it.rel) ? ' on' : '') + '"></div>' +
-          '<div class="lib-hit-main"><div class="lib-hit-name">' + it.name + '</div>' +
+          '<div class="lib-hit-main"><div class="lib-hit-name">「' + (i + 1) + '」' + it.name + '</div>' +
           '<div class="lib-hit-snip">' + (it.snippet || '（文件名匹配）') + '</div></div>' +
-          '<div class="lib-hit-kind">' + (it.ext || '').toUpperCase() + '</div></div>';
-      }
+          '<div class="lib-hit-kind">' + meta + '</div></div>';
+      });
       $groups.innerHTML = html;
       $groups.querySelectorAll('.lib-hit').forEach((row) => {
         const rel = row.getAttribute('data-rel');
@@ -1047,10 +1062,10 @@
         const top = lastHits.slice(0, 8);
         if (!top.length) return;
         const proj = (state && state.project && state.project.name) || '当前项目';
-        const lines = top.map((h, i) => (i + 1) + '. ' + h.name + (h.snippet ? ('：' + h.snippet) : ''));
+        const lines = top.map((h, i) => '「' + (i + 1) + '」' + h.name + (h.score != null ? ('（相似度 ' + h.score + '）') : '') + (h.snippet ? ('：' + h.snippet) : ''));
         if (window.aqara && window.aqara.send) {
-          window.aqara.send('【工作区上下文】项目：' + proj + '\n【资料库检索】关键词：' + k + '\n' + lines.join('\n') + '\n【指令】请基于以上资料库检索结果完成任务；如需读取原文件请说明。');
-          showToast('→ 已把 ' + top.length + ' 条检索结果发给 Agent');
+          window.aqara.send('【工作区上下文】项目：' + proj + '\n【资料库语义检索】关键词：' + k + '\n' + lines.join('\n') + '\n【指令】请基于以上资料库检索结果（含引用来源）完成任务；如需读取原文件请说明来源编号。');
+          showToast('→ 已把 ' + top.length + ' 条检索结果（含引用）发给 Agent');
         }
       });
     }

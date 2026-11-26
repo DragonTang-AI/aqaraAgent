@@ -379,7 +379,75 @@ function startStateSync() {
   };
   const libAbs = (rel) => path.join(LIBRARY_DIR, String(rel || '').replace(/\.\.(\/|\\)/g, ''));
 
-  // 知识检索：为资料库建立索引（文本类读正文，其它仅索引元数据）
+  // 语义向量检索（本地：中文按字/双字切分 + TF-IDF 加权 + 余弦相似度）
+  const VEC_DIM = 1024;
+  let vecIndex = null;
+  const vecTokenizer = (s) => {
+    const out = [];
+    const lower = String(s || '').toLowerCase();
+    const words = lower.match(/[a-z0-9_]+/g) || [];
+    for (const w of words) out.push('w:' + w);
+    const cjk = lower.replace(/[^\u4e00-\u9fa5]+/g, ' ');
+    for (const seg of cjk.split(/\s+/)) {
+      for (let i = 0; i < seg.length; i++) {
+        out.push('c:' + seg[i]);
+        if (i + 1 < seg.length) out.push('b:' + seg.slice(i, i + 2));
+      }
+    }
+    return out;
+  };
+  const vecHash = (t) => { let h = 2166136261; for (let i = 0; i < t.length; i++) { h ^= t.charCodeAt(i); h = Math.imul(h, 16777619); } return (h >>> 0) % VEC_DIM; };
+  const vecChunk = (text, size = 420, overlap = 80) => {
+    const out = [];
+    const t = String(text || '').replace(/\r/g, '');
+    for (let i = 0; i < t.length; i += (size - overlap)) {
+      out.push({ offset: i, text: t.slice(i, i + size) });
+      if (i + size >= t.length) break;
+    }
+    return out;
+  };
+  const vecOf = (text, idf) => {
+    const v = new Float32Array(VEC_DIM);
+    const tf = new Map();
+    for (const t of vecTokenizer(text)) { const h = vecHash(t); tf.set(h, (tf.get(h) || 0) + 1); }
+    for (const [h, n] of tf) v[h] += (1 + Math.log(n)) * (idf ? idf[h] : 1);
+    let norm = 0; for (let i = 0; i < VEC_DIM; i++) norm += v[i] * v[i];
+    norm = Math.sqrt(norm) || 1;
+    for (let i = 0; i < VEC_DIM; i++) v[i] /= norm;
+    return v;
+  };
+  const buildVecIndex = () => {
+    const files = walkLibrary();
+    const chunks = [];
+    for (const f of files) {
+      if (!LIB_TEXT_EXT.has('.' + f.ext)) continue;
+      let text = ''; try { text = fs.readFileSync(libAbs(f.rel), 'utf8'); } catch (_) {}
+      if (!text) continue;
+      for (const c of vecChunk(text)) chunks.push({ rel: f.rel, name: f.name, offset: c.offset, text: c.text });
+    }
+    const df = new Float32Array(VEC_DIM);
+    for (const c of chunks) {
+      const seen = new Set();
+      for (const t of vecTokenizer(c.text)) { const h = vecHash(t); if (!seen.has(h)) { seen.add(h); df[h] += 1; } }
+    }
+    const N = Math.max(1, chunks.length);
+    const idf = new Float32Array(VEC_DIM);
+    for (let i = 0; i < VEC_DIM; i++) idf[i] = Math.log((N + 1) / (df[i] + 1)) + 1;
+    for (const c of chunks) c.vec = vecOf(c.text, idf);
+    vecIndex = { dim: VEC_DIM, idf, chunks };
+    return { chunks: chunks.length, files: new Set(chunks.map((c) => c.rel)).size };
+  };
+  const semanticSearch = (q, k = 8) => {
+    if (!vecIndex || !vecIndex.chunks.length) buildVecIndex();
+    if (!vecIndex || !vecIndex.chunks.length) return [];
+    const qv = vecOf(q, vecIndex.idf);
+    const scored = vecIndex.chunks.map((c) => { let s = 0; for (let i = 0; i < VEC_DIM; i++) s += qv[i] * c.vec[i]; return { c, s }; });
+    scored.sort((a, b) => b.s - a.s);
+    return scored.filter((x) => x.s > 0.01).slice(0, k).map(({ c, s }) => ({
+      rel: c.rel, name: c.name, score: Math.round(s * 1000) / 1000,
+      snippet: c.text.slice(0, 200).replace(/\s+/g, ' ').trim(), offset: c.offset,
+    }));
+  };
   let libIndex = null;
   const LIB_TEXT_EXT = new Set(['.txt', '.md', '.markdown', '.json', '.csv', '.log', '.yml', '.yaml', '.html', '.htm', '.xml', '.js', '.ts', '.css', '.py']);
   const buildLibraryIndex = () => {
@@ -433,6 +501,15 @@ function startStateSync() {
     try { return { ok: true, results: searchLibrary(q) }; }
     catch (e) { return { ok: false, reason: e && e.message }; }
   });
+  // 语义向量检索
+  ipcMain.handle('aqara:library-vec-index', () => {
+    try { const i = buildVecIndex(); return { ok: true, chunks: i.chunks, files: i.files }; }
+    catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:library-semantic-search', (_e, q) => {
+    try { return { ok: true, results: semanticSearch(q) }; }
+    catch (e) { return { ok: false, reason: e && e.message }; }
+  });
   ipcMain.handle('aqara:import-library', async () => {
     try {
       const r = await dialog.showOpenDialog({ title: '上传到资料库', properties: ['openFile', 'multiSelections'] });
@@ -449,7 +526,7 @@ function startStateSync() {
         fs.copyFileSync(src, dest);
       }
       console.log('[shell] 资料库导入', r.filePaths.length, '个文件');
-      libIndex = null;
+      libIndex = null; vecIndex = null;
       return { ok: true, files: walkLibrary() };
     } catch (e) { return { ok: false, reason: e && e.message }; }
   });
@@ -467,7 +544,7 @@ function startStateSync() {
   ipcMain.handle('aqara:open-library-item', (_e, rel) => { try { shell.openPath(libAbs(rel)); } catch (_) {} return { ok: true }; });
   ipcMain.handle('aqara:reveal-library', () => { try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); shell.openPath(LIBRARY_DIR); } catch (_) {} return { ok: true, dir: LIBRARY_DIR }; });
   ipcMain.handle('aqara:delete-library-item', (_e, rel) => {
-    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); libIndex = null; return { ok: true, files: walkLibrary() }; }
+    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); libIndex = null; vecIndex = null; return { ok: true, files: walkLibrary() }; }
     catch (e) { return { ok: false, reason: e && e.message }; }
   });
   // 把选中的资料库文件复制进当前项目工作区（Agent 可读）→ 返回工作区相对路径

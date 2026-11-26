@@ -51,6 +51,8 @@ contextBridge.exposeInMainWorld('aqara', {
   libraryToChat: (rels) => ipcRenderer.invoke('aqara:library-to-chat', rels),
   librarySearch: (q) => ipcRenderer.invoke('aqara:library-search', q),
   libraryReindex: () => ipcRenderer.invoke('aqara:library-reindex'),
+  librarySemanticSearch: (q) => ipcRenderer.invoke('aqara:library-semantic-search', q),
+  libraryVecIndex: () => ipcRenderer.invoke('aqara:library-vec-index'),
   // 扫码上传（临时 HTTP + 二维码）
   qrStart: () => ipcRenderer.invoke('aqara:qr-start'),
   qrStop: () => ipcRenderer.invoke('aqara:qr-stop'),
