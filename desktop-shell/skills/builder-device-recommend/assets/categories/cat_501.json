@@ -1,0 +1,346 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "501",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "卫浴晾晒",
+    "en-US": "Bathroom Appliance"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.toilet.acn001",
+      "displayName": {
+        "zh-CN": "Aqara智能马桶H1",
+        "en-US": "Smart Toilet H1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AX017"
+      ],
+      "skuIds": [
+        "sku.AX017CNW01",
+        "sku.AX017CNW02"
+      ]
+    },
+    {
+      "model": "aqara.toilet.ccn01",
+      "displayName": {
+        "zh-CN": "西马智能马桶盖W1",
+        "en-US": "Smart Toilet W1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.XX002"
+      ],
+      "skuIds": [
+        "sku.XX002CNW01"
+      ]
+    },
+    {
+      "model": "aqara.tow_w.acn001",
+      "displayName": {
+        "zh-CN": "智能毛巾架 H1",
+        "en-US": "Smart Towel Warmer H1"
+      },
+      "deviceTypesList": [
+        "TowelRack"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.airer.acn001",
+      "displayName": {
+        "zh-CN": "智能晾衣机H1",
+        "en-US": "Aqara Smart Clothes Drying Rack H1"
+      },
+      "deviceTypesList": [
+        "Light",
+        "ClotheDryingMachine"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM030"
+      ],
+      "skuIds": [
+        "sku.AM030CNW01"
+      ]
+    },
+    {
+      "model": "lumi.airer.acn005",
+      "displayName": {
+        "zh-CN": "云隐 智能晾衣机C100",
+        "en-US": "Smart Drying Rack C100"
+      },
+      "deviceTypesList": [
+        "Light",
+        "ClotheDryingMachine"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM068"
+      ],
+      "skuIds": [
+        "sku.AM068CNW01"
+      ]
+    },
+    {
+      "model": "lumi.bhf_light.acn001",
+      "displayName": {
+        "zh-CN": "Aqara智能浴霸 T1",
+        "en-US": "Aqara Intelligent Bathroom Heater T1"
+      },
+      "deviceTypesList": [
+        "Light",
+        "BathroomHeater"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AX021"
+      ],
+      "skuIds": [
+        "sku.AX021CNW01",
+        "sku.AX021KRW01"
+      ]
+    },
+    {
+      "model": "lumi.mirror.acn001",
+      "displayName": {
+        "zh-CN": "浴室镜 H1",
+        "en-US": "Aqara Smart Bathroom Mirror H1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM032"
+      ],
+      "skuIds": [
+        "sku.AM034CNW01"
+      ]
+    }
+  ],
+  "modelCount": 7,
+  "spuCount": 6,
+  "skuCount": 8,
+  "commonCapabilities": [
+    {
+      "deviceType": "TowelRack",
+      "functionCode": "TowelRackDry",
+      "traitCode": "SetTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TowelRack",
+      "functionCode": "TowelRackDry",
+      "traitCode": "SetTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TowelRack",
+      "functionCode": "TowelRackDry",
+      "traitCode": "SetTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TowelRack",
+      "functionCode": "TowelRackDry",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TowelRack",
+      "functionCode": "TowelRackDry",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ClotheDryingMachine",
+      "functionCode": "Lifter",
+      "traitCode": "CurrentPositionPercentage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ClotheDryingMachine",
+      "functionCode": "Lifter",
+      "traitCode": "CurrentPositionPercentage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ClotheDryingMachine",
+      "functionCode": "Lifter",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ClotheDryingMachine",
+      "functionCode": "Lifter",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ClotheDryingMachine",
+      "functionCode": "Lifter",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "starter",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "condition",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "action",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "BathroomHeater",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "BathroomHeater",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "BathroomHeater",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "BathroomHeater",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "BathroomHeater",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    }
+  ],
+  "protocols": [
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 6,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "卫浴晾晒"
+      ],
+      "en-US": [
+        "Bathroom Appliance"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

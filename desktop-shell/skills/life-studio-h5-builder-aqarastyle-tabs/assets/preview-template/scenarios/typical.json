@@ -1,0 +1,2265 @@
+{
+  "schemaVersion": "1.0",
+  "id": "typical",
+  "spaces": [
+    {
+      "spaceId": "mock-home",
+      "name": "我的家",
+      "children": [
+        {
+          "spaceId": "mock-living",
+          "name": "客厅"
+        },
+        {
+          "spaceId": "mock-bedroom",
+          "name": "卧室"
+        },
+        {
+          "spaceId": "mock-empty",
+          "name": "书房"
+        }
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "deviceId": "mock-device-0",
+      "deviceName": "客厅吊灯",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-1",
+      "deviceName": "全光谱灯",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-2",
+      "deviceName": "智能窗帘",
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-3",
+      "deviceName": "摄像机",
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-4",
+      "deviceName": "温湿度传感器",
+      "deviceTypesList": [
+        "Sensor"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-5",
+      "deviceName": "网关",
+      "deviceTypesList": [
+        "Gateway"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-6",
+      "deviceName": "客厅吊灯 7",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-7",
+      "deviceName": "全光谱灯 8",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": true,
+      "space": null
+    },
+    {
+      "deviceId": "mock-device-8",
+      "deviceName": "智能窗帘 9",
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-9",
+      "deviceName": "摄像机 10",
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-10",
+      "deviceName": "温湿度传感器 11",
+      "deviceTypesList": [
+        "Sensor"
+      ],
+      "state": false,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-11",
+      "deviceName": "网关 12",
+      "deviceTypesList": [
+        "Gateway"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-12",
+      "deviceName": "客厅吊灯 13",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-13",
+      "deviceName": "全光谱灯 14",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-14",
+      "deviceName": "智能窗帘 15",
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-15",
+      "deviceName": "摄像机 16",
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-device-16",
+      "deviceName": "温湿度传感器 17",
+      "deviceTypesList": [
+        "Sensor"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-device-17",
+      "deviceName": "网关 18",
+      "deviceTypesList": [
+        "Gateway"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-hvac-0",
+      "deviceName": "客厅空调 1",
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-hvac-1",
+      "deviceName": "客厅空调 2",
+      "deviceTypesList": [
+        "Thermostat"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-hvac-2",
+      "deviceName": "卧室空调 3",
+      "deviceTypesList": [
+        "Thermostat"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-fav-offline-light",
+      "deviceName": "离线客厅灯",
+      "deviceTypesList": [
+        "Light"
+      ],
+      "state": false,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-fav-contact",
+      "deviceName": "门窗传感器",
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "deviceId": "mock-fav-lock",
+      "deviceName": "门锁",
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "deviceId": "mock-favorite-speaker",
+      "deviceName": "客厅智能音箱",
+      "deviceTypesList": [
+        "Speaker"
+      ],
+      "state": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    }
+  ],
+  "definitions": [
+    {
+      "deviceId": "mock-device-0",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "灯"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        },
+        {
+          "endpointId": 2,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "灯"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": ""
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-1",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                },
+                {
+                  "traitCode": "ColorTemperature",
+                  "pointName": "色温",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 153,
+                    "max": 500,
+                    "step": 1,
+                    "unit": "mired"
+                  },
+                  "value": 370
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "灯"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-2",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "WindowCovering",
+          "functions": [
+            {
+              "functionCode": "WindowCovering",
+              "traits": [
+                {
+                  "traitCode": "TargetPositionPercentage",
+                  "pointName": "开合度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 70
+                },
+                {
+                  "traitCode": "CurrentPositionPercentage",
+                  "pointName": "实际开合度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": false,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 70
+                }
+              ],
+              "commands": [
+                {
+                  "commandCode": "StopMotion",
+                  "pointName": "停止",
+                  "fields": []
+                },
+                {
+                  "commandCode": "AutoControl",
+                  "fields": []
+                }
+              ]
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "窗帘"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-3",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Camera",
+          "functions": [
+            {
+              "functionCode": "Camera",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "WebRTCSignalingEvent",
+                  "pointName": "信令",
+                  "parameter": {
+                    "type": "Struct",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": null
+                }
+              ],
+              "commands": [
+                {
+                  "commandCode": "WebRTCProvideOffer",
+                  "fields": [
+                    {
+                      "fieldCode": "InitiatorData",
+                      "index": 0
+                    },
+                    {
+                      "fieldCode": "SessionId",
+                      "index": 1
+                    },
+                    {
+                      "fieldCode": "SDP",
+                      "index": 2
+                    },
+                    {
+                      "fieldCode": "StreamUsage",
+                      "index": 3
+                    },
+                    {
+                      "fieldCode": "ICEServers",
+                      "index": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "摄像机"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-4",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Sensor",
+          "functions": [
+            {
+              "functionCode": "Sensor",
+              "traits": [
+                {
+                  "traitCode": "CurrentTemperature",
+                  "pointName": "温度",
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": false,
+                    "unit": "°C"
+                  },
+                  "value": 25.2
+                },
+                {
+                  "traitCode": "CurrentHumidity",
+                  "pointName": "湿度",
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": false,
+                    "unit": "%"
+                  },
+                  "value": 61
+                },
+                {
+                  "traitCode": "OccupancySensed",
+                  "pointName": "有人",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "温湿度传感器"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-5",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Gateway",
+          "functions": [
+            {
+              "functionCode": "Gateway",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "网关"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-6",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "客厅吊灯 7"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-7",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                },
+                {
+                  "traitCode": "ColorTemperature",
+                  "pointName": "色温",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 153,
+                    "max": 500,
+                    "step": 1,
+                    "unit": "mired"
+                  },
+                  "value": 370
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "全光谱灯 8"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": ""
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-8",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "WindowCovering",
+          "functions": [
+            {
+              "functionCode": "WindowCovering",
+              "traits": [
+                {
+                  "traitCode": "TargetPositionPercentage",
+                  "pointName": "开合度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 70
+                },
+                {
+                  "traitCode": "CurrentPositionPercentage",
+                  "pointName": "实际开合度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": false,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 70
+                }
+              ],
+              "commands": [
+                {
+                  "commandCode": "StopMotion",
+                  "pointName": "停止",
+                  "fields": []
+                },
+                {
+                  "commandCode": "AutoControl",
+                  "fields": []
+                }
+              ]
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "智能窗帘 9"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-9",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Camera",
+          "functions": [
+            {
+              "functionCode": "Camera",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "WebRTCSignalingEvent",
+                  "pointName": "信令",
+                  "parameter": {
+                    "type": "Struct",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": null
+                }
+              ],
+              "commands": [
+                {
+                  "commandCode": "WebRTCProvideOffer",
+                  "fields": [
+                    {
+                      "fieldCode": "InitiatorData",
+                      "index": 0
+                    },
+                    {
+                      "fieldCode": "SessionId",
+                      "index": 1
+                    },
+                    {
+                      "fieldCode": "SDP",
+                      "index": 2
+                    },
+                    {
+                      "fieldCode": "StreamUsage",
+                      "index": 3
+                    },
+                    {
+                      "fieldCode": "ICEServers",
+                      "index": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "摄像机 10"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-10",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Sensor",
+          "functions": [
+            {
+              "functionCode": "Sensor",
+              "traits": [
+                {
+                  "traitCode": "CurrentTemperature",
+                  "pointName": "温度",
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": false,
+                    "unit": "°C"
+                  },
+                  "value": 25.2
+                },
+                {
+                  "traitCode": "CurrentHumidity",
+                  "pointName": "湿度",
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": false,
+                    "unit": "%"
+                  },
+                  "value": 61
+                },
+                {
+                  "traitCode": "OccupancySensed",
+                  "pointName": "有人",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "温湿度传感器 11"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-11",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Gateway",
+          "functions": [
+            {
+              "functionCode": "Gateway",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "网关 12"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-12",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "客厅吊灯 13"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-13",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Light",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "CurrentLevel",
+                  "pointName": "亮度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 55
+                },
+                {
+                  "traitCode": "ColorTemperature",
+                  "pointName": "色温",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 153,
+                    "max": 500,
+                    "step": 1,
+                    "unit": "mired"
+                  },
+                  "value": 370
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "全光谱灯 14"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-14",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "WindowCovering",
+          "functions": [
+            {
+              "functionCode": "WindowCovering",
+              "traits": [
+                {
+                  "traitCode": "TargetPositionPercentage",
+                  "pointName": "开合度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": true,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 70
+                },
+                {
+                  "traitCode": "CurrentPositionPercentage",
+                  "pointName": "实际开合度",
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": false,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  },
+                  "value": 70
+                }
+              ],
+              "commands": [
+                {
+                  "commandCode": "StopMotion",
+                  "pointName": "停止",
+                  "fields": []
+                },
+                {
+                  "commandCode": "AutoControl",
+                  "fields": []
+                }
+              ]
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "智能窗帘 15"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-15",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Camera",
+          "functions": [
+            {
+              "functionCode": "Camera",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                },
+                {
+                  "traitCode": "WebRTCSignalingEvent",
+                  "pointName": "信令",
+                  "parameter": {
+                    "type": "Struct",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": null
+                }
+              ],
+              "commands": [
+                {
+                  "commandCode": "WebRTCProvideOffer",
+                  "fields": [
+                    {
+                      "fieldCode": "InitiatorData",
+                      "index": 0
+                    },
+                    {
+                      "fieldCode": "SessionId",
+                      "index": 1
+                    },
+                    {
+                      "fieldCode": "SDP",
+                      "index": 2
+                    },
+                    {
+                      "fieldCode": "StreamUsage",
+                      "index": 3
+                    },
+                    {
+                      "fieldCode": "ICEServers",
+                      "index": 4
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "摄像机 16"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-16",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Sensor",
+          "functions": [
+            {
+              "functionCode": "Sensor",
+              "traits": [
+                {
+                  "traitCode": "CurrentTemperature",
+                  "pointName": "温度",
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": false,
+                    "unit": "°C"
+                  },
+                  "value": 25.2
+                },
+                {
+                  "traitCode": "CurrentHumidity",
+                  "pointName": "湿度",
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": false,
+                    "unit": "%"
+                  },
+                  "value": 61
+                },
+                {
+                  "traitCode": "OccupancySensed",
+                  "pointName": "有人",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "温湿度传感器 17"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-device-17",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Gateway",
+          "functions": [
+            {
+              "functionCode": "Gateway",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "网关 18"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-hvac-0",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "AirConditioner",
+          "functions": [
+            {
+              "functionCode": "Output",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "PowerSwitch"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-hvac-1",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Thermostat",
+          "functions": [
+            {
+              "functionCode": "Output",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": true
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "客厅空调 2"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-living"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-hvac-2",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Thermostat",
+          "functions": [
+            {
+              "functionCode": "Output",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "pointName": "电源",
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  },
+                  "value": false
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "卧室空调 3"
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  },
+                  "value": "mock-bedroom"
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-fav-offline-light",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "Light",
+          "functions": [
+            {
+              "functionCode": "Output",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "value": false,
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  }
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "value": "离线客厅灯",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  }
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "value": "mock-living",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  }
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-fav-contact",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "ContactSensor",
+          "functions": [
+            {
+              "functionCode": "ContactSensor",
+              "traits": [
+                {
+                  "traitCode": "ContactSensorState",
+                  "value": false,
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": false
+                  }
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "value": "门窗传感器",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  }
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "value": "mock-bedroom",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  }
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-fav-lock",
+      "endpoints": [
+        {
+          "endpointId": 1,
+          "deviceType": "DoorLock",
+          "functions": [
+            {
+              "functionCode": "DoorLock",
+              "traits": [
+                {
+                  "traitCode": "LockState",
+                  "value": 1,
+                  "parameter": {
+                    "type": "Integer",
+                    "readable": true,
+                    "writable": false
+                  }
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "EndpointLabel",
+              "traits": [
+                {
+                  "traitCode": "EndpointName",
+                  "value": "门锁",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  }
+                },
+                {
+                  "traitCode": "EndpointRoom",
+                  "value": "mock-living",
+                  "parameter": {
+                    "type": "String",
+                    "readable": true,
+                    "writable": false
+                  }
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "deviceId": "mock-favorite-speaker",
+      "endpoints": [
+        {
+          "endpointId": 3,
+          "deviceType": "Speaker",
+          "functions": [
+            {
+              "functionCode": "Output",
+              "traits": [
+                {
+                  "traitCode": "OnOff",
+                  "value": true,
+                  "parameter": {
+                    "type": "Bool",
+                    "readable": true,
+                    "writable": true
+                  }
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "MediaPlayback",
+              "traits": [
+                {
+                  "traitCode": "CurrentPlaybackState",
+                  "value": 0,
+                  "parameter": {
+                    "type": "Enum",
+                    "readable": true,
+                    "writable": false,
+                    "supportedValues": [
+                      {
+                        "key": "Playing",
+                        "value": 0
+                      },
+                      {
+                        "key": "Paused",
+                        "value": 1
+                      },
+                      {
+                        "key": "Stopped",
+                        "value": 2
+                      },
+                      {
+                        "key": "Buffering",
+                        "value": 3
+                      },
+                      {
+                        "key": "FastForwarding",
+                        "value": 4
+                      },
+                      {
+                        "key": "Rewinding",
+                        "value": 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "traitCode": "TargetPlaybackState",
+                  "value": 0,
+                  "parameter": {
+                    "type": "Enum",
+                    "readable": true,
+                    "writable": true,
+                    "supportedValues": [
+                      {
+                        "key": "Play",
+                        "value": 0
+                      },
+                      {
+                        "key": "Pause",
+                        "value": 1
+                      },
+                      {
+                        "key": "Previous",
+                        "value": 6
+                      },
+                      {
+                        "key": "Next",
+                        "value": 7
+                      }
+                    ]
+                  }
+                }
+              ],
+              "commands": []
+            },
+            {
+              "functionCode": "Speaker",
+              "traits": [
+                {
+                  "traitCode": "Volume",
+                  "value": 35,
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": true,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  }
+                }
+              ],
+              "commands": []
+            }
+          ]
+        },
+        {
+          "endpointId": 4,
+          "deviceType": "Speaker",
+          "functions": [
+            {
+              "functionCode": "MediaPlayback",
+              "traits": [
+                {
+                  "traitCode": "CurrentPlaybackState",
+                  "value": 0,
+                  "parameter": {
+                    "type": "Enum",
+                    "readable": true,
+                    "writable": false,
+                    "supportedValues": [
+                      {
+                        "key": "Playing",
+                        "value": 0
+                      },
+                      {
+                        "key": "Paused",
+                        "value": 1
+                      },
+                      {
+                        "key": "Stopped",
+                        "value": 2
+                      },
+                      {
+                        "key": "Buffering",
+                        "value": 3
+                      },
+                      {
+                        "key": "FastForwarding",
+                        "value": 4
+                      },
+                      {
+                        "key": "Rewinding",
+                        "value": 5
+                      }
+                    ]
+                  }
+                },
+                {
+                  "traitCode": "TargetPlaybackState",
+                  "value": 0,
+                  "parameter": {
+                    "type": "Enum",
+                    "readable": true,
+                    "writable": true,
+                    "supportedValues": [
+                      {
+                        "key": "Play",
+                        "value": 0
+                      },
+                      {
+                        "key": "Pause",
+                        "value": 1
+                      },
+                      {
+                        "key": "Previous",
+                        "value": 6
+                      },
+                      {
+                        "key": "Next",
+                        "value": 7
+                      }
+                    ]
+                  }
+                }
+              ],
+              "commands": []
+            }
+          ]
+        },
+        {
+          "endpointId": 5,
+          "deviceType": "Speaker",
+          "functions": [
+            {
+              "functionCode": "Speaker",
+              "traits": [
+                {
+                  "traitCode": "Volume",
+                  "value": 15,
+                  "parameter": {
+                    "type": "Float",
+                    "readable": true,
+                    "writable": true,
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "unit": "%"
+                  }
+                }
+              ],
+              "commands": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "automations": [
+    {
+      "automationId": "mock-auto-0",
+      "name": "回家照明",
+      "enabled": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    },
+    {
+      "automationId": "mock-auto-1",
+      "name": "夜间安防",
+      "enabled": false,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      }
+    },
+    {
+      "automationId": "mock-auto-2",
+      "name": "有人时开灯",
+      "enabled": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "automationId": "mock-auto-0",
+      "automationName": "回家照明",
+      "triggerNodeId": "mock-trigger-home",
+      "triggerName": "回家",
+      "enabled": true,
+      "space": {
+        "spaceId": "mock-living",
+        "name": "客厅"
+      },
+      "sceneId": "mock-scene-mock-trigger-home",
+      "name": "回家"
+    },
+    {
+      "automationId": "mock-auto-1",
+      "automationName": "夜间安防",
+      "triggerNodeId": "mock-trigger-sleep",
+      "triggerName": "睡眠",
+      "enabled": false,
+      "space": {
+        "spaceId": "mock-bedroom",
+        "name": "卧室"
+      },
+      "sceneId": "mock-scene-mock-trigger-sleep",
+      "name": "睡眠"
+    }
+  ],
+  "failures": {},
+  "studioHeader": {
+    "studioDid": "mock-studio-typical",
+    "studioName": "示例家庭 Studio",
+    "connectStatus": "local"
+  }
+}

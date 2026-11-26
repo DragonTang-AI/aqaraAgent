@@ -1,0 +1,155 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "302",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "管状电机",
+    "en-US": "Tubular Motor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.curtain.acn002",
+      "displayName": {
+        "zh-CN": "智能卷帘伴侣 E1",
+        "en-US": "Roller Shade Driver E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM023"
+      ],
+      "skuIds": [
+        "sku.AM023CNW01",
+        "sku.AM023GLW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.aq2",
+      "displayName": {
+        "zh-CN": "智能管状电机",
+        "en-US": "Roller Shade Controller"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM003"
+      ],
+      "skuIds": [
+        "sku.AM003CNW01",
+        "sku.AM003CNW02",
+        "sku.AM003EUW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.vagl02",
+      "displayName": {
+        "zh-CN": "智能管状电机 T1",
+        "en-US": "Roller Shade Controller T1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM015",
+        "spu.AM039",
+        "spu.AM056"
+      ],
+      "skuIds": [
+        "sku.AM015CNW01",
+        "sku.AM039CNW01",
+        "sku.AM056GLS01"
+      ]
+    }
+  ],
+  "modelCount": 3,
+  "spuCount": 5,
+  "skuCount": 8,
+  "commonCapabilities": [
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentPositionPercentage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentPositionPercentage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "MotorOperationStatus",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "MotorOperationStatus",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "action",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 3,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "管状电机"
+      ],
+      "en-US": [
+        "Tubular Motor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

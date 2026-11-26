@@ -1,0 +1,9 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';import vm from 'node:vm';
+const source=readFileSync(new URL('../assets/dashboard-template/i18n.js',import.meta.url),'utf8');let cases=0;
+for(const role of ['', 'male','female','senior','child']){const window={__LIFE_STUDIO_DASHBOARD_CONFIG__:{role},navigator:{language:'zh-CN'}},document={documentElement:{}};vm.runInNewContext(source,{window,document});const i=window.LifeI18n;
+for(const lang of ['zh-CN','zh-TW','en']){i.setLocale(lang);for(const key of Object.keys(i.functionCopy)){assert.ok(i.functionText(key));assert.ok(i.functionText(key,{form:'full'}));cases++;}assert.equal(i.functionText('unknown',{fallback:'API label'}),'API label');assert.equal(i.functionText('unknown'),'');
+const unknown={kind:'range',traitCode:'VendorValue',label:'原始名称',value:32};const before=JSON.stringify(unknown);assert.equal(i.controlText(unknown,'light'),'原始名称');assert.equal(JSON.stringify(unknown),before);assert.equal(i.controlText({kind:'range',traitCode:'Brightness',label:'Brightness'},'climate'),'Brightness');assert.equal(i.controlText({kind:'enum',traitCode:'Brightness',label:'enum'},'light'),'enum');assert.equal(i.controlText({kind:'range',traitCode:'ColorTemperature',label:'vendor'},'light'),i.functionText('light.temperature'));assert.notEqual(i.functionText('light.on'),i.functionText('light.off'));assert.notEqual(i.functionText('curtain.auto'),i.functionText('curtain.open'));assert.ok(i.overviewTitle());
+if(lang==='zh-CN'&&['senior','child'].includes(role))assert.equal(i.functionText('light.adjust'),'调灯光');if(role==='child'){assert.ok(i.t('childHomeTemperature'));assert.ok(i.t('childHomeHumidity'));assert.notEqual(i.t('childHomeTemperature'),i.t('indoorTemperature'));}assert.ok(Object.isFrozen(i.functionCopy));}
+}
+console.log('PASS semantic function copy: '+cases+' role/locale/key combinations; fallback, immutable source, trait/category/kind guards');

@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "name": "客厅双灯追逐",
+    "description": "两条灯带轮流换色，光会往前跑。"
+  },
+  "automations": [
+    {
+      "name": "客厅双灯追逐",
+      "starters": [{ "type": "manual", "name": "客厅双灯追逐" }],
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [
+            { "deviceId": "dev.living.strip1", "endpointIds": [2] },
+            { "deviceId": "dev.living.strip2", "endpointIds": [2] }
+          ],
+          "value": true
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "LevelControl",
+          "traitCode": "CurrentLevel",
+          "targets": [
+            { "deviceId": "dev.living.strip1", "endpointIds": [2] },
+            { "deviceId": "dev.living.strip2", "endpointIds": [2] }
+          ],
+          "value": 100
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [{ "deviceId": "dev.living.strip1", "endpointIds": [2] }],
+          "value": 2748732539
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [{ "deviceId": "dev.living.strip2", "endpointIds": [2] }],
+          "value": 644222812
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [{ "deviceId": "dev.living.strip1", "endpointIds": [2] }],
+          "value": 1288477081
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [{ "deviceId": "dev.living.strip2", "endpointIds": [2] }],
+          "value": 2748732539
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [{ "deviceId": "dev.living.strip1", "endpointIds": [2] }],
+          "value": 644222812
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [{ "deviceId": "dev.living.strip2", "endpointIds": [2] }],
+          "value": 1288477081
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "ColorControl",
+          "traitCode": "ColorXY",
+          "targets": [
+            { "deviceId": "dev.living.strip1", "endpointIds": [2] },
+            { "deviceId": "dev.living.strip2", "endpointIds": [2] }
+          ],
+          "value": 1374365286
+        }
+      ]
+    }
+  ]
+}

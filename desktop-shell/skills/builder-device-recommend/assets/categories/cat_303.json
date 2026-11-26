@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "303",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "门窗开合器",
+    "en-US": "Door and Window Opener"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.wopener.hocn01",
+      "displayName": {
+        "zh-CN": "HOPO悬挂外开窗",
+        "en-US": "Hopo Hanging Outward Opening Window"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "aqara.wopener.hocn02",
+      "displayName": {
+        "zh-CN": "HOPO外平开窗",
+        "en-US": "Hopo External Casement Window"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "aqara.wopener.hocn04",
+      "displayName": {
+        "zh-CN": "HOPO内开内倒窗",
+        "en-US": "Hopo Inward Opening And Turning Windows"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 3,
+  "spuCount": 0,
+  "skuCount": 0,
+  "commonCapabilities": [],
+  "protocols": [
+    "wifi"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 3,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "门窗开合器"
+      ],
+      "en-US": [
+        "Door and Window Opener"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

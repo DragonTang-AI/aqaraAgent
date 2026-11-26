@@ -533,12 +533,12 @@
     } else if (type === 'devices') {
       panel.innerHTML = `<div class="pad">
         <div class="sec-title">设备点位 / DEVICES</div>
-        ${(state.devices || []).map(d => `<div class="row" data-send="查看并说明「${d.name}」当前状态"><span class="dot"></span><span class="name">${d.name}</span><span class="loc">${d.room}</span><span class="st">${d.status}</span></div>`).join('')}
+        ${(state.devices || []).map(d => { const extra = [d.room, d.model, (d.qty ? ('×' + d.qty) : '')].filter(Boolean).join(' · '); const msg = '查看并说明「' + d.name + '」当前状态' + (d.model ? ('（型号 ' + d.model + '）') : ''); return `<div class="row" data-send="${msg}"><span class="dot"></span><span class="name">${d.name}</span><span class="loc">${extra}</span><span class="st">${d.status || ''}</span></div>`; }).join('')}
       </div>`;
     } else if (type === 'scenes') {
       panel.innerHTML = `<div class="pad">
         <div class="sec-title">场景 / SCENES</div>
-        <div class="chips">${(state.scenes || []).map(s => `<span class="chip" data-send="应用场景：${s}">${s}</span>`).join('')}</div>
+        <div class="chips">${(state.scenes || []).map(s => { const nm = (typeof s === 'string') ? s : ((s && s.name) || '场景'); return `<span class="chip" data-send="应用场景：${nm}">${nm}</span>`; }).join('')}</div>
         <div class="sec-title">自动化 / AUTOMATIONS</div>
         <div class="cards">${(state.automations || []).map(a => `<div class="card"><div class="t">${a.title}</div><div class="d">${a.detail}</div></div>`).join('')}</div>
       </div>`;
@@ -1810,11 +1810,23 @@
     applyMode('normal');
   })();
 
+  let lastFocus = '';
+  function applyFocus() {
+    const f = state && state.ui && state.ui.focus;
+    if (!f || f === lastFocus) return;
+    lastFocus = f;
+    const map = { devices: 'devices', floorplan: 'devices', scenes: 'scenes', automation: 'scenes', board: 'board', dashboard: 'board', files: 'files', twin: 'twin', library: 'library', partners: 'partners' };
+    const type = map[f] || f;
+    if (!DEFS[type]) return;
+    const t = tabs.find((x) => x.type === type);
+    if (t) activateTab(t.id); else addTab(type, true);
+  }
   function renderAll() {
     tabs.forEach((t) => { const p = panelEls[t.id]; if (p) buildPanel(p, t.type); });
     if (activeId) activateTab(activeId, false);
     renderCtx();
     reHighlight();
+    applyFocus();
   }
 
   // 主题：读取 + 订阅

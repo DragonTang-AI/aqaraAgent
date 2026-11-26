@@ -1,0 +1,742 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.switch.acn032",
+  "displayName": {
+    "zh-CN": "妙控开关 S1E",
+    "en-US": "Aqara Smart Scene Panel Switch S1"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [
+    "Button",
+    "Switch"
+  ],
+  "category": {
+    "categoryId": "51",
+    "name": null,
+    "tags": [
+      "51"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [
+      "<p>安装前请确认电源总闸已关闭！</p>\n<p>1. 使用一字螺丝刀撬开开关面板；</p>\n<p>2.&nbsp;使用螺丝刀拧松开关背面接线柱螺丝，将火线接入L孔，将零线接入N孔，将负载（灯）线接入L1、L2、L3孔（分别对应左、中、右键），确认接线正确后，拧紧接线柱螺丝，三路累计负载不能超过2200W；</p>\n<p>*火线一般为红色导线，零线一般为蓝色或黑色导线。</p>\n<p>3.&nbsp;使用附送的螺丝将开关固定到墙壁接线盒上，并扣上面板，请务必注意面板的扣接安装方式。</p>\n<p>*螺丝扭矩请勿超过0.7N&middot;m。</p>\n<p>4. 给设备上电，等设备屏幕正常显示且进入入网提示页面，则正常入网并使用。</p>"
+    ],
+    "powerType": null,
+    "networkProtocol": "wifi",
+    "networkProtocols": [
+      "wifi"
+    ],
+    "requiresGateway": null,
+    "installRequired": true,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ProductName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ProductName",
+                "spec": {
+                  "rid": "8.0.1076",
+                  "path": "0.128.32900.1",
+                  "traitId": "32900",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DeviceID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.DeviceID",
+                "spec": {
+                  "rid": "8.0.1077",
+                  "path": "0.128.32905.1",
+                  "traitId": "32905",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorName",
+                "spec": {
+                  "rid": "8.0.121",
+                  "path": "0.128.32898.1",
+                  "traitId": "32898",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorID",
+                "spec": {
+                  "rid": "8.0.120",
+                  "path": "0.128.32899.1",
+                  "traitId": "32899",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Reachable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Reachable",
+                "spec": {
+                  "rid": "8.0.839",
+                  "path": "0.128.32901.1",
+                  "traitId": "32901",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SerialNumber",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.SerialNumber",
+                "spec": {
+                  "rid": "8.0.372",
+                  "path": "0.128.32897.1",
+                  "traitId": "32897",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Mac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Mac",
+                "spec": {
+                  "rid": "8.0.1081",
+                  "path": "0.128.32904.1",
+                  "traitId": "32904",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "EnergyManagement",
+            "traits": [
+              {
+                "traitCode": "CumulativeEnergyConsumption",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100000000.0,
+                  "step": 0.1,
+                  "unit": "W·h"
+                },
+                "pointName": "EnergyManagement.CumulativeEnergyConsumption",
+                "spec": {
+                  "rid": "23.0.85",
+                  "path": "1.140.32946.1",
+                  "traitId": "32946",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CurrentPower",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 5000.0,
+                  "step": 0.1,
+                  "unit": "W"
+                },
+                "pointName": "EnergyManagement.CurrentPower",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "23.0.812",
+                  "path": "1.140.32945.1",
+                  "traitId": "32945",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CurrentVoltage",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 100.0,
+                  "max": 380.0,
+                  "step": 0.001,
+                  "unit": "V"
+                },
+                "pointName": "EnergyManagement.CurrentVoltage",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "23.0.824",
+                  "path": "1.140.32944.1",
+                  "traitId": "32944",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "GeneralDiagnostics",
+            "traits": [
+              {
+                "traitCode": "RebootCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 4294967295.0,
+                  "step": 1.0
+                },
+                "pointName": "GeneralDiagnostics.RebootCount",
+                "spec": {
+                  "rid": "8.0.827",
+                  "path": "1.176.33096.1",
+                  "traitId": "33096",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Identify",
+            "traits": [
+              {
+                "traitCode": "IdentifyTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10.0,
+                  "step": 0.1,
+                  "unit": "S"
+                },
+                "pointName": "Identify.IdentifyTime",
+                "spec": {
+                  "rid": "8.0.1058",
+                  "path": "1.131.32916.1",
+                  "traitId": "32916",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "NetworkCommissioning",
+            "traits": [
+              {
+                "traitCode": "WiFiRSSI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -100.0,
+                  "max": 0.0,
+                  "step": 1.0
+                },
+                "pointName": "NetworkCommissioning.WiFiRSSI",
+                "spec": {
+                  "rid": "8.0.1338",
+                  "path": "1.171.20119.1",
+                  "traitId": "20119",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 3,
+        "endpointName": "Switch",
+        "deviceType": "Switch",
+        "functions": [
+          {
+            "functionCode": "Output",
+            "traits": [
+              {
+                "traitCode": "OnOff",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "Output.OnOff",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "4.2.85",
+                  "path": "3.132.32920.1",
+                  "traitId": "32920",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 4,
+        "endpointName": "Switch",
+        "deviceType": "Switch",
+        "functions": [
+          {
+            "functionCode": "Output",
+            "traits": [
+              {
+                "traitCode": "OnOff",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "Output.OnOff",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "4.3.85",
+                  "path": "4.132.32920.1",
+                  "traitId": "32920",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 5,
+        "endpointName": "Switch",
+        "deviceType": "Switch",
+        "functions": [
+          {
+            "functionCode": "Output",
+            "traits": [
+              {
+                "traitCode": "OnOff",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "Output.OnOff",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "4.4.85",
+                  "path": "5.132.32920.1",
+                  "traitId": "32920",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 6,
+        "endpointName": "Button",
+        "deviceType": "Button",
+        "functions": [
+          {
+            "functionCode": "Button",
+            "traits": [
+              {
+                "traitCode": "ButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "SinglePress",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "pointName": "Button.ButtonEvent",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.5.85",
+                  "path": "6.135.32928.1",
+                  "traitId": "32928",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 7,
+        "endpointName": "Button",
+        "deviceType": "Button",
+        "functions": [
+          {
+            "functionCode": "Button",
+            "traits": [
+              {
+                "traitCode": "ButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "SinglePress",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "pointName": "Button.ButtonEvent",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.6.85",
+                  "path": "7.135.32928.1",
+                  "traitId": "32928",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 8,
+        "endpointName": "Button",
+        "deviceType": "Button",
+        "functions": [
+          {
+            "functionCode": "Button",
+            "traits": [
+              {
+                "traitCode": "ButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "SinglePress",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "pointName": "Button.ButtonEvent",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.7.85",
+                  "path": "8.135.32928.1",
+                  "traitId": "32928",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 9,
+        "endpointName": "Button",
+        "deviceType": "Button",
+        "functions": [
+          {
+            "functionCode": "Button",
+            "traits": [
+              {
+                "traitCode": "ButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "SinglePress",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "pointName": "Button.ButtonEvent",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.8.85",
+                  "path": "9.135.32928.1",
+                  "traitId": "32928",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 10,
+        "endpointName": "Button",
+        "deviceType": "Button",
+        "functions": [
+          {
+            "functionCode": "Button",
+            "traits": [
+              {
+                "traitCode": "ButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "SinglePress",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "pointName": "Button.ButtonEvent",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.9.85",
+                  "path": "10.135.32928.1",
+                  "traitId": "32928",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 11,
+        "endpointName": "Button",
+        "deviceType": "Button",
+        "functions": [
+          {
+            "functionCode": "Button",
+            "traits": [
+              {
+                "traitCode": "ButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "SinglePress",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "pointName": "Button.ButtonEvent",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.10.85",
+                  "path": "11.135.32928.1",
+                  "traitId": "32928",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.AG033",
+      "spu.AK145"
+    ],
+    "defaultSpuId": "spu.AG033"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.switch.acn032.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": null
+  },
+  "extensions": {}
+}

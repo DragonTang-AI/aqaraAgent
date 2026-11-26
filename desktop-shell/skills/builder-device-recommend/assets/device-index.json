@@ -1,0 +1,7156 @@
+{
+  "schemaVersion": "device-index-v1",
+  "source": "Aqara 设备库/categories",
+  "categoryCount": 33,
+  "modelCount": 344,
+  "categories": [
+    {
+      "categoryId": "151",
+      "name": {
+        "zh-CN": "人体传感器",
+        "en-US": "Motion Sensor"
+      },
+      "file": "assets/categories/cat_151.json",
+      "protocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 12,
+      "skuCount": 35,
+      "commonTraitCodes": [
+        "AttitudeDetected",
+        "CurrentHumidity",
+        "CurrentIlluminance",
+        "CurrentTemperature",
+        "CurrentVoltage",
+        "MotionDetected",
+        "Occupancy",
+        "OnBed",
+        "SleepQuality",
+        "SleepStage",
+        "SleepState",
+        "StateOfLowBat"
+      ]
+    },
+    {
+      "categoryId": "157",
+      "name": {
+        "zh-CN": "光照传感器",
+        "en-US": "Light sensor"
+      },
+      "file": "assets/categories/cat_157.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 3,
+      "skuCount": 3,
+      "commonTraitCodes": [
+        "CurrentIlluminance",
+        "CurrentVoltage",
+        "StateOfLowBat"
+      ]
+    },
+    {
+      "categoryId": "551",
+      "name": {
+        "zh-CN": "其他",
+        "en-US": "Other"
+      },
+      "file": "assets/categories/cat_551.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 1,
+      "skuCount": 3,
+      "commonTraitCodes": [
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "158",
+      "name": {
+        "zh-CN": "动静贴",
+        "en-US": "Vibration Sensor"
+      },
+      "file": "assets/categories/cat_158.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 3,
+      "skuCount": 10,
+      "commonTraitCodes": [
+        "ContactSensorState",
+        "CurrentVoltage",
+        "InitialTiltAngle",
+        "ObjectOrientationState",
+        "PeakTiltAngle",
+        "StateOfLowBat",
+        "StationaryState",
+        "StationaryTiltAngle",
+        "TiltAngleDeviation",
+        "VibrationEvent"
+      ]
+    },
+    {
+      "categoryId": "501",
+      "name": {
+        "zh-CN": "卫浴晾晒",
+        "en-US": "Bathroom Appliance"
+      },
+      "file": "assets/categories/cat_501.json",
+      "protocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 7,
+      "skuCount": 8,
+      "commonTraitCodes": [
+        "ColorTemperature",
+        "CurrentLevel",
+        "CurrentPositionPercentage",
+        "CurrentTemperature",
+        "FanMode",
+        "HeaterCoolerMode",
+        "OnOff",
+        "SetTemperature",
+        "TargetPositionPercentage"
+      ]
+    },
+    {
+      "categoryId": "504",
+      "name": {
+        "zh-CN": "宠物园艺",
+        "en-US": "Pet & Garden Supplies"
+      },
+      "file": "assets/categories/cat_504.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 1,
+      "skuCount": 0,
+      "commonTraitCodes": [
+        "Feed"
+      ]
+    },
+    {
+      "categoryId": "51",
+      "name": {
+        "zh-CN": "开关类",
+        "en-US": "Switch"
+      },
+      "file": "assets/categories/cat_51.json",
+      "protocols": [
+        "4g/5g",
+        "bluetooth",
+        "ethernet",
+        "matter",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 69,
+      "skuCount": 189,
+      "commonTraitCodes": [
+        "ButtonEvent",
+        "CurrentHumidity",
+        "CurrentPlaybackState",
+        "CurrentPower",
+        "CurrentTemperature",
+        "CurrentVoltage",
+        "Mute",
+        "OnOff",
+        "TargetPlaybackState",
+        "Volume"
+      ]
+    },
+    {
+      "categoryId": "53",
+      "name": {
+        "zh-CN": "控制模块",
+        "en-US": "Switch Module"
+      },
+      "file": "assets/categories/cat_53.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 8,
+      "skuCount": 8,
+      "commonTraitCodes": [
+        "CircuitCurrent",
+        "CurrentPower",
+        "CurrentVoltage",
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "52",
+      "name": {
+        "zh-CN": "插座/排插类",
+        "en-US": "Plug"
+      },
+      "file": "assets/categories/cat_52.json",
+      "protocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 19,
+      "skuCount": 27,
+      "commonTraitCodes": [
+        "CircuitCurrent",
+        "CurrentPower",
+        "CurrentVoltage",
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "251",
+      "name": {
+        "zh-CN": "摄像机类",
+        "en-US": "Camera"
+      },
+      "file": "assets/categories/cat_251.json",
+      "protocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 17,
+      "skuCount": 44,
+      "commonTraitCodes": [
+        "CameraActiveStatus",
+        "DoorState",
+        "LockState",
+        "Occupancy",
+        "P2PCaptureEnabled"
+      ]
+    },
+    {
+      "categoryId": "403",
+      "name": {
+        "zh-CN": "新风控制",
+        "en-US": "Fresh Air Control"
+      },
+      "file": "assets/categories/cat_403.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 1,
+      "skuCount": 1,
+      "commonTraitCodes": [
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "351",
+      "name": {
+        "zh-CN": "无线遥控类",
+        "en-US": "Remote Control"
+      },
+      "file": "assets/categories/cat_351.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 37,
+      "skuCount": 78,
+      "commonTraitCodes": [
+        "ButtonEvent",
+        "CubeEvent",
+        "CurrentVoltage",
+        "HoldRotationAngle",
+        "RotationAngle",
+        "RotationEvent",
+        "StateOfLowBat",
+        "TopFace",
+        "TopFaceChanged"
+      ]
+    },
+    {
+      "categoryId": "506",
+      "name": {
+        "zh-CN": "智能家具",
+        "en-US": "Smart Furniture"
+      },
+      "file": "assets/categories/cat_506.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 1,
+      "skuCount": 0,
+      "commonTraitCodes": []
+    },
+    {
+      "categoryId": "101",
+      "name": {
+        "zh-CN": "智能灯具",
+        "en-US": "Light"
+      },
+      "file": "assets/categories/cat_101.json",
+      "protocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "modelCount": 37,
+      "skuCount": 105,
+      "commonTraitCodes": [
+        "ColorTemperature",
+        "ColorXY",
+        "CurrentLevel",
+        "CurrentPower",
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "253",
+      "name": {
+        "zh-CN": "智能门铃类",
+        "en-US": "Doorbell"
+      },
+      "file": "assets/categories/cat_253.json",
+      "protocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 4,
+      "skuCount": 10,
+      "commonTraitCodes": [
+        "ButtonEvent",
+        "CameraActiveStatus",
+        "P2PCaptureEnabled",
+        "StateOfLowBat",
+        "Volume"
+      ]
+    },
+    {
+      "categoryId": "154",
+      "name": {
+        "zh-CN": "水浸传感器",
+        "en-US": "Water Leak Sensor"
+      },
+      "file": "assets/categories/cat_154.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 4,
+      "skuCount": 10,
+      "commonTraitCodes": [
+        "CurrentVoltage",
+        "LeakState",
+        "StateOfLowBat"
+      ]
+    },
+    {
+      "categoryId": "402",
+      "name": {
+        "zh-CN": "温控器",
+        "en-US": "Thermostat"
+      },
+      "file": "assets/categories/cat_402.json",
+      "protocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 12,
+      "skuCount": 17,
+      "commonTraitCodes": [
+        "CoolingTemperature",
+        "FanMode",
+        "HeaterCoolerMode",
+        "HeatingTemperature",
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "153",
+      "name": {
+        "zh-CN": "温湿度传感器",
+        "en-US": "Temperature and humidity sensor"
+      },
+      "file": "assets/categories/cat_153.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 4,
+      "skuCount": 12,
+      "commonTraitCodes": [
+        "CurrentHumidity",
+        "CurrentPressure",
+        "CurrentTemperature",
+        "CurrentVoltage",
+        "StateOfLowBat"
+      ]
+    },
+    {
+      "categoryId": "155",
+      "name": {
+        "zh-CN": "烟雾报警器",
+        "en-US": "Smoke Detector"
+      },
+      "file": "assets/categories/cat_155.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 3,
+      "skuCount": 6,
+      "commonTraitCodes": [
+        "CurrentVoltage",
+        "ExpressedState",
+        "Mute",
+        "SelfCheck",
+        "SmokeDensity",
+        "SmokeDensitydB",
+        "SmokeDetected",
+        "StateOfLowBat"
+      ]
+    },
+    {
+      "categoryId": "156",
+      "name": {
+        "zh-CN": "燃气报警器",
+        "en-US": "Gas Alarm"
+      },
+      "file": "assets/categories/cat_156.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 3,
+      "skuCount": 3,
+      "commonTraitCodes": [
+        "GasDensity",
+        "GasDetected",
+        "Mute",
+        "SelfCheck"
+      ]
+    },
+    {
+      "categoryId": "252",
+      "name": {
+        "zh-CN": "猫眼类",
+        "en-US": "Peephole Camera"
+      },
+      "file": "assets/categories/cat_252.json",
+      "protocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "modelCount": 1,
+      "skuCount": 1,
+      "commonTraitCodes": [
+        "CameraActiveStatus",
+        "DoorState",
+        "LockState",
+        "Occupancy"
+      ]
+    },
+    {
+      "categoryId": "451",
+      "name": {
+        "zh-CN": "睡眠监测带",
+        "en-US": "Sleep monitoring belt"
+      },
+      "file": "assets/categories/cat_451.json",
+      "protocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "modelCount": 1,
+      "skuCount": 4,
+      "commonTraitCodes": [
+        "OnBed",
+        "SleepQuality",
+        "SleepStage",
+        "SleepState"
+      ]
+    },
+    {
+      "categoryId": "159",
+      "name": {
+        "zh-CN": "空气健康检测仪",
+        "en-US": "Air Quality Sensor"
+      },
+      "file": "assets/categories/cat_159.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 2,
+      "skuCount": 4,
+      "commonTraitCodes": [
+        "CO2Density",
+        "CO2Level",
+        "CurrentHumidity",
+        "CurrentTemperature",
+        "CurrentVoltage",
+        "PM1.0Density",
+        "PM10Density",
+        "PM2.5Density",
+        "PM2.5Level",
+        "StateOfLowBat",
+        "VOCDensity",
+        "VOCQuality"
+      ]
+    },
+    {
+      "categoryId": "404",
+      "name": {
+        "zh-CN": "空调",
+        "en-US": "Air Conditioner"
+      },
+      "file": "assets/categories/cat_404.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 1,
+      "skuCount": 0,
+      "commonTraitCodes": [
+        "CoolingTemperature",
+        "CurrentTemperature",
+        "FanMode",
+        "FreshAirMode",
+        "HeaterCoolerMode",
+        "HeatingTemperature",
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "401",
+      "name": {
+        "zh-CN": "空调伴侣",
+        "en-US": "Air Conditioning Controller"
+      },
+      "file": "assets/categories/cat_401.json",
+      "protocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 4,
+      "skuCount": 6,
+      "commonTraitCodes": [
+        "CoolingTemperature",
+        "CurrentHumidity",
+        "CurrentPower",
+        "CurrentVoltage",
+        "FanMode",
+        "HeaterCoolerMode",
+        "HeatingTemperature",
+        "OnOff",
+        "RockSetting"
+      ]
+    },
+    {
+      "categoryId": "301",
+      "name": {
+        "zh-CN": "窗帘电机",
+        "en-US": "Curtain Controller"
+      },
+      "file": "assets/categories/cat_301.json",
+      "protocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 15,
+      "skuCount": 23,
+      "commonTraitCodes": [
+        "CurrentPositionPercentage",
+        "CurrentRotationAngle",
+        "MotorOperationStatus",
+        "TargetPositionPercentage",
+        "TargetRotationAngle"
+      ]
+    },
+    {
+      "categoryId": "302",
+      "name": {
+        "zh-CN": "管状电机",
+        "en-US": "Tubular Motor"
+      },
+      "file": "assets/categories/cat_302.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 3,
+      "skuCount": 8,
+      "commonTraitCodes": [
+        "CurrentPositionPercentage",
+        "MotorOperationStatus",
+        "TargetPositionPercentage"
+      ]
+    },
+    {
+      "categoryId": "1",
+      "name": {
+        "zh-CN": "网关中控",
+        "en-US": "Hub"
+      },
+      "file": "assets/categories/cat_1.json",
+      "protocols": [
+        "4g/5g",
+        "bluetooth",
+        "ethernet",
+        "matter",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 45,
+      "skuCount": 101,
+      "commonTraitCodes": [
+        "CoolingTemperature",
+        "CurrentHumidity",
+        "CurrentPower",
+        "CurrentVoltage",
+        "FanMode",
+        "HeaterCoolerMode",
+        "HeatingTemperature",
+        "OnOff",
+        "RockSetting"
+      ]
+    },
+    {
+      "categoryId": "552",
+      "name": {
+        "zh-CN": "网络设备",
+        "en-US": "Internet equipment"
+      },
+      "file": "assets/categories/cat_552.json",
+      "protocols": [
+        "ethernet",
+        "wifi"
+      ],
+      "modelCount": 1,
+      "skuCount": 1,
+      "commonTraitCodes": []
+    },
+    {
+      "categoryId": "102",
+      "name": {
+        "zh-CN": "调光模块",
+        "en-US": "Light Module"
+      },
+      "file": "assets/categories/cat_102.json",
+      "protocols": [
+        "zigbee"
+      ],
+      "modelCount": 21,
+      "skuCount": 15,
+      "commonTraitCodes": [
+        "CircuitCurrent",
+        "ColorRGB",
+        "ColorTemperature",
+        "ColorXY",
+        "CurrentLevel",
+        "CurrentPower",
+        "CurrentVoltage",
+        "OnOff"
+      ]
+    },
+    {
+      "categoryId": "152",
+      "name": {
+        "zh-CN": "门窗传感器",
+        "en-US": "Door and Window Sensor"
+      },
+      "file": "assets/categories/cat_152.json",
+      "protocols": [
+        "4g/5g",
+        "zigbee"
+      ],
+      "modelCount": 7,
+      "skuCount": 15,
+      "commonTraitCodes": [
+        "ContactSensorState",
+        "CurrentVoltage",
+        "InitialTiltAngle",
+        "ObjectOrientationState",
+        "PeakTiltAngle",
+        "StateOfLowBat",
+        "StationaryState",
+        "StationaryTiltAngle",
+        "TiltAngleDeviation",
+        "VibrationEvent"
+      ]
+    },
+    {
+      "categoryId": "303",
+      "name": {
+        "zh-CN": "门窗开合器",
+        "en-US": "Door and Window Opener"
+      },
+      "file": "assets/categories/cat_303.json",
+      "protocols": [
+        "wifi"
+      ],
+      "modelCount": 3,
+      "skuCount": 0,
+      "commonTraitCodes": []
+    },
+    {
+      "categoryId": "201",
+      "name": {
+        "zh-CN": "门锁类",
+        "en-US": "Door Lock"
+      },
+      "file": "assets/categories/cat_201.json",
+      "protocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "modelCount": 21,
+      "skuCount": 40,
+      "commonTraitCodes": [
+        "CameraActiveStatus",
+        "DoorState",
+        "EnableRemoteControl",
+        "LockState",
+        "Occupancy",
+        "RemoteUnlock",
+        "StateOfLowBat"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "model": "aqara.gateway.mdcn01",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "曼顿智能微断S3（网关）",
+        "en-US": "Manton Smart Micro-Breaker S3 (Hub)"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.controller.a4acn1",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "集悦智慧面板 S1",
+        "en-US": "Aqara MagicPad S1"
+      },
+      "deviceTypesList": [
+        "Speaker"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG015CNB01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.gateway.acn01",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关 M1S",
+        "en-US": "Hub M1S"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG013CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.acn012",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "方舟 智慧中枢 M3",
+        "en-US": "Hub M3"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG041CNB01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.agl001",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关 M2",
+        "en-US": "Hub M2"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG035EUB01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.gateway.agl002",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关 M1S Gen 2",
+        "en-US": "Hub M1S Gen 2"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG036EUW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.agl004",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "方舟 智慧中枢 M3（国际版）",
+        "en-US": "Hub M3"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG042GLB01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.agl008",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关 M100（国际版）",
+        "en-US": "Hub M100"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG046GLW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.agl010",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关 M100",
+        "en-US": "Hub M100"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG046CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.gateway.agl011",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关M200",
+        "en-US": "Hub M200"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG047CNB01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.gateway.agl012",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "智慧边端 M300",
+        "en-US": "Edge Hub M300"
+      },
+      "deviceTypesList": [
+        "Hub",
+        "AirConditioner",
+        "IRDevice"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG048CNB01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.agl013",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "白羊 配电箱网关 AX100M",
+        "en-US": "DIN Rail Hub AX100M"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG049CNB01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.gateway.agl020",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "Aqara智慧边端 GX300M",
+        "en-US": "Aqara Smart Edge Hub GX300M"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.gateway.agl021",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "Aqara智慧网关 AX200M",
+        "en-US": "Aqara Smart Hub AX200M"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG054CNB01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.gateway.aq1",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关",
+        "en-US": "Smart Hub"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.gateway.aqcn02",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关E1（青春版）",
+        "en-US": "Hub E1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG022CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.gateway.aqcn03",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "Hub E1",
+        "en-US": "Hub E1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG022GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.gateway.aqhm01",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关",
+        "en-US": "Hub"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG005CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.gateway.aqhm02",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关（海外版）",
+        "en-US": "Hub"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG006USW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.iragl5",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "网关 M2",
+        "en-US": "Hub M2"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG012CNB02",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.tvbox.hzfzs1",
+      "categoryId": "1",
+      "categoryFile": "assets/categories/cat_1.json",
+      "displayName": {
+        "zh-CN": "电视盒子（4G网关版）",
+        "en-US": "TV box (4G hub version)"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.abr01",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "宽电压LED灯泡（可调亮度）",
+        "en-US": "LED Light（Adjustable Brightness）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.acn003",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "Aqara 吸顶灯 L1-350",
+        "en-US": "Ceiling Light L1-350"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL018CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn006",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道灯 H1 Pro",
+        "en-US": "Track/rail Light H1 Pro"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB01",
+      "skuCount": 9
+    },
+    {
+      "model": "lumi.light.acn007",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道格栅灯 H1（6头）",
+        "en-US": "Smart Grille Light (6-Lamp)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB02",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn008",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道格栅灯 H1（12头）",
+        "en-US": "Smart Grille Light (12-Lamp)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB03",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn009",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道泛光灯 H1（30cm）",
+        "en-US": "Smart Light (30cm)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB04",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn010",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道泛光灯 H1（60cm）",
+        "en-US": "Smart Flood Light (60cm)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB05",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn011",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道吊线灯 H1",
+        "en-US": "Smart Pendant Light"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB06",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn012",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道折叠格栅灯 H1（6头）",
+        "en-US": "Smart Foldable Grille Light (6-Lamp)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB07",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn013",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道偏光灯 H1（22cm）",
+        "en-US": "Smart Magnetic Wall Washer Light（22cm）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL040CNB08",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn014",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED灯泡 T1（可调色温）",
+        "en-US": "LED Bulb T1 (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL039CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.light.acn015",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "Aqara光艺晴空灯 H1",
+        "en-US": "Light Art Skylight H1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL070CNL01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn023",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "射灯 T2（15度）",
+        "en-US": "Spotlight T2 (15°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL104CNB01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.light.acn024",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "射灯 T2（24度）",
+        "en-US": "Spotlight T2 (24°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL105CNB01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.light.acn025",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "射灯 T2（36度）",
+        "en-US": "Spotlight T2 (36°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL106CNB01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.light.acn026",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "筒灯 T2（60度）",
+        "en-US": "Downlight T2 (60°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL107CNB01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.light.acn033",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "星云H1/云熙D1S/云耀Z1S吸顶灯",
+        "en-US": "Nebula H1/Yunxi D1S/Yunyao Z1S Ceiling Light"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL188CNW01",
+      "skuCount": 9
+    },
+    {
+      "model": "lumi.light.acn036",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "射灯 V1",
+        "en-US": "Spotlight V1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL199CNW01",
+      "skuCount": 14
+    },
+    {
+      "model": "lumi.light.acn037",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "轨道灯 V1",
+        "en-US": "Track/Rail Light V1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL206CNG01",
+      "skuCount": 10
+    },
+    {
+      "model": "lumi.light.acn040",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "筒射灯 T2 Pro",
+        "en-US": "Downlight T2 Pro"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL241CNW01",
+      "skuCount": 13
+    },
+    {
+      "model": "lumi.light.acn041",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "万象天镜 吸顶灯 V1",
+        "en-US": "Universal Sky Mirror Ceiling Light V1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL243CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.light.acn132",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "流光溢彩灯带 T1",
+        "en-US": "LED Strip T1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL117CNW01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.light.agl001",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E26, RGB CCT)",
+        "en-US": "LED Bulb T2 (E26, RGB CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL228USW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.agl002",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E26, CCT)",
+        "en-US": "LED Bulb T2 (E26, CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL228USW02",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.agl003",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E27, RGB CCT)",
+        "en-US": "LED Bulb T2 (E27, RGB CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.agl004",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E27, CCT)",
+        "en-US": "LED Bulb T2 (E27, CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.agl005",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (GU10, RGB CCT)",
+        "en-US": "LED Bulb T2 (GU10, RGB CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.agl006",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (GU10, CCT)",
+        "en-US": "LED Bulb T2 (GU10, CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.agl007",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "双色温驱动器 T3",
+        "en-US": "Dual Color Temperature Driver T3"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.aqcn02",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "LED灯泡（可调色温）",
+        "en-US": "LED Light Bulb (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL002CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.light.cwjwcn01",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "射灯（可调色温）",
+        "en-US": "Spot Light（Adjustable Color Temperature）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XL001GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.cwjwcn02",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "筒灯（可调色温）",
+        "en-US": "Down Light（Adjustable Color Temperature）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XL003GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.cwopcn01",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "吸顶灯MX960（可调色温）",
+        "en-US": "Ceiling light MX960 (adjustable color temperature)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XL004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.cwopcn02",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "吸顶灯MX650（可调色温）",
+        "en-US": "Ceiling light MX650 (adjustable color temperature)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XL005CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.light.cwopcn03",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "吸顶灯MX480（可调色温）",
+        "en-US": "Ceiling light MX480 (adjustable color temperature)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.wjwcn01",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "射灯（可调亮度）",
+        "en-US": "Spot Light（Adjustable Brightness）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XL002GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "x2.lumi.light.acn128",
+      "categoryId": "101",
+      "categoryFile": "assets/categories/cat_101.json",
+      "displayName": {
+        "zh-CN": "筒射灯 T2 Lite",
+        "en-US": "Downlight T2 Lite"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_ct.es1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（双色温）",
+        "en-US": "Dimmer (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK011CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_dimmer3.es1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（三通道）",
+        "en-US": "Dimmer (3 Channels)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK009CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_dimmer3.v1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（三通道）",
+        "en-US": "Dimmer (3 Channels)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_rgb.aq1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（RGB）",
+        "en-US": "Dimmer (Multicolor)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_rgb.es1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（RGB）",
+        "en-US": "Dimmer (Multicolor)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK010CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.dimmer.acn001",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "双色温驱动器 T2",
+        "en-US": "Smart Constant Current Driver T2"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL180CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.dimmer.acn002",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "双色温驱动器 T2 (24W)",
+        "en-US": "Smart Constant Current Driver T2 (24W)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL181CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.dimmer.c3egl01",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（三通道）",
+        "en-US": "Dimmer (3 Channels)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.dimmer.cwegl01",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（双色温）",
+        "en-US": "Dimmer (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.dimmer.rcbac1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara智能灯带驱动模块",
+        "en-US": "Aqara Smart Lightstrip Driver"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AX033KRW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.dimmer.rgbegl01",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "调光控制器（RGB）",
+        "en-US": "Dimmer (Multicolor)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.acn004",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara 双色温驱动器 T1 Pro",
+        "en-US": "Aqara Smart Dimmer Controller T1 Pro"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.light.acn049",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara双色温驱动器 PR100L（24W）",
+        "en-US": "Aqara Tunable White Driver PR100L (24W)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL247CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn050",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara智能调光模块 PR100L（0-10V）",
+        "en-US": "Aqara Smart Dimmer Controller PR100L (0-10V)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL248CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.acn051",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara智能灯带驱动模块 PR100L",
+        "en-US": "Aqara Smart Lightstrip Driver PR100L"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL249CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.cbacn1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara 智能恒流驱动器 T1-1",
+        "en-US": "Aqara Constant Current Driver T1-1)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.cbacn2",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara 智能恒流驱动器 T1-2",
+        "en-US": "Aqara Constant Current Driver T1-2)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.light.cwacn1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara智能调光模块T1（0-10v）",
+        "en-US": "Aqara Smart Dimmer Controller T1（0-10V）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AL005CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.light.rgbac1",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "Aqara智能调光模块 T1",
+        "en-US": "Aqara Smart Dimmer Controller T1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AU004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.agl007",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "美标调光开关 H2",
+        "en-US": "Dimmer Switch H2 US"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.agl011",
+      "categoryId": "102",
+      "categoryFile": "assets/categories/cat_102.json",
+      "displayName": {
+        "zh-CN": "欧标调光旋钮",
+        "en-US": "Dimmer Switch H2 EU"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.motion.ac02",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "人体传感器 P1",
+        "en-US": "Motion Sensor P1"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS038CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.motion.acn001",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "人体传感器E1",
+        "en-US": "Motion Sensor E1"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS045CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.motion.acn004",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "Aqara人体传感器 PR110P",
+        "en-US": "Aqara Motion Sensor PR110P"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS082CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.motion.acn005",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "Aqara高精度人体传感器 PR120P",
+        "en-US": "Aqara High Precision Motion Sensor PR120P"
+      },
+      "deviceTypesList": [
+        "MotionSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS083CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.motion.acn006",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "Aqara AI智能存在传感器 PR130P",
+        "en-US": "Aqara AI Smart Presence Sensor PR130P"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "LocationSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS084CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.motion.agl001",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "人体场景传感器 FP2",
+        "en-US": "Presence Sensor FP2"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "HeartMonitor",
+        "SleepMonitor",
+        "BreathingMonitor",
+        "AttitudeDetector",
+        "IlluminanceSensor",
+        "LocationSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AS059CNW01",
+      "skuCount": 8
+    },
+    {
+      "model": "lumi.motion.agl02",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "人体传感器T1",
+        "en-US": "Motion Sensor T1"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS011CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.motion.agl04",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "高精度人体传感器",
+        "en-US": "High Precision Motion Sensor"
+      },
+      "deviceTypesList": [
+        "MotionSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS017GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_motion.aq2",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "人体传感器",
+        "en-US": "Motion Sensor"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS002CNW01",
+      "skuCount": 8
+    },
+    {
+      "model": "lumi.sensor_occupy.acn1",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "AI 多维人在传感器 FP310",
+        "en-US": "Presence Multi-Sensor FP310"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "IlluminanceSensor",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_occupy.agl1",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "AI智能存在传感器 FP1E",
+        "en-US": "Presence Sensor FP1E"
+      },
+      "deviceTypesList": [
+        "OccupancySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS074CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.sensor_occupy.agl8",
+      "categoryId": "151",
+      "categoryFile": "assets/categories/cat_151.json",
+      "displayName": {
+        "zh-CN": "AI 多维人在传感器FP300",
+        "en-US": "Presence Multi-Sensor FP300"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "IlluminanceSensor",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.magnet.ac01",
+      "categoryId": "152",
+      "categoryFile": "assets/categories/cat_152.json",
+      "displayName": {
+        "zh-CN": "门窗传感器 P1",
+        "en-US": "Door and Window Sensor P1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS039CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.magnet.acn001",
+      "categoryId": "152",
+      "categoryFile": "assets/categories/cat_152.json",
+      "displayName": {
+        "zh-CN": "门窗传感器E1",
+        "en-US": "Door and Window Sensor E1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS043CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.magnet.acn002",
+      "categoryId": "152",
+      "categoryFile": "assets/categories/cat_152.json",
+      "displayName": {
+        "zh-CN": "门窗传感器 NB-IOT版",
+        "en-US": "Door and Window Sensor NB-IOT Edition"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "4g/5g"
+      ],
+      "representativeSkuId": "sku.AS047CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.magnet.acn006",
+      "categoryId": "152",
+      "categoryFile": "assets/categories/cat_152.json",
+      "displayName": {
+        "zh-CN": "Aqara门窗传感器 PR150P",
+        "en-US": "Door and Window Sensor T1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS086CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.magnet.agl02",
+      "categoryId": "152",
+      "categoryFile": "assets/categories/cat_152.json",
+      "displayName": {
+        "zh-CN": "门窗传感器T1",
+        "en-US": "Door and Window Sensor T1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS012CNW01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.sensor_magnet.aq2",
+      "categoryId": "152",
+      "categoryFile": "assets/categories/cat_152.json",
+      "displayName": {
+        "zh-CN": "门窗传感器",
+        "en-US": "Door and Window Sensor"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS001CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.sensor_ht.acn001",
+      "categoryId": "153",
+      "categoryFile": "assets/categories/cat_153.json",
+      "displayName": {
+        "zh-CN": "Aqara温湿度传感器 PR140P",
+        "en-US": "Aqara Temperature and Humidity Sensor PR140P"
+      },
+      "deviceTypesList": [
+        "AtmosphericPressureSensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS085CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_ht.agl001",
+      "categoryId": "153",
+      "categoryFile": "assets/categories/cat_153.json",
+      "displayName": {
+        "zh-CN": "温控伴侣W100",
+        "en-US": "Climate Sensor W100"
+      },
+      "deviceTypesList": [
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_ht.agl02",
+      "categoryId": "153",
+      "categoryFile": "assets/categories/cat_153.json",
+      "displayName": {
+        "zh-CN": "温湿度传感器T1",
+        "en-US": "Temperature and Humidity Sensor T1"
+      },
+      "deviceTypesList": [
+        "AtmosphericPressureSensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS013CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.weather.v1",
+      "categoryId": "153",
+      "categoryFile": "assets/categories/cat_153.json",
+      "displayName": {
+        "zh-CN": "温湿度传感器",
+        "en-US": "Temperature and Humidity Sensor"
+      },
+      "deviceTypesList": [
+        "AtmosphericPressureSensor",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS003CNW01",
+      "skuCount": 7
+    },
+    {
+      "model": "lumi.flood.acn001",
+      "categoryId": "154",
+      "categoryFile": "assets/categories/cat_154.json",
+      "displayName": {
+        "zh-CN": "水浸传感器E1",
+        "en-US": "Water Leak Sensor E1"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS044CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.flood.acn003",
+      "categoryId": "154",
+      "categoryFile": "assets/categories/cat_154.json",
+      "displayName": {
+        "zh-CN": "Aqara水浸传感器 PR160P",
+        "en-US": "Aqara Water Leak Sensor PR160P"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS087CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.flood.agl02",
+      "categoryId": "154",
+      "categoryFile": "assets/categories/cat_154.json",
+      "displayName": {
+        "zh-CN": "水浸传感器T1",
+        "en-US": "Water Leak Sensor T1"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS014CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_wleak.aq1",
+      "categoryId": "154",
+      "categoryFile": "assets/categories/cat_154.json",
+      "displayName": {
+        "zh-CN": "水浸传感器",
+        "en-US": "Water Leak Sensor"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS005CNW01",
+      "skuCount": 7
+    },
+    {
+      "model": "lumi.sensor_smoke.acn02",
+      "categoryId": "155",
+      "categoryFile": "assets/categories/cat_155.json",
+      "displayName": {
+        "zh-CN": "烟雾报警器",
+        "en-US": "Smoke Detector"
+      },
+      "deviceTypesList": [
+        "SmokeAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.MS005CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_smoke.acn03",
+      "categoryId": "155",
+      "categoryFile": "assets/categories/cat_155.json",
+      "displayName": {
+        "zh-CN": "Aqara烟雾报警器",
+        "en-US": "Smoke Detector"
+      },
+      "deviceTypesList": [
+        "SmokeAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS018CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.sensor_smoke.acn06",
+      "categoryId": "155",
+      "categoryFile": "assets/categories/cat_155.json",
+      "displayName": {
+        "zh-CN": "烟雾报警器 P100",
+        "en-US": "Smoke Alarm P100"
+      },
+      "deviceTypesList": [
+        "SmokeAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_gas.acn01",
+      "categoryId": "156",
+      "categoryFile": "assets/categories/cat_156.json",
+      "displayName": {
+        "zh-CN": "天然气报警器",
+        "en-US": "Smart Natural Gas Detector"
+      },
+      "deviceTypesList": [
+        "NaturalGasAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_gas.acn02",
+      "categoryId": "156",
+      "categoryFile": "assets/categories/cat_156.json",
+      "displayName": {
+        "zh-CN": "Aqara天然气报警器",
+        "en-US": "Smart Natural Gas Detector"
+      },
+      "deviceTypesList": [
+        "NaturalGasAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS019CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.sensor_natgas.v1",
+      "categoryId": "156",
+      "categoryFile": "assets/categories/cat_156.json",
+      "displayName": {
+        "zh-CN": "天然气报警器",
+        "en-US": "Smart Natural Gas Detector"
+      },
+      "deviceTypesList": [
+        "NaturalGasAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.MS004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sen_ill.acn003",
+      "categoryId": "157",
+      "categoryFile": "assets/categories/cat_157.json",
+      "displayName": {
+        "zh-CN": "Aqara光照传感器 PR180P",
+        "en-US": "Aqara Light Sensor PR180P"
+      },
+      "deviceTypesList": [
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS089CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sen_ill.agl01",
+      "categoryId": "157",
+      "categoryFile": "assets/categories/cat_157.json",
+      "displayName": {
+        "zh-CN": "光照传感器 T1",
+        "en-US": "Light Detection Sensor T1"
+      },
+      "deviceTypesList": [
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS015GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sen_ill.mgl01",
+      "categoryId": "157",
+      "categoryFile": "assets/categories/cat_157.json",
+      "displayName": {
+        "zh-CN": "米家光照传感器",
+        "en-US": "Light Detection Sensor"
+      },
+      "deviceTypesList": [
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.MS009CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.vibration.agl002",
+      "categoryId": "158",
+      "categoryFile": "assets/categories/cat_158.json",
+      "displayName": {
+        "zh-CN": "AI 多维状态传感器 P100",
+        "en-US": "Multi-State Sensor P100"
+      },
+      "deviceTypesList": [
+        "VibrationSensor",
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.vibration.agl01",
+      "categoryId": "158",
+      "categoryFile": "assets/categories/cat_158.json",
+      "displayName": {
+        "zh-CN": "动静贴T1",
+        "en-US": "Vibration Sensor T1"
+      },
+      "deviceTypesList": [
+        "VibrationSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS025CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.vibration.aq1",
+      "categoryId": "158",
+      "categoryFile": "assets/categories/cat_158.json",
+      "displayName": {
+        "zh-CN": "动静贴",
+        "en-US": "Vibration Sensor"
+      },
+      "deviceTypesList": [
+        "VibrationSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS004CNW01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.airm.fhac01",
+      "categoryId": "159",
+      "categoryFile": "assets/categories/cat_159.json",
+      "displayName": {
+        "zh-CN": "空气监测面板S1",
+        "en-US": "Aqara Air Quality Monitor S1"
+      },
+      "deviceTypesList": [
+        "ParticulateMatterSensor",
+        "CO2Sensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS040CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.airmonitor.acn01",
+      "categoryId": "159",
+      "categoryFile": "assets/categories/cat_159.json",
+      "displayName": {
+        "zh-CN": "TVOC空气健康伴侣",
+        "en-US": "TVOC Air Quality Monitor"
+      },
+      "deviceTypesList": [
+        "TVOCSensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS029GLW01",
+      "skuCount": 2
+    },
+    {
+      "model": "aqara.lock.acn001",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 A100 Pro",
+        "en-US": "Smart Lock A100 Pro"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.ED002CNB03",
+      "skuCount": 2
+    },
+    {
+      "model": "aqara.lock.acn004",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "人脸识别智能门锁D200",
+        "en-US": "Aqara Smart Door Lock D200"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD022CNB01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.acn008",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁N200",
+        "en-US": "Smart Door Lock N200 Zigbee"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.lock.acn10",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 U100",
+        "en-US": "Smart Door Lock U100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD028KRB01",
+      "skuCount": 3
+    },
+    {
+      "model": "aqara.lock.agl002",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁A100（国际版）",
+        "en-US": "Smart door lock A100 (International version)"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.ED002GLB01",
+      "skuCount": 3
+    },
+    {
+      "model": "aqara.lock.akr001",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 L100",
+        "en-US": "Smart Door Lock L100"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD060KRB01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.akr011",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 K100",
+        "en-US": "Smart Door Lock K100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD033KRW01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.akr012",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 L100 SE",
+        "en-US": "Smart Lock L100 SE"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.lock.aqcn01",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁X10",
+        "en-US": "Smart Door Lock X10"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.ED002CNG03",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.aqgl01",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "全自动智能门锁 D100（国际版）",
+        "en-US": "Smart Automatic Door Lock D100 (International Version)"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD012GLB01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.aus001",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 U50",
+        "en-US": "Smart Door Lock U50"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD045USB02",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.bzacn3",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁N100 Zigbee版",
+        "en-US": "Smart Door Lock N100 Zigbee Edition"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "representativeSkuId": "sku.AD006CNB02",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.lock.bzacn4",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁N100 Zigbee版",
+        "en-US": "Smart Door Lock N100 Zigbee Edition"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD006CNB03",
+      "skuCount": 7
+    },
+    {
+      "model": "aqara.lock.dacn03",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "全自动智能猫眼锁 H100",
+        "en-US": "Smart Peephole Door Lock H100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD019CNB01",
+      "skuCount": 2
+    },
+    {
+      "model": "aqara.lock.eicn03",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 J1",
+        "en-US": "Smart Lock J1"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.lock.wbzac1",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能摄像头门锁P100",
+        "en-US": "Smart Door Lock P100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD010CNG01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.lock.acn02",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁S2",
+        "en-US": "Smart Door Lock S2"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD002CNB01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.lock.acn03",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁S2 Pro",
+        "en-US": "Smart Door Lock S2 Pro"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD003CNB01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.lock.acn04",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁HL",
+        "en-US": "Smart Door Lock HL"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AD005CNB01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.lock.aus001",
+      "categoryId": "201",
+      "categoryFile": "assets/categories/cat_201.json",
+      "displayName": {
+        "zh-CN": "智能门锁 B50",
+        "en-US": "Smart Door Lock B50"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AD063USB01",
+      "skuCount": 2
+    },
+    {
+      "model": "aqara.camera.acn003",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能半球摄像机 T1",
+        "en-US": "Smart Dome Camera T1"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "MotionSensor",
+        "HumanDetector"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.EC013CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.camera.acn003",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H Pro（网关版）",
+        "en-US": "Camera Hub G2H Pro"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC009CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.camera.acn006",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机 E1（国际版）",
+        "en-US": "Camera E1"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AC016GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.camera.acn007",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机 E1",
+        "en-US": "Camera E1"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AC017CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.camera.acn009",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G5 Pro（PoE网关版）",
+        "en-US": "Camera Hub G5 (PoE)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC019CNG01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.acn010",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "Camera Hub G5 Pro (PoE)",
+        "en-US": "Camera Hub G5 Pro (PoE)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC019GLG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.camera.acn016",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机 G100",
+        "en-US": "Camera G100"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": "sku.AC028CNB01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.agl001",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H Pro(国际版)",
+        "en-US": "Camera Hub G2H Pro"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC009FRW01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.camera.agl003",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G5 Pro（Wi-Fi网关版）",
+        "en-US": "Camera Hub G5 Pro (Wi-Fi)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC027CNG01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.agl004",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "Camera Hub G5 Pro (Wi-Fi)",
+        "en-US": "Camera Hub G5 Pro (Wi-Fi)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC027GLG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.camera.agl005",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "Camera G100",
+        "en-US": "Camera G100"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": "sku.AC028GLB01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.camera.agl010",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G350（网关版）",
+        "en-US": "Camera Hub G350"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC031CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.camera.gwag03",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H (国际版)",
+        "en-US": "Camera Hub G2H"
+      },
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC004EUW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.camera.gwagl02",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H (网关版)",
+        "en-US": "Camera Hub G2H"
+      },
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": "sku.AC004CNL01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.camera.gwpagl01",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G3（网关版）",
+        "en-US": "Camera Hub G3"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "SoundSensor",
+        "HumanDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC005CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.gwpgl1",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能摄像机G3（国际版）",
+        "en-US": "Camera Hub G3"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC005EUW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.lock.acn006",
+      "categoryId": "251",
+      "categoryFile": "assets/categories/cat_251.json",
+      "displayName": {
+        "zh-CN": "智能门 V100",
+        "en-US": "Smart Door V100"
+      },
+      "deviceTypesList": [
+        "DoorLock",
+        "HumanDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AD026CNG01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.camera.acn005",
+      "categoryId": "253",
+      "categoryFile": "assets/categories/cat_253.json",
+      "displayName": {
+        "zh-CN": "智能可视门铃G4",
+        "en-US": "Doorbell G4"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AC008CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.acn017",
+      "categoryId": "253",
+      "categoryFile": "assets/categories/cat_253.json",
+      "displayName": {
+        "zh-CN": "智能可视门铃G410（网关版）",
+        "en-US": "Doorbell Camera Hub G410"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC029CNG01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.agl002",
+      "categoryId": "253",
+      "categoryFile": "assets/categories/cat_253.json",
+      "displayName": {
+        "zh-CN": "智能可视门铃G4（国际版）",
+        "en-US": "Doorbell G4"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AC015GLB01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.camera.agl006",
+      "categoryId": "253",
+      "categoryFile": "assets/categories/cat_253.json",
+      "displayName": {
+        "zh-CN": "智能可视门铃G410（网关版）",
+        "en-US": "Doorbell Camera Hub G410"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AC029GLB01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.curtain.acn003",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "智能窗帘伴侣E1",
+        "en-US": "Aqara Curtain Driver E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM024CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.curtain.acn004",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "智能窗帘电机 X1",
+        "en-US": "Curtain Controller X1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM026CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.acn007",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 T1",
+        "en-US": "Aqara Curtain Motor T1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM027CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.curtain.acn010",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "风琴 智能窗帘电机 C4",
+        "en-US": "Organ smart Curtain Controller C4"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM058CNJ01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.acn011",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara智能梦幻帘电机 H1",
+        "en-US": "Aqara Smart Vertical Blinds Controller H1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM035CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.acn014",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 E1",
+        "en-US": "Aqara Smart Curtain Controller E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.curtain.acn015",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 T2",
+        "en-US": "Aqara Smart Curtain Controller T2"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM057CNWO1",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.acn018",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara 智能隐形窗帘电机 C200",
+        "en-US": "Curtain Controller C200"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM058CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.acn04",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 C3",
+        "en-US": "Smart Curtain Controller C3"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM044CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.curtain.agl001",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "智能窗帘伴侣E1（国际版）",
+        "en-US": "Curtain Driver E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM025GLW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.curtain.hagl06",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "智能窗帘电机 B1S",
+        "en-US": "Curtain Controller B1S"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM010CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.hagl08",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机A1",
+        "en-US": "Aqara Curtain Controller A1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AM018CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.jcn001",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "京鱼座智能窗帘电机L版-开合帘版",
+        "en-US": "Curtain Controller L"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XM004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.curtain.v1",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "智能窗帘电机 (Zigbee开合帘版)",
+        "en-US": "Curtain Controller"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM001CNS01",
+      "skuCount": 7
+    },
+    {
+      "model": "lumi.switch.aeu003",
+      "categoryId": "301",
+      "categoryFile": "assets/categories/cat_301.json",
+      "displayName": {
+        "zh-CN": "欧标卷帘开关",
+        "en-US": "Shutter Switch H2 EU"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.curtain.acn002",
+      "categoryId": "302",
+      "categoryFile": "assets/categories/cat_302.json",
+      "displayName": {
+        "zh-CN": "智能卷帘伴侣 E1",
+        "en-US": "Roller Shade Driver E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM023CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.curtain.aq2",
+      "categoryId": "302",
+      "categoryFile": "assets/categories/cat_302.json",
+      "displayName": {
+        "zh-CN": "智能管状电机",
+        "en-US": "Roller Shade Controller"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM003CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.curtain.vagl02",
+      "categoryId": "302",
+      "categoryFile": "assets/categories/cat_302.json",
+      "displayName": {
+        "zh-CN": "智能管状电机 T1",
+        "en-US": "Roller Shade Controller T1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM015CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "aqara.wopener.hocn01",
+      "categoryId": "303",
+      "categoryFile": "assets/categories/cat_303.json",
+      "displayName": {
+        "zh-CN": "HOPO悬挂外开窗",
+        "en-US": "Hopo Hanging Outward Opening Window"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.wopener.hocn02",
+      "categoryId": "303",
+      "categoryFile": "assets/categories/cat_303.json",
+      "displayName": {
+        "zh-CN": "HOPO外平开窗",
+        "en-US": "Hopo External Casement Window"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.wopener.hocn04",
+      "categoryId": "303",
+      "categoryFile": "assets/categories/cat_303.json",
+      "displayName": {
+        "zh-CN": "HOPO内开内倒窗",
+        "en-US": "Hopo Inward Opening And Turning Windows"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.remote.acn003",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关 E1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch E1 (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR014CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.acn004",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关E1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch E1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR015CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.acn007",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关E1",
+        "en-US": "Wireless Mini Switch E1"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR019CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.acn008",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关 H1M（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch H1M(Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK093CNG01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.acn009",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关 H1M（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch H1M (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK094CNG01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.acn010",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "蓝牙语音控制器",
+        "en-US": "Bluetooth Voice Controller"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.remote.b186acn01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK011CNW01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.remote.b186acn02",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关D1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch D1 (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR004CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.remote.b186acn03",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关T1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch T1 (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR002CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.remote.b18ac1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关H1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch H1(Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR009CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.remote.b1acn01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK010CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.remote.b1acn02",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关T1",
+        "en-US": "Wireless Mini Switch T1"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR001CNW01",
+      "skuCount": 11
+    },
+    {
+      "model": "lumi.remote.b286acn01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK012CNW01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.remote.b286acn02",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关D1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch D1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR005CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.remote.b286acn03",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关T1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch T1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR003CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.remote.b286opcn01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线场景开关（双键版）",
+        "en-US": "Wireless Scene Switch (Two Button Edition)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XK002CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.b28ac1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关H1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch H1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR009CNG02",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.remote.b486opcn01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线场景开关（四键版）",
+        "en-US": "Wireless Scene Switch (Four Button Edition)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XK003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.b686opcn01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线场景开关（六键版）",
+        "en-US": "Wireless Scene Switch (Six Button Edition)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.XK004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.cagl01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "魔方控制器T1",
+        "en-US": "Cube T1"
+      },
+      "deviceTypesList": [
+        "Cube",
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR007CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.remote.cagl02",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "魔方控制器 T1 Pro",
+        "en-US": "Cube T1 Pro"
+      },
+      "deviceTypesList": [
+        "Cube",
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR013CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.remote.rkba01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "智能旋钮开关 H1（无线版）",
+        "en-US": "Wireless Smart Knob H1"
+      },
+      "deviceTypesList": [
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR008CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.sensor_86sw1.aq1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_86sw1.es1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_86sw1.v1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_86sw2.aq1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_86sw2.es1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_86sw2.v1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK004CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_cube.aqgl01",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "魔方控制器",
+        "en-US": "Cube"
+      },
+      "deviceTypesList": [
+        "Cube"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK009CNW01",
+      "skuCount": 7
+    },
+    {
+      "model": "lumi.sensor_cube.es1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "魔方控制器",
+        "en-US": "Cube"
+      },
+      "deviceTypesList": [
+        "Cube"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_cube.v1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "魔方控制器",
+        "en-US": "Cube"
+      },
+      "deviceTypesList": [
+        "Cube",
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_switch.aq2",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK001CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_switch.aq3",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（升级版）",
+        "en-US": "Wireless Mini Switch (Advanced)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK002CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.sensor_switch.es2",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK001CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_switch.es3",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关（升级版）",
+        "en-US": "Wireless Mini Switch (Advanced)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK002CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.sensor_switch.v1",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.sensor_switch.v2",
+      "categoryId": "351",
+      "categoryFile": "assets/categories/cat_351.json",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.MK001CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.acpartner.acn002",
+      "categoryId": "401",
+      "categoryFile": "assets/categories/cat_401.json",
+      "displayName": {
+        "zh-CN": "Aqara空调伴侣 AR300W",
+        "en-US": "Aqara Air Conditioning Controller AR300W"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "IRDevice",
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AT025CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.acpartner.aq1",
+      "categoryId": "401",
+      "categoryFile": "assets/categories/cat_401.json",
+      "displayName": {
+        "zh-CN": "空调伴侣（B端专供）",
+        "en-US": "Air conditioning Companion (B-end Exclusive Supply)"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AA001CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.acpartner.v3",
+      "categoryId": "401",
+      "categoryFile": "assets/categories/cat_401.json",
+      "displayName": {
+        "zh-CN": "空调伴侣（升级版）",
+        "en-US": "Air Conditioning Controller (Advanced)"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA002CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.aircondition.acn05",
+      "categoryId": "401",
+      "categoryFile": "assets/categories/cat_401.json",
+      "displayName": {
+        "zh-CN": "空调伴侣 P3",
+        "en-US": "Air Conditioning Controller P3"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "IRDevice",
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA003CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "aqara.airrtc.acn011",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "Aqara VRF控制器 PR100W",
+        "en-US": "Aqara VRF Controller PR100W"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "Ventilation",
+        "FloorHeating"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA024CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.airrtc.acn002",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "智能温控器W400 (氟机版)",
+        "en-US": "Thermostat W400 (VRF)"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "FloorHeating",
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA012CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.airrtc.acn003",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "智能温控器W400 (水机版)",
+        "en-US": "Thermostat W400 (FCU)"
+      },
+      "deviceTypesList": [
+        "FloorHeating",
+        "AirConditioner",
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA013CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.airrtc.acn012",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "Aqara智能温控器 PR200W",
+        "en-US": "Aqara Smart Thermostat PR200W"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA026CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.airrtc.aus002",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "美标温控器网关W200",
+        "en-US": "Thermostat Hub W200"
+      },
+      "deviceTypesList": [
+        "Thermostat",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AA015USB01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.airrtc.tcpco2ecn01",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "空调温控器（CO2）",
+        "en-US": "Thermostat (CO2)"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "CO2Sensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EA005CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.airrtc.tcpecn01",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.airrtc.tcpecn02",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "空调温控器 S2",
+        "en-US": "Thermostat S2"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EA006CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.airrtc.vrfegl01",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "VRF空调控制器",
+        "en-US": "VRF Air Conditioning Controller"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EA003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_hvac.aq1",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_hvac.es1",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EA002CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_hvac.v1",
+      "categoryId": "402",
+      "categoryFile": "assets/categories/cat_402.json",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.vent.eicn01",
+      "categoryId": "403",
+      "categoryFile": "assets/categories/cat_403.json",
+      "displayName": {
+        "zh-CN": "新风控制器",
+        "en-US": "Fresh air controller"
+      },
+      "deviceTypesList": [
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EA009CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.airrtc.acn02",
+      "categoryId": "404",
+      "categoryFile": "assets/categories/cat_404.json",
+      "displayName": {
+        "zh-CN": "温控伴侣 T1（室内机）",
+        "en-US": "Temperature control mate T1 (indoor unit)"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.lunar.acn01",
+      "categoryId": "451",
+      "categoryFile": "assets/categories/cat_451.json",
+      "displayName": {
+        "zh-CN": "Aqara智能睡眠监测带",
+        "en-US": "Aqara Sleeping Belt"
+      },
+      "deviceTypesList": [
+        "SleepMonitor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AS030CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "aqara.toilet.acn001",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "Aqara智能马桶H1",
+        "en-US": "Smart Toilet H1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AX017CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "aqara.toilet.ccn01",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "西马智能马桶盖W1",
+        "en-US": "Smart Toilet W1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "representativeSkuId": "sku.XX002CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.tow_w.acn001",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "智能毛巾架 H1",
+        "en-US": "Smart Towel Warmer H1"
+      },
+      "deviceTypesList": [
+        "TowelRack"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.airer.acn001",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "智能晾衣机H1",
+        "en-US": "Aqara Smart Clothes Drying Rack H1"
+      },
+      "deviceTypesList": [
+        "Light",
+        "ClotheDryingMachine"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM030CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.airer.acn005",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "云隐 智能晾衣机C100",
+        "en-US": "Smart Drying Rack C100"
+      },
+      "deviceTypesList": [
+        "Light",
+        "ClotheDryingMachine"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM068CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.bhf_light.acn001",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "Aqara智能浴霸 T1",
+        "en-US": "Aqara Intelligent Bathroom Heater T1"
+      },
+      "deviceTypesList": [
+        "Light",
+        "BathroomHeater"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AX021CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.mirror.acn001",
+      "categoryId": "501",
+      "categoryFile": "assets/categories/cat_501.json",
+      "displayName": {
+        "zh-CN": "浴室镜 H1",
+        "en-US": "Aqara Smart Bathroom Mirror H1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AM034CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "aqara.feeder.acn001",
+      "categoryId": "504",
+      "categoryFile": "assets/categories/cat_504.json",
+      "displayName": {
+        "zh-CN": "智能宠物喂食器C1",
+        "en-US": "Smart Pet Feeder C1"
+      },
+      "deviceTypesList": [
+        "PetFeeder"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "aqara.bed.hhcn03",
+      "categoryId": "506",
+      "categoryFile": "assets/categories/cat_506.json",
+      "displayName": {
+        "zh-CN": "智能电动床W1",
+        "en-US": "Smart Bed W1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.controller.acn002",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Pro",
+        "en-US": "MagicPad S1 Pro"
+      },
+      "deviceTypesList": [
+        "Speaker"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AG030CNG01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_ln1.aq1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线单键版）",
+        "en-US": "Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK015CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.ctrl_ln1.es1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线单键版）",
+        "en-US": "Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK007CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.ctrl_ln1.v1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线单键版）",
+        "en-US": "Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_ln2.aq1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线双键版）",
+        "en-US": "Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK016CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.ctrl_ln2.es1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线双键版）",
+        "en-US": "Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK008CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.ctrl_ln2.v1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线双键版）",
+        "en-US": "Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_neutral1.aq1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线单键版）",
+        "en-US": "Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_neutral1.es1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线单键版）",
+        "en-US": "Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK005CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_neutral1.v1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线单键版）",
+        "en-US": "Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK005CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.ctrl_neutral2.aq1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线双键版）",
+        "en-US": "Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.ctrl_neutral2.es1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线双键版）",
+        "en-US": "Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK006CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_neutral2.v1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线双键版）",
+        "en-US": "Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK006CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.gateway.agl015",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "妙控场景屏 AX100S",
+        "en-US": "Panel Hub AX100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "4g/5g",
+        "bluetooth",
+        "matter",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG051CNG01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.gateway.agl019",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "Aqara集悦妙控屏 GR100S",
+        "en-US": "Aqara Jiyue Smart Control Screen GR100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch",
+        "Panel"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK215CNB01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.acn001",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关X1（单火线单键版）",
+        "en-US": "Wall Switch X1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK079CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.acn002",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关X1（单火线双键版）",
+        "en-US": "Wall Switch X1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK080CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.acn003",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关X1（单火线三键版）",
+        "en-US": "Wall Switch X1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK081CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.acn023",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（单火线单键版）",
+        "en-US": "Smart Wall Switch H1M (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn024",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（单火线双键版）",
+        "en-US": "Smart Wall Switch H1M (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn028",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（单火线三键版）",
+        "en-US": "Smart Wall Switch H1M (No Neutral, Triple Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn029",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（零火线单键版）",
+        "en-US": "Smart Wall Switch H1M (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK090CNG01",
+      "skuCount": 8
+    },
+    {
+      "model": "lumi.switch.acn030",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（零火线双键版）",
+        "en-US": "Smart Wall Switch H1M (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK091CNG01",
+      "skuCount": 8
+    },
+    {
+      "model": "lumi.switch.acn031",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（零火线三键版）",
+        "en-US": "Smart Wall Switch H1M (With Neutral, Triple Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK092CNG01",
+      "skuCount": 8
+    },
+    {
+      "model": "lumi.switch.acn034",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Plus",
+        "en-US": "MagicPad/Panel Hub S1 Plus"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch",
+        "Panel"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK098CNG01",
+      "skuCount": 7
+    },
+    {
+      "model": "lumi.switch.acn048",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（单键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK141CNG01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.acn049",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（双键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn051",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "妙控开关 V1（四键版）",
+        "en-US": "Smart Magic Switch V1 (Quintuple Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK147",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.acn053",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "繁星旋钮 V1",
+        "en-US": "Touchscreen Dial V1"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.AK140CNB01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.switch.acn054",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（三键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Triple Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK142CNG01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.acn055",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（四键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Quadruple Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK143CNG01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.acn056",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（单键版）",
+        "en-US": "Smart wall switch Z1 Pro (single button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK148CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.acn057",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（双键版）",
+        "en-US": "Smart wall switch Z1 Pro (double-button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK149CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.acn058",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（三键版）",
+        "en-US": "Smart wall switch Z1 Pro (three-button version)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK150CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.acn059",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（四键版）",
+        "en-US": "Smart wall switch Z1 Pro (four-button version)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK151CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.acn062",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 Q1（单键版）",
+        "en-US": "Smart wall switch Q1 (single-button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK156CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.acn063",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 Q1（双键版）",
+        "en-US": "Smart wall switch Q1 (double-button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn065",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 Q1（四键版）",
+        "en-US": "Smart wall switch Q1 (four-button version)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK159CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.acn066",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "妙控场景屏 S100",
+        "en-US": "Panel Switch S100"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn075",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "Aqara妙控场景屏 AR100S",
+        "en-US": "Panel Hub AR100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn080",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "繁花 场景开关H1 Elite",
+        "en-US": "Scene Switch H1 Elite"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button",
+        "OccupancySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK206CNG01",
+      "skuCount": 6
+    },
+    {
+      "model": "lumi.switch.agl003",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Plus（国际版）",
+        "en-US": "MagicPad/Panel Hub S1 Plus"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK153EUW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.switch.b1lacn01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关T1（单火线单键版）",
+        "en-US": "Smart Wall Switch T1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK037CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.b1lacn02",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（单火线单键版）",
+        "en-US": "Smart Wall Switch D1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK043CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.b1laus01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（单火线单键版）",
+        "en-US": "Smart Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK022USW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.b1nacn02",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（零火线单键版）",
+        "en-US": "Smart Wall Switch D1 (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK045CNW01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.b1naus01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（零火线单键版）",
+        "en-US": "Smart Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK024USW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.b2lacn01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关T1（单火线双键版）",
+        "en-US": "Smart Wall Switch T1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK038CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.b2lacn02",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（单火线双键版）",
+        "en-US": "Smart Wall Switch D1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK044CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.switch.b2laus01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（单火线双键版）",
+        "en-US": "Smart Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK023USW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.b2nacn02",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（零火线双键版）",
+        "en-US": "Smart Wall Switch D1 (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK046CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.b2naus01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（零火线双键版）",
+        "en-US": "Smart Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK025USW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.b3l01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关T1（单火线三键版）",
+        "en-US": "Wall Switch T1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK065CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.eicn09",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 J1（零火线双键版）",
+        "en-US": "Wall Switch J1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.eicn10",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 J1（零火线三键版）",
+        "en-US": "Wall Switch J1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.l1acn1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（单火线单键版）",
+        "en-US": "Wall Switch H1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK057CNJ01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.switch.l1aeu1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（单火线单键版）",
+        "en-US": "Smart Wall Switch H1 EU (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK071EUW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.l2acn1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（单火线双键版）",
+        "en-US": "Wall Switch H1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK058CNJ01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.switch.l2aeu1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（单火线双键版）",
+        "en-US": "Smart Wall Switch H1 EU (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK072EUW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.l3acn1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（单火线三键版）",
+        "en-US": "Wall Switch H1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK059CNJ01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.l3acn3",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（单火线三键版）",
+        "en-US": "Wall Switch D1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK049CNG01",
+      "skuCount": 4
+    },
+    {
+      "model": "lumi.switch.n1acn1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（零火线单键版）",
+        "en-US": "Wall Switch H1 (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK060CNG03",
+      "skuCount": 9
+    },
+    {
+      "model": "lumi.switch.n1aeu1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（零火线单键版）",
+        "en-US": "Smart Wall Switch H1 EU (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK073EUW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.n2acn1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（零火线双键版）",
+        "en-US": "Wall Switch H1 (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK061CNG03",
+      "skuCount": 9
+    },
+    {
+      "model": "lumi.switch.n2aeu1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（零火线双键版）",
+        "en-US": "Smart Wall Switch H1 EU (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK074EUW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.n3acn1",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（零火线三键版）",
+        "en-US": "Wall Switch H1 (With Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK062CNG03",
+      "skuCount": 10
+    },
+    {
+      "model": "lumi.switch.n3acn3",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（零火线三键版）",
+        "en-US": "Wall Switch D1 (With Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK050CNG01",
+      "skuCount": 7
+    },
+    {
+      "model": "lumi.switch.n4acn4",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能场景面板开关 S1",
+        "en-US": "Scene Panel Switch S1"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK056CNB01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.switch.rkna01",
+      "categoryId": "51",
+      "categoryFile": "assets/categories/cat_51.json",
+      "displayName": {
+        "zh-CN": "智能旋钮开关 H1（零火线版）",
+        "en-US": "Smart Knob H1 (With Neutral)"
+      },
+      "deviceTypesList": [
+        "Knob",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK070CNG01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.ctrl_86plug.aq1",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "墙壁插座（Zigbee版）",
+        "en-US": "Wall Outlet"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP004CNW01",
+      "skuCount": 5
+    },
+    {
+      "model": "lumi.ctrl_86plug.es1",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "墙壁插座（Zigbee版）",
+        "en-US": "Wall Outlet"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EP001CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_86plug.v1",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "墙壁插座（Zigbee版）",
+        "en-US": "Wall Outlet"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP001CNG01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.gateway.acn011",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能墙壁网关V1",
+        "en-US": "Smart Wall hub V1"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG040CNH01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.gateway.sacn01",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能USB墙壁插座 H1（网关版）",
+        "en-US": "Smart USB Wall Outlet H1 Hub"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG021CNJ01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.plug.acn001",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "Aqara智能墙壁插座 X1",
+        "en-US": "Smart Wall Outlet X1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.plug.acn003",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "Aqara智能墙壁插座 X1(USB)",
+        "en-US": "Smart Wall Plug X1(USB)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP016CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.acn005",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "Aqara 智能墙壁插座 H2",
+        "en-US": "Aqara Smart Wall Socket H2"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP024CNG01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.acn008",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "Aqara智能墙壁插座 AR200K",
+        "en-US": "Aqara Smart Wall Socket AR200K"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP031CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.aeu002",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "英标智能墙壁插座H2",
+        "en-US": "Wall Outlet H2 UK"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.plug.aq1",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.plug.es1",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EP003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.makr01",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能插座T1 (欧标)",
+        "en-US": "Power Plug H2 EU"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP011KRW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.maus01",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能插座 (美标)",
+        "en-US": "Smart Plug (USA Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP003USW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.mitw01",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.MP002TWW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.sacn02",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能墙壁插座T1",
+        "en-US": "Smart Wall Outlet T1"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP009CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.sacn03",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能墙壁插座 H1（USB版）",
+        "en-US": "Smart Wall Outlet H1(USB)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AP013CNG01",
+      "skuCount": 3
+    },
+    {
+      "model": "lumi.plug.sgwacn01",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "墙壁插座（网关版）",
+        "en-US": "Wall Outlet Hub"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AG003CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.plug.v1",
+      "categoryId": "52",
+      "categoryFile": "assets/categories/cat_52.json",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.MP001CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.ctrl_dualchn.es1",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "双路控制模块",
+        "en-US": "Dual control module"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.EK012CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.relay.c2acn01",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "双路控制模块",
+        "en-US": "Dual control module"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AK027CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.relay.c4acn01",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "四路控制器",
+        "en-US": "Wireless Relay Controller (4 Channels)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": null,
+      "skuCount": 0
+    },
+    {
+      "model": "lumi.switch.acn047",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "双路控制模块 T2",
+        "en-US": "Dual Relay Module T2"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AR023CNW01",
+      "skuCount": 2
+    },
+    {
+      "model": "lumi.switch.l0acn1",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "单路控制器 T1（单火版）",
+        "en-US": "Single Switch Module T1 (No Neutral)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AU002CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.l0agl1",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "单路控制器 T1单火线（国际版）",
+        "en-US": "Single channel controller T1 single live wire (international version)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AU002GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.n0acn2",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "单路控制器 T1（零火版）",
+        "en-US": "Single Switch Module T1 (With Neutral)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AU001CNW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.switch.n0agl1",
+      "categoryId": "53",
+      "categoryFile": "assets/categories/cat_53.json",
+      "displayName": {
+        "zh-CN": "单路控制模块 T1零火线（国际版）",
+        "en-US": "Single-channel control module T1 neutral and live wire (international version)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AU001GLW01",
+      "skuCount": 1
+    },
+    {
+      "model": "lumi.valve.agl001",
+      "categoryId": "551",
+      "categoryFile": "assets/categories/cat_551.json",
+      "displayName": {
+        "zh-CN": "智能阀门控制器T1",
+        "en-US": "Valve Controller T1"
+      },
+      "deviceTypesList": [
+        "Valve"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "representativeSkuId": "sku.AX047CNW01",
+      "skuCount": 3
+    },
+    {
+      "model": "aqara.router.ecn003",
+      "categoryId": "552",
+      "categoryFile": "assets/categories/cat_552.json",
+      "displayName": {
+        "zh-CN": "EigenStone无线接入控制器  AC1000-A",
+        "en-US": "EigenStone Wireless Access Controller AC1000-A"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "ethernet",
+        "wifi"
+      ],
+      "representativeSkuId": "sku.EX005CNB01",
+      "skuCount": 1
+    }
+  ],
+  "pathNote": "Always use file paths from this index (assets/categories/cat_{id}.json). Never invent Chinese filenames."
+}

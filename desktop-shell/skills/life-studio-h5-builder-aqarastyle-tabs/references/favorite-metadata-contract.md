@@ -1,0 +1,32 @@
+# Shared RN-compatible favorite metadata
+
+## Identity and data
+
+Use the current native host OpenAPI context exactly as RN: POST `/open/api/v1/users/me/metadata/query` with `{keys:["favoriteDevices","favoriteScenes"]}` as needed, and POST `/open/api/v1/users/me/metadata/update` with `{metadata:{...}}`. Keep existing nativeHttpRequest transport, source header and request mode. Authentication and Studio routing belong to the host. No new native favorite bridge, page namespace, fabricated user/Studio identifier or delete call. The client cannot infer server account-versus-account+Studio isolation from these paths.
+
+`favoriteDevices` is an ordered maximum-10 array of `{did:string,endpointId:string}`; `favoriteScenes` is an ordered maximum-10 sceneId string array. Centralize conversion to existing H5 deviceId/integer endpoint coordinates, preserving nonnumeric endpoint identifiers as unavailable removable entries, never guessing an endpoint. Resolve names, status and capabilities from existing live indexes. An absent/null key means empty. Accept array JSON strings as RN does; reject unsupported/malformed data or oversized lists without silently truncating and overwriting them. Display an actionable read error rather than a false empty state.
+
+## Read and save ownership
+
+`favorite-metadata.js` is the shared in-memory repository; UI modules own their independent drafts and existing controls. Query asynchronously when actual Studio identity is available, in parallel with existing list reads. Fetch only enabled favorite-module keys; combine the two when enabled together. A missing Devices/Smart tab never disables Home favorites. No favorite modules means zero metadata reads. Foreground Home refresh rereads enabled keys; ordinary tab/selector entry reuses loaded configuration. Native-plugin return and device writes keep existing targeted state refresh, without metadata writes or unconditional favorite queries. No persistence/cache of account favorites in localStorage/sessionStorage, no old page-favorite auto-import, no page-path namespace. An empty server selection wins over old local records.
+
+Confirm sends a single save transaction; Back/Escape discard drafts. Saving locks that editor, keeps its draft on failure, and commits Home membership only after success. Preserve existing card DOM/scroll, selector row state and fresh device entities. One queue serializes both favorite-key saves in the page. Before updating, query both known keys afresh; if the edited key changed from the editor's base, update committed state, show conflict and reset selection for review before another explicit confirm. Keep returned other fields unchanged. No auto-cleanup of missing, offline, partially loaded or unsupported favorites. Clearing all saves an empty array; it never deletes Studio devices/scenes.
+
+### Explicitly accepted RN save limitation (2026-10-21)
+
+The user explicitly selected strict RN behavior pending backend contract confirmation: query the two known keys, merge the edited key into the returned map, then submit the whole map. Preserve every field actually returned, but **do not claim preservation of unreturned metadata such as preferences** if the server replaces the entire object. No invented full-query parameters or unverified merge semantics. Same-page queuing and pre-save conflict checks cannot prevent a write race with another client after the check; no server CAS/version contract is available. Do not change RN or backend code to work around this maintenance scope.
+
+Use strict successful code 0/"0" envelopes. Query failures keep confirmed in-memory data and disable editing until an explicit retry. After a failed/lost update response, perform one verification query: matching target confirms the save; a different target is a failed save; failed verification is unconfirmed and requires refresh. Never automatically replay a metadata update. Studio/user scope changes clear client state, close the old editor and reject old queued work; old responses cannot publish into the new scope. Requests already dispatched cannot be undone by UI cancellation.
+
+## Preview and validation
+
+The isolated preview host simulates both routes using iframe-owned metadata and the RN-style replacement semantics. Default fixture metadata is empty; optional explicit fixture values may show populated previews. Reset/theme reload creates a new simulated session; this does not model real App persistence. Query is a simulated read even though POST; do not report it as a device write. Preview never talks to real accounts and no preview store/fixture enters App export.
+
+Run `smoke_test_favorite_metadata.mjs`, existing device/scene/control smoke gates and `profile_favorite_metadata.mjs` using an already-installed browser. Also run favorite devices/scenes, selector-state, tab-aware read-plan and applicable preview/export gates. Cover no-tabs/hidden modules, success/failure/empty, order/limits, cancellation, same-key conflict, preserving returned other fields, no write replay, stale scope responses, old local records ignored, exact control commands, light/dark/320px and clean export. Real RN/H5 account persistence and Studio server isolation need the user's native verification; simulated tests are not proof of those server guarantees.
+
+## First-use scene presence
+
+The shared repository exposes `snapshot.has(key)` after a successful load. An absent scene key permits view-only defaults; an explicit empty array suppresses them. Unknown/loading/error is never absence. Same-key conflict detection distinguishes absent/null from[] so another page clearing favorites cannot be overwritten by a default-seeded draft. Saved device behavior is unchanged. New senior/female pages may use missing-device-key view-only recommendations; explicit empty and saved records still win. Device and scene default drafts both distinguish absent/null from[] during conflict detection. Defaults never invoke metadata/update until explicit confirmation.
+
+## Senior and child automatic collections
+For senior/child Home modules, daily-use-role-contract.md governs: no official metadata query/update/delete, no saved-key dependency, no add/editor/selection persistence. Reuse existing real scene/device catalogs, role-select at most six suitable scenes and three senior endpoints, and preserve exact control/execution semantics. Generic/male/female service-backed favorites remain unchanged.

@@ -20,3 +20,10 @@ desktop-shell/secure/
 
 # 运行时连接器注册表（含本机路径）
 desktop-shell/connectors.json
+
+# Agent 运行产物（非源码）
+desktop-shell/projects/*/lookup_result.json
+desktop-shell/projects/*/recommendation.json
+desktop-shell/projects/*/spatial_graph.json
+desktop-shell/projects/*/json.*.json
+desktop-shell/projects/*/空间方案-*.md

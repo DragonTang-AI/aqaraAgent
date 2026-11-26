@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "json-standard-scene-lighting",
+  "title": "json.standard_scene lighting-library (classic JSON_SCENE + DisplayImage)",
+  "description": "与经典标准场景同形；照明库须在 config.actions 含 DisplayImage+http(s) 图片 URL",
+  "type": "object",
+  "required": ["name", "configFormat", "config"],
+  "properties": {
+    "name": { "type": "string", "minLength": 1 },
+    "createTime": { "type": "string" },
+    "configFormat": { "const": "JSON_SCENE" },
+    "config": {
+      "type": "object",
+      "required": ["metadata", "actions"],
+      "properties": {
+        "metadata": { "type": "object" },
+        "actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "object" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "404",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "空调",
+    "en-US": "Air Conditioner"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.airrtc.acn02",
+      "displayName": {
+        "zh-CN": "温控伴侣 T1（室内机）",
+        "en-US": "Temperature control mate T1 (indoor unit)"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 0,
+  "skuCount": 0,
+  "commonCapabilities": [
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Ventilation",
+      "functionCode": "FreshAirControl",
+      "traitCode": "FreshAirMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Ventilation",
+      "functionCode": "FreshAirControl",
+      "traitCode": "FreshAirMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Ventilation",
+      "functionCode": "FreshAirControl",
+      "traitCode": "FreshAirMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 1,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "空调"
+      ],
+      "en-US": [
+        "Air Conditioner"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

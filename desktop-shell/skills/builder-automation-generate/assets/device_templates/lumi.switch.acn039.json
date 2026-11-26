@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.switch.acn039",
+  "displayName": {
+    "zh-CN": "智能墙壁开关 E1（单火线三键版）",
+    "en-US": "Smart Wall Switch E1 (No Neutral, Triple Rocker)"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [],
+  "category": {
+    "categoryId": "51",
+    "name": null,
+    "tags": [
+      "51"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": "zigbee",
+    "networkProtocols": [
+      "zigbee"
+    ],
+    "requiresGateway": null,
+    "installRequired": true,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.AK110"
+    ],
+    "defaultSpuId": "spu.AK110"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.switch.acn039.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": null
+  },
+  "extensions": {}
+}

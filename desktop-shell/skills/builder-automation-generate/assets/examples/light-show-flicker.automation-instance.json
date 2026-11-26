@@ -1,0 +1,67 @@
+{
+  "metadata": {
+    "name": "客厅节奏闪烁",
+    "description": "灯亮灭交替三下，再停在一半亮。"
+  },
+  "automations": [
+    {
+      "name": "客厅节奏闪烁",
+      "starters": [{ "type": "manual", "name": "客厅节奏闪烁" }],
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": true
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "LevelControl",
+          "traitCode": "CurrentLevel",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": 100
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": false
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": true
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": false
+        },
+        { "type": "delay", "for": "1sec" },
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": true
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "LevelControl",
+          "traitCode": "CurrentLevel",
+          "targets": [{ "deviceId": "dev.living.light", "endpointIds": [1] }],
+          "value": 50
+        }
+      ]
+    }
+  ]
+}

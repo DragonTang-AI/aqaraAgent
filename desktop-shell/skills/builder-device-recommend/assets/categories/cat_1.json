@@ -1,0 +1,1287 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "1",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "网关中控",
+    "en-US": "Hub"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.gateway.mdcn01",
+      "displayName": {
+        "zh-CN": "曼顿智能微断S3（网关）",
+        "en-US": "Manton Smart Micro-Breaker S3 (Hub)"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.acpartner.acn002",
+      "displayName": {
+        "zh-CN": "Aqara空调伴侣 AR300W",
+        "en-US": "Aqara Air Conditioning Controller AR300W"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "IRDevice",
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AT025"
+      ],
+      "skuIds": [
+        "sku.AT025CNW01"
+      ]
+    },
+    {
+      "model": "lumi.acpartner.aq1",
+      "displayName": {
+        "zh-CN": "空调伴侣（B端专供）",
+        "en-US": "Air conditioning Companion (B-end Exclusive Supply)"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AA001"
+      ],
+      "skuIds": [
+        "sku.AA001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.acpartner.v3",
+      "displayName": {
+        "zh-CN": "空调伴侣（升级版）",
+        "en-US": "Air Conditioning Controller (Advanced)"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA002"
+      ],
+      "skuIds": [
+        "sku.AA002CNW01"
+      ]
+    },
+    {
+      "model": "lumi.aircondition.acn05",
+      "displayName": {
+        "zh-CN": "空调伴侣 P3",
+        "en-US": "Air Conditioning Controller P3"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "IRDevice",
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA003"
+      ],
+      "skuIds": [
+        "sku.AA003CNW01",
+        "sku.AA003CNW02",
+        "sku.AA003CNW03"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.aus002",
+      "displayName": {
+        "zh-CN": "美标温控器网关W200",
+        "en-US": "Thermostat Hub W200"
+      },
+      "deviceTypesList": [
+        "Thermostat",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA015"
+      ],
+      "skuIds": [
+        "sku.AA015USB01",
+        "sku.AA015USB02",
+        "sku.AA015USB03"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn003",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H Pro（网关版）",
+        "en-US": "Camera Hub G2H Pro"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC009"
+      ],
+      "skuIds": [
+        "sku.AC009CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn009",
+      "displayName": {
+        "zh-CN": "智能摄像机G5 Pro（PoE网关版）",
+        "en-US": "Camera Hub G5 (PoE)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC019"
+      ],
+      "skuIds": [
+        "sku.AC019CNG01",
+        "sku.AC019CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn010",
+      "displayName": {
+        "zh-CN": "Camera Hub G5 Pro (PoE)",
+        "en-US": "Camera Hub G5 Pro (PoE)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC019"
+      ],
+      "skuIds": [
+        "sku.AC019GLG01",
+        "sku.AC019GLG02",
+        "sku.AC019GLW01",
+        "sku.AC019GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl001",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H Pro(国际版)",
+        "en-US": "Camera Hub G2H Pro"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC009"
+      ],
+      "skuIds": [
+        "sku.AC009FRW01",
+        "sku.AC009GLW01",
+        "sku.AC009RUW01",
+        "sku.AC009RUW02",
+        "sku.AC009UKW02",
+        "sku.AC009USW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl003",
+      "displayName": {
+        "zh-CN": "智能摄像机G5 Pro（Wi-Fi网关版）",
+        "en-US": "Camera Hub G5 Pro (Wi-Fi)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC027"
+      ],
+      "skuIds": [
+        "sku.AC027CNG01",
+        "sku.AC027CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl004",
+      "displayName": {
+        "zh-CN": "Camera Hub G5 Pro (Wi-Fi)",
+        "en-US": "Camera Hub G5 Pro (Wi-Fi)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC027"
+      ],
+      "skuIds": [
+        "sku.AC027GLG01",
+        "sku.AC027GLG02",
+        "sku.AC027GLW01",
+        "sku.AC027GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl010",
+      "displayName": {
+        "zh-CN": "智能摄像机G350（网关版）",
+        "en-US": "Camera Hub G350"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC031"
+      ],
+      "skuIds": [
+        "sku.AC031CNW01",
+        "sku.AC031GLW01",
+        "sku.AC031GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwag03",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H (国际版)",
+        "en-US": "Camera Hub G2H"
+      },
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC004"
+      ],
+      "skuIds": [
+        "sku.AC004EUW01",
+        "sku.AC004UKW01",
+        "sku.AC004USW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwagl02",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H (网关版)",
+        "en-US": "Camera Hub G2H"
+      },
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [
+        "spu.AC004"
+      ],
+      "skuIds": [
+        "sku.AC004CNL01",
+        "sku.AC004CNR01",
+        "sku.AC004CNW01",
+        "sku.AC004CNY01"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwpagl01",
+      "displayName": {
+        "zh-CN": "智能摄像机G3（网关版）",
+        "en-US": "Camera Hub G3"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "SoundSensor",
+        "HumanDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC005",
+        "spu.AC010"
+      ],
+      "skuIds": [
+        "sku.AC005CNW01",
+        "sku.AC010CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwpgl1",
+      "displayName": {
+        "zh-CN": "智能摄像机G3（国际版）",
+        "en-US": "Camera Hub G3"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC005"
+      ],
+      "skuIds": [
+        "sku.AC005EUW01",
+        "sku.AC005UKW01",
+        "sku.AC005USW01"
+      ]
+    },
+    {
+      "model": "lumi.controller.a4acn1",
+      "displayName": {
+        "zh-CN": "集悦智慧面板 S1",
+        "en-US": "Aqara MagicPad S1"
+      },
+      "deviceTypesList": [
+        "Speaker"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG015"
+      ],
+      "skuIds": [
+        "sku.AG015CNB01",
+        "sku.AG015CNJ01",
+        "sku.AG015CNW01"
+      ]
+    },
+    {
+      "model": "lumi.controller.acn002",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Pro",
+        "en-US": "MagicPad S1 Pro"
+      },
+      "deviceTypesList": [
+        "Speaker"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AG030"
+      ],
+      "skuIds": [
+        "sku.AG030CNG01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.acn01",
+      "displayName": {
+        "zh-CN": "网关 M1S",
+        "en-US": "Hub M1S"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG013",
+        "spu.AG019"
+      ],
+      "skuIds": [
+        "sku.AG013CNW01",
+        "sku.AG019CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.acn011",
+      "displayName": {
+        "zh-CN": "智能墙壁网关V1",
+        "en-US": "Smart Wall hub V1"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG040"
+      ],
+      "skuIds": [
+        "sku.AG040CNH01",
+        "sku.AG040CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.acn012",
+      "displayName": {
+        "zh-CN": "方舟 智慧中枢 M3",
+        "en-US": "Hub M3"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG041"
+      ],
+      "skuIds": [
+        "sku.AG041CNB01",
+        "sku.AG041CNS01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl001",
+      "displayName": {
+        "zh-CN": "网关 M2",
+        "en-US": "Hub M2"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG035",
+        "spu.AG044"
+      ],
+      "skuIds": [
+        "sku.AG035EUB01",
+        "sku.AG035GLB01",
+        "sku.AG035USB01",
+        "sku.AG044GLB01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl002",
+      "displayName": {
+        "zh-CN": "网关 M1S Gen 2",
+        "en-US": "Hub M1S Gen 2"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG036"
+      ],
+      "skuIds": [
+        "sku.AG036EUW01",
+        "sku.AG036USW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl004",
+      "displayName": {
+        "zh-CN": "方舟 智慧中枢 M3（国际版）",
+        "en-US": "Hub M3"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG042"
+      ],
+      "skuIds": [
+        "sku.AG042GLB01",
+        "sku.AG042GLB02"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl008",
+      "displayName": {
+        "zh-CN": "网关 M100（国际版）",
+        "en-US": "Hub M100"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG046"
+      ],
+      "skuIds": [
+        "sku.AG046GLW01",
+        "sku.AG046GLW02"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl010",
+      "displayName": {
+        "zh-CN": "网关 M100",
+        "en-US": "Hub M100"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG046"
+      ],
+      "skuIds": [
+        "sku.AG046CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl011",
+      "displayName": {
+        "zh-CN": "网关M200",
+        "en-US": "Hub M200"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG047"
+      ],
+      "skuIds": [
+        "sku.AG047CNB01",
+        "sku.AG047GLB01",
+        "sku.AG047GLB02",
+        "sku.AG047JPB01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl012",
+      "displayName": {
+        "zh-CN": "智慧边端 M300",
+        "en-US": "Edge Hub M300"
+      },
+      "deviceTypesList": [
+        "Hub",
+        "AirConditioner",
+        "IRDevice"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG048"
+      ],
+      "skuIds": [
+        "sku.AG048CNB01",
+        "sku.AG048GLB02"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl013",
+      "displayName": {
+        "zh-CN": "白羊 配电箱网关 AX100M",
+        "en-US": "DIN Rail Hub AX100M"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG049"
+      ],
+      "skuIds": [
+        "sku.AG049CNB01",
+        "sku.AG049GLB01",
+        "sku.AG049GLB02"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl015",
+      "displayName": {
+        "zh-CN": "妙控场景屏 AX100S",
+        "en-US": "Panel Hub AX100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "4g/5g",
+        "bluetooth",
+        "matter",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG051",
+        "spu.ZNZKP11LM"
+      ],
+      "skuIds": [
+        "sku.AG051CNG01",
+        "sku.AG051CNG02",
+        "sku.AG051CNW01",
+        "sku.AG051CNW02",
+        "sku.AG051GLG01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl020",
+      "displayName": {
+        "zh-CN": "Aqara智慧边端 GX300M",
+        "en-US": "Aqara Smart Edge Hub GX300M"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG054"
+      ],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.gateway.agl021",
+      "displayName": {
+        "zh-CN": "Aqara智慧网关 AX200M",
+        "en-US": "Aqara Smart Hub AX200M"
+      },
+      "deviceTypesList": [
+        "IRDevice",
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG054"
+      ],
+      "skuIds": [
+        "sku.AG054CNB01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.aq1",
+      "displayName": {
+        "zh-CN": "网关",
+        "en-US": "Smart Hub"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.gateway.aqcn02",
+      "displayName": {
+        "zh-CN": "网关E1（青春版）",
+        "en-US": "Hub E1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG022"
+      ],
+      "skuIds": [
+        "sku.AG022CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.aqcn03",
+      "displayName": {
+        "zh-CN": "Hub E1",
+        "en-US": "Hub E1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG022"
+      ],
+      "skuIds": [
+        "sku.AG022GLW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.aqhm01",
+      "displayName": {
+        "zh-CN": "网关",
+        "en-US": "Hub"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG005"
+      ],
+      "skuIds": [
+        "sku.AG005CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.aqhm02",
+      "displayName": {
+        "zh-CN": "网关（海外版）",
+        "en-US": "Hub"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG006",
+        "spu.AG010"
+      ],
+      "skuIds": [
+        "sku.AG006USW01",
+        "sku.AG010UKW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.iragl5",
+      "displayName": {
+        "zh-CN": "网关 M2",
+        "en-US": "Hub M2"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG012"
+      ],
+      "skuIds": [
+        "sku.AG012CNB02",
+        "sku.AG012CNB03"
+      ]
+    },
+    {
+      "model": "lumi.gateway.sacn01",
+      "displayName": {
+        "zh-CN": "智能USB墙壁插座 H1（网关版）",
+        "en-US": "Smart USB Wall Outlet H1 Hub"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG021"
+      ],
+      "skuIds": [
+        "sku.AG021CNJ01",
+        "sku.AG021CNN01",
+        "sku.AG021CNW01"
+      ]
+    },
+    {
+      "model": "lumi.lock.acn006",
+      "displayName": {
+        "zh-CN": "智能门 V100",
+        "en-US": "Smart Door V100"
+      },
+      "deviceTypesList": [
+        "DoorLock",
+        "HumanDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AD026"
+      ],
+      "skuIds": [
+        "sku.AD026CNG01"
+      ]
+    },
+    {
+      "model": "lumi.plug.sgwacn01",
+      "displayName": {
+        "zh-CN": "墙壁插座（网关版）",
+        "en-US": "Wall Outlet Hub"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG003"
+      ],
+      "skuIds": [
+        "sku.AG003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn034",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Plus",
+        "en-US": "MagicPad/Panel Hub S1 Plus"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch",
+        "Panel"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK098",
+        "spu.AK189",
+        "spu.AK205"
+      ],
+      "skuIds": [
+        "sku.AK098CNG01",
+        "sku.AK098CNG02",
+        "sku.AK098CNW01",
+        "sku.AK189CNG01",
+        "sku.AK189CNW01",
+        "sku.AK205CNG01",
+        "sku.AK205CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.agl003",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Plus（国际版）",
+        "en-US": "MagicPad/Panel Hub S1 Plus"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK153",
+        "spu.AK193"
+      ],
+      "skuIds": [
+        "sku.AK153EUW01",
+        "sku.AK153SAG01",
+        "sku.AK193EUW01"
+      ]
+    },
+    {
+      "model": "lumi.tvbox.hzfzs1",
+      "displayName": {
+        "zh-CN": "电视盒子（4G网关版）",
+        "en-US": "TV box (4G hub version)"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [
+        "spu.1"
+      ],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 45,
+  "spuCount": 43,
+  "skuCount": 101,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "RockSetting",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "RockSetting",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "RockSetting",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "IRDevice",
+      "functionCode": "IRControl",
+      "commandCode": "IRKey",
+      "automationRole": "action",
+      "valueType": "command"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "4g/5g",
+    "bluetooth",
+    "ethernet",
+    "matter",
+    "thread",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 45,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "网关中控"
+      ],
+      "en-US": [
+        "Hub"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

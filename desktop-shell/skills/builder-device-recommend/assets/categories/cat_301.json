@@ -1,0 +1,438 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "301",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "窗帘电机",
+    "en-US": "Curtain Controller"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.curtain.acn003",
+      "displayName": {
+        "zh-CN": "智能窗帘伴侣E1",
+        "en-US": "Aqara Curtain Driver E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM024"
+      ],
+      "skuIds": [
+        "sku.AM024CNW01",
+        "sku.AM024CNW02"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn004",
+      "displayName": {
+        "zh-CN": "智能窗帘电机 X1",
+        "en-US": "Curtain Controller X1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM026"
+      ],
+      "skuIds": [
+        "sku.AM026CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn007",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 T1",
+        "en-US": "Aqara Curtain Motor T1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM027",
+        "spu.AM053"
+      ],
+      "skuIds": [
+        "sku.AM027CNW01",
+        "sku.AM053CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn010",
+      "displayName": {
+        "zh-CN": "风琴 智能窗帘电机 C4",
+        "en-US": "Organ smart Curtain Controller C4"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM058"
+      ],
+      "skuIds": [
+        "sku.AM058CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn011",
+      "displayName": {
+        "zh-CN": "Aqara智能梦幻帘电机 H1",
+        "en-US": "Aqara Smart Vertical Blinds Controller H1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM035"
+      ],
+      "skuIds": [
+        "sku.AM035CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn014",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 E1",
+        "en-US": "Aqara Smart Curtain Controller E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.curtain.acn015",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 T2",
+        "en-US": "Aqara Smart Curtain Controller T2"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM057"
+      ],
+      "skuIds": [
+        "sku.AM057CNWO1"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn018",
+      "displayName": {
+        "zh-CN": "Aqara 智能隐形窗帘电机 C200",
+        "en-US": "Curtain Controller C200"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM058"
+      ],
+      "skuIds": [
+        "sku.AM058CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.acn04",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机 C3",
+        "en-US": "Smart Curtain Controller C3"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM044"
+      ],
+      "skuIds": [
+        "sku.AM044CNW01",
+        "sku.AM044JPJ01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.agl001",
+      "displayName": {
+        "zh-CN": "智能窗帘伴侣E1（国际版）",
+        "en-US": "Curtain Driver E1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM025"
+      ],
+      "skuIds": [
+        "sku.AM025GLW01",
+        "sku.AM025GLW02"
+      ]
+    },
+    {
+      "model": "lumi.curtain.hagl06",
+      "displayName": {
+        "zh-CN": "智能窗帘电机 B1S",
+        "en-US": "Curtain Controller B1S"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM010"
+      ],
+      "skuIds": [
+        "sku.AM010CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.hagl08",
+      "displayName": {
+        "zh-CN": "Aqara智能窗帘电机A1",
+        "en-US": "Aqara Curtain Controller A1"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AM018"
+      ],
+      "skuIds": [
+        "sku.AM018CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.jcn001",
+      "displayName": {
+        "zh-CN": "京鱼座智能窗帘电机L版-开合帘版",
+        "en-US": "Curtain Controller L"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XM004"
+      ],
+      "skuIds": [
+        "sku.XM004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.curtain.v1",
+      "displayName": {
+        "zh-CN": "智能窗帘电机 (Zigbee开合帘版)",
+        "en-US": "Curtain Controller"
+      },
+      "deviceTypesList": [
+        "WindowCovering"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AM001",
+        "spu.AM005",
+        "spu.AM039",
+        "spu.AM047",
+        "spu.AM055",
+        "spu.无"
+      ],
+      "skuIds": [
+        "sku.AM001CNS01",
+        "sku.AM001CNS03",
+        "sku.AM005CNS01",
+        "sku.AM039RUS01",
+        "sku.AM047CNS01",
+        "sku.AM055KRS01",
+        "sku.无"
+      ]
+    },
+    {
+      "model": "lumi.switch.aeu003",
+      "displayName": {
+        "zh-CN": "欧标卷帘开关",
+        "en-US": "Shutter Switch H2 EU"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 15,
+  "spuCount": 18,
+  "skuCount": 23,
+  "commonCapabilities": [
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentPositionPercentage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentPositionPercentage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "MotorOperationStatus",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "MotorOperationStatus",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetPositionPercentage",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetRotationAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetRotationAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "TargetRotationAngle",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentRotationAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentRotationAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "WindowCovering",
+      "functionCode": "WindowCovering",
+      "traitCode": "CurrentRotationAngle",
+      "automationRole": "action",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 13,
+    "notRequiredModelCount": 2,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "窗帘电机"
+      ],
+      "en-US": [
+        "Curtain Controller"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

@@ -1,0 +1,499 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "52",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "插座/排插类",
+    "en-US": "Plug"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.ctrl_86plug.aq1",
+      "displayName": {
+        "zh-CN": "墙壁插座（Zigbee版）",
+        "en-US": "Wall Outlet"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP004",
+        "spu.AP005"
+      ],
+      "skuIds": [
+        "sku.AP004CNW01",
+        "sku.AP004CNW02",
+        "sku.AP004CNW03",
+        "sku.AP005CNG01",
+        "sku.AP005CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_86plug.es1",
+      "displayName": {
+        "zh-CN": "墙壁插座（Zigbee版）",
+        "en-US": "Wall Outlet"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EP001"
+      ],
+      "skuIds": [
+        "sku.EP001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_86plug.v1",
+      "displayName": {
+        "zh-CN": "墙壁插座（Zigbee版）",
+        "en-US": "Wall Outlet"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP001"
+      ],
+      "skuIds": [
+        "sku.AP001CNG01",
+        "sku.AP001CNJ01",
+        "sku.AP001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.acn011",
+      "displayName": {
+        "zh-CN": "智能墙壁网关V1",
+        "en-US": "Smart Wall hub V1"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG040"
+      ],
+      "skuIds": [
+        "sku.AG040CNH01",
+        "sku.AG040CNW01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.sacn01",
+      "displayName": {
+        "zh-CN": "智能USB墙壁插座 H1（网关版）",
+        "en-US": "Smart USB Wall Outlet H1 Hub"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG021"
+      ],
+      "skuIds": [
+        "sku.AG021CNJ01",
+        "sku.AG021CNN01",
+        "sku.AG021CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.acn001",
+      "displayName": {
+        "zh-CN": "Aqara智能墙壁插座 X1",
+        "en-US": "Smart Wall Outlet X1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.plug.acn003",
+      "displayName": {
+        "zh-CN": "Aqara智能墙壁插座 X1(USB)",
+        "en-US": "Smart Wall Plug X1(USB)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP016"
+      ],
+      "skuIds": [
+        "sku.AP016CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.acn005",
+      "displayName": {
+        "zh-CN": "Aqara 智能墙壁插座 H2",
+        "en-US": "Aqara Smart Wall Socket H2"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP024"
+      ],
+      "skuIds": [
+        "sku.AP024CNG01"
+      ]
+    },
+    {
+      "model": "lumi.plug.acn008",
+      "displayName": {
+        "zh-CN": "Aqara智能墙壁插座 AR200K",
+        "en-US": "Aqara Smart Wall Socket AR200K"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP031"
+      ],
+      "skuIds": [
+        "sku.AP031CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.aeu002",
+      "displayName": {
+        "zh-CN": "英标智能墙壁插座H2",
+        "en-US": "Wall Outlet H2 UK"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.plug.aq1",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.plug.es1",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EP003"
+      ],
+      "skuIds": [
+        "sku.EP003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.makr01",
+      "displayName": {
+        "zh-CN": "智能插座T1 (欧标)",
+        "en-US": "Power Plug H2 EU"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP011"
+      ],
+      "skuIds": [
+        "sku.AP011KRW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.maus01",
+      "displayName": {
+        "zh-CN": "智能插座 (美标)",
+        "en-US": "Smart Plug (USA Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP003"
+      ],
+      "skuIds": [
+        "sku.AP003USW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.mitw01",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.MP002"
+      ],
+      "skuIds": [
+        "sku.MP002TWW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.sacn02",
+      "displayName": {
+        "zh-CN": "智能墙壁插座T1",
+        "en-US": "Smart Wall Outlet T1"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP009"
+      ],
+      "skuIds": [
+        "sku.AP009CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.sacn03",
+      "displayName": {
+        "zh-CN": "智能墙壁插座 H1（USB版）",
+        "en-US": "Smart Wall Outlet H1(USB)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AP013"
+      ],
+      "skuIds": [
+        "sku.AP013CNG01",
+        "sku.AP013CNJ01",
+        "sku.AP013CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.sgwacn01",
+      "displayName": {
+        "zh-CN": "墙壁插座（网关版）",
+        "en-US": "Wall Outlet Hub"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG003"
+      ],
+      "skuIds": [
+        "sku.AG003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.plug.v1",
+      "displayName": {
+        "zh-CN": "智能插座 (国标)",
+        "en-US": "Smart Plug (China Standard)"
+      },
+      "deviceTypesList": [
+        "Outlet"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.MP001"
+      ],
+      "skuIds": [
+        "sku.MP001CNW01"
+      ]
+    }
+  ],
+  "modelCount": 19,
+  "spuCount": 17,
+  "skuCount": 27,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Outlet",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Outlet",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Outlet",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CircuitCurrent",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CircuitCurrent",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Outlet",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Outlet",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "ethernet",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 16,
+    "notRequiredModelCount": 3,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "插座/排插类"
+      ],
+      "en-US": [
+        "Plug"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

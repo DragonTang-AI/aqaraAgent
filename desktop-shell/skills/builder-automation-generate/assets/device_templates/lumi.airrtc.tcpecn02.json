@@ -1,0 +1,863 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.airrtc.tcpecn02",
+  "displayName": {
+    "zh-CN": "空调温控器 S2"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [
+    "AirConditioner"
+  ],
+  "category": {
+    "categoryId": "402",
+    "name": "温控器",
+    "tags": [
+      "温控器"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": "zigbee",
+    "networkProtocols": [
+      "zigbee"
+    ],
+    "requiresGateway": true,
+    "installRequired": false,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ProductName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ProductName",
+                "spec": {
+                  "rid": "8.0.1076",
+                  "path": "0.128.32900.1",
+                  "traitId": "32900",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DeviceID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.DeviceID",
+                "spec": {
+                  "rid": "8.0.1077",
+                  "path": "0.128.32905.1",
+                  "traitId": "32905",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorName",
+                "spec": {
+                  "rid": "8.0.121",
+                  "path": "0.128.32898.1",
+                  "traitId": "32898",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorID",
+                "spec": {
+                  "rid": "8.0.120",
+                  "path": "0.128.32899.1",
+                  "traitId": "32899",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "FirmwareRevisionString",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.FirmwareRevisionString",
+                "spec": {
+                  "rid": "8.0.833",
+                  "path": "0.128.33047.1",
+                  "traitId": "33047",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ChipTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -50.0,
+                  "max": 1000.0,
+                  "step": 0.01,
+                  "unit": "℃"
+                },
+                "pointName": "BasicInformation.ChipTemperature",
+                "spec": {
+                  "rid": "8.0.831",
+                  "path": "0.128.20095.1",
+                  "traitId": "20095",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Reachable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Reachable",
+                "spec": {
+                  "rid": "8.0.839",
+                  "path": "0.128.32901.1",
+                  "traitId": "32901",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SerialNumber",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.SerialNumber",
+                "spec": {
+                  "rid": "8.0.372",
+                  "path": "0.128.32897.1",
+                  "traitId": "32897",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Mac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Mac",
+                "spec": {
+                  "rid": "8.0.1081",
+                  "path": "0.128.32904.1",
+                  "traitId": "32904",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "GeneralDiagnostics",
+            "traits": [
+              {
+                "traitCode": "RebootCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 4294967296.0,
+                  "step": 1.0
+                },
+                "pointName": "GeneralDiagnostics.RebootCount",
+                "spec": {
+                  "rid": "8.0.827",
+                  "path": "1.176.33096.1",
+                  "traitId": "33096",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Identify",
+            "traits": [
+              {
+                "traitCode": "IdentifyTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10.0,
+                  "step": 0.1,
+                  "unit": "S"
+                },
+                "pointName": "Identify.IdentifyTime",
+                "spec": {
+                  "rid": "8.0.1058",
+                  "path": "1.131.32916.1",
+                  "traitId": "32916",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "ZigbeeNetworkDiagnostics",
+            "traits": [
+              {
+                "traitCode": "ZigbeeTotalMessageInOneHour",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 4294967296.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.ZigbeeTotalMessageInOneHour",
+                "spec": {
+                  "rid": "8.0.828",
+                  "path": "1.205.20115.1",
+                  "traitId": "20115",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ZigbeeFailedMessageInOneHour",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 255.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.ZigbeeFailedMessageInOneHour",
+                "spec": {
+                  "rid": "8.0.829",
+                  "path": "1.205.20112.1",
+                  "traitId": "20112",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ZigbeeAvgSuccessfulResendCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 255.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.ZigbeeAvgSuccessfulResendCount",
+                "spec": {
+                  "rid": "8.0.835",
+                  "path": "1.205.20111.1",
+                  "traitId": "20111",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "LQI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 255.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.LQI",
+                "spec": {
+                  "rid": "8.0.832",
+                  "path": "1.205.33107.1",
+                  "traitId": "33107",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ZigbeeResentMessageInOneHour",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 255.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.ZigbeeResentMessageInOneHour",
+                "spec": {
+                  "rid": "8.0.830",
+                  "path": "1.205.20114.1",
+                  "traitId": "20114",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CCAMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "CCA1",
+                      "value": "0"
+                    },
+                    {
+                      "key": "CCA2",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.CCAMode",
+                "spec": {
+                  "rid": "8.0.844",
+                  "path": "1.205.20124.1",
+                  "traitId": "20124",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CurOperationMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "UnjoinedMode",
+                      "value": "0"
+                    },
+                    {
+                      "key": "NewlyJoinedMode",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PollingMode",
+                      "value": "2"
+                    },
+                    {
+                      "key": "UserMode",
+                      "value": "3"
+                    },
+                    {
+                      "key": "DegradedMode",
+                      "value": "4"
+                    },
+                    {
+                      "key": "RejoinMode",
+                      "value": "5"
+                    }
+                  ]
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.CurOperationMode",
+                "spec": {
+                  "rid": "8.0.842",
+                  "path": "1.205.20125.1",
+                  "traitId": "20125",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "PreOperationMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "UnjoinedMode",
+                      "value": "0"
+                    },
+                    {
+                      "key": "NewlyJoinedMode",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PollingMode",
+                      "value": "2"
+                    },
+                    {
+                      "key": "UserMode",
+                      "value": "3"
+                    },
+                    {
+                      "key": "DegradedMode",
+                      "value": "4"
+                    },
+                    {
+                      "key": "RejoinMode",
+                      "value": "5"
+                    }
+                  ]
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.PreOperationMode",
+                "spec": {
+                  "rid": "8.0.843",
+                  "path": "1.205.20137.1",
+                  "traitId": "20137",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 2,
+        "endpointName": "AirConditioner",
+        "deviceType": "AirConditioner",
+        "functions": [
+          {
+            "functionCode": "FanControl",
+            "traits": [
+              {
+                "traitCode": "FanMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "LowSpeed",
+                      "value": "1"
+                    },
+                    {
+                      "key": "MediumSpeed",
+                      "value": "2"
+                    },
+                    {
+                      "key": "HighSpeed",
+                      "value": "3"
+                    },
+                    {
+                      "key": "Auto",
+                      "value": "4"
+                    }
+                  ]
+                },
+                "pointName": "FanControl.FanMode",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "14.2.85",
+                  "path": "2.142.32950.1",
+                  "traitId": "32950",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "HeaterCooler",
+            "traits": [
+              {
+                "traitCode": "HeaterCoolerPolarity",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Forward",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Reverse",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Bidirectional",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "HeaterCooler.HeaterCoolerPolarity",
+                "spec": {
+                  "rid": "0.1.970",
+                  "path": "2.141.20098.1",
+                  "traitId": "20098",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "HeaterCoolerMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Cool",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Heat",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "HeaterCooler.HeaterCoolerMode",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "14.1.85",
+                  "path": "2.141.32947.1",
+                  "traitId": "32947",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "HeatingTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 17.0,
+                  "max": 30.0,
+                  "step": 1.0,
+                  "unit": "℃"
+                },
+                "pointName": "HeaterCooler.HeatingTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "0.1.1133",
+                  "path": "2.141.32948.1",
+                  "traitId": "32948",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CoolingTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 17.0,
+                  "max": 30.0,
+                  "step": 1.0,
+                  "unit": "℃"
+                },
+                "pointName": "HeaterCooler.CoolingTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "0.1.1132",
+                  "path": "2.141.32949.1",
+                  "traitId": "32949",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CurrentTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -50.0,
+                  "max": 100.0,
+                  "step": 0.01,
+                  "unit": "℃"
+                },
+                "pointName": "HeaterCooler.CurrentTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "0.1.85",
+                  "path": "2.141.32952.1",
+                  "traitId": "32952",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "HeaterCoolerButtonEvent",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PowerShortPress",
+                      "value": "0"
+                    },
+                    {
+                      "key": "PowerMidPress",
+                      "value": "16"
+                    },
+                    {
+                      "key": "PowerLongPress",
+                      "value": "48"
+                    },
+                    {
+                      "key": "FanSpeedShortPress",
+                      "value": "1"
+                    },
+                    {
+                      "key": "FanSpeedMidPress",
+                      "value": "17"
+                    },
+                    {
+                      "key": "FanSpeedLongPress",
+                      "value": "49"
+                    },
+                    {
+                      "key": "TempUpShortPress",
+                      "value": "2"
+                    },
+                    {
+                      "key": "TempUpMidPress",
+                      "value": "18"
+                    },
+                    {
+                      "key": "TempUpLongPress",
+                      "value": "50"
+                    },
+                    {
+                      "key": "TempDownShortPress",
+                      "value": "3"
+                    },
+                    {
+                      "key": "TempDownMidPress",
+                      "value": "19"
+                    },
+                    {
+                      "key": "TempDownLongPress",
+                      "value": "51"
+                    },
+                    {
+                      "key": "ModeShortPress",
+                      "value": "4"
+                    },
+                    {
+                      "key": "ModeMidPress",
+                      "value": "20"
+                    },
+                    {
+                      "key": "ModeLongPress",
+                      "value": "52"
+                    }
+                  ]
+                },
+                "pointName": "HeaterCooler.HeaterCoolerButtonEvent",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "0.1.1340",
+                  "path": "2.141.20097.1",
+                  "traitId": "20097",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Output",
+            "traits": [
+              {
+                "traitCode": "OnOff",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "Output.OnOff",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "4.1.85",
+                  "path": "2.132.32920.1",
+                  "traitId": "32920",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.EA006"
+    ],
+    "defaultSpuId": "spu.EA006"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.airrtc.tcpecn02.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": "category/supportDevices_zh.json"
+  },
+  "extensions": {}
+}

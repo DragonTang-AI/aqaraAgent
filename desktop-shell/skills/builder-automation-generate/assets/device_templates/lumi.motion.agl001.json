@@ -1,0 +1,4268 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.motion.agl001",
+  "displayName": {
+    "zh-CN": "人体场景传感器 FP2"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [
+    "OccupancySensor",
+    "HeartMonitor",
+    "SleepMonitor",
+    "BreathingMonitor",
+    "AttitudeDetector",
+    "IlluminanceSensor",
+    "LocationSensor"
+  ],
+  "category": {
+    "categoryId": "151",
+    "name": "人体传感器",
+    "tags": [
+      "人体传感器"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [
+      "支持通过磁吸、胶贴、螺钉安装方式，可以通过墙角支架实现墙角安装，或筒灯支架配件实现筒灯隐藏式安装，同时可以支持安装于磁吸轨道。"
+    ],
+    "powerType": null,
+    "networkProtocol": null,
+    "networkProtocols": [
+      "bluetooth",
+      "wifi"
+    ],
+    "requiresGateway": false,
+    "installRequired": true,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Reachable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Reachable",
+                "spec": {
+                  "rid": "8.0.839",
+                  "path": "0.128.32901.1",
+                  "traitId": "32901",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ProductName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ProductName",
+                "spec": {
+                  "rid": "8.0.1076",
+                  "path": "0.128.32900.1",
+                  "traitId": "32900",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DeviceID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.DeviceID",
+                "spec": {
+                  "rid": "8.0.1077",
+                  "path": "0.128.32905.1",
+                  "traitId": "32905",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorName",
+                "spec": {
+                  "rid": "8.0.121",
+                  "path": "0.128.32898.1",
+                  "traitId": "32898",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorID",
+                "spec": {
+                  "rid": "8.0.120",
+                  "path": "0.128.32899.1",
+                  "traitId": "32899",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SerialNumber",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.SerialNumber",
+                "spec": {
+                  "rid": "8.0.372",
+                  "path": "0.128.32897.1",
+                  "traitId": "32897",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Mac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Mac",
+                "spec": {
+                  "rid": "8.0.1081",
+                  "path": "0.128.32904.1",
+                  "traitId": "32904",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "GeneralDiagnostics",
+            "traits": [
+              {
+                "traitCode": "RebootCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 4294967295.0,
+                  "step": 1.0
+                },
+                "pointName": "GeneralDiagnostics.RebootCount",
+                "spec": {
+                  "rid": "8.0.827",
+                  "path": "1.176.33096.1",
+                  "traitId": "33096",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Identify",
+            "traits": [
+              {
+                "traitCode": "IdentifyTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10.0,
+                  "step": 0.1,
+                  "unit": "S"
+                },
+                "pointName": "Identify.IdentifyTime",
+                "spec": {
+                  "rid": "8.0.1058",
+                  "path": "1.131.32916.1",
+                  "traitId": "32916",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "NetworkCommissioning",
+            "traits": [
+              {
+                "traitCode": "WiFiRSSI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -100.0,
+                  "max": 0.0,
+                  "step": 1.0
+                },
+                "pointName": "NetworkCommissioning.WiFiRSSI",
+                "spec": {
+                  "rid": "8.0.1338",
+                  "path": "1.171.20119.1",
+                  "traitId": "20119",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 2,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.1.1200",
+                  "path": "2.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.1.859",
+                  "path": "2.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.1.85",
+                  "path": "2.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.1.1199",
+                  "path": "2.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 3,
+        "endpointName": "LocationSensor",
+        "deviceType": "LocationSensor",
+        "functions": [
+          {
+            "functionCode": "Location",
+            "traits": [
+              {
+                "traitCode": "MotionDetected",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Enter",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Left",
+                      "value": "1"
+                    },
+                    {
+                      "key": "LeftIn",
+                      "value": "2"
+                    },
+                    {
+                      "key": "RightOut",
+                      "value": "3"
+                    },
+                    {
+                      "key": "RightIn",
+                      "value": "4"
+                    },
+                    {
+                      "key": "LeftOut",
+                      "value": "5"
+                    },
+                    {
+                      "key": "Access",
+                      "value": "6"
+                    },
+                    {
+                      "key": "Away",
+                      "value": "7"
+                    }
+                  ]
+                },
+                "pointName": "Location.MotionDetected",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "13.2.85",
+                  "path": "3.161.33002.1",
+                  "traitId": "33002",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 4,
+        "endpointName": "IlluminanceSensor",
+        "deviceType": "IlluminanceSensor",
+        "functions": [
+          {
+            "functionCode": "Illuminance",
+            "traits": [
+              {
+                "traitCode": "CurrentIlluminance",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 83000.0,
+                  "step": 10.0,
+                  "unit": "lux"
+                },
+                "pointName": "Illuminance.CurrentIlluminance",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "0.3.85",
+                  "path": "4.154.32989.1",
+                  "traitId": "32989",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 5,
+        "endpointName": "AttitudeDetector",
+        "deviceType": "AttitudeDetector",
+        "functions": [
+          {
+            "functionCode": "AttitudeDetection",
+            "traits": [
+              {
+                "traitCode": "AttitudeDetected",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Normal",
+                      "value": "0"
+                    },
+                    {
+                      "key": "FallDown",
+                      "value": "1"
+                    },
+                    {
+                      "key": "SuspectedFall",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "AttitudeDetection.AttitudeDetected",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "13.4.85",
+                  "path": "5.168.33019.1",
+                  "traitId": "33019",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 6,
+        "endpointName": "SleepMonitor",
+        "deviceType": "SleepMonitor",
+        "functions": [
+          {
+            "functionCode": "Sleep",
+            "traits": [
+              {
+                "traitCode": "SleepState",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Unknow",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Awake",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Sleep",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "Sleep.SleepState",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "13.5.85",
+                  "path": "6.158.32995.1",
+                  "traitId": "32995",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OnBed",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "Sleep.OnBed",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "13.5.894",
+                  "path": "6.158.32997.1",
+                  "traitId": "32997",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SleepStage",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "LightSleep",
+                      "value": "0"
+                    },
+                    {
+                      "key": "DeepSleep",
+                      "value": "1"
+                    },
+                    {
+                      "key": "REM",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "Sleep.SleepStage",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "13.5.895",
+                  "path": "6.158.32998.1",
+                  "traitId": "32998",
+                  "tags": [
+                    "0"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SleepQuality",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0
+                },
+                "pointName": "Sleep.SleepQuality",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "13.5.1198",
+                  "path": "6.158.32996.1",
+                  "traitId": "32996",
+                  "tags": [
+                    "0"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 101,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.100.859",
+                  "path": "101.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.100.1199",
+                  "path": "101.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.100.1200",
+                  "path": "101.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.100.85",
+                  "path": "101.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 102,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.101.859",
+                  "path": "102.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.101.85",
+                  "path": "102.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.101.1199",
+                  "path": "102.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.101.1200",
+                  "path": "102.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 103,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.102.1200",
+                  "path": "103.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.102.859",
+                  "path": "103.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.102.85",
+                  "path": "103.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.102.1199",
+                  "path": "103.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 104,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.103.85",
+                  "path": "104.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.103.1200",
+                  "path": "104.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.103.1199",
+                  "path": "104.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.103.859",
+                  "path": "104.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 105,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.104.1200",
+                  "path": "105.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.104.85",
+                  "path": "105.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.104.1199",
+                  "path": "105.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.104.859",
+                  "path": "105.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 106,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.105.1199",
+                  "path": "106.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.105.859",
+                  "path": "106.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.105.1200",
+                  "path": "106.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.105.85",
+                  "path": "106.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 107,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.106.1200",
+                  "path": "107.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.106.859",
+                  "path": "107.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.106.1199",
+                  "path": "107.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.106.85",
+                  "path": "107.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 108,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.107.859",
+                  "path": "108.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.107.1199",
+                  "path": "108.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.107.85",
+                  "path": "108.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.107.1200",
+                  "path": "108.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 109,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.108.1200",
+                  "path": "109.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.108.85",
+                  "path": "109.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.108.1199",
+                  "path": "109.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.108.859",
+                  "path": "109.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 110,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.109.1199",
+                  "path": "110.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.109.85",
+                  "path": "110.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.109.1200",
+                  "path": "110.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.109.859",
+                  "path": "110.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 111,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.110.85",
+                  "path": "111.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.110.1199",
+                  "path": "111.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.110.859",
+                  "path": "111.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.110.1200",
+                  "path": "111.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 112,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.111.859",
+                  "path": "112.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.111.1199",
+                  "path": "112.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.111.1200",
+                  "path": "112.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.111.85",
+                  "path": "112.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 113,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.112.1200",
+                  "path": "113.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.112.859",
+                  "path": "113.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.112.85",
+                  "path": "113.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.112.1199",
+                  "path": "113.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 114,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.113.1200",
+                  "path": "114.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.113.1199",
+                  "path": "114.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.113.859",
+                  "path": "114.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.113.85",
+                  "path": "114.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 115,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.114.1199",
+                  "path": "115.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.114.85",
+                  "path": "115.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.114.1200",
+                  "path": "115.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.114.859",
+                  "path": "115.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 116,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.115.859",
+                  "path": "116.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.115.85",
+                  "path": "116.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.115.1199",
+                  "path": "116.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.115.1200",
+                  "path": "116.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 117,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.116.85",
+                  "path": "117.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.116.859",
+                  "path": "117.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.116.1199",
+                  "path": "117.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.116.1200",
+                  "path": "117.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 118,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.117.1200",
+                  "path": "118.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.117.859",
+                  "path": "118.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.117.1199",
+                  "path": "118.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.117.85",
+                  "path": "118.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 119,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.118.1200",
+                  "path": "119.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.118.85",
+                  "path": "119.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.118.859",
+                  "path": "119.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.118.1199",
+                  "path": "119.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 120,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.119.859",
+                  "path": "120.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.119.85",
+                  "path": "120.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.119.1200",
+                  "path": "120.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.119.1199",
+                  "path": "120.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 121,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.120.1199",
+                  "path": "121.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.120.85",
+                  "path": "121.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.120.1200",
+                  "path": "121.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.120.859",
+                  "path": "121.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 122,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.121.1200",
+                  "path": "122.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.121.85",
+                  "path": "122.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.121.859",
+                  "path": "122.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.121.1199",
+                  "path": "122.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 123,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.122.85",
+                  "path": "123.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.122.859",
+                  "path": "123.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.122.1200",
+                  "path": "123.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.122.1199",
+                  "path": "123.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 124,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.123.859",
+                  "path": "124.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.123.1200",
+                  "path": "124.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.123.1199",
+                  "path": "124.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.123.85",
+                  "path": "124.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 125,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.124.1199",
+                  "path": "125.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.124.85",
+                  "path": "125.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.124.1200",
+                  "path": "125.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.124.859",
+                  "path": "125.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 126,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.125.85",
+                  "path": "126.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.125.859",
+                  "path": "126.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.125.1199",
+                  "path": "126.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.125.1200",
+                  "path": "126.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 127,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.126.859",
+                  "path": "127.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.126.1199",
+                  "path": "127.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.126.85",
+                  "path": "127.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.126.1200",
+                  "path": "127.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 128,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.127.85",
+                  "path": "128.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.127.859",
+                  "path": "128.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.127.1199",
+                  "path": "128.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.127.1200",
+                  "path": "128.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 129,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.128.1200",
+                  "path": "129.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.128.859",
+                  "path": "129.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.128.85",
+                  "path": "129.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.128.1199",
+                  "path": "129.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 130,
+        "endpointName": "OccupancySensor",
+        "deviceType": "OccupancySensor",
+        "functions": [
+          {
+            "functionCode": "OccupancySensing",
+            "traits": [
+              {
+                "traitCode": "DurationOccupiedWithinOneWeek",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 604800000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneWeek",
+                "spec": {
+                  "rid": "3.129.1200",
+                  "path": "130.160.33045.1",
+                  "traitId": "33045",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Occupancy",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "OccupancySensing.Occupancy",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "3.129.85",
+                  "path": "130.160.33000.1",
+                  "traitId": "33000",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DurationOccupiedWithinOneDay",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400000.0,
+                  "step": 1.0,
+                  "unit": "ms"
+                },
+                "pointName": "OccupancySensing.DurationOccupiedWithinOneDay",
+                "spec": {
+                  "rid": "3.129.1199",
+                  "path": "130.160.33044.1",
+                  "traitId": "33044",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OccupancySensorType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PIR",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Ultrasonic",
+                      "value": "1"
+                    },
+                    {
+                      "key": "PIRAndUltrasonic",
+                      "value": "2"
+                    },
+                    {
+                      "key": "PhysicalContact",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "OccupancySensing.OccupancySensorType",
+                "spec": {
+                  "rid": "3.129.859",
+                  "path": "130.160.33001.1",
+                  "traitId": "33001",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 131,
+        "endpointName": "HeartMonitor",
+        "deviceType": "HeartMonitor",
+        "functions": [
+          {
+            "functionCode": "HeartMonitoring",
+            "traits": [
+              {
+                "traitCode": "HeartRate",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 300.0,
+                  "step": 1.0,
+                  "unit": "bpm"
+                },
+                "pointName": "HeartMonitoring.HeartRate",
+                "spec": {
+                  "rid": "0.130.85",
+                  "path": "131.225.20232.1",
+                  "traitId": "20232",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 132,
+        "endpointName": "BreathingMonitor",
+        "deviceType": "BreathingMonitor",
+        "functions": [
+          {
+            "functionCode": "BreathingMonitoring",
+            "traits": [
+              {
+                "traitCode": "BreathingRate",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 60.0,
+                  "step": 1.0,
+                  "unit": "bpm"
+                },
+                "pointName": "BreathingMonitoring.BreathingRate",
+                "spec": {
+                  "rid": "0.131.85",
+                  "path": "132.226.20231.1",
+                  "traitId": "20231",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.AS055",
+      "spu.AS059",
+      "spu.AT020"
+    ],
+    "defaultSpuId": "spu.AS055"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.motion.agl001.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": "category/supportDevices_zh.json"
+  },
+  "extensions": {}
+}

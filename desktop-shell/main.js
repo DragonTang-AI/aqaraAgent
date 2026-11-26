@@ -896,11 +896,23 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
   const parseFrontmatter = (text) => {
     const m = text.match(/^---\s*\n([\s\S]*?)\n---/);
     if (!m) return {};
+    const lines = m[1].split('\n');
     const data = {};
-    m[1].split('\n').forEach((line) => {
-      const mm = line.match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
-      if (mm) data[mm[1]] = mm[2].trim().replace(/^["']|["']$/g, '');
-    });
+    for (let i = 0; i < lines.length; i++) {
+      const mm = lines[i].match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
+      if (!mm) continue;
+      const key = mm[1];
+      let val = mm[2].trim();
+      if (val === '>' || val === '|' || val === '>-' || val === '|-') {
+        const buf = [];
+        i++;
+        while (i < lines.length && (/^\s+/.test(lines[i]) || lines[i].trim() === '')) { buf.push(lines[i].trim()); i++; }
+        i--;
+        data[key] = buf.join(' ').trim();
+      } else {
+        data[key] = val.replace(/^["']|["']$/g, '');
+      }
+    }
     return data;
   };
   const readSkillAt = (file, id, disabled) => {

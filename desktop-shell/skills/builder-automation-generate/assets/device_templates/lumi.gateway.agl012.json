@@ -1,0 +1,1451 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.gateway.agl012",
+  "displayName": {
+    "zh-CN": "智慧边端 M300"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [
+    "Hub",
+    "AirConditioner",
+    "IRDevice"
+  ],
+  "category": {
+    "categoryId": "1",
+    "name": "网关中控",
+    "tags": [
+      "网关中控"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": null,
+    "networkProtocols": [
+      "bluetooth",
+      "ethernet",
+      "thread",
+      "wifi",
+      "zigbee"
+    ],
+    "requiresGateway": false,
+    "installRequired": false,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "FirmwareRevisionString",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.FirmwareRevisionString",
+                "spec": {
+                  "rid": "8.0.833",
+                  "path": "0.128.33047.1",
+                  "traitId": "33047",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ChipTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -50.0,
+                  "max": 1000.0,
+                  "step": 0.01,
+                  "unit": "℃"
+                },
+                "pointName": "BasicInformation.ChipTemperature",
+                "spec": {
+                  "rid": "8.0.831",
+                  "path": "0.128.20095.1",
+                  "traitId": "20095",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Reachable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Reachable",
+                "spec": {
+                  "rid": "8.0.839",
+                  "path": "0.128.32901.1",
+                  "traitId": "32901",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ProductName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ProductName",
+                "spec": {
+                  "rid": "8.0.1076",
+                  "path": "0.128.32900.1",
+                  "traitId": "32900",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DeviceID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.DeviceID",
+                "spec": {
+                  "rid": "8.0.1077",
+                  "path": "0.128.32905.1",
+                  "traitId": "32905",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorName",
+                "spec": {
+                  "rid": "8.0.121",
+                  "path": "0.128.32898.1",
+                  "traitId": "32898",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorID",
+                "spec": {
+                  "rid": "8.0.120",
+                  "path": "0.128.32899.1",
+                  "traitId": "32899",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SerialNumber",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.SerialNumber",
+                "spec": {
+                  "rid": "8.0.372",
+                  "path": "0.128.32897.1",
+                  "traitId": "32897",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Mac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Mac",
+                "spec": {
+                  "rid": "8.0.1081",
+                  "path": "0.128.32904.1",
+                  "traitId": "32904",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "HubConnectionStatus",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Disconnected",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Connected",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "BasicInformation.HubConnectionStatus",
+                "spec": {
+                  "rid": "8.0.2337",
+                  "path": "0.128.20306.1",
+                  "traitId": "20306",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "GeneralConfiguration",
+            "traits": [
+              {
+                "traitCode": "TimeZone",
+                "parameter": {
+                  "type": "Data",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "GeneralConfiguration.TimeZone",
+                "spec": {
+                  "rid": "8.0.1441",
+                  "path": "1.175.20297.1",
+                  "traitId": "20297",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VoiceLanguage",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Chinese",
+                      "value": "1"
+                    },
+                    {
+                      "key": "English",
+                      "value": "2"
+                    },
+                    {
+                      "key": "Cantonese",
+                      "value": "3"
+                    },
+                    {
+                      "key": "Spanish",
+                      "value": "4"
+                    },
+                    {
+                      "key": "Russian",
+                      "value": "5"
+                    },
+                    {
+                      "key": "Korean",
+                      "value": "6"
+                    },
+                    {
+                      "key": "German",
+                      "value": "8"
+                    },
+                    {
+                      "key": "French",
+                      "value": "9"
+                    },
+                    {
+                      "key": "Italian",
+                      "value": "10"
+                    },
+                    {
+                      "key": "Japanese",
+                      "value": "11"
+                    },
+                    {
+                      "key": "Polish",
+                      "value": "12"
+                    },
+                    {
+                      "key": "Arabic",
+                      "value": "19"
+                    }
+                  ]
+                },
+                "pointName": "GeneralConfiguration.VoiceLanguage",
+                "spec": {
+                  "rid": "8.0.1225",
+                  "path": "1.175.20211.1",
+                  "traitId": "20211",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "GeneralDiagnostics",
+            "traits": [
+              {
+                "traitCode": "RebootCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 65535.0,
+                  "step": 1.0
+                },
+                "pointName": "GeneralDiagnostics.RebootCount",
+                "spec": {
+                  "rid": "8.0.827",
+                  "path": "1.176.33096.1",
+                  "traitId": "33096",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "AntiDeletionLevelSetting",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "EnableResetAndFactory",
+                      "value": "0"
+                    },
+                    {
+                      "key": "DisableFactoryOnly",
+                      "value": "1"
+                    },
+                    {
+                      "key": "DisableResetAndFactory",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "GeneralDiagnostics.AntiDeletionLevelSetting",
+                "spec": {
+                  "rid": "8.0.1429",
+                  "path": "1.176.20227.1",
+                  "traitId": "20227",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "RebootReason",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Unspecified",
+                      "value": "0"
+                    },
+                    {
+                      "key": "PowerOnReboot",
+                      "value": "1"
+                    },
+                    {
+                      "key": "BrownOutReset",
+                      "value": "2"
+                    },
+                    {
+                      "key": "SoftwareWatchdogReset",
+                      "value": "3"
+                    },
+                    {
+                      "key": "HardwareWatchdogReset",
+                      "value": "4"
+                    },
+                    {
+                      "key": "SoftwareUpdateCompleted",
+                      "value": "5"
+                    },
+                    {
+                      "key": "SoftwareReset",
+                      "value": "6"
+                    }
+                  ]
+                },
+                "pointName": "GeneralDiagnostics.RebootReason",
+                "spec": {
+                  "rid": "8.0.690",
+                  "path": "1.176.33097.1",
+                  "traitId": "33097",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "AntiDeletionNotification",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": false,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Trigger",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "GeneralDiagnostics.AntiDeletionNotification",
+                "automationRoles": [
+                  "starter"
+                ],
+                "spec": {
+                  "rid": "8.0.841",
+                  "path": "1.176.20299.1",
+                  "traitId": "20299",
+                  "tags": [
+                    "0",
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "AntiDeletionSetting",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Disable",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Enable",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "GeneralDiagnostics.AntiDeletionSetting",
+                "spec": {
+                  "rid": "8.0.819",
+                  "path": "1.176.20298.1",
+                  "traitId": "20298",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Identify",
+            "traits": [
+              {
+                "traitCode": "IdentifyTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10.0,
+                  "step": 0.1,
+                  "unit": "S"
+                },
+                "pointName": "Identify.IdentifyTime",
+                "spec": {
+                  "rid": "8.0.1058",
+                  "path": "1.131.32916.1",
+                  "traitId": "32916",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "NetworkCommissioning",
+            "traits": [
+              {
+                "traitCode": "WiFiRSSI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -100.0,
+                  "max": 0.0,
+                  "step": 1.0
+                },
+                "pointName": "NetworkCommissioning.WiFiRSSI",
+                "spec": {
+                  "rid": "8.0.1338",
+                  "path": "1.171.20119.1",
+                  "traitId": "20119",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "WiFiChannel",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 1.0,
+                  "max": 165.0,
+                  "step": 1.0
+                },
+                "pointName": "NetworkCommissioning.WiFiChannel",
+                "spec": {
+                  "rid": "8.0.2025",
+                  "path": "1.171.20118.1",
+                  "traitId": "20118",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "NetworkManagement",
+            "traits": [
+              {
+                "traitCode": "LanAccessAddress",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "NetworkManagement.LanAccessAddress",
+                "spec": {
+                  "rid": "8.0.2384",
+                  "path": "1.248.20304.1",
+                  "traitId": "20304",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "RemoteProxyAccessEnable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "NetworkManagement.RemoteProxyAccessEnable",
+                "spec": {
+                  "rid": "8.0.1440",
+                  "path": "1.248.20302.1",
+                  "traitId": "20302",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 2,
+        "endpointName": "Hub",
+        "deviceType": "Hub",
+        "functions": [
+          {
+            "functionCode": "MatterBridgeCommissioning",
+            "traits": [
+              {
+                "traitCode": "MatterBindState",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Unbound",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Bound",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "MatterBridgeCommissioning.MatterBindState",
+                "spec": {
+                  "rid": "13.1.760",
+                  "path": "2.183.33120.1",
+                  "traitId": "33120",
+                  "tags": [
+                    "1",
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "MatterBridgeSupported",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "MatterBridgeCommissioning.MatterBridgeSupported",
+                "spec": {
+                  "rid": "13.1.2302",
+                  "path": "2.183.33124.1",
+                  "traitId": "33124",
+                  "tags": [
+                    "1",
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Ringtone",
+            "traits": [
+              {
+                "traitCode": "RingtonePlayVolume",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "Ringtone.RingtonePlayVolume",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "13.1.1404",
+                  "path": "2.256.20386.1",
+                  "traitId": "20386",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "RingtonePlayStatus",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Stopped",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Playing",
+                      "value": "1"
+                    }
+                  ]
+                },
+                "pointName": "Ringtone.RingtonePlayStatus",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "13.1.1405",
+                  "path": "2.256.20387.1",
+                  "traitId": "20387",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "RingtonePlayDuration",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 86400.0,
+                  "step": 1.0,
+                  "unit": "S"
+                },
+                "pointName": "Ringtone.RingtonePlayDuration",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "13.1.1406",
+                  "path": "2.256.20388.1",
+                  "traitId": "20388",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "RingtonePlayIndex",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "PoliceCar1",
+                      "value": "0"
+                    },
+                    {
+                      "key": "PoliceCar2",
+                      "value": "1"
+                    },
+                    {
+                      "key": "SafetyAccident",
+                      "value": "2"
+                    },
+                    {
+                      "key": "MissileCountdown",
+                      "value": "3"
+                    },
+                    {
+                      "key": "GhostSound",
+                      "value": "4"
+                    },
+                    {
+                      "key": "SniperRifle",
+                      "value": "5"
+                    },
+                    {
+                      "key": "IntenseBattle",
+                      "value": "6"
+                    },
+                    {
+                      "key": "AirRaidSiren",
+                      "value": "7"
+                    },
+                    {
+                      "key": "DogBark",
+                      "value": "8"
+                    },
+                    {
+                      "key": "Doorbell",
+                      "value": "10"
+                    },
+                    {
+                      "key": "Knock",
+                      "value": "11"
+                    },
+                    {
+                      "key": "Funny",
+                      "value": "12"
+                    },
+                    {
+                      "key": "AlarmClock",
+                      "value": "13"
+                    },
+                    {
+                      "key": "Arming",
+                      "value": "14"
+                    },
+                    {
+                      "key": "Disarming",
+                      "value": "15"
+                    },
+                    {
+                      "key": "MiMix",
+                      "value": "20"
+                    },
+                    {
+                      "key": "Enthusiastic",
+                      "value": "21"
+                    },
+                    {
+                      "key": "GuitarClassic",
+                      "value": "22"
+                    },
+                    {
+                      "key": "IceWorldPiano",
+                      "value": "23"
+                    },
+                    {
+                      "key": "LeisureTime",
+                      "value": "24"
+                    },
+                    {
+                      "key": "Childhood",
+                      "value": "25"
+                    },
+                    {
+                      "key": "MorningStreamIet",
+                      "value": "26"
+                    },
+                    {
+                      "key": "MusixBox",
+                      "value": "27"
+                    },
+                    {
+                      "key": "Orange",
+                      "value": "28"
+                    },
+                    {
+                      "key": "DefaultRingtone",
+                      "value": "10000"
+                    }
+                  ]
+                },
+                "pointName": "Ringtone.RingtonePlayIndex",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "13.1.1403",
+                  "path": "2.256.20385.1",
+                  "traitId": "20385",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Speaker",
+            "traits": [
+              {
+                "traitCode": "Volume",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "Speaker.Volume",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "13.1.1156",
+                  "path": "2.146.32960.1",
+                  "traitId": "32960",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "ZigbeeNetworkDiagnostics",
+            "traits": [
+              {
+                "traitCode": "PANID",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 65534.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.PANID",
+                "spec": {
+                  "rid": "13.1.1307",
+                  "path": "2.205.33099.1",
+                  "traitId": "33099",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Channel",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 65535.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.Channel",
+                "spec": {
+                  "rid": "13.1.1308",
+                  "path": "2.205.33098.1",
+                  "traitId": "33098",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ZigbeeExtendedPANID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.ZigbeeExtendedPANID",
+                "spec": {
+                  "rid": "13.1.1377",
+                  "path": "2.205.20391.1",
+                  "traitId": "20391",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ZigbeeCoordMac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.ZigbeeCoordMac",
+                "spec": {
+                  "rid": "13.1.1379",
+                  "path": "2.205.20301.1",
+                  "traitId": "20301",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 3,
+        "endpointName": "AirConditioner",
+        "deviceType": "AirConditioner",
+        "functions": [
+          {
+            "functionCode": "FanControl",
+            "traits": [
+              {
+                "traitCode": "RockSetting",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Off",
+                      "value": "0"
+                    },
+                    {
+                      "key": "RockLeftRight",
+                      "value": "1"
+                    },
+                    {
+                      "key": "RockUpDown",
+                      "value": "2"
+                    },
+                    {
+                      "key": "RockRound",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "FanControl.RockSetting",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "14.3.1135",
+                  "path": "3.142.32951.1",
+                  "traitId": "32951",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "FanMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "LowSpeed",
+                      "value": "1"
+                    },
+                    {
+                      "key": "MediumSpeed",
+                      "value": "2"
+                    },
+                    {
+                      "key": "HighSpeed",
+                      "value": "3"
+                    },
+                    {
+                      "key": "Auto",
+                      "value": "4"
+                    }
+                  ]
+                },
+                "pointName": "FanControl.FanMode",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "14.3.85",
+                  "path": "3.142.32950.1",
+                  "traitId": "32950",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "HeaterCooler",
+            "traits": [
+              {
+                "traitCode": "CurrentHumidity",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "HeaterCooler.CurrentHumidity",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "0.2.1451",
+                  "path": "3.141.32953.1",
+                  "traitId": "32953",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "HeaterCoolerMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Cool",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Heat",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Auto",
+                      "value": "2"
+                    },
+                    {
+                      "key": "Fan",
+                      "value": "3"
+                    },
+                    {
+                      "key": "Dry",
+                      "value": "4"
+                    },
+                    {
+                      "key": "Sleep",
+                      "value": "5"
+                    }
+                  ]
+                },
+                "pointName": "HeaterCooler.HeaterCoolerMode",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "14.2.85",
+                  "path": "3.141.32947.1",
+                  "traitId": "32947",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CoolingTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 16.0,
+                  "max": 32.0,
+                  "step": 1.0,
+                  "unit": "℃"
+                },
+                "pointName": "HeaterCooler.CoolingTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "0.2.1132",
+                  "path": "3.141.32949.1",
+                  "traitId": "32949",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "HeatingTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 16.0,
+                  "max": 32.0,
+                  "step": 1.0,
+                  "unit": "℃"
+                },
+                "pointName": "HeaterCooler.HeatingTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "0.2.1133",
+                  "path": "3.141.32948.1",
+                  "traitId": "32948",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CurrentTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -50.0,
+                  "max": 100.0,
+                  "step": 0.01,
+                  "unit": "℃"
+                },
+                "pointName": "HeaterCooler.CurrentTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "0.2.85",
+                  "path": "3.141.32952.1",
+                  "traitId": "32952",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Output",
+            "traits": [
+              {
+                "traitCode": "OnOff",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "Output.OnOff",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "4.2.85",
+                  "path": "3.132.32920.1",
+                  "traitId": "32920",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 4,
+        "endpointName": "IRDevice",
+        "deviceType": "IRDevice",
+        "functions": [
+          {
+            "functionCode": "IRControl",
+            "traits": [
+              {
+                "traitCode": "IRType",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "AirConditioner",
+                      "value": "0"
+                    },
+                    {
+                      "key": "TV",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Fan",
+                      "value": "2"
+                    },
+                    {
+                      "key": "TVBox",
+                      "value": "3"
+                    },
+                    {
+                      "key": "Projector",
+                      "value": "4"
+                    },
+                    {
+                      "key": "SettopBox",
+                      "value": "5"
+                    },
+                    {
+                      "key": "DVD",
+                      "value": "6"
+                    },
+                    {
+                      "key": "Heater",
+                      "value": "7"
+                    },
+                    {
+                      "key": "AirPurifier",
+                      "value": "8"
+                    },
+                    {
+                      "key": "Speaker",
+                      "value": "9"
+                    },
+                    {
+                      "key": "Lighting",
+                      "value": "10"
+                    },
+                    {
+                      "key": "DVD",
+                      "value": "11"
+                    },
+                    {
+                      "key": "Customize",
+                      "value": "12"
+                    }
+                  ]
+                },
+                "pointName": "IRControl.IRType",
+                "spec": {
+                  "rid": "14.4.1128",
+                  "path": "4.139.32940.1",
+                  "traitId": "32940",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": [
+              {
+                "commandCode": "IRKey",
+                "fields": [],
+                "pointName": "IRControl.IRKey",
+                "automationRoles": [
+                  "action"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.AG048"
+    ],
+    "defaultSpuId": "spu.AG048"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.gateway.agl012.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": "category/supportDevices_zh.json"
+  },
+  "extensions": {}
+}

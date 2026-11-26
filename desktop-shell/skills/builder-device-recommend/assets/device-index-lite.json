@@ -1,0 +1,305 @@
+{
+  "schemaVersion": "device-index-lite-v1",
+  "categoryCount": 33,
+  "modelCount": 344,
+  "categories": [
+    {
+      "categoryId": "151",
+      "name": {
+        "zh-CN": "人体传感器",
+        "en-US": "Motion Sensor"
+      },
+      "file": "assets/categories/cat_151.json",
+      "modelCount": 12
+    },
+    {
+      "categoryId": "157",
+      "name": {
+        "zh-CN": "光照传感器",
+        "en-US": "Light sensor"
+      },
+      "file": "assets/categories/cat_157.json",
+      "modelCount": 3
+    },
+    {
+      "categoryId": "551",
+      "name": {
+        "zh-CN": "其他",
+        "en-US": "Other"
+      },
+      "file": "assets/categories/cat_551.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "158",
+      "name": {
+        "zh-CN": "动静贴",
+        "en-US": "Vibration Sensor"
+      },
+      "file": "assets/categories/cat_158.json",
+      "modelCount": 3
+    },
+    {
+      "categoryId": "501",
+      "name": {
+        "zh-CN": "卫浴晾晒",
+        "en-US": "Bathroom Appliance"
+      },
+      "file": "assets/categories/cat_501.json",
+      "modelCount": 7
+    },
+    {
+      "categoryId": "504",
+      "name": {
+        "zh-CN": "宠物园艺",
+        "en-US": "Pet & Garden Supplies"
+      },
+      "file": "assets/categories/cat_504.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "51",
+      "name": {
+        "zh-CN": "开关类",
+        "en-US": "Switch"
+      },
+      "file": "assets/categories/cat_51.json",
+      "modelCount": 69
+    },
+    {
+      "categoryId": "53",
+      "name": {
+        "zh-CN": "控制模块",
+        "en-US": "Switch Module"
+      },
+      "file": "assets/categories/cat_53.json",
+      "modelCount": 8
+    },
+    {
+      "categoryId": "52",
+      "name": {
+        "zh-CN": "插座/排插类",
+        "en-US": "Plug"
+      },
+      "file": "assets/categories/cat_52.json",
+      "modelCount": 19
+    },
+    {
+      "categoryId": "251",
+      "name": {
+        "zh-CN": "摄像机类",
+        "en-US": "Camera"
+      },
+      "file": "assets/categories/cat_251.json",
+      "modelCount": 17
+    },
+    {
+      "categoryId": "403",
+      "name": {
+        "zh-CN": "新风控制",
+        "en-US": "Fresh Air Control"
+      },
+      "file": "assets/categories/cat_403.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "351",
+      "name": {
+        "zh-CN": "无线遥控类",
+        "en-US": "Remote Control"
+      },
+      "file": "assets/categories/cat_351.json",
+      "modelCount": 37
+    },
+    {
+      "categoryId": "506",
+      "name": {
+        "zh-CN": "智能家具",
+        "en-US": "Smart Furniture"
+      },
+      "file": "assets/categories/cat_506.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "101",
+      "name": {
+        "zh-CN": "智能灯具",
+        "en-US": "Light"
+      },
+      "file": "assets/categories/cat_101.json",
+      "modelCount": 37
+    },
+    {
+      "categoryId": "253",
+      "name": {
+        "zh-CN": "智能门铃类",
+        "en-US": "Doorbell"
+      },
+      "file": "assets/categories/cat_253.json",
+      "modelCount": 4
+    },
+    {
+      "categoryId": "154",
+      "name": {
+        "zh-CN": "水浸传感器",
+        "en-US": "Water Leak Sensor"
+      },
+      "file": "assets/categories/cat_154.json",
+      "modelCount": 4
+    },
+    {
+      "categoryId": "402",
+      "name": {
+        "zh-CN": "温控器",
+        "en-US": "Thermostat"
+      },
+      "file": "assets/categories/cat_402.json",
+      "modelCount": 12
+    },
+    {
+      "categoryId": "153",
+      "name": {
+        "zh-CN": "温湿度传感器",
+        "en-US": "Temperature and humidity sensor"
+      },
+      "file": "assets/categories/cat_153.json",
+      "modelCount": 4
+    },
+    {
+      "categoryId": "155",
+      "name": {
+        "zh-CN": "烟雾报警器",
+        "en-US": "Smoke Detector"
+      },
+      "file": "assets/categories/cat_155.json",
+      "modelCount": 3
+    },
+    {
+      "categoryId": "156",
+      "name": {
+        "zh-CN": "燃气报警器",
+        "en-US": "Gas Alarm"
+      },
+      "file": "assets/categories/cat_156.json",
+      "modelCount": 3
+    },
+    {
+      "categoryId": "252",
+      "name": {
+        "zh-CN": "猫眼类",
+        "en-US": "Peephole Camera"
+      },
+      "file": "assets/categories/cat_252.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "451",
+      "name": {
+        "zh-CN": "睡眠监测带",
+        "en-US": "Sleep monitoring belt"
+      },
+      "file": "assets/categories/cat_451.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "159",
+      "name": {
+        "zh-CN": "空气健康检测仪",
+        "en-US": "Air Quality Sensor"
+      },
+      "file": "assets/categories/cat_159.json",
+      "modelCount": 2
+    },
+    {
+      "categoryId": "404",
+      "name": {
+        "zh-CN": "空调",
+        "en-US": "Air Conditioner"
+      },
+      "file": "assets/categories/cat_404.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "401",
+      "name": {
+        "zh-CN": "空调伴侣",
+        "en-US": "Air Conditioning Controller"
+      },
+      "file": "assets/categories/cat_401.json",
+      "modelCount": 4
+    },
+    {
+      "categoryId": "301",
+      "name": {
+        "zh-CN": "窗帘电机",
+        "en-US": "Curtain Controller"
+      },
+      "file": "assets/categories/cat_301.json",
+      "modelCount": 15
+    },
+    {
+      "categoryId": "302",
+      "name": {
+        "zh-CN": "管状电机",
+        "en-US": "Tubular Motor"
+      },
+      "file": "assets/categories/cat_302.json",
+      "modelCount": 3
+    },
+    {
+      "categoryId": "1",
+      "name": {
+        "zh-CN": "网关中控",
+        "en-US": "Hub"
+      },
+      "file": "assets/categories/cat_1.json",
+      "modelCount": 45
+    },
+    {
+      "categoryId": "552",
+      "name": {
+        "zh-CN": "网络设备",
+        "en-US": "Internet equipment"
+      },
+      "file": "assets/categories/cat_552.json",
+      "modelCount": 1
+    },
+    {
+      "categoryId": "102",
+      "name": {
+        "zh-CN": "调光模块",
+        "en-US": "Light Module"
+      },
+      "file": "assets/categories/cat_102.json",
+      "modelCount": 21
+    },
+    {
+      "categoryId": "152",
+      "name": {
+        "zh-CN": "门窗传感器",
+        "en-US": "Door and Window Sensor"
+      },
+      "file": "assets/categories/cat_152.json",
+      "modelCount": 7
+    },
+    {
+      "categoryId": "303",
+      "name": {
+        "zh-CN": "门窗开合器",
+        "en-US": "Door and Window Opener"
+      },
+      "file": "assets/categories/cat_303.json",
+      "modelCount": 3
+    },
+    {
+      "categoryId": "201",
+      "name": {
+        "zh-CN": "门锁类",
+        "en-US": "Door Lock"
+      },
+      "file": "assets/categories/cat_201.json",
+      "modelCount": 21
+    }
+  ],
+  "usage": "Prefer assets/default-picks.json for recommend fast-path. Use full device-index.json only when picking alternate models via python filter — do not read_file the whole full index."
+}

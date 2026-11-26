@@ -1,0 +1,342 @@
+{
+  "schemaVersion": "default-picks-v1",
+  "tier": "standard",
+  "note": "房间角色+数量骨架。未点名品类时空房含灯（role=light）。用户点名只要传感/窗帘等则不要硬铺灯。型号必须来自 lookup。点名房间只出这些房间。禁止把同一 rationale 复制到每个房间。档位见 budgetTiers；品类见 intentPresets。",
+  "budgetTiers": {
+    "basic": {
+      "label_zh": "精简入门",
+      "label_en": "Essential",
+      "roles": ["light", "motion", "contact", "leak", "gas"],
+      "areaQty": false
+    },
+    "standard": {
+      "label_zh": "标准舒适",
+      "label_en": "Comfort",
+      "roles": ["light", "motion", "switch", "contact", "leak", "gas"],
+      "areaQty": true
+    },
+    "plus": {
+      "label_zh": "全屋进阶",
+      "label_en": "Full home",
+      "roles": ["light", "motion", "switch", "contact", "climate", "leak", "gas"],
+      "areaQty": true
+    }
+  },
+  "areaQtyHints": {
+    "light": "客厅 ≥25㎡→2；客厅 ≥50㎡→3",
+    "motion": "客厅/卧室 ≥25㎡→2；客厅 ≥40㎡→3",
+    "switch": "客厅/卧室 ≥30㎡→2",
+    "contact": "客厅/阳台 ≥20㎡→2"
+  },
+  "gateway": {
+    "deviceType": "Gateway",
+    "model": "lumi.gateway.aqcn02",
+    "spuId": "spu.AG022",
+    "productName": "网关",
+    "protocols": ["wifi", "zigbee"],
+    "needsGateway": false,
+    "qty": 1,
+    "rationale": "Zigbee 子设备组网与本地联动中枢"
+  },
+  "byRoomRole": {
+    "客厅": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn033",
+        "spuId": "spu.AL219",
+        "productName": "吸顶灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "空房主灯，人来开灯与全屋场景的基础"
+      },
+      {
+        "role": "motion",
+        "deviceType": "MotionSensor",
+        "model": "lumi.motion.ac02",
+        "spuId": "spu.AS038",
+        "productName": "人体传感器 P1",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "覆盖动线，便于人来开灯与安防感知"
+      },
+      {
+        "role": "switch",
+        "deviceType": "Switch",
+        "model": "lumi.switch.b1lacn02",
+        "spuId": "spu.AK043",
+        "productName": "智能墙壁开关",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "墙开控灯回路，和智能灯一起做场景"
+      },
+      {
+        "role": "contact",
+        "deviceType": "ContactSensor",
+        "model": "lumi.sensor_magnet.aq2",
+        "spuId": "spu.AS001",
+        "productName": "门窗传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "感知门窗开合，支持安防与通风提醒"
+      }
+    ],
+    "卧室": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn003",
+        "spuId": "spu.AL018",
+        "productName": "吸顶灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "卧室主灯，睡眠与起夜场景的基础"
+      },
+      {
+        "role": "motion",
+        "deviceType": "MotionSensor",
+        "model": "lumi.motion.ac02",
+        "spuId": "spu.AS038",
+        "productName": "人体传感器 P1",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "覆盖动线，便于人来开灯与安防感知"
+      },
+      {
+        "role": "switch",
+        "deviceType": "Switch",
+        "model": "lumi.switch.b1lacn02",
+        "spuId": "spu.AK043",
+        "productName": "智能墙壁开关",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "墙开控灯回路，和智能灯一起做场景"
+      },
+      {
+        "role": "climate",
+        "deviceType": "TemperatureSensor",
+        "model": "lumi.weather.v1",
+        "spuId": "spu.AS003",
+        "productName": "温湿度传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "监测温湿度，便于舒适与除湿联动"
+      }
+    ],
+    "主卧": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn003",
+        "spuId": "spu.AL018",
+        "productName": "吸顶灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "主卧主灯，睡眠与起夜场景的基础"
+      },
+      {
+        "role": "motion",
+        "deviceType": "MotionSensor",
+        "model": "lumi.motion.ac02",
+        "spuId": "spu.AS038",
+        "productName": "人体传感器 P1",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "覆盖动线，便于人来开灯与安防感知"
+      },
+      {
+        "role": "switch",
+        "deviceType": "Switch",
+        "model": "lumi.switch.b1lacn02",
+        "spuId": "spu.AK043",
+        "productName": "智能墙壁开关",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "墙开控灯回路，和智能灯一起做场景"
+      },
+      {
+        "role": "climate",
+        "deviceType": "TemperatureSensor",
+        "model": "lumi.weather.v1",
+        "spuId": "spu.AS003",
+        "productName": "温湿度传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "监测温湿度，便于舒适与除湿联动"
+      }
+    ],
+    "厨房": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn026",
+        "spuId": "spu.AL107",
+        "productName": "筒灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "厨房作业面基础照明"
+      },
+      {
+        "role": "leak",
+        "deviceType": "WaterLeakSensor",
+        "model": "lumi.sensor_wleak.aq1",
+        "spuId": "spu.AS005",
+        "productName": "水浸传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "监测漏水，降低厨卫水患风险"
+      },
+      {
+        "role": "gas",
+        "deviceType": "NaturalGasAlarm",
+        "model": "lumi.sensor_natgas.v1",
+        "spuId": "spu.MS004",
+        "productName": "燃气报警器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "监测燃气泄漏，提升厨房安全"
+      }
+    ],
+    "卫生间": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn026",
+        "spuId": "spu.AL107",
+        "productName": "筒灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "卫生间基础照明，便于夜起与清洁"
+      },
+      {
+        "role": "leak",
+        "deviceType": "WaterLeakSensor",
+        "model": "lumi.sensor_wleak.aq1",
+        "spuId": "spu.AS005",
+        "productName": "水浸传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "监测漏水，降低厨卫水患风险"
+      },
+      {
+        "role": "motion",
+        "deviceType": "MotionSensor",
+        "model": "lumi.motion.ac02",
+        "spuId": "spu.AS038",
+        "productName": "人体传感器 P1",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "覆盖动线，便于人来开灯与安防感知"
+      }
+    ],
+    "主卫": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn026",
+        "spuId": "spu.AL107",
+        "productName": "筒灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "主卫基础照明，便于夜起与清洁"
+      },
+      {
+        "role": "leak",
+        "deviceType": "WaterLeakSensor",
+        "model": "lumi.sensor_wleak.aq1",
+        "spuId": "spu.AS005",
+        "productName": "水浸传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "监测漏水，降低厨卫水患风险"
+      }
+    ],
+    "阳台": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn003",
+        "spuId": "spu.AL018",
+        "productName": "吸顶灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "阳台基础照明，便于夜间使用"
+      },
+      {
+        "role": "contact",
+        "deviceType": "ContactSensor",
+        "model": "lumi.sensor_magnet.aq2",
+        "spuId": "spu.AS001",
+        "productName": "门窗传感器",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "感知门窗开合，支持安防与通风提醒"
+      }
+    ],
+    "默认": [
+      {
+        "role": "light",
+        "deviceType": "Light",
+        "model": "lumi.light.acn003",
+        "spuId": "spu.AL018",
+        "productName": "吸顶灯",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "房间主灯，人来开灯与场景的基础"
+      },
+      {
+        "role": "motion",
+        "deviceType": "MotionSensor",
+        "model": "lumi.motion.ac02",
+        "spuId": "spu.AS038",
+        "productName": "人体传感器 P1",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "覆盖动线，便于人来开灯与安防感知"
+      },
+      {
+        "role": "switch",
+        "deviceType": "Switch",
+        "model": "lumi.switch.b1lacn02",
+        "spuId": "spu.AK043",
+        "productName": "智能墙壁开关",
+        "protocols": ["zigbee"],
+        "needsGateway": true,
+        "qty": 1,
+        "rationale": "墙开控灯回路，和智能灯一起做场景"
+      }
+    ]
+  },
+  "intentPresets": {
+    "精简入门": ["light", "motion", "contact", "leak", "gas"],
+    "标准舒适": ["light", "motion", "switch", "contact", "leak", "gas"],
+    "全屋进阶": ["light", "motion", "switch", "contact", "climate", "leak", "gas"],
+    "侧重安防": ["motion", "contact", "gas", "leak"],
+    "侧重照明": ["light", "switch", "motion"],
+    "综合舒适": ["light", "motion", "switch", "contact", "climate", "leak", "gas"]
+  }
+}

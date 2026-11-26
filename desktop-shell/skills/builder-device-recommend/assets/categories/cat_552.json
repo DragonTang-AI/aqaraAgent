@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "552",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "网络设备",
+    "en-US": "Internet equipment"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.router.ecn003",
+      "displayName": {
+        "zh-CN": "EigenStone无线接入控制器  AC1000-A",
+        "en-US": "EigenStone Wireless Access Controller AC1000-A"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "ethernet",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.EX005"
+      ],
+      "skuIds": [
+        "sku.EX005CNB01"
+      ]
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 1,
+  "skuCount": 1,
+  "commonCapabilities": [],
+  "protocols": [
+    "ethernet",
+    "wifi"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "网络设备"
+      ],
+      "en-US": [
+        "Internet equipment"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

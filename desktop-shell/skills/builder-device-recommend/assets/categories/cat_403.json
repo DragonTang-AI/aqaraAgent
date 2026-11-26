@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "403",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "新风控制",
+    "en-US": "Fresh Air Control"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.vent.eicn01",
+      "displayName": {
+        "zh-CN": "新风控制器",
+        "en-US": "Fresh air controller"
+      },
+      "deviceTypesList": [
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EA009"
+      ],
+      "skuIds": [
+        "sku.EA009CNW01"
+      ]
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 1,
+  "skuCount": 1,
+  "commonCapabilities": [
+    {
+      "deviceType": "Ventilation",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Ventilation",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Ventilation",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 1,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "新风控制"
+      ],
+      "en-US": [
+        "Fresh Air Control"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

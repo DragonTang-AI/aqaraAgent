@@ -1,0 +1,576 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "102",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "调光模块",
+    "en-US": "Light Module"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.ctrl_ct.es1",
+      "displayName": {
+        "zh-CN": "调光控制器（双色温）",
+        "en-US": "Dimmer (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK011"
+      ],
+      "skuIds": [
+        "sku.EK011CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_dimmer3.es1",
+      "displayName": {
+        "zh-CN": "调光控制器（三通道）",
+        "en-US": "Dimmer (3 Channels)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK009"
+      ],
+      "skuIds": [
+        "sku.EK009CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_dimmer3.v1",
+      "displayName": {
+        "zh-CN": "调光控制器（三通道）",
+        "en-US": "Dimmer (3 Channels)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_rgb.aq1",
+      "displayName": {
+        "zh-CN": "调光控制器（RGB）",
+        "en-US": "Dimmer (Multicolor)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_rgb.es1",
+      "displayName": {
+        "zh-CN": "调光控制器（RGB）",
+        "en-US": "Dimmer (Multicolor)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK010"
+      ],
+      "skuIds": [
+        "sku.EK010CNW01"
+      ]
+    },
+    {
+      "model": "lumi.dimmer.acn001",
+      "displayName": {
+        "zh-CN": "双色温驱动器 T2",
+        "en-US": "Smart Constant Current Driver T2"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL180"
+      ],
+      "skuIds": [
+        "sku.AL180CNW01"
+      ]
+    },
+    {
+      "model": "lumi.dimmer.acn002",
+      "displayName": {
+        "zh-CN": "双色温驱动器 T2 (24W)",
+        "en-US": "Smart Constant Current Driver T2 (24W)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL181"
+      ],
+      "skuIds": [
+        "sku.AL181CNW01"
+      ]
+    },
+    {
+      "model": "lumi.dimmer.c3egl01",
+      "displayName": {
+        "zh-CN": "调光控制器（三通道）",
+        "en-US": "Dimmer (3 Channels)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.dimmer.cwegl01",
+      "displayName": {
+        "zh-CN": "调光控制器（双色温）",
+        "en-US": "Dimmer (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.dimmer.rcbac1",
+      "displayName": {
+        "zh-CN": "Aqara智能灯带驱动模块",
+        "en-US": "Aqara Smart Lightstrip Driver"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL010",
+        "spu.AX033"
+      ],
+      "skuIds": [
+        "sku.AX033KRW01",
+        "sku.NA"
+      ]
+    },
+    {
+      "model": "lumi.dimmer.rgbegl01",
+      "displayName": {
+        "zh-CN": "调光控制器（RGB）",
+        "en-US": "Dimmer (Multicolor)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.acn004",
+      "displayName": {
+        "zh-CN": "Aqara 双色温驱动器 T1 Pro",
+        "en-US": "Aqara Smart Dimmer Controller T1 Pro"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.TBD"
+      ],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.acn049",
+      "displayName": {
+        "zh-CN": "Aqara双色温驱动器 PR100L（24W）",
+        "en-US": "Aqara Tunable White Driver PR100L (24W)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL247"
+      ],
+      "skuIds": [
+        "sku.AL247CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn050",
+      "displayName": {
+        "zh-CN": "Aqara智能调光模块 PR100L（0-10V）",
+        "en-US": "Aqara Smart Dimmer Controller PR100L (0-10V)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL248"
+      ],
+      "skuIds": [
+        "sku.AL248CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn051",
+      "displayName": {
+        "zh-CN": "Aqara智能灯带驱动模块 PR100L",
+        "en-US": "Aqara Smart Lightstrip Driver PR100L"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL249"
+      ],
+      "skuIds": [
+        "sku.AL249CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cbacn1",
+      "displayName": {
+        "zh-CN": "Aqara 智能恒流驱动器 T1-1",
+        "en-US": "Aqara Constant Current Driver T1-1)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL003"
+      ],
+      "skuIds": [
+        "sku.AL003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cbacn2",
+      "displayName": {
+        "zh-CN": "Aqara 智能恒流驱动器 T1-2",
+        "en-US": "Aqara Constant Current Driver T1-2)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL004"
+      ],
+      "skuIds": [
+        "sku.AL004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cwacn1",
+      "displayName": {
+        "zh-CN": "Aqara智能调光模块T1（0-10v）",
+        "en-US": "Aqara Smart Dimmer Controller T1（0-10V）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL005",
+        "spu.AU005"
+      ],
+      "skuIds": [
+        "sku.AL005CNW01",
+        "sku.AU005CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.rgbac1",
+      "displayName": {
+        "zh-CN": "Aqara智能调光模块 T1",
+        "en-US": "Aqara Smart Dimmer Controller T1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AU004"
+      ],
+      "skuIds": [
+        "sku.AU004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.agl007",
+      "displayName": {
+        "zh-CN": "美标调光开关 H2",
+        "en-US": "Dimmer Switch H2 US"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.agl011",
+      "displayName": {
+        "zh-CN": "欧标调光旋钮",
+        "en-US": "Dimmer Switch H2 EU"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 21,
+  "spuCount": 16,
+  "skuCount": 15,
+  "commonCapabilities": [
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "starter",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "condition",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "action",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorRGB",
+      "automationRole": "starter",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorRGB",
+      "automationRole": "condition",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorRGB",
+      "automationRole": "action",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorXY",
+      "automationRole": "starter",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorXY",
+      "automationRole": "condition",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorXY",
+      "automationRole": "action",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CircuitCurrent",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CircuitCurrent",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 21,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "调光模块"
+      ],
+      "en-US": [
+        "Light Module"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.light.acn043",
+  "displayName": {
+    "zh-CN": "lumi.light.acn043"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [],
+  "category": {
+    "categoryId": null,
+    "name": null,
+    "tags": []
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": null,
+    "networkProtocols": [],
+    "requiresGateway": null,
+    "installRequired": false,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "FirmwareRevisionString",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.FirmwareRevisionString",
+                "spec": {
+                  "rid": "8.0.833",
+                  "path": "0.128.33047.1",
+                  "traitId": "33047",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [],
+    "defaultSpuId": null
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.light.acn043.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": null,
+    "supportDeviceSource": null
+  },
+  "extensions": {}
+}

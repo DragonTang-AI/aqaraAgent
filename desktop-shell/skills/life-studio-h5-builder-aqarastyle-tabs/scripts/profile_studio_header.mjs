@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+import assert from 'node:assert/strict';
+import {mkdirSync,writeFileSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {validateWorkspace} from './preview-package.mjs';
+import {assertExternalQAOutput,startQAStaticServer} from './qa-output.mjs';
+const args=process.argv.slice(2),opt=n=>args[args.indexOf(n)+1],root=resolve(args[0]),qa=resolve(opt('--qa-output'));
+validateWorkspace(root);assertExternalQAOutput(root,qa);mkdirSync(qa,{recursive:true});
+const server=await startQAStaticServer(root);
+const mod=await import(pathToFileURL(resolve(opt('--playwright-module')))),browser=await(mod.default||mod).chromium.launch({headless:true,executablePath:resolve(opt('--browser'))}),errors=[];
+try{
+ const page=await browser.newPage({viewport:{width:1100,height:1000}});page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:'+server.address().port+'/preview/canvas.html');const frame=page.frameLocator('main > iframe');await frame.locator('#dashboard-title').filter({hasText:'示例家庭 Studio'}).waitFor();await frame.locator('.device-card').first().waitFor();let child=page.frames().find(f=>f.url().includes('/preview/index.html'));await child.waitForFunction(()=>!window.StudioHomeRefresh.busy() && window.StudioRuntime.spaceControlIndex().complete);
+ assert.equal(await frame.locator('.title-lockup .eyebrow').count(),0);assert.equal(await frame.locator('#connection-text').innerText(),'局域网访问 Studio 中');
+ await child.evaluate(()=>{window.__headerRequests=0;window.__headerCard=document.querySelector('.device-card');const old=LifeBridge;window.LifeBridge=Object.freeze(Object.assign({},old,{nativeHttpRequest:req=>{window.__headerRequests++;return old.nativeHttpRequest(req);}}));});
+ const update=async value=>child.evaluate(payload=>H5Invoke('StudioConnectStatusUpdate',payload),Object.assign({studioDid:'mock-studio-typical',studioName:'示例家庭 Studio'},value));
+ const before=await frame.locator('#topbar').evaluate(el=>el.getBoundingClientRect().height);
+ await page.locator('main > iframe').screenshot({path:qa+'/local-name-light.png'});
+ await update({connectStatus:'cloud',studioName:'真实名称 <img onerror="bad()"> 很长的 Studio 名称'});assert.equal(await frame.locator('#connection-text').innerText(),'远程访问 Studio 中');assert.equal(await frame.locator('#dashboard-title img').count(),0);assert.equal(await frame.locator('#dashboard-title').innerText(),'真实名称 <img onerror="bad()"> 很长的 Studio 名称');assert.equal(await frame.locator('#topbar').evaluate(el=>el.getBoundingClientRect().height),before);await page.locator('main > iframe').screenshot({path:qa+'/remote-long-name-light.png'});
+ assert.equal(await child.evaluate(()=>window.__headerRequests),0);assert.equal(await child.evaluate(()=>window.__headerCard===document.querySelector('.device-card')),true);
+ for(const [code,text] of [[60101,'局域网证书异常'],[60102,'Studio 连接不可用']]){await update({connectStatus:'error',errorCode:code});assert.equal(await frame.locator('#connection-text').innerText(),text);assert.equal(await frame.locator('#connection-banner').getAttribute('data-error-code'),String(code));}
+ await child.evaluate(() => window.StudioHomeRefresh.refresh());await child.waitForFunction(()=>!window.StudioHomeRefresh.busy());assert.equal(await frame.locator('#connection-text').innerText(),'Studio 连接不可用','successful reads must not replace native error');await page.locator('main > iframe').screenshot({path:qa+'/native-error-after-refresh.png'});
+ await update({connectStatus:'local'});assert.equal(await frame.locator('#connection-banner').getAttribute('data-error-code'),null);
+ await page.locator('#language').selectOption('en');await frame.locator('#connection-text').filter({hasText:'Accessing Studio locally'}).waitFor();assert.equal(await frame.locator('#dashboard-title').innerText(),'示例家庭 Studio');await page.locator('#theme').selectOption('dark');await frame.locator('html[data-theme="dark"]').waitFor();await frame.locator('#connection-text').filter({hasText:'Accessing Studio locally'}).waitFor();await page.locator('#width').selectOption('320');child=page.frames().find(f=>f.url().includes('/preview/index.html'));await child.waitForFunction(()=>document.documentElement.dataset.theme==='dark'&&document.querySelector('#connection-text').textContent==='Accessing Studio locally');await update({connectStatus:'cloud'});await page.locator('main > iframe').screenshot({path:qa+'/remote-320-dark-en.png'});assert.equal(await child.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+ await update({studioDid:'',studioName:'',connectStatus:'unknown'});assert.equal(await frame.locator('#dashboard-title').innerText(),'Current Studio');assert.equal(await frame.locator('#connection-text').innerText(),'Studio connection status unknown');await page.locator('main > iframe').screenshot({path:qa+'/unknown-320-dark-en.png'});
+ assert.deepEqual(errors,[]);writeFileSync(qa+'/results.json',JSON.stringify({passed:true,checks:['no branding','native name','local/cloud/errors/unknown','no API override','rename and safe text','zero header HTTP','same card DOM','recovery code removal','locale and long title','320 dark']},null,2));console.log('STUDIO HEADER BROWSER PASS: actual name, native status authority, data-refresh isolation, safe long text, unchanged cards, locale/dark/320px');
+}finally{await browser.close();await new Promise(r=>server.close(r));}

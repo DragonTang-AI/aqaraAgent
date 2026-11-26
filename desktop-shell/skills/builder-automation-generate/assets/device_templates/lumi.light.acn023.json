@@ -1,0 +1,566 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.light.acn023",
+  "displayName": {
+    "zh-CN": "射灯 T2（15度）"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [
+    "Light"
+  ],
+  "category": {
+    "categoryId": "101",
+    "name": "智能灯具",
+    "tags": [
+      "智能灯具"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": "zigbee",
+    "networkProtocols": [
+      "zigbee"
+    ],
+    "requiresGateway": true,
+    "installRequired": true,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ProductName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ProductName",
+                "spec": {
+                  "rid": "8.0.1076",
+                  "path": "0.128.32900.1",
+                  "traitId": "32900",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DeviceID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.DeviceID",
+                "spec": {
+                  "rid": "8.0.1077",
+                  "path": "0.128.32905.1",
+                  "traitId": "32905",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorName",
+                "spec": {
+                  "rid": "8.0.121",
+                  "path": "0.128.32898.1",
+                  "traitId": "32898",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorID",
+                "spec": {
+                  "rid": "8.0.120",
+                  "path": "0.128.32899.1",
+                  "traitId": "32899",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "FirmwareRevisionString",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.FirmwareRevisionString",
+                "spec": {
+                  "rid": "8.0.833",
+                  "path": "0.128.33047.1",
+                  "traitId": "33047",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ChipTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -50.0,
+                  "max": 1000.0,
+                  "step": 0.01,
+                  "unit": "℃"
+                },
+                "pointName": "BasicInformation.ChipTemperature",
+                "spec": {
+                  "rid": "8.0.831",
+                  "path": "0.128.20095.1",
+                  "traitId": "20095",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Reachable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Reachable",
+                "spec": {
+                  "rid": "8.0.839",
+                  "path": "0.128.32901.1",
+                  "traitId": "32901",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "SerialNumber",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.SerialNumber",
+                "spec": {
+                  "rid": "8.0.372",
+                  "path": "0.128.32897.1",
+                  "traitId": "32897",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Mac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Mac",
+                "spec": {
+                  "rid": "8.0.1081",
+                  "path": "0.128.32904.1",
+                  "traitId": "32904",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "GeneralDiagnostics",
+            "traits": [
+              {
+                "traitCode": "RebootCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 4294967295.0,
+                  "step": 1.0
+                },
+                "pointName": "GeneralDiagnostics.RebootCount",
+                "spec": {
+                  "rid": "8.0.827",
+                  "path": "1.176.33096.1",
+                  "traitId": "33096",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Identify",
+            "traits": [
+              {
+                "traitCode": "IdentifyTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10.0,
+                  "step": 0.1,
+                  "unit": "S"
+                },
+                "pointName": "Identify.IdentifyTime",
+                "spec": {
+                  "rid": "8.0.1058",
+                  "path": "1.131.32916.1",
+                  "traitId": "32916",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "ZigbeeNetworkDiagnostics",
+            "traits": [
+              {
+                "traitCode": "LQI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 255.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.LQI",
+                "spec": {
+                  "rid": "8.0.832",
+                  "path": "1.205.33107.1",
+                  "traitId": "33107",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 2,
+        "endpointName": "Light",
+        "deviceType": "Light",
+        "functions": [
+          {
+            "functionCode": "ColorControl",
+            "traits": [
+              {
+                "traitCode": "ColorMode",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "ColorTemperature",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "ColorControl.ColorMode",
+                "spec": {
+                  "rid": "64.1.1056",
+                  "path": "2.134.32924.1",
+                  "traitId": "32924",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ColorTemperature",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 166.0,
+                  "max": 370.0,
+                  "step": 1.0,
+                  "unit": "Mired"
+                },
+                "pointName": "ColorControl.ColorTemperature",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "64.1.85",
+                  "path": "2.134.32927.1",
+                  "traitId": "32927",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "LevelControl",
+            "traits": [
+              {
+                "traitCode": "OffTransitionTime",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10000.0,
+                  "step": 500.0,
+                  "unit": "ms"
+                },
+                "pointName": "LevelControl.OffTransitionTime",
+                "spec": {
+                  "rid": "54.1.850",
+                  "path": "2.133.33126.1",
+                  "traitId": "33126",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "CurrentLevel",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 1.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "LevelControl.CurrentLevel",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "54.1.85",
+                  "path": "2.133.32923.1",
+                  "traitId": "32923",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OnTransitionTime",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10000.0,
+                  "step": 500.0,
+                  "unit": "ms"
+                },
+                "pointName": "LevelControl.OnTransitionTime",
+                "spec": {
+                  "rid": "54.1.849",
+                  "path": "2.133.33125.1",
+                  "traitId": "33125",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "StartUpBrightness",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "LevelControl.StartUpBrightness",
+                "spec": {
+                  "rid": "54.1.870",
+                  "path": "2.133.20106.1",
+                  "traitId": "20106",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "Output",
+            "traits": [
+              {
+                "traitCode": "StartUpOnOff",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Off",
+                      "value": "0"
+                    },
+                    {
+                      "key": "On",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Hold",
+                      "value": "3"
+                    }
+                  ]
+                },
+                "pointName": "Output.StartUpOnOff",
+                "spec": {
+                  "rid": "55.1.811",
+                  "path": "2.132.32921.1",
+                  "traitId": "32921",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "OnOff",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "Output.OnOff",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "55.1.85",
+                  "path": "2.132.32920.1",
+                  "traitId": "32920",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.AL104",
+      "spu.AL118"
+    ],
+    "defaultSpuId": "spu.AL104"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.light.acn023.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": "category/supportDevices_zh.json"
+  },
+  "extensions": {}
+}

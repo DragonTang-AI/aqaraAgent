@@ -1,0 +1,220 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "253",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "智能门铃类",
+    "en-US": "Doorbell"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.camera.acn005",
+      "displayName": {
+        "zh-CN": "智能可视门铃G4",
+        "en-US": "Doorbell G4"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AC008",
+        "spu.AC011"
+      ],
+      "skuIds": [
+        "sku.AC008CNW01",
+        "sku.AC011CNB01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn017",
+      "displayName": {
+        "zh-CN": "智能可视门铃G410（网关版）",
+        "en-US": "Doorbell Camera Hub G410"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC029"
+      ],
+      "skuIds": [
+        "sku.AC029CNG01",
+        "sku.AC029CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl002",
+      "displayName": {
+        "zh-CN": "智能可视门铃G4（国际版）",
+        "en-US": "Doorbell G4"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AC015"
+      ],
+      "skuIds": [
+        "sku.AC015GLB01",
+        "sku.AC015GLB02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl006",
+      "displayName": {
+        "zh-CN": "智能可视门铃G410（网关版）",
+        "en-US": "Doorbell Camera Hub G410"
+      },
+      "deviceTypesList": [
+        "VideoDoorbell",
+        "Unknown",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC029"
+      ],
+      "skuIds": [
+        "sku.AC029GLB01",
+        "sku.AC029GLB02",
+        "sku.AC029GLG01",
+        "sku.AC029GLW01"
+      ]
+    }
+  ],
+  "modelCount": 4,
+  "spuCount": 4,
+  "skuCount": 10,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Doorbell",
+      "traitCode": "ButtonEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Doorbell",
+      "traitCode": "Volume",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Doorbell",
+      "traitCode": "Volume",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Doorbell",
+      "traitCode": "Volume",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Camera",
+      "traitCode": "P2PCaptureEnabled",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Camera",
+      "traitCode": "P2PCaptureEnabled",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "VideoDoorbell",
+      "functionCode": "Camera",
+      "traitCode": "P2PCaptureEnabled",
+      "automationRole": "action",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 4,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "智能门铃类"
+      ],
+      "en-US": [
+        "Doorbell"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

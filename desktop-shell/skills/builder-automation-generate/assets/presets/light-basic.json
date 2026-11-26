@@ -1,0 +1,77 @@
+{
+  "schemaVersion": "automation-presets-v1",
+  "id": "light-basic",
+  "title": "灯光基础套餐",
+  "description": "适用于已布点灯具：定时亮灭 + 起夜柔光 + 会客/观影一键场景。无人感时不做来人开灯。",
+  "requires": { "minLights": 1 },
+  "automations": [
+    {
+      "presetId": "evening_on",
+      "name": "傍晚自动亮灯",
+      "kind": "schedule",
+      "starter": { "type": "time.schedule", "at": "18:30" },
+      "actions": [
+        { "role": "all_lights", "trait": "OnOff", "value": true },
+        { "role": "primary_light", "trait": "CurrentLevel", "value": 80, "optional": true },
+        { "role": "primary_light", "trait": "ColorTemperature", "value": 400, "optional": true },
+        { "role": "secondary_lights", "trait": "CurrentLevel", "value": 70, "optional": true }
+      ]
+    },
+    {
+      "presetId": "late_off",
+      "name": "深夜自动关灯",
+      "kind": "schedule",
+      "starter": { "type": "time.schedule", "at": "23:30" },
+      "actions": [
+        { "role": "all_lights", "trait": "OnOff", "value": false }
+      ]
+    },
+    {
+      "presetId": "night_soft",
+      "name": "起夜柔光",
+      "kind": "schedule",
+      "starter": { "type": "time.schedule", "at": "00:30" },
+      "actions": [
+        { "role": "secondary_lights", "trait": "OnOff", "value": false },
+        { "role": "primary_light", "trait": "OnOff", "value": true },
+        { "role": "primary_light", "trait": "CurrentLevel", "value": 5, "optional": true },
+        { "role": "primary_light", "trait": "ColorTemperature", "value": 500, "optional": true }
+      ]
+    },
+    {
+      "presetId": "guest_scene",
+      "name": "会客模式",
+      "kind": "scene",
+      "starter": { "type": "manual", "name": "会客模式" },
+      "actions": [
+        { "role": "all_lights", "trait": "OnOff", "value": true },
+        { "role": "all_lights", "trait": "CurrentLevel", "value": 100, "optional": true },
+        { "role": "all_lights", "trait": "ColorTemperature", "value": 250, "optional": true }
+      ]
+    },
+    {
+      "presetId": "movie_scene",
+      "name": "观影模式",
+      "kind": "scene",
+      "starter": { "type": "manual", "name": "观影模式" },
+      "actions": [
+        { "role": "primary_light", "trait": "OnOff", "value": true },
+        { "role": "primary_light", "trait": "CurrentLevel", "value": 20, "optional": true },
+        { "role": "primary_light", "trait": "ColorTemperature", "value": 450, "optional": true },
+        { "role": "secondary_lights", "trait": "OnOff", "value": true },
+        { "role": "secondary_lights", "trait": "CurrentLevel", "value": 30, "optional": true },
+        { "role": "secondary_lights", "trait": "ColorTemperature", "value": 450, "optional": true }
+      ]
+    }
+  ],
+  "gapsWhenMissing": [
+    {
+      "when": "no_motion",
+      "message": "未布点人体/存在传感器，暂无法生成「人来开灯 / 人走关灯」"
+    },
+    {
+      "when": "no_contact",
+      "message": "未布点门窗传感器，暂无法生成「开门迎光」类联动"
+    }
+  ]
+}

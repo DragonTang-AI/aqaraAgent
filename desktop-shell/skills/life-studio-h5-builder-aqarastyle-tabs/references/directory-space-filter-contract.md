@@ -1,0 +1,38 @@
+# Devices and Smart: space scope
+
+## Scope and semantics
+
+This is an optional-directory feature, independent of Home room selection, space device cards, Space control, favorites/metadata and control transactions. Use `space-filter.js` for the ID/path index, RN-compatible parent/child selection and shared modal UI. No upstream checkout is required for generation. Device and Smart selection are separate in-memory states; Scenes and Automations share the Smart selection. A tab switch preserves selection; a Studio/user collection-scope change clears it and invalidates old requests. No preference persistence or metadata writes. Render no selector or associated directory reads when the corresponding tab is absent.
+
+Read the real `/spaces` tree, retaining empty spaces and API order. Deduplicate by spaceId and guard cyclic/deep malformed trees. Never infer room membership from names or related devices. No selected IDs means no space restriction, including unassigned entries. Selecting a node includes itself and all descendants; selecting all siblings promotes their parent as in RN. Unchecking a node removes its subtree and selected ancestors, retaining other siblings. A parent with selected descendants has a mixed checkbox. Selected root is not synonymous with unrestricted All: unassigned records are excluded. The label All spaces is a scope label, never a fabricated tree node; actual root/space names come from the API. First release does not expose a separate unassigned-only/mixed-unassigned selection, although unrestricted lists retain the unassigned group last.
+
+Device refresh reloads spaces and its current device page; Smart refresh reloads spaces and only the active Scenes/Automations sub-tab. Prefetch only enabled tabs using their current space/status/type query, never a scope-independent whole-set scan. Refresh tree/name indexes through existing shared collection reads; no per-checkbox/per-expansion network calls. Re-expand selected parents on a valid new tree so new descendants join their scope. Retain unknown/deleted selected IDs as explicit removable unavailable selections; never silently turn them into unrestricted All. A failed tree read retains last good index and offers explicit retry. Reset/close an old-scope modal before new-scope publication.
+
+## Server queries, pagination and names
+
+For Devices use existing GET `/devices`, preserving keyword/status/type parameters and adding `spaceIds` (comma-separated minimal selected subtree roots) with Boolean `needChildren:true`. Automations uses the same space parameters on existing GET `/automations` and retains keyword/order/pagination. Source review confirmed server filtering occurs before totalCount/sorting/paging; spaceAssociated=false would override spaceIds, so do not add it to these combined scopes. Different filters AND together, space IDs OR together. No speculative API or all-device capability scan.
+
+Scenes keep the shared complete `/scenes` catalog; do not invent a scene space query parameter. Normalize actual nested `space.spaceId/name` and RN-compatible top-level `spaceId/spaceName`, then filter locally by selected IDs. Group smart lists and devices by ID with full path headers; fallback to returned space name, then ID. Unassigned groups are last; identical room names never merge IDs.
+
+Changing directory scope resets only that directory's query page/total and request revision. Smart Scenes repaint locally; invalidate the Automations page and load it when visible. Search inherits current space selection and existing device status/type; closing search restores the same scope. The scope chip stays visible but cannot open another modal inside the search dialog. Old list responses cannot overwrite a newer scope; do not display a first-page-only local filter as an authoritative empty result or total. Keep the existing request cache, sequential explicit pagination, search debounce/IME handling and control budgets. Namespace cache entries by the actual query through the existing collection cache.
+
+## Interaction
+
+Use a dedicated range row below the full-width search field, with a space pill and the existing Devices advanced-filter entry. Do not squeeze the input or add a Home/studio navigation bar to these pages. Default pill is All spaces; one selection uses its short actual name; multiple compact subtrees use a selected-space count. Full paths appear inside the picker and accessible labels.
+
+The theme-aware bottom sheet has a title, explicit close, local space search, expandable multiselect rows, selected chips/count and fixed Reset/Apply. Row name/checkbox selects; the separate arrow expands/collapses, with aria-expanded and mixed/true/false checkbox state. Open parents of existing selections. Reset changes only draft; Apply commits once; backdrop/close/Escape cancels. Preserve focus, scroll and body styles. Only one dialog at a time; trap keyboard focus, make background inert and mark directory refresh busy while open. Internal scrolling and keyboard-adjusted height cannot trigger page pull refresh. Do not animate/move underlying list on each check. All controls are at least 44 CSS px; use existing semantic colors, readable light/dark text, pure web controls and no new bitmap assets.
+
+Build indexes once per tree; selection/filter matching uses Sets. Search is local/debounced, does not execute commands, and renders at most 200 tree/search rows initially with explicit append. Avoid per-render full-data network requests, tree-wide capability reads or new libraries.
+
+## Roles
+
+- **Male:** existing full-capability/three-tab preset exposes space scope plus existing advanced device filters; nothing is hidden to simplify the preset.
+- **Female:** same capabilities and scope semantics with the selected theme/material; concise space labels and selected chips reduce clutter. No gender-based room/device association.
+- **Senior:** retain the existing default tabs and explicit choices. Larger 48px entry, 54px selection rows and 18px row names; explicit Reset/Apply and readable selected summary. Keep search and multiselect available, rather than silently reducing features.
+- **Child:** keep the default Home-only preset and its existing actual-room Home policy. Do not add Devices/Smart tabs or their reads just for this feature. When explicitly enabled, those directories get the same accurate picker (friendly Choose rooms title) and normal controls. They do not silently inherit Home's room selection. Role is not authorization; a request to restrict all pages needs an explicit supported data-scope contract, not a cosmetic filter.
+
+Role presets change defaults/readability, not APIs, parent-child semantics, device capability validation, search correctness or real access rights. Explicit user-configured tabs/theme win. Do not relabel real spaces/scenes, preselect inferred rooms, or add a second favorite/space-card module.
+
+## Verification and delivery
+
+Run `smoke_test_space_filter.mjs`, shared scene/Tab/read-plan tests and `profile_directory_spaces.mjs` with an already-installed browser. Check parent/mixed/child state, cancel/reset/apply, server filtering before pagination (target after row 200), search+space+advanced conjunction, independent Device/Smart state, shared Smart scope, scope changes/tree failures, retained unavailable selection, grouping and unchanged automation writes. Inspect light/dark/320px and keyboard/landscape bounds. Generate role samples to check default tabs, readability and no accidental Home scope leakage. Run favorite metadata and device regressions; controls/camera code remains independent. Refresh preview manifest and clean App export; all QA stays outside deliverables.

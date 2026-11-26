@@ -1,0 +1,115 @@
+{
+  "hasRecommendedDevices": true,
+  "totalRooms": 2,
+  "totalDevices": 5,
+  "recommendations": [
+    {
+      "roomId": "zone_room_1",
+      "roomName": "客厅",
+      "area": 25.5,
+      "deviceTypes": [
+        {
+          "type": "MotionSensor",
+          "count": 1
+        },
+        {
+          "type": "Switch",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "roomId": "zone_room_2",
+      "roomName": "卧室",
+      "area": 12.0,
+      "deviceTypes": [
+        {
+          "type": "MotionSensor",
+          "count": 1
+        },
+        {
+          "type": "ContactSensor",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "seq": 1,
+      "roomId": "zone_room_1",
+      "roomName": "客厅",
+      "deviceType": "Gateway",
+      "spuId": "spu.AG022",
+      "productName": "网关",
+      "model": "lumi.gateway.aqcn02",
+      "protocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "needsGateway": false,
+      "qty": 1,
+      "rationale": "Zigbee 子设备组网与本地联动中枢"
+    },
+    {
+      "seq": 2,
+      "roomId": "zone_room_1",
+      "roomName": "客厅",
+      "deviceType": "MotionSensor",
+      "spuId": "spu.AS038",
+      "productName": "人体传感器 P1",
+      "model": "lumi.motion.ac02",
+      "protocols": [
+        "zigbee"
+      ],
+      "needsGateway": true,
+      "qty": 1,
+      "rationale": "覆盖动线，便于人来开灯与安防感知"
+    },
+    {
+      "seq": 3,
+      "roomId": "zone_room_1",
+      "roomName": "客厅",
+      "deviceType": "Switch",
+      "spuId": "spu.AK043",
+      "productName": "智能墙壁开关 D1（单火线单键）",
+      "model": "lumi.switch.b1lacn02",
+      "protocols": [
+        "zigbee"
+      ],
+      "needsGateway": true,
+      "qty": 1,
+      "rationale": "控制房间主灯回路，便于场景与联动"
+    },
+    {
+      "seq": 4,
+      "roomId": "zone_room_2",
+      "roomName": "卧室",
+      "deviceType": "MotionSensor",
+      "spuId": "spu.AS038",
+      "productName": "人体传感器 P1",
+      "model": "lumi.motion.ac02",
+      "protocols": [
+        "zigbee"
+      ],
+      "needsGateway": true,
+      "qty": 1,
+      "rationale": "覆盖动线，便于人来开灯与安防感知"
+    },
+    {
+      "seq": 5,
+      "roomId": "zone_room_2",
+      "roomName": "卧室",
+      "deviceType": "ContactSensor",
+      "spuId": "spu.AS001",
+      "productName": "门窗传感器",
+      "model": "lumi.sensor_magnet.aq2",
+      "protocols": [
+        "zigbee"
+      ],
+      "needsGateway": true,
+      "qty": 1,
+      "rationale": "感知门窗开合，支持安防与通风提醒"
+    }
+  ]
+}

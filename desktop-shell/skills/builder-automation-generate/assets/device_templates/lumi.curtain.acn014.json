@@ -1,0 +1,503 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.curtain.acn014",
+  "displayName": {
+    "zh-CN": "Aqara智能窗帘电机 E1"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [
+    "WindowCovering"
+  ],
+  "category": {
+    "categoryId": "301",
+    "name": "窗帘电机",
+    "tags": [
+      "窗帘电机"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": "wifi",
+    "networkProtocols": [
+      "wifi"
+    ],
+    "requiresGateway": false,
+    "installRequired": false,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "SerialNumber",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.SerialNumber",
+                "spec": {
+                  "rid": "8.0.372",
+                  "path": "0.128.32897.1",
+                  "traitId": "32897",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ProductName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ProductName",
+                "spec": {
+                  "rid": "8.0.1076",
+                  "path": "0.128.32900.1",
+                  "traitId": "32900",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "DeviceID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.DeviceID",
+                "spec": {
+                  "rid": "8.0.1077",
+                  "path": "0.128.32905.1",
+                  "traitId": "32905",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Mac",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Mac",
+                "spec": {
+                  "rid": "8.0.1081",
+                  "path": "0.128.32904.1",
+                  "traitId": "32904",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorName",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorName",
+                "spec": {
+                  "rid": "8.0.121",
+                  "path": "0.128.32898.1",
+                  "traitId": "32898",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "VendorID",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.VendorID",
+                "spec": {
+                  "rid": "8.0.120",
+                  "path": "0.128.32899.1",
+                  "traitId": "32899",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "Reachable",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.Reachable",
+                "spec": {
+                  "rid": "8.0.839",
+                  "path": "0.128.32901.1",
+                  "traitId": "32901",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "Identify",
+            "traits": [
+              {
+                "traitCode": "IdentifyTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 10.0,
+                  "step": 0.1,
+                  "unit": "S"
+                },
+                "pointName": "Identify.IdentifyTime",
+                "spec": {
+                  "rid": "8.0.1058",
+                  "path": "1.131.32916.1",
+                  "traitId": "32916",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "NetworkCommissioning",
+            "traits": [
+              {
+                "traitCode": "WiFiRSSI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -100.0,
+                  "max": 0.0,
+                  "step": 1.0
+                },
+                "pointName": "NetworkCommissioning.WiFiRSSI",
+                "spec": {
+                  "rid": "8.0.1338",
+                  "path": "1.171.20119.1",
+                  "traitId": "20119",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 2,
+        "endpointName": "WindowCovering",
+        "deviceType": "WindowCovering",
+        "functions": [
+          {
+            "functionCode": "WindowCovering",
+            "traits": [
+              {
+                "traitCode": "CurrentPositionPercentage",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "WindowCovering.CurrentPositionPercentage",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "1.1.951",
+                  "path": "2.137.32931.1",
+                  "traitId": "32931",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "TravelConfigured",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "WindowCovering.TravelConfigured",
+                "spec": {
+                  "rid": "1.1.953",
+                  "path": "2.137.20032.1",
+                  "traitId": "20032",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "MotorDirectionReversed",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "WindowCovering.MotorDirectionReversed",
+                "spec": {
+                  "rid": "1.1.954",
+                  "path": "2.137.20033.1",
+                  "traitId": "20033",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ManualPullStartEnabled",
+                "parameter": {
+                  "type": "Bool",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true
+                },
+                "pointName": "WindowCovering.ManualPullStartEnabled",
+                "spec": {
+                  "rid": "1.1.955",
+                  "path": "2.137.20142.1",
+                  "traitId": "20142",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "TargetPositionPercentage",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 100.0,
+                  "step": 1.0,
+                  "unit": "%"
+                },
+                "pointName": "WindowCovering.TargetPositionPercentage",
+                "automationRoles": [
+                  "starter",
+                  "condition",
+                  "action"
+                ],
+                "spec": {
+                  "rid": "1.1.85",
+                  "path": "2.137.32932.1",
+                  "traitId": "32932",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "TripTime",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 1.0,
+                  "max": 300.0,
+                  "step": 1.0,
+                  "unit": "S"
+                },
+                "pointName": "WindowCovering.TripTime",
+                "spec": {
+                  "rid": "1.1.949",
+                  "path": "2.137.33017.1",
+                  "traitId": "33017",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "LimitPointCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 2.0,
+                  "step": 1.0
+                },
+                "pointName": "WindowCovering.LimitPointCount",
+                "spec": {
+                  "rid": "1.1.960",
+                  "path": "2.137.20189.1",
+                  "traitId": "20189",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "MotorSpeedSetting",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "LowSpeed",
+                      "value": "0"
+                    },
+                    {
+                      "key": "MediumSpeed",
+                      "value": "1"
+                    },
+                    {
+                      "key": "HighSpeed",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "WindowCovering.MotorSpeedSetting",
+                "spec": {
+                  "rid": "1.1.961",
+                  "path": "2.137.20184.1",
+                  "traitId": "20184",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              },
+              {
+                "traitCode": "MotorOperationStatus",
+                "parameter": {
+                  "type": "Enum",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "supportedValues": [
+                    {
+                      "key": "Closing",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Opening",
+                      "value": "1"
+                    },
+                    {
+                      "key": "Stopped",
+                      "value": "2"
+                    }
+                  ]
+                },
+                "pointName": "WindowCovering.MotorOperationStatus",
+                "automationRoles": [
+                  "starter",
+                  "condition"
+                ],
+                "spec": {
+                  "rid": "1.1.959",
+                  "path": "2.137.20031.1",
+                  "traitId": "20031",
+                  "tags": [
+                    "0",
+                    "1"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [],
+    "defaultSpuId": null
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.curtain.acn014.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": null,
+    "supportDeviceSource": "category/supportDevices_zh.json"
+  },
+  "extensions": {}
+}

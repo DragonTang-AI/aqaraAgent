@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "451",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "睡眠监测带",
+    "en-US": "Sleep monitoring belt"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.lunar.acn01",
+      "displayName": {
+        "zh-CN": "Aqara智能睡眠监测带",
+        "en-US": "Aqara Sleeping Belt"
+      },
+      "deviceTypesList": [
+        "SleepMonitor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS030"
+      ],
+      "skuIds": [
+        "sku.AS030CNW01",
+        "sku.AS030CNW02",
+        "sku.AS030GLW01",
+        "sku.AS030GLW02"
+      ]
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 1,
+  "skuCount": 4,
+  "commonCapabilities": [
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "OnBed",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "OnBed",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepStage",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepStage",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepQuality",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepQuality",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 1,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "睡眠监测带"
+      ],
+      "en-US": [
+        "Sleep monitoring belt"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

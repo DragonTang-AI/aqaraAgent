@@ -1,0 +1,460 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "402",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "温控器",
+    "en-US": "Thermostat"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.airrtc.acn011",
+      "displayName": {
+        "zh-CN": "Aqara VRF控制器 PR100W",
+        "en-US": "Aqara VRF Controller PR100W"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "Ventilation",
+        "FloorHeating"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA024"
+      ],
+      "skuIds": [
+        "sku.AA024CNW01"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.acn002",
+      "displayName": {
+        "zh-CN": "智能温控器W400 (氟机版)",
+        "en-US": "Thermostat W400 (VRF)"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "FloorHeating",
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA012"
+      ],
+      "skuIds": [
+        "sku.AA012CNG01",
+        "sku.AA012CNW01",
+        "sku.AA012SAG01",
+        "sku.AA012SAW01"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.acn003",
+      "displayName": {
+        "zh-CN": "智能温控器W400 (水机版)",
+        "en-US": "Thermostat W400 (FCU)"
+      },
+      "deviceTypesList": [
+        "FloorHeating",
+        "AirConditioner",
+        "Ventilation"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA013"
+      ],
+      "skuIds": [
+        "sku.AA013CNG01",
+        "sku.AA013CNW01",
+        "sku.AA013SAG01",
+        "sku.AA013SAW01"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.acn012",
+      "displayName": {
+        "zh-CN": "Aqara智能温控器 PR200W",
+        "en-US": "Aqara Smart Thermostat PR200W"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA026"
+      ],
+      "skuIds": [
+        "sku.AA026CNW01"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.aus002",
+      "displayName": {
+        "zh-CN": "美标温控器网关W200",
+        "en-US": "Thermostat Hub W200"
+      },
+      "deviceTypesList": [
+        "Thermostat",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA015"
+      ],
+      "skuIds": [
+        "sku.AA015USB01",
+        "sku.AA015USB02",
+        "sku.AA015USB03"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.tcpco2ecn01",
+      "displayName": {
+        "zh-CN": "空调温控器（CO2）",
+        "en-US": "Thermostat (CO2)"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "CO2Sensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EA005"
+      ],
+      "skuIds": [
+        "sku.EA005CNW01"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.tcpecn01",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.airrtc.tcpecn02",
+      "displayName": {
+        "zh-CN": "空调温控器 S2",
+        "en-US": "Thermostat S2"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EA006"
+      ],
+      "skuIds": [
+        "sku.EA006CNW01"
+      ]
+    },
+    {
+      "model": "lumi.airrtc.vrfegl01",
+      "displayName": {
+        "zh-CN": "VRF空调控制器",
+        "en-US": "VRF Air Conditioning Controller"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EA003"
+      ],
+      "skuIds": [
+        "sku.EA003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_hvac.aq1",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_hvac.es1",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EA002"
+      ],
+      "skuIds": [
+        "sku.EA002CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_hvac.v1",
+      "displayName": {
+        "zh-CN": "空调温控器",
+        "en-US": "Thermostat"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 12,
+  "spuCount": 9,
+  "skuCount": 17,
+  "commonCapabilities": [
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "FloorHeating",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 11,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "温控器"
+      ],
+      "en-US": [
+        "Thermostat"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

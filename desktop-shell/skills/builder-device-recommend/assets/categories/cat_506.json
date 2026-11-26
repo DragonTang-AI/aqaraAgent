@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "506",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "智能家具",
+    "en-US": "Smart Furniture"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.bed.hhcn03",
+      "displayName": {
+        "zh-CN": "智能电动床W1",
+        "en-US": "Smart Bed W1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu./"
+      ],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 1,
+  "skuCount": 0,
+  "commonCapabilities": [],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 1,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "智能家具"
+      ],
+      "en-US": [
+        "Smart Furniture"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

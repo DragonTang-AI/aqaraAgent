@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "153",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "温湿度传感器",
+    "en-US": "Temperature and humidity sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.sensor_ht.acn001",
+      "displayName": {
+        "zh-CN": "Aqara温湿度传感器 PR140P",
+        "en-US": "Aqara Temperature and Humidity Sensor PR140P"
+      },
+      "deviceTypesList": [
+        "AtmosphericPressureSensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS085"
+      ],
+      "skuIds": [
+        "sku.AS085CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_ht.agl001",
+      "displayName": {
+        "zh-CN": "温控伴侣W100",
+        "en-US": "Climate Sensor W100"
+      },
+      "deviceTypesList": [
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_ht.agl02",
+      "displayName": {
+        "zh-CN": "温湿度传感器T1",
+        "en-US": "Temperature and Humidity Sensor T1"
+      },
+      "deviceTypesList": [
+        "AtmosphericPressureSensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS013",
+        "spu.AS071"
+      ],
+      "skuIds": [
+        "sku.AS013CNW01",
+        "sku.AS013KRW01",
+        "sku.AS071GLW01",
+        "sku.AS071SEW01"
+      ]
+    },
+    {
+      "model": "lumi.weather.v1",
+      "displayName": {
+        "zh-CN": "温湿度传感器",
+        "en-US": "Temperature and Humidity Sensor"
+      },
+      "deviceTypesList": [
+        "AtmosphericPressureSensor",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS003",
+        "spu.AS008"
+      ],
+      "skuIds": [
+        "sku.AS003CNW01",
+        "sku.AS003CNW02",
+        "sku.AS003CNW03",
+        "sku.AS008CNW01",
+        "sku.AS008CNW02",
+        "sku.AS008RUW01",
+        "sku.AS008UEW01"
+      ]
+    }
+  ],
+  "modelCount": 4,
+  "spuCount": 5,
+  "skuCount": 12,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AtmosphericPressureSensor",
+      "functionCode": "Pressure",
+      "traitCode": "CurrentPressure",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AtmosphericPressureSensor",
+      "functionCode": "Pressure",
+      "traitCode": "CurrentPressure",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 4,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "温湿度传感器"
+      ],
+      "en-US": [
+        "Temperature and humidity sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

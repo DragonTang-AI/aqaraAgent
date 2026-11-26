@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "contractVersion": "2026.11.03.2",
+  "verifiedAt": "2026-09-21",
+  "policy": "Portable release metadata only. Ordinary generation requires no upstream repository. Detailed internal source locations and hashes are intentionally excluded from the distributable skill. Additions are historical audit records, not current behavioral instructions; current linked contracts and compatibility matrix govern.",
+  "sources": [
+    {
+      "id": "life-ios-host-and-bridge",
+      "verification": "source-backed snapshot"
+    },
+    {
+      "id": "studio-openapi-and-asyncapi",
+      "verification": "source-backed snapshot"
+    },
+    {
+      "id": "studio-camera-webrtc-runtime",
+      "verification": "source-backed snapshot"
+    },
+    {
+      "id": "aqara-mobile-ui-grammar",
+      "verification": "source-backed snapshot"
+    },
+    {
+      "id": "aqara-dashboard-visual-profile",
+      "verification": "reviewed design snapshot"
+    },
+    {
+      "id": "aqara-smart-home-card-design",
+      "version": "0.12.0",
+      "verification": "reviewed portable visual-contract snapshot"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "15de38fb70bc80ae9276fa7703b48ae861a672e6"
+    }
+  ],
+  "additions": [
+    {
+      "id": "home-ai-assistant",
+      "reviewedAt": "2026-10-14",
+      "verification": "Reviewed source integration and screenshot-derived H5 adaptation; automated gates recorded separately; real-host acceptance pending user build. Baseline upstream hashes and verifiedAt have not been recertified."
+    },
+    {
+      "id": "shared-aqara-ui-theme-skins",
+      "reviewedAt": "2026-10-14",
+      "verification": "H5-only shared geometry/behavior and light/dark paint contract; baseline upstream certification unchanged."
+    },
+    {
+      "id": "favorite-scenes-local-selection",
+      "reviewedAt": "2026-10-14",
+      "verification": "Figma rules and user-confirmed local storage, 0–10 selection, two-column UI and request-success feedback; H5 browser/portability gates passed. Native build verification remains with user; baseline upstream certification unchanged.",
+      "supersededBy": "rn-compatible-favorite-metadata (persistence only; presentation remains applicable)"
+    },
+    {
+      "id": "space-control-and-shared-category-details",
+      "reviewedAt": "2026-10-14",
+      "verification": "Figma-derived summary and independent detail cards, user-confirmed overview entries, real public API batch plans with partial failure and targeted state readback; portable browser and runtime gates. Native acceptance remains with user; baseline hashes and verifiedAt unchanged."
+    },
+    {
+      "id": "home-xl-grid-alignment-and-slider-paint",
+      "reviewedAt": "2026-10-14",
+      "verification": "Full-width Home light XL, theme-aware endpoint border and visible range focus; CSS-only correction, control/bridge/camera logic unchanged. Native acceptance remains with user; baseline upstream certification unchanged."
+    },
+    {
+      "id": "native-studio-header-identity-and-status",
+      "reviewedAt": "2026-10-14",
+      "verification": "Source-backed RN-equivalent committed route/error projection and actual Studio name; H5 getter/subscription lifecycle. Native syntax review only; build and real-host acceptance remain with user; baseline upstream hashes and verifiedAt unchanged."
+    },
+    {
+      "id": "favorite-devices-independent-home-mode",
+      "reviewedAt": "2026-10-14",
+      "verification": "Figma endpoint-level 0–10 compact cards and selection; user-confirmed isolated local storage; explicit intent routing and exact public Boolean/AutoControl shortcuts. H5 runtime/browser gates; native build remains with user. Baseline upstream hashes and verifiedAt unchanged.",
+      "supersededBy": "rn-compatible-favorite-metadata (persistence only; presentation remains applicable)"
+    },
+    {
+      "id": "favorite-device-freshness-and-direct-curtain-glyph",
+      "reviewedAt": "2026-10-15",
+      "verification": "Direct Figma curtain glyph retained. Superseded commit/theme refresh by versioned canonical entity commits, silent selected reads, fresh selector reuse, zero-request local save, and optional document-scoped PageVisibilityChanged bridge. Held-response, cancellation, concurrent write/read and browser regression gates; native syntax review only, App build and live lifecycle acceptance remain with user. Baseline source certification unchanged."
+    },
+    {
+      "id": "favorite-speaker-traits-and-selector-back-focus",
+      "reviewedAt": "2026-10-16",
+      "verification": "Reviewed Aqara Speaker/MediaPlayback trait semantics, actual-capability-only independent favorite card, grouped targeted readback, typed controls and scoped WebKit back-button focus reset. H5 smoke/browser review; native build and live Speaker/Safari acceptance remain with user. Baseline upstream certification unchanged."
+    },
+    {
+      "id": "role-uiux-usability-polish",
+      "reviewedAt": "2026-10-20",
+      "verification": "Targeted public UI/UX Pro Max document review distilled into portable H5 role guidance and generator CSS. Baseline upstream revisions/verifiedAt remain unchanged; browser gates are scoped checks, not native or full accessibility certification."
+    },
+    {
+      "id": "child-scoped-room-startup",
+      "reviewedAt": "2026-10-20",
+      "verification": "H5-only child preset first-room/manual startup policy; real tree-scoped queries and shared spaces read, empty/failure and stale-request guards. Upstream native/API baseline revisions and verifiedAt remain unchanged; native build verification remains with the user.",
+      "supersededBy": "role-profiles-contract.md: default whole-home/manual; first-room only when explicitly requested"
+    },
+    {
+      "id": "role-switch-color-pairing",
+      "reviewedAt": "2026-10-20",
+      "verification": "Role-only CSS correction; four-role light/dark browser checks include on/off/loading glyphs and invariant geometry. No runtime data, bridge or control handler changes; real-device acceptance remains user-owned."
+    },
+    {
+      "id": "rn-compatible-favorite-metadata",
+      "reviewedAt": "2026-10-21",
+      "verification": "User authorized RN-known-key read/merge/update, accepting unknown-key overwrite limitation. Shared H5 state and isolated preview simulation; no native/backend changes. Real host persistence remains user verification."
+    },
+    {
+      "id": "directory-space-multiselect",
+      "reviewedAt": "2026-10-21",
+      "verification": "RN 1.0.7 selection/index and local-filter source reviewed; existing device/automation server space parameters verified in service source. H5 draft tree UI and pagination adaptation; role defaults preserved. Native build remains user verification."
+    },
+    {
+      "id": "rn-compatible-ai-initial-question",
+      "reviewedAt": "2026-10-21",
+      "verification": "RN RouterUtil and iOS aiAssistantPrompt initialMessage chain reviewed. H5 optional content, old-host capability marker, shared click lock and isolated preview simulation. Browser/bridge regression and native syntax parse only; App build and actual consent/question execution remain user verification. Baseline upstream certification unchanged."
+    },
+    {
+      "id": "role-scoped-native-device-pairing",
+      "reviewedAt": "2026-10-21",
+      "verification": "Male-only default with independent explicit configuration; shared legacy/new iOS advertisement and adapter, RN pairing URL/control path reused. Isolated preview, callback tests and device-directory return refresh. Native build and actual pairing remain user verification; baseline upstream certification unchanged."
+    },
+    {
+      "id": "safe-area-background-continuity",
+      "reviewedAt": "2026-10-21",
+      "verification": "Shared inert status guard exposes original page paint at origin and matches scrolled header glass; Smart canvas spread halo removed. Browser pixel and geometry checks cover nonzero safe area, Apple layered gradient, role artwork, themes, tabs and reduced transparency. No native/bridge/data/control change; native appearance remains user verification. Baseline certification unchanged."
+    },
+    {
+      "id": "single-plane-scroll-chrome",
+      "reviewedAt": "2026-10-21",
+      "verification": "Follow-up to real-device scroll feedback: replace separate status/header blur planes and threshold tint transition with a shared masked material plane, measured header extent and frame-coalesced continuous scroll opacity. Dynamic forward/reverse offset browser checks and role/theme reviews; no native or bridge change. Real iOS scroll/compositor acceptance remains user verification."
+    },
+    {
+      "id": "role-scoped-home-space-card-details",
+      "reviewedAt": "2026-10-22",
+      "verification": "User-confirmed Home space-card detail default: male/unscoped enabled, female/senior/child disabled; independent explicit Boolean override and older-config fallback. Generation/role/portability and six browser variants verify click/keyboard affordances and inline switch writes. Favorite/device-plugin/Space-control modules unchanged; no native changes."
+    },
+    {
+      "id": "shared-space-summary-anatomy",
+      "reviewedAt": "2026-10-22",
+      "verification": "User approved standard Figma summary structure across all roles: shared Grid, top icon/actions, copy then all-space chips, 172/126 scope heights. Role paints/device card variants retained; clear summary actions adapted to validated 56x44 targets. Layout matrix and existing control/material gates cover themes, roles, scopes, narrow widths and long text. No new APIs/native behavior; no fresh upstream certification."
+    },
+    {
+      "id": "ir-ac-and-top-level-space-counts",
+      "reviewedAt": "2026-11-03",
+      "verification": "Android Studio response review confirmed IRDevice OnOff points and top-level room spaces. H5 climate matching and active-room summaries were corrected; deterministic space-control and generated-package gates passed. Native code and baseline upstream certification unchanged."
+    },
+    {
+      "id": "direct-space-room-tabs",
+      "reviewedAt": "2026-11-03",
+      "verification": "RN Home and category-detail selectors were compared with Android screenshots. H5 room tabs now derive from directly assigned matching devices and use exact space IDs, excluding empty parent duplicates and putting unassigned last. Deterministic room-projection and generated-package gates passed; native and baseline upstream certification unchanged."
+    }
+  ]
+}

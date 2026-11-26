@@ -1,0 +1,905 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "351",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "无线遥控类",
+    "en-US": "Remote Control"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.remote.acn003",
+      "displayName": {
+        "zh-CN": "无线开关 E1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch E1 (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR014"
+      ],
+      "skuIds": [
+        "sku.AR014CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.acn004",
+      "displayName": {
+        "zh-CN": "无线开关E1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch E1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR015"
+      ],
+      "skuIds": [
+        "sku.AR015CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.acn007",
+      "displayName": {
+        "zh-CN": "无线开关E1",
+        "en-US": "Wireless Mini Switch E1"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR019"
+      ],
+      "skuIds": [
+        "sku.AR019CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.acn008",
+      "displayName": {
+        "zh-CN": "无线开关 H1M（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch H1M(Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK093"
+      ],
+      "skuIds": [
+        "sku.AK093CNG01"
+      ]
+    },
+    {
+      "model": "lumi.remote.acn009",
+      "displayName": {
+        "zh-CN": "无线开关 H1M（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch H1M (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK094"
+      ],
+      "skuIds": [
+        "sku.AK094CNG01"
+      ]
+    },
+    {
+      "model": "lumi.remote.acn010",
+      "displayName": {
+        "zh-CN": "蓝牙语音控制器",
+        "en-US": "Bluetooth Voice Controller"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.remote.b186acn01",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK011",
+        "spu.AK030"
+      ],
+      "skuIds": [
+        "sku.AK011CNW01",
+        "sku.AK011CNW02",
+        "sku.AK011RUW01",
+        "sku.AK011UEW01",
+        "sku.AK030CNG01",
+        "sku.AK030CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b186acn02",
+      "displayName": {
+        "zh-CN": "无线开关D1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch D1 (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR004"
+      ],
+      "skuIds": [
+        "sku.AR004CNW01",
+        "sku.AR004CNW02"
+      ]
+    },
+    {
+      "model": "lumi.remote.b186acn03",
+      "displayName": {
+        "zh-CN": "无线开关T1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch T1 (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR002"
+      ],
+      "skuIds": [
+        "sku.AR002CNW01",
+        "sku.AR002KRW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b18ac1",
+      "displayName": {
+        "zh-CN": "无线开关H1（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch H1(Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR009",
+        "spu.AR010"
+      ],
+      "skuIds": [
+        "sku.AR009CNG01",
+        "sku.AR010CNG01",
+        "sku.AR010CNJ01",
+        "sku.AR010CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b1acn01",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK010"
+      ],
+      "skuIds": [
+        "sku.AK010CNW01",
+        "sku.AK010CNW03",
+        "sku.AK010RUW01",
+        "sku.AK010UEW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b1acn02",
+      "displayName": {
+        "zh-CN": "无线开关T1",
+        "en-US": "Wireless Mini Switch T1"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR001",
+        "spu.AR027"
+      ],
+      "skuIds": [
+        "sku.AR001CNW01",
+        "sku.AR001CNW02",
+        "sku.AR001GLW01",
+        "sku.AR001GLW02",
+        "sku.AR001GLW03",
+        "sku.AR001GLW04",
+        "sku.AR001KRW01",
+        "sku.AR001KRW02",
+        "sku.AR001RUW01",
+        "sku.AR027GLW01",
+        "sku.AR027SEW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b286acn01",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK012",
+        "spu.AK031",
+        "spu.无"
+      ],
+      "skuIds": [
+        "sku.AK012CNW01",
+        "sku.AK012RUW01",
+        "sku.AK012UEW01",
+        "sku.AK031CNG01",
+        "sku.AK031CNJ01",
+        "sku.有品SKU：3007179"
+      ]
+    },
+    {
+      "model": "lumi.remote.b286acn02",
+      "displayName": {
+        "zh-CN": "无线开关D1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch D1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR005"
+      ],
+      "skuIds": [
+        "sku.AR005CNW01",
+        "sku.AR005CNW02"
+      ]
+    },
+    {
+      "model": "lumi.remote.b286acn03",
+      "displayName": {
+        "zh-CN": "无线开关T1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch T1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR003"
+      ],
+      "skuIds": [
+        "sku.AR003CNW01",
+        "sku.AR003KRW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b286opcn01",
+      "displayName": {
+        "zh-CN": "无线场景开关（双键版）",
+        "en-US": "Wireless Scene Switch (Two Button Edition)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XK002"
+      ],
+      "skuIds": [
+        "sku.XK002CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b28ac1",
+      "displayName": {
+        "zh-CN": "无线开关H1（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch H1 (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR009"
+      ],
+      "skuIds": [
+        "sku.AR009CNG02",
+        "sku.AR009CNJ02",
+        "sku.AR009CNW02",
+        "sku.AR009GLG01",
+        "sku.AR009GLW02"
+      ]
+    },
+    {
+      "model": "lumi.remote.b486opcn01",
+      "displayName": {
+        "zh-CN": "无线场景开关（四键版）",
+        "en-US": "Wireless Scene Switch (Four Button Edition)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XK003"
+      ],
+      "skuIds": [
+        "sku.XK003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.b686opcn01",
+      "displayName": {
+        "zh-CN": "无线场景开关（六键版）",
+        "en-US": "Wireless Scene Switch (Six Button Edition)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XK004"
+      ],
+      "skuIds": [
+        "sku.XK004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.cagl01",
+      "displayName": {
+        "zh-CN": "魔方控制器T1",
+        "en-US": "Cube T1"
+      },
+      "deviceTypesList": [
+        "Cube",
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR007"
+      ],
+      "skuIds": [
+        "sku.AR007CNW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.cagl02",
+      "displayName": {
+        "zh-CN": "魔方控制器 T1 Pro",
+        "en-US": "Cube T1 Pro"
+      },
+      "deviceTypesList": [
+        "Cube",
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR013",
+        "spu.AR020"
+      ],
+      "skuIds": [
+        "sku.AR013CNW01",
+        "sku.AR020GLW01"
+      ]
+    },
+    {
+      "model": "lumi.remote.rkba01",
+      "displayName": {
+        "zh-CN": "智能旋钮开关 H1（无线版）",
+        "en-US": "Wireless Smart Knob H1"
+      },
+      "deviceTypesList": [
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR008",
+        "spu.AR025"
+      ],
+      "skuIds": [
+        "sku.AR008CNG01",
+        "sku.AR008CNJ01",
+        "sku.AR008CNW01",
+        "sku.AR025KRW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_86sw1.aq1",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_86sw1.es1",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK003"
+      ],
+      "skuIds": [
+        "sku.EK003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_86sw1.v1",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式单键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK003"
+      ],
+      "skuIds": [
+        "sku.AK003CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_86sw2.aq1",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_86sw2.es1",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK004"
+      ],
+      "skuIds": [
+        "sku.EK004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_86sw2.v1",
+      "displayName": {
+        "zh-CN": "无线开关（贴墙式双键版）",
+        "en-US": "Wireless Remote Switch (Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK004"
+      ],
+      "skuIds": [
+        "sku.AK004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_cube.aqgl01",
+      "displayName": {
+        "zh-CN": "魔方控制器",
+        "en-US": "Cube"
+      },
+      "deviceTypesList": [
+        "Cube"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK009",
+        "spu.AK009UEW01",
+        "spu.AK026"
+      ],
+      "skuIds": [
+        "sku.AK009",
+        "sku.AK009CNW01",
+        "sku.AK009RUW01",
+        "sku.AK009UEW01",
+        "sku.AK026CNW01",
+        "sku.AK026CNW02",
+        "sku.AK026CNW03"
+      ]
+    },
+    {
+      "model": "lumi.sensor_cube.es1",
+      "displayName": {
+        "zh-CN": "魔方控制器",
+        "en-US": "Cube"
+      },
+      "deviceTypesList": [
+        "Cube"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_cube.v1",
+      "displayName": {
+        "zh-CN": "魔方控制器",
+        "en-US": "Cube"
+      },
+      "deviceTypesList": [
+        "Cube",
+        "Knob"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_switch.aq2",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK001"
+      ],
+      "skuIds": [
+        "sku.AK001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_switch.aq3",
+      "displayName": {
+        "zh-CN": "无线开关（升级版）",
+        "en-US": "Wireless Mini Switch (Advanced)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK002",
+        "spu.AK041"
+      ],
+      "skuIds": [
+        "sku.AK002CNW01",
+        "sku.AK002CNW02",
+        "sku.AK041CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_switch.es2",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK001"
+      ],
+      "skuIds": [
+        "sku.EK001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_switch.es3",
+      "displayName": {
+        "zh-CN": "无线开关（升级版）",
+        "en-US": "Wireless Mini Switch (Advanced)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK002"
+      ],
+      "skuIds": [
+        "sku.EK002CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_switch.v1",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_switch.v2",
+      "displayName": {
+        "zh-CN": "无线开关",
+        "en-US": "Wireless Switch"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.MK001",
+        "spu.MR001"
+      ],
+      "skuIds": [
+        "sku.MK001CNW01",
+        "sku.MR001CN01"
+      ]
+    }
+  ],
+  "modelCount": 37,
+  "spuCount": 41,
+  "skuCount": 78,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Button",
+      "functionCode": "Button",
+      "traitCode": "ButtonEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Cube",
+      "functionCode": "Cube",
+      "traitCode": "CubeEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Knob",
+      "functionCode": "Knob",
+      "traitCode": "RotationAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Cube",
+      "functionCode": "Cube",
+      "traitCode": "TopFace",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Cube",
+      "functionCode": "Cube",
+      "traitCode": "TopFace",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Cube",
+      "functionCode": "Cube",
+      "traitCode": "TopFaceChanged",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Knob",
+      "functionCode": "Button",
+      "traitCode": "ButtonEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Knob",
+      "functionCode": "Knob",
+      "traitCode": "RotationEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Knob",
+      "functionCode": "Knob",
+      "traitCode": "HoldRotationAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 37,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "无线遥控类"
+      ],
+      "en-US": [
+        "Remote Control"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "v1",
+  "kind": "DeviceTemplate",
+  "model": "lumi.switch.acn001",
+  "displayName": {
+    "zh-CN": "智能墙壁开关X1（单火线单键版）"
+  },
+  "brand": "Aqara",
+  "deviceTypesList": [],
+  "category": {
+    "categoryId": "51",
+    "name": "开关类",
+    "tags": [
+      "开关类"
+    ]
+  },
+  "installProfile": {
+    "installMethods": [],
+    "powerType": null,
+    "networkProtocol": "zigbee",
+    "networkProtocols": [
+      "zigbee"
+    ],
+    "requiresGateway": true,
+    "installRequired": false,
+    "recommendedSpaces": [],
+    "constraints": []
+  },
+  "capabilities": {
+    "automationDefinitionType": "SCRIPT_JSON",
+    "endpoints": [
+      {
+        "endpointId": 0,
+        "endpointName": "endpoint-0",
+        "deviceType": "Root",
+        "functions": [
+          {
+            "functionCode": "BasicInformation",
+            "traits": [
+              {
+                "traitCode": "ModelValue",
+                "parameter": {
+                  "type": "String",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true
+                },
+                "pointName": "BasicInformation.ModelValue",
+                "spec": {
+                  "rid": "8.0.1433",
+                  "path": "0.128.33141.1",
+                  "traitId": "33141",
+                  "tags": [
+                    "1"
+                  ]
+                }
+              },
+              {
+                "traitCode": "ChipTemperature",
+                "parameter": {
+                  "type": "Float",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": -50.0,
+                  "max": 1000.0,
+                  "step": 0.01,
+                  "unit": "℃"
+                },
+                "pointName": "BasicInformation.ChipTemperature",
+                "spec": {
+                  "rid": "8.0.831",
+                  "path": "0.128.20095.1",
+                  "traitId": "20095",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      },
+      {
+        "endpointId": 1,
+        "endpointName": "endpoint-1",
+        "deviceType": "Public",
+        "functions": [
+          {
+            "functionCode": "GeneralDiagnostics",
+            "traits": [
+              {
+                "traitCode": "RebootCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 4294967295.0,
+                  "step": 1.0
+                },
+                "pointName": "GeneralDiagnostics.RebootCount",
+                "spec": {
+                  "rid": "8.0.827",
+                  "path": "1.176.33096.1",
+                  "traitId": "33096",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          },
+          {
+            "functionCode": "ZigbeeNetworkDiagnostics",
+            "traits": [
+              {
+                "traitCode": "APSRetransmissionCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 20.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.APSRetransmissionCount",
+                "spec": {
+                  "rid": "8.0.2187",
+                  "path": "1.205.20123.1",
+                  "traitId": "20123",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "NWKRetransmissionCount",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 20.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.NWKRetransmissionCount",
+                "spec": {
+                  "rid": "8.0.2189",
+                  "path": "1.205.20136.1",
+                  "traitId": "20136",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "RoutingAgingCountThreshold",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": true,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 20.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.RoutingAgingCountThreshold",
+                "spec": {
+                  "rid": "8.0.2190",
+                  "path": "1.205.20135.1",
+                  "traitId": "20135",
+                  "tags": [
+                    "3"
+                  ]
+                }
+              },
+              {
+                "traitCode": "LQI",
+                "parameter": {
+                  "type": "Integer",
+                  "readable": true,
+                  "writable": false,
+                  "subscribable": true,
+                  "min": 0.0,
+                  "max": 255.0,
+                  "step": 1.0
+                },
+                "pointName": "ZigbeeNetworkDiagnostics.LQI",
+                "spec": {
+                  "rid": "8.0.832",
+                  "path": "1.205.33107.1",
+                  "traitId": "33107",
+                  "tags": [
+                    "2"
+                  ]
+                }
+              }
+            ],
+            "commands": []
+          }
+        ]
+      }
+    ]
+  },
+  "catalogRefs": {
+    "spuIds": [
+      "spu.AK079"
+    ],
+    "defaultSpuId": "spu.AK079"
+  },
+  "lifecycle": {
+    "status": "unknown"
+  },
+  "sourceRefs": {
+    "specFile": "doc/deviceTemplate/spec/lumi.switch.acn001.json",
+    "traitSource": "iot_qlink_subject_trait.xlsx",
+    "hardwareSource": "c_hardware_config.xlsx",
+    "supportDeviceSource": "category/supportDevices_zh.json"
+  },
+  "extensions": {}
+}

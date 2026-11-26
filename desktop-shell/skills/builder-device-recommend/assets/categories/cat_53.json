@@ -1,0 +1,260 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "53",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "控制模块",
+    "en-US": "Switch Module"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.ctrl_dualchn.es1",
+      "displayName": {
+        "zh-CN": "双路控制模块",
+        "en-US": "Dual control module"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK012"
+      ],
+      "skuIds": [
+        "sku.EK012CNW01"
+      ]
+    },
+    {
+      "model": "lumi.relay.c2acn01",
+      "displayName": {
+        "zh-CN": "双路控制模块",
+        "en-US": "Dual control module"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK027"
+      ],
+      "skuIds": [
+        "sku.AK027CNW01"
+      ]
+    },
+    {
+      "model": "lumi.relay.c4acn01",
+      "displayName": {
+        "zh-CN": "四路控制器",
+        "en-US": "Wireless Relay Controller (4 Channels)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn047",
+      "displayName": {
+        "zh-CN": "双路控制模块 T2",
+        "en-US": "Dual Relay Module T2"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AR023",
+        "spu.AR026"
+      ],
+      "skuIds": [
+        "sku.AR023CNW01",
+        "sku.AR026CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.l0acn1",
+      "displayName": {
+        "zh-CN": "单路控制器 T1（单火版）",
+        "en-US": "Single Switch Module T1 (No Neutral)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AU002"
+      ],
+      "skuIds": [
+        "sku.AU002CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.l0agl1",
+      "displayName": {
+        "zh-CN": "单路控制器 T1单火线（国际版）",
+        "en-US": "Single channel controller T1 single live wire (international version)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AU002"
+      ],
+      "skuIds": [
+        "sku.AU002GLW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n0acn2",
+      "displayName": {
+        "zh-CN": "单路控制器 T1（零火版）",
+        "en-US": "Single Switch Module T1 (With Neutral)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AU001"
+      ],
+      "skuIds": [
+        "sku.AU001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n0agl1",
+      "displayName": {
+        "zh-CN": "单路控制模块 T1零火线（国际版）",
+        "en-US": "Single-channel control module T1 neutral and live wire (international version)"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AU001"
+      ],
+      "skuIds": [
+        "sku.AU001GLW01"
+      ]
+    }
+  ],
+  "modelCount": 8,
+  "spuCount": 6,
+  "skuCount": 8,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CircuitCurrent",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CircuitCurrent",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 8,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "控制模块"
+      ],
+      "en-US": [
+        "Switch Module"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

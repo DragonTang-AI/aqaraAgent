@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "name": "客厅灯随人动",
+    "description": "有人开灯；无人持续30秒关灯。scope 只放传感器；灯用 targets。endpointId 仅示意，必须以 probe Occupancy.endpointId 覆盖（常见人感=2，勿照抄 1）。",
+    "scope": [
+      {
+        "name": "livingOcc",
+        "type": "device.property",
+        "deviceId": "dev.living.motion",
+        "endpointId": 2,
+        "functionCode": "OccupancySensing",
+        "traitCode": "Occupancy"
+      }
+    ]
+  },
+  "automations": [
+    {
+      "name": "有人开灯",
+      "starters": [
+        {
+          "type": "property.event",
+          "source": {
+            "type": "data.ref",
+            "from": "/metadata/scope",
+            "select": { "by": "name", "value": "livingOcc" }
+          },
+          "is": true
+        }
+      ],
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light1", "endpointIds": [1] }],
+          "value": true
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light2", "endpointIds": [1] }],
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "无人关灯",
+      "starters": [
+        {
+          "type": "property.event",
+          "source": {
+            "type": "data.ref",
+            "from": "/metadata/scope",
+            "select": { "by": "name", "value": "livingOcc" }
+          },
+          "is": false,
+          "for": "30sec"
+        }
+      ],
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light1", "endpointIds": [1] }],
+          "value": false
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.living.light2", "endpointIds": [1] }],
+          "value": false
+        }
+      ]
+    }
+  ]
+}

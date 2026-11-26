@@ -1,0 +1,325 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "152",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "门窗传感器",
+    "en-US": "Door and Window Sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.magnet.ac01",
+      "displayName": {
+        "zh-CN": "门窗传感器 P1",
+        "en-US": "Door and Window Sensor P1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS039"
+      ],
+      "skuIds": [
+        "sku.AS039CNW01"
+      ]
+    },
+    {
+      "model": "lumi.magnet.acn001",
+      "displayName": {
+        "zh-CN": "门窗传感器E1",
+        "en-US": "Door and Window Sensor E1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS043"
+      ],
+      "skuIds": [
+        "sku.AS043CNW01"
+      ]
+    },
+    {
+      "model": "lumi.magnet.acn002",
+      "displayName": {
+        "zh-CN": "门窗传感器 NB-IOT版",
+        "en-US": "Door and Window Sensor NB-IOT Edition"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "4g/5g"
+      ],
+      "spuIds": [
+        "spu.AS047"
+      ],
+      "skuIds": [
+        "sku.AS047CNW01"
+      ]
+    },
+    {
+      "model": "lumi.magnet.acn006",
+      "displayName": {
+        "zh-CN": "Aqara门窗传感器 PR150P",
+        "en-US": "Door and Window Sensor T1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS086"
+      ],
+      "skuIds": [
+        "sku.AS086CNW01"
+      ]
+    },
+    {
+      "model": "lumi.magnet.agl02",
+      "displayName": {
+        "zh-CN": "门窗传感器T1",
+        "en-US": "Door and Window Sensor T1"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS012",
+        "spu.AS012CNW01",
+        "spu.AS020",
+        "spu.AS070"
+      ],
+      "skuIds": [
+        "sku.AS012",
+        "sku.AS012CNW01",
+        "sku.AS012KRW01",
+        "sku.AS020KRW02",
+        "sku.AS070GLW01",
+        "sku.AS070SEW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_magnet.aq2",
+      "displayName": {
+        "zh-CN": "门窗传感器",
+        "en-US": "Door and Window Sensor"
+      },
+      "deviceTypesList": [
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.1",
+        "spu.AS001",
+        "spu.AS006",
+        "spu.AS035"
+      ],
+      "skuIds": [
+        "sku.AS001CNW01",
+        "sku.AS001CNW02",
+        "sku.AS006CNW01",
+        "sku.AS006UEW01",
+        "sku.AS035CNW01"
+      ]
+    },
+    {
+      "model": "lumi.vibration.agl002",
+      "displayName": {
+        "zh-CN": "AI 多维状态传感器 P100",
+        "en-US": "Multi-State Sensor P100"
+      },
+      "deviceTypesList": [
+        "VibrationSensor",
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 7,
+  "spuCount": 12,
+  "skuCount": 15,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "ContactSensor",
+      "functionCode": "Contact",
+      "traitCode": "ContactSensorState",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "ContactSensor",
+      "functionCode": "Contact",
+      "traitCode": "ContactSensorState",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "VibrationEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "TiltAngleDeviation",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "TiltAngleDeviation",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "PeakTiltAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "PeakTiltAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryTiltAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryTiltAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "ObjectOrientationState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "ObjectOrientationState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "InitialTiltAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "InitialTiltAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "4g/5g",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 6,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "门窗传感器"
+      ],
+      "en-US": [
+        "Door and Window Sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

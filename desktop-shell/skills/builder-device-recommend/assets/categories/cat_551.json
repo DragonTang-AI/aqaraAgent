@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "551",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "其他",
+    "en-US": "Other"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.valve.agl001",
+      "displayName": {
+        "zh-CN": "智能阀门控制器T1",
+        "en-US": "Valve Controller T1"
+      },
+      "deviceTypesList": [
+        "Valve"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AX047"
+      ],
+      "skuIds": [
+        "sku.AX047CNW01",
+        "sku.AX047GLW01",
+        "sku.AX047GLW02"
+      ]
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 1,
+  "skuCount": 3,
+  "commonCapabilities": [
+    {
+      "deviceType": "Valve",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Valve",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Valve",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 1,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "其他"
+      ],
+      "en-US": [
+        "Other"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

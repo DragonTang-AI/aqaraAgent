@@ -1,0 +1,127 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "252",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "猫眼类",
+    "en-US": "Peephole Camera"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.lock.acn006",
+      "displayName": {
+        "zh-CN": "智能门 V100",
+        "en-US": "Smart Door V100"
+      },
+      "deviceTypesList": [
+        "DoorLock",
+        "HumanDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AD026"
+      ],
+      "skuIds": [
+        "sku.AD026CNG01"
+      ]
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 1,
+  "skuCount": 1,
+  "commonCapabilities": [
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "LockState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "LockState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "DoorState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "DoorState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "猫眼类"
+      ],
+      "en-US": [
+        "Peephole Camera"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

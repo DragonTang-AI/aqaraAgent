@@ -1,0 +1,938 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "101",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "智能灯具",
+    "en-US": "Light"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.light.abr01",
+      "displayName": {
+        "zh-CN": "宽电压LED灯泡（可调亮度）",
+        "en-US": "LED Light（Adjustable Brightness）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.acn003",
+      "displayName": {
+        "zh-CN": "Aqara 吸顶灯 L1-350",
+        "en-US": "Ceiling Light L1-350"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL018"
+      ],
+      "skuIds": [
+        "sku.AL018CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn006",
+      "displayName": {
+        "zh-CN": "轨道灯 H1 Pro",
+        "en-US": "Track/rail Light H1 Pro"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL040",
+        "spu.AL134",
+        "spu.AL135",
+        "spu.AL136",
+        "spu.AL137",
+        "spu.AL138",
+        "spu.AL139"
+      ],
+      "skuIds": [
+        "sku.AL040CNB01",
+        "sku.AL134CNB01",
+        "sku.AL135CNB01",
+        "sku.AL135CNB02",
+        "sku.AL136CNB01",
+        "sku.AL137CNB01",
+        "sku.AL138CNB01",
+        "sku.AL138CNB02",
+        "sku.AL139CNB01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn007",
+      "displayName": {
+        "zh-CN": "轨道格栅灯 H1（6头）",
+        "en-US": "Smart Grille Light (6-Lamp)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL041"
+      ],
+      "skuIds": [
+        "sku.AL040CNB02"
+      ]
+    },
+    {
+      "model": "lumi.light.acn008",
+      "displayName": {
+        "zh-CN": "轨道格栅灯 H1（12头）",
+        "en-US": "Smart Grille Light (12-Lamp)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL042"
+      ],
+      "skuIds": [
+        "sku.AL040CNB03"
+      ]
+    },
+    {
+      "model": "lumi.light.acn009",
+      "displayName": {
+        "zh-CN": "轨道泛光灯 H1（30cm）",
+        "en-US": "Smart Light (30cm)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL043"
+      ],
+      "skuIds": [
+        "sku.AL040CNB04"
+      ]
+    },
+    {
+      "model": "lumi.light.acn010",
+      "displayName": {
+        "zh-CN": "轨道泛光灯 H1（60cm）",
+        "en-US": "Smart Flood Light (60cm)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL044"
+      ],
+      "skuIds": [
+        "sku.AL040CNB05"
+      ]
+    },
+    {
+      "model": "lumi.light.acn011",
+      "displayName": {
+        "zh-CN": "轨道吊线灯 H1",
+        "en-US": "Smart Pendant Light"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL045"
+      ],
+      "skuIds": [
+        "sku.AL040CNB06"
+      ]
+    },
+    {
+      "model": "lumi.light.acn012",
+      "displayName": {
+        "zh-CN": "轨道折叠格栅灯 H1（6头）",
+        "en-US": "Smart Foldable Grille Light (6-Lamp)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL046"
+      ],
+      "skuIds": [
+        "sku.AL040CNB07"
+      ]
+    },
+    {
+      "model": "lumi.light.acn013",
+      "displayName": {
+        "zh-CN": "轨道偏光灯 H1（22cm）",
+        "en-US": "Smart Magnetic Wall Washer Light（22cm）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL047"
+      ],
+      "skuIds": [
+        "sku.AL040CNB08"
+      ]
+    },
+    {
+      "model": "lumi.light.acn014",
+      "displayName": {
+        "zh-CN": "LED灯泡 T1（可调色温）",
+        "en-US": "LED Bulb T1 (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL039",
+        "spu.AL112",
+        "spu.AL113",
+        "spu.AL114"
+      ],
+      "skuIds": [
+        "sku.AL039CNW01",
+        "sku.AL112GLW01",
+        "sku.AL112GLW02",
+        "sku.AL112GLW03"
+      ]
+    },
+    {
+      "model": "lumi.light.acn015",
+      "displayName": {
+        "zh-CN": "Aqara光艺晴空灯 H1",
+        "en-US": "Light Art Skylight H1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL070"
+      ],
+      "skuIds": [
+        "sku.AL070CNL01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn023",
+      "displayName": {
+        "zh-CN": "射灯 T2（15度）",
+        "en-US": "Spotlight T2 (15°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL104",
+        "spu.AL118"
+      ],
+      "skuIds": [
+        "sku.AL104CNB01",
+        "sku.AL104RUB01",
+        "sku.AL118CNW01",
+        "sku.AL118CNW02",
+        "sku.AL118CNW03",
+        "sku.AL118CNW04"
+      ]
+    },
+    {
+      "model": "lumi.light.acn024",
+      "displayName": {
+        "zh-CN": "射灯 T2（24度）",
+        "en-US": "Spotlight T2 (24°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL105"
+      ],
+      "skuIds": [
+        "sku.AL105CNB01",
+        "sku.AL105KRB01",
+        "sku.AL105RUB01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn025",
+      "displayName": {
+        "zh-CN": "射灯 T2（36度）",
+        "en-US": "Spotlight T2 (36°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL106"
+      ],
+      "skuIds": [
+        "sku.AL106CNB01",
+        "sku.AL106KRB01",
+        "sku.AL106RUB01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn026",
+      "displayName": {
+        "zh-CN": "筒灯 T2（60度）",
+        "en-US": "Downlight T2 (60°)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL107"
+      ],
+      "skuIds": [
+        "sku.AL107CNB01",
+        "sku.AL107KRB01",
+        "sku.AL107KRW01",
+        "sku.AL107RUB01"
+      ]
+    },
+    {
+      "model": "lumi.light.acn033",
+      "displayName": {
+        "zh-CN": "星云H1/云熙D1S/云耀Z1S吸顶灯",
+        "en-US": "Nebula H1/Yunxi D1S/Yunyao Z1S Ceiling Light"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL188",
+        "spu.AL217",
+        "spu.AL219"
+      ],
+      "skuIds": [
+        "sku.AL188CNW01",
+        "sku.AL188CNW02",
+        "sku.AL188CNW03",
+        "sku.AL217CNW01",
+        "sku.AL217CNW02",
+        "sku.AL217CNW03",
+        "sku.AL219CNW01",
+        "sku.AL219CNW02",
+        "sku.AL219CNW03"
+      ]
+    },
+    {
+      "model": "lumi.light.acn036",
+      "displayName": {
+        "zh-CN": "射灯 V1",
+        "en-US": "Spotlight V1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL199",
+        "spu.AL239"
+      ],
+      "skuIds": [
+        "sku.AL199CNW01",
+        "sku.AL199CNW02",
+        "sku.AL199CNW03",
+        "sku.AL199CNW04",
+        "sku.AL199CNW05",
+        "sku.AL199CNW06",
+        "sku.AL199CNW07",
+        "sku.AL199CNW08",
+        "sku.AL199CNW09",
+        "sku.AL199CNW10",
+        "sku.AL199CNW11",
+        "sku.AL199CNW12",
+        "sku.AL239KRW01",
+        "sku.AL239KRW02"
+      ]
+    },
+    {
+      "model": "lumi.light.acn037",
+      "displayName": {
+        "zh-CN": "轨道灯 V1",
+        "en-US": "Track/Rail Light V1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL206"
+      ],
+      "skuIds": [
+        "sku.AL206CNG01",
+        "sku.AL206CNG02",
+        "sku.AL206CNG03",
+        "sku.AL206CNG04",
+        "sku.AL206CNG05",
+        "sku.AL206CNW01",
+        "sku.AL206CNW02",
+        "sku.AL206CNW03",
+        "sku.AL206CNW04",
+        "sku.AL206CNW05"
+      ]
+    },
+    {
+      "model": "lumi.light.acn040",
+      "displayName": {
+        "zh-CN": "筒射灯 T2 Pro",
+        "en-US": "Downlight T2 Pro"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL241"
+      ],
+      "skuIds": [
+        "sku.AL241CNW01",
+        "sku.AL241CNW02",
+        "sku.AL241CNW03",
+        "sku.AL241CNW04",
+        "sku.AL241CNW05",
+        "sku.AL241CNW06",
+        "sku.AL241CNW07",
+        "sku.AL241CNW08",
+        "sku.AL241CNW09",
+        "sku.AL241CNW10",
+        "sku.AL241CNW11",
+        "sku.AL241CNW12",
+        "sku.AL241CNW13"
+      ]
+    },
+    {
+      "model": "lumi.light.acn041",
+      "displayName": {
+        "zh-CN": "万象天镜 吸顶灯 V1",
+        "en-US": "Universal Sky Mirror Ceiling Light V1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL243"
+      ],
+      "skuIds": [
+        "sku.AL243CNW01",
+        "sku.AL243CNW02",
+        "sku.AL243CNW03",
+        "sku.AL243CNW04"
+      ]
+    },
+    {
+      "model": "lumi.light.acn132",
+      "displayName": {
+        "zh-CN": "流光溢彩灯带 T1",
+        "en-US": "LED Strip T1"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL117"
+      ],
+      "skuIds": [
+        "sku.AL117CNW01",
+        "sku.AL117CNW02",
+        "sku.AL117EUW01",
+        "sku.AL117USW01",
+        "sku.AL140EUW01",
+        "sku.AL140USW01"
+      ]
+    },
+    {
+      "model": "lumi.light.agl001",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E26, RGB CCT)",
+        "en-US": "LED Bulb T2 (E26, RGB CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL228"
+      ],
+      "skuIds": [
+        "sku.AL228USW01"
+      ]
+    },
+    {
+      "model": "lumi.light.agl002",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E26, CCT)",
+        "en-US": "LED Bulb T2 (E26, CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL228"
+      ],
+      "skuIds": [
+        "sku.AL228USW02"
+      ]
+    },
+    {
+      "model": "lumi.light.agl003",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E27, RGB CCT)",
+        "en-US": "LED Bulb T2 (E27, RGB CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.agl004",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (E27, CCT)",
+        "en-US": "LED Bulb T2 (E27, CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.agl005",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (GU10, RGB CCT)",
+        "en-US": "LED Bulb T2 (GU10, RGB CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.agl006",
+      "displayName": {
+        "zh-CN": "LED Bulb T2 (GU10, CCT)",
+        "en-US": "LED Bulb T2 (GU10, CCT)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.agl007",
+      "displayName": {
+        "zh-CN": "双色温驱动器 T3",
+        "en-US": "Dual Color Temperature Driver T3"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.aqcn02",
+      "displayName": {
+        "zh-CN": "LED灯泡（可调色温）",
+        "en-US": "LED Light Bulb (Tunable White)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AL002",
+        "spu.NA"
+      ],
+      "skuIds": [
+        "sku.AL002CNW01",
+        "sku.AL002EUW01",
+        "sku.AL002RUW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cwjwcn01",
+      "displayName": {
+        "zh-CN": "射灯（可调色温）",
+        "en-US": "Spot Light（Adjustable Color Temperature）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XL001"
+      ],
+      "skuIds": [
+        "sku.XL001GLW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cwjwcn02",
+      "displayName": {
+        "zh-CN": "筒灯（可调色温）",
+        "en-US": "Down Light（Adjustable Color Temperature）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XL003"
+      ],
+      "skuIds": [
+        "sku.XL003GLW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cwopcn01",
+      "displayName": {
+        "zh-CN": "吸顶灯MX960（可调色温）",
+        "en-US": "Ceiling light MX960 (adjustable color temperature)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XL004"
+      ],
+      "skuIds": [
+        "sku.XL004CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cwopcn02",
+      "displayName": {
+        "zh-CN": "吸顶灯MX650（可调色温）",
+        "en-US": "Ceiling light MX650 (adjustable color temperature)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XL005",
+        "spu.XL006"
+      ],
+      "skuIds": [
+        "sku.XL005CNW01",
+        "sku.XL006CNW01"
+      ]
+    },
+    {
+      "model": "lumi.light.cwopcn03",
+      "displayName": {
+        "zh-CN": "吸顶灯MX480（可调色温）",
+        "en-US": "Ceiling light MX480 (adjustable color temperature)"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.light.wjwcn01",
+      "displayName": {
+        "zh-CN": "射灯（可调亮度）",
+        "en-US": "Spot Light（Adjustable Brightness）"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.XL002"
+      ],
+      "skuIds": [
+        "sku.XL002GLW01"
+      ]
+    },
+    {
+      "model": "x2.lumi.light.acn128",
+      "displayName": {
+        "zh-CN": "筒射灯 T2 Lite",
+        "en-US": "Downlight T2 Lite"
+      },
+      "deviceTypesList": [
+        "Light"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 37,
+  "spuCount": 43,
+  "skuCount": 105,
+  "commonCapabilities": [
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "LevelControl",
+      "traitCode": "CurrentLevel",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "starter",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "condition",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorTemperature",
+      "automationRole": "action",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorXY",
+      "automationRole": "starter",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorXY",
+      "automationRole": "condition",
+      "valueType": "Integer"
+    },
+    {
+      "deviceType": "Light",
+      "functionCode": "ColorControl",
+      "traitCode": "ColorXY",
+      "automationRole": "action",
+      "valueType": "Integer"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 37,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "智能灯具"
+      ],
+      "en-US": [
+        "Light"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

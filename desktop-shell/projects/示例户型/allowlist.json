@@ -1,0 +1,10 @@
+{
+  "device_models": [
+    "lumi.light.aqcn02",
+    "lumi.curtain.acn002",
+    "lumi.sensor_motion.aq2",
+    "lumi.sensor_ht.agl02",
+    "lumi.switch.b1nacn02",
+    "lumi.aircondition.acn05"
+  ]
+}

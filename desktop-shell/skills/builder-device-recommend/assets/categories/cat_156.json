@@ -1,0 +1,168 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "156",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "燃气报警器",
+    "en-US": "Gas Alarm"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.sensor_gas.acn01",
+      "displayName": {
+        "zh-CN": "天然气报警器",
+        "en-US": "Smart Natural Gas Detector"
+      },
+      "deviceTypesList": [
+        "NaturalGasAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_gas.acn02",
+      "displayName": {
+        "zh-CN": "Aqara天然气报警器",
+        "en-US": "Smart Natural Gas Detector"
+      },
+      "deviceTypesList": [
+        "NaturalGasAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS019",
+        "spu.AS053",
+        "spu.NA"
+      ],
+      "skuIds": [
+        "sku.AS019CNW01",
+        "sku.AS053RUW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_natgas.v1",
+      "displayName": {
+        "zh-CN": "天然气报警器",
+        "en-US": "Smart Natural Gas Detector"
+      },
+      "deviceTypesList": [
+        "NaturalGasAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.MS004"
+      ],
+      "skuIds": [
+        "sku.MS004CNW01"
+      ]
+    }
+  ],
+  "modelCount": 3,
+  "spuCount": 4,
+  "skuCount": 3,
+  "commonCapabilities": [
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "GasDetected",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "GasDetected",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "SelfCheck",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "SelfCheck",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "SelfCheck",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "GasDensity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "GasDensity",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "Mute",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "Mute",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "NaturalGasAlarm",
+      "functionCode": "Gas",
+      "traitCode": "Mute",
+      "automationRole": "action",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 3,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "燃气报警器"
+      ],
+      "en-US": [
+        "Gas Alarm"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

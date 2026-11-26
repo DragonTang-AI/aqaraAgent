@@ -2,7 +2,7 @@
   "project": {
     "name": "示例户型 · 三室两厅（已更新）",
     "area": 96,
-    "updatedAt": "2026-11-25"
+    "updatedAt": "2026-11-26"
   },
   "rooms": [
     {
@@ -42,7 +42,10 @@
         0,
         1.2,
         1
-      ]
+      ],
+      "model": "lumi.light.aqcn02",
+      "productName": "Aqara 智能吸顶灯",
+      "qty": 1
     },
     {
       "name": "人体存在传感器",
@@ -50,9 +53,12 @@
       "status": "OK",
       "pos": [
         -1.5,
-        1.0,
+        1,
         -2.5
-      ]
+      ],
+      "model": "lumi.sensor_motion.aq2",
+      "productName": "人体传感器",
+      "qty": 1
     },
     {
       "name": "窗帘电机",
@@ -72,7 +78,10 @@
         1.5,
         0.9,
         -2.5
-      ]
+      ],
+      "model": "lumi.sensor_ht.agl02",
+      "productName": "温湿度传感器T1",
+      "qty": 1
     },
     {
       "name": "智能门锁",
@@ -113,15 +122,145 @@
         0.7,
         -2
       ]
+    },
+    {
+      "name": "客厅窗帘",
+      "room": "客厅 · 阳台侧",
+      "model": "lumi.curtain.acn002",
+      "productName": "Aqara 智能窗帘电机",
+      "qty": 1,
+      "status": "OFF",
+      "pos": [
+        2.6,
+        1.4,
+        1.1
+      ]
+    },
+    {
+      "name": "人体传感器",
+      "room": "客厅",
+      "model": "lumi.sensor_motion.aq2",
+      "productName": "人体传感器",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        0.5,
+        1.0,
+        0.8
+      ],
+      "rationale": "客厅动线补人感，联动灯光与安防",
+      "source": "recommend"
+    },
+    {
+      "name": "智能墙壁开关D1（零火线单键版）",
+      "room": "客厅",
+      "model": "lumi.switch.b1nacn02",
+      "productName": "智能墙壁开关D1（零火线单键版）",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        -1.2,
+        1.0,
+        0.5
+      ],
+      "rationale": "沙发区补墙开，手动切会客/休闲",
+      "source": "recommend"
+    },
+    {
+      "name": "空调伴侣 P3",
+      "room": "客厅",
+      "model": "lumi.aircondition.acn05",
+      "productName": "空调伴侣 P3",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        2.0,
+        0.9,
+        0.2
+      ],
+      "rationale": "大开间补空调伴侣，统一温控",
+      "source": "recommend"
+    },
+    {
+      "name": "LED灯泡（可调色温）",
+      "room": "主卧",
+      "model": "lumi.light.aqcn02",
+      "productName": "LED灯泡（可调色温）",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        -1.5,
+        1.2,
+        -2.5
+      ],
+      "rationale": "主卧尚无智能主灯，补可调色温灯泡/灯具控制",
+      "source": "recommend"
+    },
+    {
+      "name": "智能墙壁开关D1（零火线单键版）",
+      "room": "主卧",
+      "model": "lumi.switch.b1nacn02",
+      "productName": "智能墙壁开关D1（零火线单键版）",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        -2.2,
+        1.0,
+        -2.0
+      ],
+      "rationale": "床头墙开，起夜与阅读一键切",
+      "source": "recommend"
+    },
+    {
+      "name": "温湿度传感器T1",
+      "room": "主卧",
+      "model": "lumi.sensor_ht.agl02",
+      "productName": "温湿度传感器T1",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        -1.0,
+        0.9,
+        -2.8
+      ],
+      "rationale": "睡眠区补温湿度，联动空调与新风",
+      "source": "recommend"
+    },
+    {
+      "name": "LED灯泡（可调色温）",
+      "room": "厨房",
+      "model": "lumi.light.aqcn02",
+      "productName": "LED灯泡（可调色温）",
+      "qty": 1,
+      "status": "推荐",
+      "pos": [
+        1.5,
+        1.2,
+        -2.5
+      ],
+      "rationale": "厨房作业面补基础照明控制",
+      "source": "recommend"
     }
   ],
   "scenes": [
-    "回家模式",
-    "观影模式",
-    "睡眠模式",
-    "离家布防",
-    "起夜模式",
-    "全屋清扫"
+    {
+      "name": "回家模式"
+    },
+    {
+      "name": "观影模式"
+    },
+    {
+      "name": "睡眠模式"
+    },
+    {
+      "name": "离家布防"
+    },
+    {
+      "name": "起夜模式"
+    },
+    {
+      "name": "全屋清扫"
+    }
   ],
   "automations": [
     {
@@ -213,5 +352,58 @@
       "name": "生成施工图纸 PDF",
       "status": "queued"
     }
-  ]
+  ],
+  "ui": {
+    "focus": "devices"
+  },
+  "recommendation": {
+    "hasRecommendedDevices": true,
+    "totalDevices": 7,
+    "budget": "standard",
+    "source": "allowlist ∩ local device-index",
+    "added": [
+      {
+        "room": "客厅",
+        "model": "lumi.sensor_motion.aq2",
+        "productName": "人体传感器",
+        "rationale": "客厅动线补人感，联动灯光与安防"
+      },
+      {
+        "room": "客厅",
+        "model": "lumi.switch.b1nacn02",
+        "productName": "智能墙壁开关D1（零火线单键版）",
+        "rationale": "沙发区补墙开，手动切会客/休闲"
+      },
+      {
+        "room": "客厅",
+        "model": "lumi.aircondition.acn05",
+        "productName": "空调伴侣 P3",
+        "rationale": "大开间补空调伴侣，统一温控"
+      },
+      {
+        "room": "主卧",
+        "model": "lumi.light.aqcn02",
+        "productName": "LED灯泡（可调色温）",
+        "rationale": "主卧尚无智能主灯，补可调色温灯泡/灯具控制"
+      },
+      {
+        "room": "主卧",
+        "model": "lumi.switch.b1nacn02",
+        "productName": "智能墙壁开关D1（零火线单键版）",
+        "rationale": "床头墙开，起夜与阅读一键切"
+      },
+      {
+        "room": "主卧",
+        "model": "lumi.sensor_ht.agl02",
+        "productName": "温湿度传感器T1",
+        "rationale": "睡眠区补温湿度，联动空调与新风"
+      },
+      {
+        "room": "厨房",
+        "model": "lumi.light.aqcn02",
+        "productName": "LED灯泡（可调色温）",
+        "rationale": "厨房作业面补基础照明控制"
+      }
+    ]
+  }
 }

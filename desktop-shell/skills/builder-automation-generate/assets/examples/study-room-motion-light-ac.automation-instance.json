@@ -1,0 +1,206 @@
+{
+  "metadata": {
+    "name": "study-room-motion-light-ac-pack",
+    "description": "书房：来人开灯、开空调 26℃ 制冷；无人持续 5 分钟后关灯、关空调。",
+    "scope": [
+      {
+        "name": "studyRoomMotion",
+        "type": "device.property",
+        "deviceId": "dev.study_room.motion",
+        "endpointId": 1,
+        "functionCode": "OccupancySensing",
+        "traitCode": "Occupancy"
+      }
+    ]
+  },
+  "automations": [
+    {
+      "name": "书房有人来开灯",
+      "starters": [
+        {
+          "type": "property.event",
+          "source": {
+            "type": "data.ref",
+            "from": "/metadata/scope",
+            "select": {
+              "by": "name",
+              "value": "studyRoomMotion"
+            }
+          },
+          "is": true,
+          "for": "5sec",
+          "suppressFor": "30sec"
+        }
+      ],
+      "condition": {
+        "type": "property.state",
+        "source": {
+          "type": "device.property",
+          "deviceId": "dev.study_room.light",
+          "endpointId": 1,
+          "functionCode": "Output",
+          "traitCode": "OnOff"
+        },
+        "is": false
+      },
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [
+            {
+              "deviceId": "dev.study_room.light",
+              "endpointIds": [1]
+            }
+          ],
+          "value": true
+        }
+      ]
+    },
+    {
+      "name": "书房有人来开空调26度制冷",
+      "starters": [
+        {
+          "type": "property.event",
+          "source": {
+            "type": "data.ref",
+            "from": "/metadata/scope",
+            "select": {
+              "by": "name",
+              "value": "studyRoomMotion"
+            }
+          },
+          "is": true,
+          "for": "5sec",
+          "suppressFor": "30sec"
+        }
+      ],
+      "condition": {
+        "type": "property.state",
+        "source": {
+          "type": "device.property",
+          "deviceId": "dev.study_room.ac",
+          "endpointId": 1,
+          "functionCode": "Output",
+          "traitCode": "OnOff"
+        },
+        "is": false
+      },
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [
+            {
+              "deviceId": "dev.study_room.ac",
+              "endpointIds": [1]
+            }
+          ],
+          "value": true
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "HeaterCooler",
+          "traitCode": "CoolingTemperature",
+          "targets": [
+            {
+              "deviceId": "dev.study_room.ac",
+              "endpointIds": [1]
+            }
+          ],
+          "value": 26
+        }
+      ]
+    },
+    {
+      "name": "书房无人关灯",
+      "starters": [
+        {
+          "type": "property.event",
+          "source": {
+            "type": "data.ref",
+            "from": "/metadata/scope",
+            "select": {
+              "by": "name",
+              "value": "studyRoomMotion"
+            }
+          },
+          "is": false,
+          "for": "5min",
+          "suppressFor": "30sec"
+        }
+      ],
+      "condition": {
+        "type": "property.state",
+        "source": {
+          "type": "device.property",
+          "deviceId": "dev.study_room.light",
+          "endpointId": 1,
+          "functionCode": "Output",
+          "traitCode": "OnOff"
+        },
+        "is": true
+      },
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [
+            {
+              "deviceId": "dev.study_room.light",
+              "endpointIds": [1]
+            }
+          ],
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "书房无人关空调",
+      "starters": [
+        {
+          "type": "property.event",
+          "source": {
+            "type": "data.ref",
+            "from": "/metadata/scope",
+            "select": {
+              "by": "name",
+              "value": "studyRoomMotion"
+            }
+          },
+          "is": false,
+          "for": "5min",
+          "suppressFor": "30sec"
+        }
+      ],
+      "condition": {
+        "type": "property.state",
+        "source": {
+          "type": "device.property",
+          "deviceId": "dev.study_room.ac",
+          "endpointId": 1,
+          "functionCode": "Output",
+          "traitCode": "OnOff"
+        },
+        "is": true
+      },
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [
+            {
+              "deviceId": "dev.study_room.ac",
+              "endpointIds": [1]
+            }
+          ],
+          "value": false
+        }
+      ]
+    }
+  ]
+}

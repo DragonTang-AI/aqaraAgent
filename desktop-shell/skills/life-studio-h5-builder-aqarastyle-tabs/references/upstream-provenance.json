@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "contractVersion": "2026.11.03.2",
+  "verifiedAt": "2026-09-21",
+  "policy": "Maintenance-only metadata. Ordinary generation must not read this file, and resolved absolute roots must never be persisted.",
+  "sources": [
+    {
+      "id": "life-ios-host-and-bridge",
+      "rootKey": "lifeIos",
+      "repository": "AqaraLifeIOS",
+      "revision": "938aa8bcfd7cd729cd4b39a0fd44e611500c11c6",
+      "files": [
+        {
+          "path": "AqaraLife/StudioMode/WebPage/WebViewController.swift",
+          "sha256": "d8c098ca41107d5e6525a530d7fb35b02650c03c9a4215de563d48b438012e6f"
+        },
+        {
+          "path": "AqaraLife/StudioMode/WebPage/LMAqaraLifeAccessNetWebAdapter.swift",
+          "sha256": "5f57afa9c8aecfb1813dff1528108f7e503915d239a98b8447f7e20379ed9150"
+        },
+        {
+          "path": "AqaraLife/Common/Network/StudioWebSocket/LMStudioWebSocketEventDispatcher.swift",
+          "sha256": "bb58f6ffdbfbcdac4bc4ab374cd8930ee8eb005d79cb4f6a6ad3e86dc0903f1b"
+        },
+        {
+          "path": "AqaraLife/StudioMode/WebPage/SutdioService.swift",
+          "sha256": "d43d7530b220080deb36110a52515c55a550746ae598df0fc5aa05d974d6ce1f"
+        },
+        {
+          "path": "Pods/LMAccessNetWebSDK/Sources/LMAccessNetWebSDK/Public/LMAccessNetH5Bridge.swift",
+          "sha256": "743f934851e9c84a735ae7fcdaebad628b853dc18c0a4ac65ebdc9b85102e6f9"
+        },
+        {
+          "path": "Pods/LMAccessNetWebSDK/Sources/LMAccessNetWebSDK/Public/LMWebProvisioningConfiguration.swift",
+          "sha256": "3fda417f29e04eaa87eb202eaa512f59087226028f82f6f695b9885c745855eb"
+        },
+        {
+          "path": "Pods/LMAccessNetWebSDK/Sources/LMAccessNetWebSDK/Web/LMAccessNetWebViewController+BridgeHost.swift",
+          "sha256": "0345ceec801b9193f21e648f19e727a4dc8cdd8ec202104179153fd63df8fa3a"
+        }
+      ]
+    },
+    {
+      "id": "studio-camera-webrtc-runtime",
+      "rootKey": "studioWebCamera",
+      "repository": "studio_web",
+      "revision": "6ddb5e621a056e78283dc812faa0453c103bf2bf",
+      "files": [
+        {
+          "path": "packages/stu-video-player/src/WebRtcSessionClient.ts",
+          "sha256": "1fe966a88ac1614458cdc8be09b4f4cc8b0b1f5642a12b5a6af79f3a9e50348c"
+        },
+        {
+          "path": "packages/stu-video-player/src/webrtcReadiness.ts",
+          "sha256": "101124a8036a75019f536d8ae69e57792ba0ee04f6b052315f63c10b52e9cb9c"
+        },
+        {
+          "path": "packages/stu-video-player/src/types.ts",
+          "sha256": "d3f42bb8cd915ae3ddfae51f18b2dc4379754f677e6b9406d6a501e5a3ce7cc2"
+        },
+        {
+          "path": "apps/aqara-sys/src/communication/platform/aqaraSpecWebRtcSessionProvider.ts",
+          "sha256": "dffee0069bda01a7642255b280e6afcaa2a6f1d5a473a4f85edfca497143e938"
+        },
+        {
+          "path": "apps/aqara-sys/src/communication/domain/camera/webRtcSignaling.ts",
+          "sha256": "64d5a41eeb7865972d722cd4b1d8dcab3b455421684dd377f8d4b76bc7787150"
+        }
+      ]
+    },
+    {
+      "id": "studio-openapi-and-asyncapi",
+      "rootKey": "studioDocs",
+      "repository": "api_doc",
+      "revision": "cd5f07e831b2a0b73eb17c156ae4a1f1f1d2b05d",
+      "files": [
+        {
+          "path": "studio/openapi/openapi-AqaraLife.yaml",
+          "sha256": "338df7e5db71a6ccf192d24bad31668cc640b7480ee230208ce16ea97ab44552"
+        },
+        {
+          "path": "studio/openapi/WebSocket订阅推送接入说明.md",
+          "sha256": "d94096139d6be3eecfa8884a798778850b0e91df74cf1a47c420b3b6fc3794fa"
+        },
+        {
+          "path": "studio/openapi/asyncapi-AqaraLife-websocket.yaml",
+          "sha256": "f488374450f9260402041abf4ee0e1494e8e65b101682ac72505c89dd6ddbfb1"
+        }
+      ]
+    },
+    {
+      "id": "rn-ui-component-grammar",
+      "rootKey": "rnUi",
+      "repository": "rn_ui_lib",
+      "revision": "aba33dcbfc10e2278d3298e79b8565954092b46e",
+      "files": [
+        {
+          "path": "src/components/card",
+          "kind": "directory",
+          "sha256": "b9b21aa22e4f8a0a0cd849d8eac8758dd383441dde62c4a8979ae3388909d511"
+        },
+        {
+          "path": "src/res/colors/index.ts",
+          "sha256": "a4d4bd6563cd9b0eb87412bc2b347150308c3c871e16f8c8c579e1e88ffcf230"
+        }
+      ]
+    },
+    {
+      "id": "aqara-dashboard-visual-benchmark",
+      "rootKey": "visualReference",
+      "repository": "design-reference-artifact",
+      "revision": null,
+      "files": [
+        {
+          "path": "苹果风家庭面板.html",
+          "sha256": "179a916fbe1e2fb17540e50825427a10e4397ce3ee6c5e0e4c372641a9b35259"
+        }
+      ]
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "revision": "15de38fb70bc80ae9276fa7703b48ae861a672e6",
+      "files": []
+    }
+  ],
+  "additions": [
+    {
+      "id": "home-ai-assistant",
+      "reviewedAt": "2026-10-14",
+      "verification": "Reviewed source integration and screenshot-derived H5 adaptation; automated gates recorded separately; real-host acceptance pending user build. Baseline upstream hashes and verifiedAt have not been recertified."
+    },
+    {
+      "id": "shared-aqara-ui-theme-skins",
+      "reviewedAt": "2026-10-14",
+      "verification": "H5-only shared geometry/behavior and light/dark paint contract; baseline upstream certification unchanged."
+    },
+    {
+      "id": "favorite-scenes-local-selection",
+      "reviewedAt": "2026-10-14",
+      "verification": "Figma rules and user-confirmed local storage, 0–10 selection, two-column UI and request-success feedback; H5 browser/portability gates passed. Native build verification remains with user; baseline upstream certification unchanged."
+    },
+    {
+      "id": "space-control-and-shared-category-details",
+      "reviewedAt": "2026-10-14",
+      "verification": "Figma-derived summary and independent detail cards, user-confirmed overview entries, real public API batch plans with partial failure and targeted state readback; portable browser and runtime gates. Native acceptance remains with user; baseline hashes and verifiedAt unchanged."
+    },
+    {
+      "id": "home-xl-grid-alignment-and-slider-paint",
+      "reviewedAt": "2026-10-14",
+      "verification": "Full-width Home light XL, theme-aware endpoint border and visible range focus; CSS-only correction, control/bridge/camera logic unchanged. Native acceptance remains with user; baseline upstream certification unchanged."
+    },
+    {
+      "id": "native-studio-header-identity-and-status",
+      "reviewedAt": "2026-10-14",
+      "verification": "Source-backed RN-equivalent committed route/error projection and actual Studio name; H5 getter/subscription lifecycle. Native syntax review only; build and real-host acceptance remain with user; baseline upstream hashes and verifiedAt unchanged."
+    },
+    {
+      "id": "favorite-devices-independent-home-mode",
+      "reviewedAt": "2026-10-14",
+      "verification": "Figma endpoint-level 0–10 compact cards and selection; user-confirmed isolated local storage; explicit intent routing and exact public Boolean/AutoControl shortcuts. H5 runtime/browser gates; native build remains with user. Baseline upstream hashes and verifiedAt unchanged."
+    },
+    {
+      "id": "favorite-device-freshness-and-direct-curtain-glyph",
+      "reviewedAt": "2026-10-15",
+      "verification": "Fresh public device connectivity and selected endpoint definitions on commit/native return, unknown/stale write gates, revoked capability replacement; direct Figma control SVG image instead of CSS mask. Existing native theme notification reused as guarded return hint. Browser/runtime validation; live App acceptance remains with user; baseline source certification unchanged."
+    },
+    {
+      "id": "favorite-speaker-traits-and-selector-back-focus",
+      "reviewedAt": "2026-10-16",
+      "verification": "Reviewed Aqara Speaker/MediaPlayback trait semantics, actual-capability-only independent favorite card, grouped targeted readback, typed controls and scoped WebKit back-button focus reset. H5 smoke/browser review; native build and live Speaker/Safari acceptance remain with user. Baseline upstream certification unchanged."
+    },
+    {
+      "id": "role-uiux-usability-polish",
+      "reviewedAt": "2026-10-20",
+      "verification": "Targeted public UI/UX Pro Max document review distilled into portable H5 role guidance and generator CSS. Baseline upstream revisions/verifiedAt remain unchanged; browser gates are scoped checks, not native or full accessibility certification."
+    },
+    {
+      "id": "child-scoped-room-startup",
+      "reviewedAt": "2026-10-20",
+      "verification": "H5-only child preset first-room/manual startup policy; real tree-scoped queries and shared spaces read, empty/failure and stale-request guards. Upstream native/API baseline revisions and verifiedAt remain unchanged; native build verification remains with the user."
+    },
+    {
+      "id": "role-switch-color-pairing",
+      "reviewedAt": "2026-10-20",
+      "verification": "Role-only CSS correction; four-role light/dark browser checks include on/off/loading glyphs and invariant geometry. No runtime data, bridge or control handler changes; real-device acceptance remains user-owned."
+    },
+    {
+      "id": "rn-compatible-favorite-metadata",
+      "reviewedAt": "2026-10-21",
+      "verification": "User authorized RN-known-key read/merge/update, accepting unknown-key overwrite limitation. Shared H5 state and isolated preview simulation; no native/backend changes. Real host persistence remains user verification."
+    },
+    {
+      "id": "directory-space-multiselect",
+      "reviewedAt": "2026-10-21",
+      "verification": "RN 1.0.7 selection/index and local-filter source reviewed; existing device/automation server space parameters verified in service source. H5 draft tree UI and pagination adaptation; role defaults preserved. Native build remains user verification."
+    },
+    {
+      "id": "rn-compatible-ai-initial-question",
+      "reviewedAt": "2026-10-21",
+      "verification": "RN RouterUtil and iOS aiAssistantPrompt initialMessage chain reviewed. H5 optional content, old-host capability marker, shared click lock and isolated preview simulation. Browser/bridge regression and native syntax parse only; App build and actual consent/question execution remain user verification. Baseline upstream certification unchanged."
+    },
+    {
+      "id": "role-scoped-native-device-pairing",
+      "reviewedAt": "2026-10-21",
+      "verification": "Male-only default with independent explicit configuration; shared legacy/new iOS advertisement and adapter, RN pairing URL/control path reused. Isolated preview, callback tests and device-directory return refresh. Native build and actual pairing remain user verification; baseline upstream certification unchanged."
+    },
+    {
+      "id": "safe-area-background-continuity",
+      "reviewedAt": "2026-10-21",
+      "verification": "Shared inert status guard exposes original page paint at origin and matches scrolled header glass; Smart canvas spread halo removed. Browser pixel and geometry checks cover nonzero safe area, Apple layered gradient, role artwork, themes, tabs and reduced transparency. No native/bridge/data/control change; native appearance remains user verification. Baseline certification unchanged."
+    },
+    {
+      "id": "single-plane-scroll-chrome",
+      "reviewedAt": "2026-10-21",
+      "verification": "Follow-up to real-device scroll feedback: replace separate status/header blur planes and threshold tint transition with a shared masked material plane, measured header extent and frame-coalesced continuous scroll opacity. Dynamic forward/reverse offset browser checks and role/theme reviews; no native or bridge change. Real iOS scroll/compositor acceptance remains user verification."
+    },
+    {
+      "id": "role-scoped-home-space-card-details",
+      "reviewedAt": "2026-10-22",
+      "verification": "User-confirmed Home space-card detail default: male/unscoped enabled, female/senior/child disabled; independent explicit Boolean override and older-config fallback. Generation/role/portability and six browser variants verify click/keyboard affordances and inline switch writes. Favorite/device-plugin/Space-control modules unchanged; no native changes."
+    },
+    {
+      "id": "shared-space-summary-anatomy",
+      "reviewedAt": "2026-10-22",
+      "verification": "User approved standard Figma summary structure across all roles: shared Grid, top icon/actions, copy then all-space chips, 172/126 scope heights. Role paints/device card variants retained; clear summary actions adapted to validated 56x44 targets. Layout matrix and existing control/material gates cover themes, roles, scopes, narrow widths and long text. No new APIs/native behavior; no fresh upstream certification."
+    },
+    {
+      "id": "ir-ac-and-top-level-space-counts",
+      "reviewedAt": "2026-11-03",
+      "verification": "Android Studio response review confirmed IRDevice OnOff points and top-level room spaces. H5 climate matching and active-room summaries were corrected; deterministic space-control and generated-package gates passed. Native code and baseline upstream certification unchanged."
+    },
+    {
+      "id": "direct-space-room-tabs",
+      "reviewedAt": "2026-11-03",
+      "verification": "RN Home and category-detail selectors were compared with Android screenshots. H5 room tabs now derive from directly assigned matching devices and use exact space IDs, excluding empty parent duplicates and putting unassigned last. Deterministic room-projection and generated-package gates passed; native and baseline upstream certification unchanged."
+    }
+  ]
+}

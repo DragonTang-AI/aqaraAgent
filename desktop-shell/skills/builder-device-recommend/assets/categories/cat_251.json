@@ -1,0 +1,598 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "251",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "摄像机类",
+    "en-US": "Camera"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.camera.acn003",
+      "displayName": {
+        "zh-CN": "智能半球摄像机 T1",
+        "en-US": "Smart Dome Camera T1"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "MotionSensor",
+        "HumanDetector"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.EC013"
+      ],
+      "skuIds": [
+        "sku.EC013CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn003",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H Pro（网关版）",
+        "en-US": "Camera Hub G2H Pro"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC009"
+      ],
+      "skuIds": [
+        "sku.AC009CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn006",
+      "displayName": {
+        "zh-CN": "智能摄像机 E1（国际版）",
+        "en-US": "Camera E1"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AC016"
+      ],
+      "skuIds": [
+        "sku.AC016GLW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn007",
+      "displayName": {
+        "zh-CN": "智能摄像机 E1",
+        "en-US": "Camera E1"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AC017"
+      ],
+      "skuIds": [
+        "sku.AC017CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn009",
+      "displayName": {
+        "zh-CN": "智能摄像机G5 Pro（PoE网关版）",
+        "en-US": "Camera Hub G5 (PoE)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC019"
+      ],
+      "skuIds": [
+        "sku.AC019CNG01",
+        "sku.AC019CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn010",
+      "displayName": {
+        "zh-CN": "Camera Hub G5 Pro (PoE)",
+        "en-US": "Camera Hub G5 Pro (PoE)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC019"
+      ],
+      "skuIds": [
+        "sku.AC019GLG01",
+        "sku.AC019GLG02",
+        "sku.AC019GLW01",
+        "sku.AC019GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.acn016",
+      "displayName": {
+        "zh-CN": "智能摄像机 G100",
+        "en-US": "Camera G100"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [
+        "spu.AC028"
+      ],
+      "skuIds": [
+        "sku.AC028CNB01",
+        "sku.AC028CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl001",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H Pro(国际版)",
+        "en-US": "Camera Hub G2H Pro"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC009"
+      ],
+      "skuIds": [
+        "sku.AC009FRW01",
+        "sku.AC009GLW01",
+        "sku.AC009RUW01",
+        "sku.AC009RUW02",
+        "sku.AC009UKW02",
+        "sku.AC009USW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl003",
+      "displayName": {
+        "zh-CN": "智能摄像机G5 Pro（Wi-Fi网关版）",
+        "en-US": "Camera Hub G5 Pro (Wi-Fi)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC027"
+      ],
+      "skuIds": [
+        "sku.AC027CNG01",
+        "sku.AC027CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl004",
+      "displayName": {
+        "zh-CN": "Camera Hub G5 Pro (Wi-Fi)",
+        "en-US": "Camera Hub G5 Pro (Wi-Fi)"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC027"
+      ],
+      "skuIds": [
+        "sku.AC027GLG01",
+        "sku.AC027GLG02",
+        "sku.AC027GLW01",
+        "sku.AC027GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl005",
+      "displayName": {
+        "zh-CN": "Camera G100",
+        "en-US": "Camera G100"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "HumanDetector",
+        "PackageDetector",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [
+        "spu.AC028"
+      ],
+      "skuIds": [
+        "sku.AC028GLB01",
+        "sku.AC028GLB02",
+        "sku.AC028GLW01",
+        "sku.AC028GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.agl010",
+      "displayName": {
+        "zh-CN": "智能摄像机G350（网关版）",
+        "en-US": "Camera Hub G350"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC031"
+      ],
+      "skuIds": [
+        "sku.AC031CNW01",
+        "sku.AC031GLW01",
+        "sku.AC031GLW02"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwag03",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H (国际版)",
+        "en-US": "Camera Hub G2H"
+      },
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC004"
+      ],
+      "skuIds": [
+        "sku.AC004EUW01",
+        "sku.AC004UKW01",
+        "sku.AC004USW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwagl02",
+      "displayName": {
+        "zh-CN": "智能摄像机G2H (网关版)",
+        "en-US": "Camera Hub G2H"
+      },
+      "deviceTypesList": [
+        "Camera"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [
+        "spu.AC004"
+      ],
+      "skuIds": [
+        "sku.AC004CNL01",
+        "sku.AC004CNR01",
+        "sku.AC004CNW01",
+        "sku.AC004CNY01"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwpagl01",
+      "displayName": {
+        "zh-CN": "智能摄像机G3（网关版）",
+        "en-US": "Camera Hub G3"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "FireAlarm",
+        "SoundSensor",
+        "HumanDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC005",
+        "spu.AC010"
+      ],
+      "skuIds": [
+        "sku.AC005CNW01",
+        "sku.AC010CNW01"
+      ]
+    },
+    {
+      "model": "lumi.camera.gwpgl1",
+      "displayName": {
+        "zh-CN": "智能摄像机G3（国际版）",
+        "en-US": "Camera Hub G3"
+      },
+      "deviceTypesList": [
+        "Camera",
+        "VehicleDetector",
+        "PetMonitor",
+        "SoundSensor",
+        "HumanDetector",
+        "PackageDetector",
+        "FaceScanner",
+        "GestureSensor",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AC005"
+      ],
+      "skuIds": [
+        "sku.AC005EUW01",
+        "sku.AC005UKW01",
+        "sku.AC005USW01"
+      ]
+    },
+    {
+      "model": "lumi.lock.acn006",
+      "displayName": {
+        "zh-CN": "智能门 V100",
+        "en-US": "Smart Door V100"
+      },
+      "deviceTypesList": [
+        "DoorLock",
+        "HumanDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AD026"
+      ],
+      "skuIds": [
+        "sku.AD026CNG01"
+      ]
+    }
+  ],
+  "modelCount": 17,
+  "spuCount": 12,
+  "skuCount": 44,
+  "commonCapabilities": [
+    {
+      "deviceType": "Camera",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Camera",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Camera",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Camera",
+      "functionCode": "Camera",
+      "traitCode": "P2PCaptureEnabled",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Camera",
+      "functionCode": "Camera",
+      "traitCode": "P2PCaptureEnabled",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Camera",
+      "functionCode": "Camera",
+      "traitCode": "P2PCaptureEnabled",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "LockState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "LockState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "DoorState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "DoorState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 17,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "摄像机类"
+      ],
+      "en-US": [
+        "Camera"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "504",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "宠物园艺",
+    "en-US": "Pet & Garden Supplies"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.feeder.acn001",
+      "displayName": {
+        "zh-CN": "智能宠物喂食器C1",
+        "en-US": "Smart Pet Feeder C1"
+      },
+      "deviceTypesList": [
+        "PetFeeder"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 1,
+  "spuCount": 0,
+  "skuCount": 0,
+  "commonCapabilities": [
+    {
+      "deviceType": "PetFeeder",
+      "functionCode": "PetFeeder",
+      "traitCode": "Feed",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "PetFeeder",
+      "functionCode": "PetFeeder",
+      "traitCode": "Feed",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 1,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "宠物园艺"
+      ],
+      "en-US": [
+        "Pet & Garden Supplies"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

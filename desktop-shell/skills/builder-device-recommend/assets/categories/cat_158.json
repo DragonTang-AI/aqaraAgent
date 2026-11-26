@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "158",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "动静贴",
+    "en-US": "Vibration Sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.vibration.agl002",
+      "displayName": {
+        "zh-CN": "AI 多维状态传感器 P100",
+        "en-US": "Multi-State Sensor P100"
+      },
+      "deviceTypesList": [
+        "VibrationSensor",
+        "ContactSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.vibration.agl01",
+      "displayName": {
+        "zh-CN": "动静贴T1",
+        "en-US": "Vibration Sensor T1"
+      },
+      "deviceTypesList": [
+        "VibrationSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS025",
+        "spu.AS075"
+      ],
+      "skuIds": [
+        "sku.AS025CNW01",
+        "sku.AS075GLW01",
+        "sku.AS075JPW01",
+        "sku.AS075USW01"
+      ]
+    },
+    {
+      "model": "lumi.vibration.aq1",
+      "displayName": {
+        "zh-CN": "动静贴",
+        "en-US": "Vibration Sensor"
+      },
+      "deviceTypesList": [
+        "VibrationSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS004",
+        "spu.AS009",
+        "spu.AS034"
+      ],
+      "skuIds": [
+        "sku.AS004CNW01",
+        "sku.AS009CNW01",
+        "sku.AS009CNW02",
+        "sku.AS009RUW01",
+        "sku.AS009UEW01",
+        "sku.AS034KRW01"
+      ]
+    }
+  ],
+  "modelCount": 3,
+  "spuCount": 5,
+  "skuCount": 10,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "VibrationEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "TiltAngleDeviation",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "TiltAngleDeviation",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "PeakTiltAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "PeakTiltAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryTiltAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryTiltAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "ObjectOrientationState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "ObjectOrientationState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "StationaryState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "InitialTiltAngle",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "VibrationSensor",
+      "functionCode": "Vibration",
+      "traitCode": "InitialTiltAngle",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ContactSensor",
+      "functionCode": "Contact",
+      "traitCode": "ContactSensorState",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "ContactSensor",
+      "functionCode": "Contact",
+      "traitCode": "ContactSensorState",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 3,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "动静贴"
+      ],
+      "en-US": [
+        "Vibration Sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f2f2f7" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>__DASHBOARD_TITLE__</title>
+    <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="tabs.css" />
+  </head>
+  <body>
+    <div id="pull-indicator" class="pull-indicator" role="status" aria-live="polite">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.34 5.66M20 4v7h-7" /></svg>
+      <span id="pull-text">下拉刷新</span>
+    </div>
+    <div id="phone-offline-banner" class="phone-offline-banner" role="status" aria-live="polite" hidden><span class="phone-offline-inner"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.5a15 15 0 0 1 18 0M6.5 13a9 9 0 0 1 11 0M10 16.5a3 3 0 0 1 4 0M12 20h.01"/><path d="M3 3l18 18"/></svg><span id="phone-offline-text">网络异常，请重试</span><button id="phone-offline-retry" type="button">重试</button></span></div>
+    <main id="app" class="app-shell" aria-busy="true">
+      <header id="topbar" class="topbar">
+        <button id="mine-button" class="icon-button mine-button" type="button" aria-label="打开我的" title="我的"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h12M4 18h8"/></svg></button>
+      </header>
+      <section id="home-panel" data-home-leading-module="overview" role="tabpanel" aria-labelledby="tab-home">
+      <div class="title-lockup home-studio-heading"><h1 id="dashboard-title">Studio</h1></div>
+      <section id="connection-banner" class="connection-banner" role="status" aria-atomic="true"><span class="status-dot"></span><span id="connection-text">正在获取 Studio 状态…</span></section>
+      <!-- home-module:overview:start -->
+      <section id="dashboard-content" class="hero-card" aria-labelledby="summary-label">
+        <div class="hero-copy"><h2 id="summary-label" class="hero-label">家庭概览</h2><h2 id="summary-heading" hidden>正在读取家庭状态</h2><p id="summary-detail" hidden>正在读取空间与设备状态</p></div>
+        <dl id="summary-grid" class="summary-grid" aria-label="家庭数据摘要">
+          <div><dd id="online-count">—</dd><dt id="online-label">在线设备</dt></div>
+          <div><dd id="space-count">—</dd><dt id="space-label">空间</dt></div>
+          <div><dd id="scene-count">—</dd><dt id="scene-label">场景</dt></div>
+          <div><dd id="temperature-value">—</dd><dt id="temperature-label">室内温度</dt></div>
+          <div><dd id="humidity-value">—</dd><dt id="humidity-label">室内湿度</dt></div>
+          <div><dd id="presence-value">—</dd><dt id="presence-label">有人空间</dt></div>
+        </dl>
+        <p id="overview-coverage" class="overview-coverage" role="status" aria-live="polite">环境数据将在首屏后异步汇总</p>
+        <div id="space-overview-links" class="space-overview-links" aria-label="分类总览">
+          <button type="button" data-space-overview="light" disabled><span class="space-overview-name">照明</span><span class="space-overview-value">—</span></button>
+          <button type="button" data-space-overview="shade" disabled><span class="space-overview-name">遮阳</span><span class="space-overview-value">—</span></button>
+          <button type="button" data-space-overview="climate" disabled><span class="space-overview-name">冷暖</span><span class="space-overview-value">—</span></button>
+        </div>
+        <p class="freshness"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 1.5"/></svg><span id="updated-at">尚未完成同步</span></p>
+      </section>
+      <!-- home-module:overview:end -->
+      <!-- home-module:aiAssistant:start -->
+      <section id="ai-assistant-section" class="ai-assistant-section" aria-label="AI 助手" hidden>
+        <div class="ai-assistant-card">
+        <button id="ai-assistant-button" class="ai-assistant-open" type="button" aria-label="打开 Aqara AI 助手">
+          <span class="ai-assistant-heading"><svg class="ai-assistant-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m10 3 2.2 5.8L18 11l-5.8 2.2L10 19l-2.2-5.8L2 11l5.8-2.2L10 3Zm9-2 1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3Z"/></svg><span id="ai-assistant-title">问问 Aqara AI Agent</span><svg class="ai-assistant-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></span>
+        </button>
+          <div id="ai-assistant-suggestions" class="ai-assistant-suggestions" hidden></div>
+        </div>
+      </section>
+      <!-- home-module:aiAssistant:end -->
+      <section id="notice" class="notice" role="status" aria-atomic="true" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2.8 19h18.4L12 3Z"/><path d="M12 9v4M12 16.5v.5"/></svg><span id="notice-text"></span></section>
+      <section id="fatal-state" class="fatal-state" role="alert" aria-labelledby="fatal-heading" hidden>
+        <div class="fatal-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v6M12 17v.2"/></svg></div>
+        <h2 id="fatal-heading">暂时无法连接 Studio</h2><p id="fatal-message"></p><button id="retry-button" class="primary-button" type="button">重新连接</button>
+      </section>
+      <!-- home-module:favoriteScenes:start -->
+      <section id="scene-section" class="scene-section" aria-labelledby="scene-heading">
+        <div class="section-heading"><div><p id="scene-eyebrow" class="eyebrow" hidden>快速操作</p><h2 id="scene-heading">常用场景</h2></div><span id="scene-note" hidden></span><button id="scene-edit" class="favorite-scenes-edit" type="button" aria-label="选择常用场景" disabled><img src="assets/icon-add.svg" alt=""></button></div>
+        <div id="scene-grid" class="favorite-scenes-grid" aria-live="polite"></div>
+      </section>
+      <!-- home-module:favoriteScenes:end -->
+      <!-- home-module:devices:start -->
+      <section id="device-section" class="content-section" aria-labelledby="device-heading">
+        <div class="section-heading"><div><p id="device-eyebrow" class="eyebrow">智能设备</p><h2 id="device-heading">设备</h2></div><span id="device-note" class="section-note">读取全部设备</span></div>
+        <nav id="device-filters" class="device-filters" aria-label="设备分类"></nav>
+        <div id="device-grid" class="device-grid" aria-live="polite"></div>
+        <button id="load-more-button" class="load-more-button" type="button" hidden>加载更多</button>
+      </section>
+      <section id="favorite-devices-section" hidden aria-labelledby="favorite-devices-heading">
+        <div class="favorite-devices-heading"><h2 id="favorite-devices-heading">常用设备</h2><button id="favorite-devices-edit" type="button" aria-label="选择常用设备" disabled><img src="assets/icon-add.svg" alt=""></button></div>
+        <div id="favorite-devices-grid" class="favorite-devices-grid" aria-live="polite"></div>
+      </section>
+      <!-- home-module:devices:end -->
+      <!-- home-module:spaceControl:start -->
+      <section id="space-control-section" aria-labelledby="space-control-heading">
+        <div class="section-heading"><h2 id="space-control-heading">空间控制</h2></div>
+        <div id="space-control-tabs" class="space-tabs"></div><div id="space-control-list" class="space-control-list"></div>
+      </section>
+      <!-- home-module:spaceControl:end -->
+      </section>
+      <section id="devices-panel" class="directory-panel" role="tabpanel" aria-labelledby="tab-devices" hidden><div id="devices-content"></div></section>
+      <section id="automation-panel" class="directory-panel" role="tabpanel" aria-labelledby="tab-automation" hidden><div id="automation-content"></div></section>
+    </main>
+    <nav id="studio-tabbar" class="studio-tabbar" role="tablist" aria-label="主导航">
+      <button id="tab-home" type="button" role="tab" aria-controls="home-panel" aria-selected="true" tabindex="0" data-tab="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H4V10M9 20v-7h6v7"/></svg><span>首页</span></button>
+      <button id="tab-devices" type="button" role="tab" aria-controls="devices-panel" aria-selected="false" tabindex="-1" data-tab="devices"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg><span>设备</span></button>
+      <button id="tab-automation" type="button" role="tab" aria-controls="automation-panel" aria-selected="false" tabindex="-1" data-tab="automation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m13 2-9 12h7l-1 8 10-13h-7z"/></svg><span>智能</span></button>
+    </nav>
+    <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+    <script src="config.js"></script><script src="life-bridge.js"></script><script src="camera-webrtc-readiness.js"></script><script src="camera-session-provider.js"></script><script src="camera-webrtc-runtime.js"></script><script src="i18n.js"></script><script src="phone-network.js"></script><script src="favorite-speaker.js"></script><script src="studio-runtime.js"></script><script src="favorite-metadata.js"></script>
+  <script src="favorite-scenes.js"></script><script src="space-control.js"></script><script src="favorite-devices.js"></script><script src="dashboard.js"></script><script src="studio-tabs-runtime.js"></script><script src="space-filter.js"></script><script src="studio-tabs.js"></script>
+  </body>
+</html>

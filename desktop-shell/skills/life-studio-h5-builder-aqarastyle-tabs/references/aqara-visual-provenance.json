@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "snapshotDate": "2026-09-17",
+  "sourceSkill": "aqara-smart-home-card-design",
+  "sourceVersion": "0.12.0",
+  "sourceOfficialDataStatus": "draft",
+  "sourceConfirmedRuleCount": 133,
+  "sourceConfirmedVariableCount": 190,
+  "sourceConfirmedVariableCollectionCount": 3,
+  "confirmedProfilesUsed": [
+    "app"
+  ],
+  "confirmedCategoryCoverage": [
+    "light"
+  ],
+  "adoptedDomains": [
+    "semantic-color-tokens",
+    "app-card-grid-and-occupancy",
+    "card-radius-and-padding",
+    "typography-hierarchy",
+    "official-atomic-components",
+    "light-functional-components",
+    "official-card-component-anatomy",
+    "circular-action-geometry",
+    "horizontal-slider-visuals",
+    "vertical-slider-visuals",
+    "color-temperature-slider-visuals",
+    "shared-visual-states",
+    "light-category-visual-mapping"
+  ],
+  "adaptedDomains": [
+    "responsive-h5-layout-outside-390x812",
+    "non-light-category-card-composition",
+    "dynamic-content-height",
+    "system-inline-svg-icons",
+    "light-dark-operational-dashboard-surfaces",
+    "dynamic-safe-renderer-bound-color-controls",
+    "task-artifact-light-form-factor-occupancy"
+  ],
+  "excludedBehaviorDomains": [
+    "network-request-policy",
+    "device-model-and-protocol-mapping",
+    "offline-action-replay",
+    "whole-card-navigation",
+    "long-press-menus",
+    "fixed-screen-horizontal-paging",
+    "simulated-loading-delays",
+    "figma-authoring-preview-styles"
+  ],
+  "reviewedArtifactEvidence": {
+    "name": "Aqara灯控三主题展示",
+    "role": "visual-regression evidence only",
+    "officialTheme": "confirmed App and 480 geometry demonstration",
+    "nonOfficialThemes": ["cyberpunk", "cozy"]
+  },
+  "sourceSnapshotHashes": {
+    "skill": "d2db9f147194baa80c293d246659e5ec78ae4da666674f1a876e4f7fb01612f7",
+    "officialComponents": "049ed56fd0ffdd390ab68cf95592e9167705ea6b1ee074f75cc78f5a184cbcf1",
+    "functionalComponents": "f1571a15295877b4c92eb6e45bcb0da0d681e6d099034797f4e25e58491fcf45",
+    "cardComponents": "f37d65de125ce70d285da1f840b0a68228b38112fe9dbb6e0745a5139fcbf82f",
+    "lightCategory": "55e237e991bfa3dfa30c25ae44b3a90b8d77f09604b6df0bc57a490c5289a653",
+    "appProfile": "0c8c2a9ee772602cc14836a05c95b972abeeed025b4498a31c38f26b6ed747ea",
+    "screen480Profile": "1b03b867afa0345ac596bd63e737b65248befea97e185b1d91f846a027d91316"
+  },
+  "installationDependencyOnSourceSkill": false
+}

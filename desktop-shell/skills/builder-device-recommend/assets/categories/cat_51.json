@@ -1,0 +1,1795 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "51",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "开关类",
+    "en-US": "Switch"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.controller.acn002",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Pro",
+        "en-US": "MagicPad S1 Pro"
+      },
+      "deviceTypesList": [
+        "Speaker"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AG030"
+      ],
+      "skuIds": [
+        "sku.AG030CNG01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_ln1.aq1",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线单键版）",
+        "en-US": "Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK015",
+        "spu.AK018",
+        "spu.AK034"
+      ],
+      "skuIds": [
+        "sku.AK015CNW01",
+        "sku.AK015CNW02",
+        "sku.AK018CNW01",
+        "sku.AK034CNG01",
+        "sku.AK034CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_ln1.es1",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线单键版）",
+        "en-US": "Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK007",
+        "spu.EK014"
+      ],
+      "skuIds": [
+        "sku.EK007CNW01",
+        "sku.EK014CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_ln1.v1",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线单键版）",
+        "en-US": "Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_ln2.aq1",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线双键版）",
+        "en-US": "Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK016",
+        "spu.AK019",
+        "spu.AK035"
+      ],
+      "skuIds": [
+        "sku.AK016CNW01",
+        "sku.AK016CNW02",
+        "sku.AK019CNW01",
+        "sku.AK035CNG01",
+        "sku.AK035CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_ln2.es1",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线双键版）",
+        "en-US": "Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK008",
+        "spu.EK015"
+      ],
+      "skuIds": [
+        "sku.EK008CNW01",
+        "sku.EK015CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_ln2.v1",
+      "displayName": {
+        "zh-CN": "墙壁开关（零火线双键版）",
+        "en-US": "Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_neutral1.aq1",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线单键版）",
+        "en-US": "Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_neutral1.es1",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线单键版）",
+        "en-US": "Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK005"
+      ],
+      "skuIds": [
+        "sku.EK005CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_neutral1.v1",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线单键版）",
+        "en-US": "Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK005",
+        "spu.AK013",
+        "spu.AK032"
+      ],
+      "skuIds": [
+        "sku.AK005CNW01",
+        "sku.AK013CNW01",
+        "sku.AK013CNW02",
+        "sku.AK032CNG01",
+        "sku.AK032CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_neutral2.aq1",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线双键版）",
+        "en-US": "Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.ctrl_neutral2.es1",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线双键版）",
+        "en-US": "Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.EK006"
+      ],
+      "skuIds": [
+        "sku.EK006CNW01"
+      ]
+    },
+    {
+      "model": "lumi.ctrl_neutral2.v1",
+      "displayName": {
+        "zh-CN": "墙壁开关（单火线双键版）",
+        "en-US": "Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK006",
+        "spu.AK014",
+        "spu.AK033"
+      ],
+      "skuIds": [
+        "sku.AK006CNW01",
+        "sku.AK014CNW01",
+        "sku.AK033CNG01",
+        "sku.AK033CNJ01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl015",
+      "displayName": {
+        "zh-CN": "妙控场景屏 AX100S",
+        "en-US": "Panel Hub AX100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "4g/5g",
+        "bluetooth",
+        "matter",
+        "thread",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AG051",
+        "spu.ZNZKP11LM"
+      ],
+      "skuIds": [
+        "sku.AG051CNG01",
+        "sku.AG051CNG02",
+        "sku.AG051CNW01",
+        "sku.AG051CNW02",
+        "sku.AG051GLG01"
+      ]
+    },
+    {
+      "model": "lumi.gateway.agl019",
+      "displayName": {
+        "zh-CN": "Aqara集悦妙控屏 GR100S",
+        "en-US": "Aqara Jiyue Smart Control Screen GR100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch",
+        "Panel"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK215"
+      ],
+      "skuIds": [
+        "sku.AK215CNB01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn001",
+      "displayName": {
+        "zh-CN": "智能墙壁开关X1（单火线单键版）",
+        "en-US": "Wall Switch X1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK079"
+      ],
+      "skuIds": [
+        "sku.AK079CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn002",
+      "displayName": {
+        "zh-CN": "智能墙壁开关X1（单火线双键版）",
+        "en-US": "Wall Switch X1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK080"
+      ],
+      "skuIds": [
+        "sku.AK080CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn003",
+      "displayName": {
+        "zh-CN": "智能墙壁开关X1（单火线三键版）",
+        "en-US": "Wall Switch X1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK081"
+      ],
+      "skuIds": [
+        "sku.AK081CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn023",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（单火线单键版）",
+        "en-US": "Smart Wall Switch H1M (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn024",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（单火线双键版）",
+        "en-US": "Smart Wall Switch H1M (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn028",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（单火线三键版）",
+        "en-US": "Smart Wall Switch H1M (No Neutral, Triple Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn029",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（零火线单键版）",
+        "en-US": "Smart Wall Switch H1M (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK090",
+        "spu.AK099",
+        "spu.AK102"
+      ],
+      "skuIds": [
+        "sku.AK090CNG01",
+        "sku.AK099CNE01",
+        "sku.AK099CNG01",
+        "sku.AK099CNL01",
+        "sku.AK099CNP01",
+        "sku.AK099CNW01",
+        "sku.AK099CNW02",
+        "sku.AK102CNG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn030",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（零火线双键版）",
+        "en-US": "Smart Wall Switch H1M (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK091",
+        "spu.AK100",
+        "spu.AK103"
+      ],
+      "skuIds": [
+        "sku.AK091CNG01",
+        "sku.AK100CNE01",
+        "sku.AK100CNG01",
+        "sku.AK100CNL01",
+        "sku.AK100CNP01",
+        "sku.AK100CNW01",
+        "sku.AK100CNW02",
+        "sku.AK103CNG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn031",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1M（零火线三键版）",
+        "en-US": "Smart Wall Switch H1M (With Neutral, Triple Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK092",
+        "spu.AK101",
+        "spu.AK104"
+      ],
+      "skuIds": [
+        "sku.AK092CNG01",
+        "sku.AK101CNE01",
+        "sku.AK101CNG01",
+        "sku.AK101CNL01",
+        "sku.AK101CNP01",
+        "sku.AK101CNW01",
+        "sku.AK101CNW02",
+        "sku.AK104CNG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn034",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Plus",
+        "en-US": "MagicPad/Panel Hub S1 Plus"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch",
+        "Panel"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK098",
+        "spu.AK189",
+        "spu.AK205"
+      ],
+      "skuIds": [
+        "sku.AK098CNG01",
+        "sku.AK098CNG02",
+        "sku.AK098CNW01",
+        "sku.AK189CNG01",
+        "sku.AK189CNW01",
+        "sku.AK205CNG01",
+        "sku.AK205CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn048",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（单键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK141"
+      ],
+      "skuIds": [
+        "sku.AK141CNG01",
+        "sku.AK141CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn049",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（双键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK142"
+      ],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn051",
+      "displayName": {
+        "zh-CN": "妙控开关 V1（四键版）",
+        "en-US": "Smart Magic Switch V1 (Quintuple Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK147CNB01",
+        "spu.AK147CNW01"
+      ],
+      "skuIds": [
+        "sku.AK147"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn053",
+      "displayName": {
+        "zh-CN": "繁星旋钮 V1",
+        "en-US": "Touchscreen Dial V1"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AK140",
+        "spu.AK192"
+      ],
+      "skuIds": [
+        "sku.AK140CNB01",
+        "sku.AK140CNG01",
+        "sku.AK140CNW01",
+        "sku.AK140EUW01",
+        "sku.AK192EUW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn054",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（三键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Triple Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK142"
+      ],
+      "skuIds": [
+        "sku.AK142CNG01",
+        "sku.AK142CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn055",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1（四键版）",
+        "en-US": "Canon Smart Wall Switch Z1(Quadruple Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK143"
+      ],
+      "skuIds": [
+        "sku.AK143CNG01",
+        "sku.AK143CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn056",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（单键版）",
+        "en-US": "Smart wall switch Z1 Pro (single button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK148",
+        "spu.AK184"
+      ],
+      "skuIds": [
+        "sku.AK148CNG01",
+        "sku.AK148CNW01",
+        "sku.AK184CNG02",
+        "sku.AK184CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn057",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（双键版）",
+        "en-US": "Smart wall switch Z1 Pro (double-button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK149",
+        "spu.AK185"
+      ],
+      "skuIds": [
+        "sku.AK149CNG01",
+        "sku.AK149CNW01",
+        "sku.AK185CNG02",
+        "sku.AK185CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn058",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（三键版）",
+        "en-US": "Smart wall switch Z1 Pro (three-button version)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK150",
+        "spu.AK186"
+      ],
+      "skuIds": [
+        "sku.AK150CNG01",
+        "sku.AK150CNW01",
+        "sku.AK186CNG02",
+        "sku.AK186CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn059",
+      "displayName": {
+        "zh-CN": "卡农 智能墙壁开关 Z1 Pro（四键版）",
+        "en-US": "Smart wall switch Z1 Pro (four-button version)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK151",
+        "spu.AK187"
+      ],
+      "skuIds": [
+        "sku.AK151CNG01",
+        "sku.AK151CNW01",
+        "sku.AK187CNG02",
+        "sku.AK187CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn062",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 Q1（单键版）",
+        "en-US": "Smart wall switch Q1 (single-button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK156",
+        "spu.AK157"
+      ],
+      "skuIds": [
+        "sku.AK156CNW01",
+        "sku.AK157CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn063",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 Q1（双键版）",
+        "en-US": "Smart wall switch Q1 (double-button version)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn065",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 Q1（四键版）",
+        "en-US": "Smart wall switch Q1 (four-button version)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK159"
+      ],
+      "skuIds": [
+        "sku.AK159CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.acn066",
+      "displayName": {
+        "zh-CN": "妙控场景屏 S100",
+        "en-US": "Panel Switch S100"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn075",
+      "displayName": {
+        "zh-CN": "Aqara妙控场景屏 AR100S",
+        "en-US": "Panel Hub AR100S"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.acn080",
+      "displayName": {
+        "zh-CN": "繁花 场景开关H1 Elite",
+        "en-US": "Scene Switch H1 Elite"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button",
+        "OccupancySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK206"
+      ],
+      "skuIds": [
+        "sku.AK206CNG01",
+        "sku.AK206CNG02",
+        "sku.AK206CNG03",
+        "sku.AK206CNG04",
+        "sku.AK206CNW01",
+        "sku.AK206CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.agl003",
+      "displayName": {
+        "zh-CN": "集悦妙控屏 S1 Plus（国际版）",
+        "en-US": "MagicPad/Panel Hub S1 Plus"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Speaker",
+        "Switch"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "ethernet",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK153",
+        "spu.AK193"
+      ],
+      "skuIds": [
+        "sku.AK153EUW01",
+        "sku.AK153SAG01",
+        "sku.AK193EUW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b1lacn01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关T1（单火线单键版）",
+        "en-US": "Smart Wall Switch T1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK037"
+      ],
+      "skuIds": [
+        "sku.AK037CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b1lacn02",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（单火线单键版）",
+        "en-US": "Smart Wall Switch D1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK043",
+        "spu.AK047"
+      ],
+      "skuIds": [
+        "sku.AK043CNW01",
+        "sku.AK043CNW02",
+        "sku.AK043CNW03",
+        "sku.AK047CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b1laus01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（单火线单键版）",
+        "en-US": "Smart Wall Switch (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK022",
+        "spu.AK028"
+      ],
+      "skuIds": [
+        "sku.AK022USW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b1nacn02",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（零火线单键版）",
+        "en-US": "Smart Wall Switch D1 (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK045",
+        "spu.AK046"
+      ],
+      "skuIds": [
+        "sku.AK045CNW01",
+        "sku.AK045CNW02",
+        "sku.AK045CNW03",
+        "sku.AK046CNW03"
+      ]
+    },
+    {
+      "model": "lumi.switch.b1naus01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（零火线单键版）",
+        "en-US": "Smart Wall Switch (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK024"
+      ],
+      "skuIds": [
+        "sku.AK024USW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b2lacn01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关T1（单火线双键版）",
+        "en-US": "Smart Wall Switch T1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK038"
+      ],
+      "skuIds": [
+        "sku.AK038CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b2lacn02",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（单火线双键版）",
+        "en-US": "Smart Wall Switch D1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK044"
+      ],
+      "skuIds": [
+        "sku.AK044CNW01",
+        "sku.AK044CNW02",
+        "sku.AK044CNW03"
+      ]
+    },
+    {
+      "model": "lumi.switch.b2laus01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（单火线双键版）",
+        "en-US": "Smart Wall Switch (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK023"
+      ],
+      "skuIds": [
+        "sku.AK023USW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b2nacn02",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（零火线双键版）",
+        "en-US": "Smart Wall Switch D1 (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK046"
+      ],
+      "skuIds": [
+        "sku.AK046CNW01",
+        "sku.AK046CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.b2naus01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关（零火线双键版）",
+        "en-US": "Smart Wall Switch (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK025"
+      ],
+      "skuIds": [
+        "sku.AK025USW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.b3l01",
+      "displayName": {
+        "zh-CN": "智能墙壁开关T1（单火线三键版）",
+        "en-US": "Wall Switch T1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK065"
+      ],
+      "skuIds": [
+        "sku.AK065CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.eicn09",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 J1（零火线双键版）",
+        "en-US": "Wall Switch J1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.eicn10",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 J1（零火线三键版）",
+        "en-US": "Wall Switch J1"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.switch.l1acn1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（单火线单键版）",
+        "en-US": "Wall Switch H1 (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK057"
+      ],
+      "skuIds": [
+        "sku.AK057CNJ01",
+        "sku.AK057CNW01",
+        "sku.AK057CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.l1aeu1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（单火线单键版）",
+        "en-US": "Smart Wall Switch H1 EU (No Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK071"
+      ],
+      "skuIds": [
+        "sku.AK071EUW01",
+        "sku.AK071RUG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.l2acn1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（单火线双键版）",
+        "en-US": "Wall Switch H1 (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK058"
+      ],
+      "skuIds": [
+        "sku.AK058CNJ01",
+        "sku.AK058CNW01",
+        "sku.AK058CNW02"
+      ]
+    },
+    {
+      "model": "lumi.switch.l2aeu1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（单火线双键版）",
+        "en-US": "Smart Wall Switch H1 EU (No Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK072",
+        "spu.AK073",
+        "spu.AK074"
+      ],
+      "skuIds": [
+        "sku.AK072EUW01",
+        "sku.AK072RUG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.l3acn1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（单火线三键版）",
+        "en-US": "Wall Switch H1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK059",
+        "spu.AK126"
+      ],
+      "skuIds": [
+        "sku.AK059CNJ01",
+        "sku.AK059CNW01",
+        "sku.AK059CNW02",
+        "sku.AK126GLW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.l3acn3",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（单火线三键版）",
+        "en-US": "Wall Switch D1 (No Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK049"
+      ],
+      "skuIds": [
+        "sku.AK049CNG01",
+        "sku.AK049CNW01",
+        "sku.AK049CNW03",
+        "sku.AK049CNY01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n1acn1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（零火线单键版）",
+        "en-US": "Wall Switch H1 (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK060",
+        "spu.AK067",
+        "spu.AK123"
+      ],
+      "skuIds": [
+        "sku.AK060CNG03",
+        "sku.AK060CNG04",
+        "sku.AK060CNJ01",
+        "sku.AK060CNW01",
+        "sku.AK060CNW02",
+        "sku.AK060CNW03",
+        "sku.AK060CNW04",
+        "sku.AK067CNN01",
+        "sku.AK123KRG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n1aeu1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（零火线单键版）",
+        "en-US": "Smart Wall Switch H1 EU (With Neutral, Single Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK073"
+      ],
+      "skuIds": [
+        "sku.AK073EUW01",
+        "sku.AK073RUG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n2acn1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（零火线双键版）",
+        "en-US": "Wall Switch H1 (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK061",
+        "spu.AK068",
+        "spu.AK124"
+      ],
+      "skuIds": [
+        "sku.AK061CNG03",
+        "sku.AK061CNG04",
+        "sku.AK061CNJ01",
+        "sku.AK061CNW01",
+        "sku.AK061CNW02",
+        "sku.AK061CNW03",
+        "sku.AK061CNW04",
+        "sku.AK068CNN01",
+        "sku.AK124KRG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n2aeu1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关 H1 EU（零火线双键版）",
+        "en-US": "Smart Wall Switch H1 EU (With Neutral, Double Rocker)"
+      },
+      "deviceTypesList": [
+        "Switch",
+        "Button"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK074"
+      ],
+      "skuIds": [
+        "sku.AK074EUW01",
+        "sku.AK074RUG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n3acn1",
+      "displayName": {
+        "zh-CN": "智能墙壁开关H1（零火线三键版）",
+        "en-US": "Wall Switch H1 (With Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK062",
+        "spu.AK069",
+        "spu.AK095",
+        "spu.AK125"
+      ],
+      "skuIds": [
+        "sku.AK062CNG03",
+        "sku.AK062CNG04",
+        "sku.AK062CNJ01",
+        "sku.AK062CNW01",
+        "sku.AK062CNW02",
+        "sku.AK062CNW03",
+        "sku.AK062CNW04",
+        "sku.AK069CNN01",
+        "sku.AK095GLW01",
+        "sku.AK125KRG01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n3acn3",
+      "displayName": {
+        "zh-CN": "智能墙壁开关D1（零火线三键版）",
+        "en-US": "Wall Switch D1 (With Neutral, Three Rocker)"
+      },
+      "deviceTypesList": [
+        "Button",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK050",
+        "spu.AK051",
+        "spu.AK078"
+      ],
+      "skuIds": [
+        "sku.AK050CNG01",
+        "sku.AK050CNW01",
+        "sku.AK050CNW02",
+        "sku.AK050CNW03",
+        "sku.AK050CNY01",
+        "sku.AK051CNG01",
+        "sku.AK078CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.n4acn4",
+      "displayName": {
+        "zh-CN": "智能场景面板开关 S1",
+        "en-US": "Scene Panel Switch S1"
+      },
+      "deviceTypesList": [
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK056"
+      ],
+      "skuIds": [
+        "sku.AK056CNB01",
+        "sku.AK056CNJ01",
+        "sku.AK056CNW01"
+      ]
+    },
+    {
+      "model": "lumi.switch.rkna01",
+      "displayName": {
+        "zh-CN": "智能旋钮开关 H1（零火线版）",
+        "en-US": "Smart Knob H1 (With Neutral)"
+      },
+      "deviceTypesList": [
+        "Knob",
+        "Switch"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AK070"
+      ],
+      "skuIds": [
+        "sku.AK070CNG01",
+        "sku.AK070CNJ01",
+        "sku.AK070CNW01"
+      ]
+    }
+  ],
+  "modelCount": 69,
+  "spuCount": 95,
+  "skuCount": 189,
+  "commonCapabilities": [
+    {
+      "deviceType": "Speaker",
+      "functionCode": "MediaPlayback",
+      "traitCode": "TargetPlaybackState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "MediaPlayback",
+      "traitCode": "TargetPlaybackState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "MediaPlayback",
+      "traitCode": "TargetPlaybackState",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "MediaPlayback",
+      "traitCode": "CurrentPlaybackState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "MediaPlayback",
+      "traitCode": "CurrentPlaybackState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "Speaker",
+      "traitCode": "Volume",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "Speaker",
+      "traitCode": "Volume",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "Speaker",
+      "traitCode": "Volume",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "Speaker",
+      "traitCode": "Mute",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "Speaker",
+      "traitCode": "Mute",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Speaker",
+      "functionCode": "Speaker",
+      "traitCode": "Mute",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Button",
+      "traitCode": "ButtonEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Switch",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "Button",
+      "functionCode": "Button",
+      "traitCode": "ButtonEvent",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "4g/5g",
+    "bluetooth",
+    "ethernet",
+    "matter",
+    "thread",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 61,
+    "notRequiredModelCount": 8,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "开关类"
+      ],
+      "en-US": [
+        "Switch"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

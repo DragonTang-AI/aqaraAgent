@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "159",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "空气健康检测仪",
+    "en-US": "Air Quality Sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.airm.fhac01",
+      "displayName": {
+        "zh-CN": "空气监测面板S1",
+        "en-US": "Aqara Air Quality Monitor S1"
+      },
+      "deviceTypesList": [
+        "ParticulateMatterSensor",
+        "CO2Sensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS040",
+        "spu.N/A"
+      ],
+      "skuIds": [
+        "sku.AS040CNW01",
+        "sku.N/A"
+      ]
+    },
+    {
+      "model": "lumi.airmonitor.acn01",
+      "displayName": {
+        "zh-CN": "TVOC空气健康伴侣",
+        "en-US": "TVOC Air Quality Monitor"
+      },
+      "deviceTypesList": [
+        "TVOCSensor",
+        "HumiditySensor",
+        "TemperatureSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS029"
+      ],
+      "skuIds": [
+        "sku.AS029GLW01",
+        "sku.AS029GLW02"
+      ]
+    }
+  ],
+  "modelCount": 2,
+  "spuCount": 3,
+  "skuCount": 4,
+  "commonCapabilities": [
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM2.5Density",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM2.5Density",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM2.5Level",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM2.5Level",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM10Density",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM10Density",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM1.0Density",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "ParticulateMatterSensor",
+      "functionCode": "ParticulateMatter",
+      "traitCode": "PM1.0Density",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "CO2Sensor",
+      "functionCode": "CO2",
+      "traitCode": "CO2Level",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "CO2Sensor",
+      "functionCode": "CO2",
+      "traitCode": "CO2Level",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "CO2Sensor",
+      "functionCode": "CO2",
+      "traitCode": "CO2Density",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "CO2Sensor",
+      "functionCode": "CO2",
+      "traitCode": "CO2Density",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "TVOCSensor",
+      "functionCode": "AirQuality",
+      "traitCode": "VOCQuality",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "TVOCSensor",
+      "functionCode": "AirQuality",
+      "traitCode": "VOCQuality",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "TVOCSensor",
+      "functionCode": "AirQuality",
+      "traitCode": "VOCDensity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TVOCSensor",
+      "functionCode": "AirQuality",
+      "traitCode": "VOCDensity",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 2,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "空气健康检测仪"
+      ],
+      "en-US": [
+        "Air Quality Sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

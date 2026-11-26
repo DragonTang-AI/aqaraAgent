@@ -1,0 +1,296 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "401",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "空调伴侣",
+    "en-US": "Air Conditioning Controller"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.acpartner.acn002",
+      "displayName": {
+        "zh-CN": "Aqara空调伴侣 AR300W",
+        "en-US": "Aqara Air Conditioning Controller AR300W"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "IRDevice",
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AT025"
+      ],
+      "skuIds": [
+        "sku.AT025CNW01"
+      ]
+    },
+    {
+      "model": "lumi.acpartner.aq1",
+      "displayName": {
+        "zh-CN": "空调伴侣（B端专供）",
+        "en-US": "Air conditioning Companion (B-end Exclusive Supply)"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AA001"
+      ],
+      "skuIds": [
+        "sku.AA001CNW01"
+      ]
+    },
+    {
+      "model": "lumi.acpartner.v3",
+      "displayName": {
+        "zh-CN": "空调伴侣（升级版）",
+        "en-US": "Air Conditioning Controller (Advanced)"
+      },
+      "deviceTypesList": [
+        "AirConditioner"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA002"
+      ],
+      "skuIds": [
+        "sku.AA002CNW01"
+      ]
+    },
+    {
+      "model": "lumi.aircondition.acn05",
+      "displayName": {
+        "zh-CN": "空调伴侣 P3",
+        "en-US": "Air Conditioning Controller P3"
+      },
+      "deviceTypesList": [
+        "AirConditioner",
+        "IRDevice",
+        "Outlet"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AA003"
+      ],
+      "skuIds": [
+        "sku.AA003CNW01",
+        "sku.AA003CNW02",
+        "sku.AA003CNW03"
+      ]
+    }
+  ],
+  "modelCount": 4,
+  "spuCount": 4,
+  "skuCount": 6,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentPower",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "EnergyManagement",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "FanMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "RockSetting",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "RockSetting",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "FanControl",
+      "traitCode": "RockSetting",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeaterCoolerMode",
+      "automationRole": "action",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "HeatingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CoolingTemperature",
+      "automationRole": "action",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "Output",
+      "traitCode": "OnOff",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "IRDevice",
+      "functionCode": "IRControl",
+      "commandCode": "IRKey",
+      "automationRole": "action",
+      "valueType": "command"
+    },
+    {
+      "deviceType": "AirConditioner",
+      "functionCode": "HeaterCooler",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 0,
+    "notRequiredModelCount": 4,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "空调伴侣"
+      ],
+      "en-US": [
+        "Air Conditioning Controller"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

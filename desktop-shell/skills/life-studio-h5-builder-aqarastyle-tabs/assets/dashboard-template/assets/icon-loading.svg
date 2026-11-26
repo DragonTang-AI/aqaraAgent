@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.083" transform="rotate(0 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.167" transform="rotate(30 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.250" transform="rotate(60 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.333" transform="rotate(90 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.417" transform="rotate(120 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.500" transform="rotate(150 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.583" transform="rotate(180 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.667" transform="rotate(210 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.750" transform="rotate(240 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.833" transform="rotate(270 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="0.917" transform="rotate(300 10 10)"/>
+<rect x="9" y=".5" width="2" height="5" rx="1" fill="#8E8E93" opacity="1.000" transform="rotate(330 10 10)"/>
+</svg>

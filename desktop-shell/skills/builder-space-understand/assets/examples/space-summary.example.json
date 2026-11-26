@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "space-summary-v1",
+  "projectId": "1bb7192f-9fc7-4d5d-b550-682c477c45be",
+  "floors": [
+    { "id": "Floor:level_5aofuf52rb4ui72m", "name": "0F", "floorNum": 0 }
+  ],
+  "rooms": [
+    {
+      "roomId": "zone_room_1",
+      "nodeId": "Room:zone_room_1",
+      "displayName": "客厅",
+      "area_m2": 28.0,
+      "labelConfidence": "high",
+      "duplicateGroup": null
+    },
+    {
+      "roomId": "zone_room_2",
+      "nodeId": "Room:zone_room_2",
+      "displayName": "卧室",
+      "area_m2": 12.0,
+      "labelConfidence": "medium",
+      "duplicateGroup": "卧室"
+    },
+    {
+      "roomId": "zone_room_3",
+      "nodeId": "Room:zone_room_3",
+      "displayName": "卧室",
+      "area_m2": 11.0,
+      "labelConfidence": "medium",
+      "duplicateGroup": "卧室"
+    }
+  ],
+  "adjacencies": [
+    { "a": "zone_room_1", "b": "zone_room_2", "via": null }
+  ],
+  "openings": { "doors": 9, "windows": 9 },
+  "deviceHints": {
+    "fromModelCount": 0,
+    "fromGraphCount": 46,
+    "withRoomBelongsTo": 13
+  },
+  "issues": [
+    {
+      "code": "duplicate_room_name",
+      "message": "存在多间「卧室」",
+      "roomIds": ["zone_room_2", "zone_room_3"]
+    },
+    {
+      "code": "orphan_devices",
+      "message": "部分设备未归属房间",
+      "count": 33
+    }
+  ],
+  "readyForRecommend": true
+}

@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "155",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "烟雾报警器",
+    "en-US": "Smoke Detector"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.sensor_smoke.acn02",
+      "displayName": {
+        "zh-CN": "烟雾报警器",
+        "en-US": "Smoke Detector"
+      },
+      "deviceTypesList": [
+        "SmokeAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.MS005"
+      ],
+      "skuIds": [
+        "sku.MS005CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_smoke.acn03",
+      "displayName": {
+        "zh-CN": "Aqara烟雾报警器",
+        "en-US": "Smoke Detector"
+      },
+      "deviceTypesList": [
+        "SmokeAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS018",
+        "spu.AS054",
+        "spu.AS076"
+      ],
+      "skuIds": [
+        "sku.AS018CNW01",
+        "sku.AS054RUW01",
+        "sku.AS076EUW01",
+        "sku.AS076EUW02",
+        "sku.AS076SEW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_smoke.acn06",
+      "displayName": {
+        "zh-CN": "烟雾报警器 P100",
+        "en-US": "Smoke Alarm P100"
+      },
+      "deviceTypesList": [
+        "SmokeAlarm"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 3,
+  "spuCount": 4,
+  "skuCount": 6,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SmokeDetected",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SmokeDetected",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SmokeDensity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SmokeDensity",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SelfCheck",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SelfCheck",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SelfCheck",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "Mute",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "Mute",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "Mute",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "ExpressedState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "ExpressedState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SmokeDensitydB",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "SmokeAlarm",
+      "functionCode": "Smoke",
+      "traitCode": "SmokeDensitydB",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 3,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "烟雾报警器"
+      ],
+      "en-US": [
+        "Smoke Detector"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

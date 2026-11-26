@@ -1,0 +1,607 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "201",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "门锁类",
+    "en-US": "Door Lock"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "aqara.lock.acn001",
+      "displayName": {
+        "zh-CN": "智能门锁 A100 Pro",
+        "en-US": "Smart Lock A100 Pro"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.ED002"
+      ],
+      "skuIds": [
+        "sku.ED002CNB03",
+        "sku.ZNMS02ES"
+      ]
+    },
+    {
+      "model": "aqara.lock.acn004",
+      "displayName": {
+        "zh-CN": "人脸识别智能门锁D200",
+        "en-US": "Aqara Smart Door Lock D200"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD022"
+      ],
+      "skuIds": [
+        "sku.AD022CNB01"
+      ]
+    },
+    {
+      "model": "aqara.lock.acn008",
+      "displayName": {
+        "zh-CN": "智能门锁N200",
+        "en-US": "Smart Door Lock N200 Zigbee"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "aqara.lock.acn10",
+      "displayName": {
+        "zh-CN": "智能门锁 U100",
+        "en-US": "Smart Door Lock U100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD028",
+        "spu.AD035"
+      ],
+      "skuIds": [
+        "sku.AD028KRB01",
+        "sku.AD035USS01",
+        "sku.AS028GLB01"
+      ]
+    },
+    {
+      "model": "aqara.lock.agl002",
+      "displayName": {
+        "zh-CN": "智能门锁A100（国际版）",
+        "en-US": "Smart door lock A100 (International version)"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.ED002"
+      ],
+      "skuIds": [
+        "sku.ED002GLB01",
+        "sku.ED002RUB01",
+        "sku.ED002TWB01"
+      ]
+    },
+    {
+      "model": "aqara.lock.akr001",
+      "displayName": {
+        "zh-CN": "智能门锁 L100",
+        "en-US": "Smart Door Lock L100"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD060"
+      ],
+      "skuIds": [
+        "sku.AD060KRB01"
+      ]
+    },
+    {
+      "model": "aqara.lock.akr011",
+      "displayName": {
+        "zh-CN": "智能门锁 K100",
+        "en-US": "Smart Door Lock K100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD033"
+      ],
+      "skuIds": [
+        "sku.AD033KRW01"
+      ]
+    },
+    {
+      "model": "aqara.lock.akr012",
+      "displayName": {
+        "zh-CN": "智能门锁 L100 SE",
+        "en-US": "Smart Lock L100 SE"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "aqara.lock.aqcn01",
+      "displayName": {
+        "zh-CN": "智能门锁X10",
+        "en-US": "Smart Door Lock X10"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.ED002"
+      ],
+      "skuIds": [
+        "sku.ED002CNG03"
+      ]
+    },
+    {
+      "model": "aqara.lock.aqgl01",
+      "displayName": {
+        "zh-CN": "全自动智能门锁 D100（国际版）",
+        "en-US": "Smart Automatic Door Lock D100 (International Version)"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD012"
+      ],
+      "skuIds": [
+        "sku.AD012GLB01"
+      ]
+    },
+    {
+      "model": "aqara.lock.aus001",
+      "displayName": {
+        "zh-CN": "智能门锁 U50",
+        "en-US": "Smart Door Lock U50"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD045"
+      ],
+      "skuIds": [
+        "sku.AD045USB02"
+      ]
+    },
+    {
+      "model": "aqara.lock.bzacn3",
+      "displayName": {
+        "zh-CN": "智能门锁N100 Zigbee版",
+        "en-US": "Smart Door Lock N100 Zigbee Edition"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "spuIds": [
+        "spu.AD006"
+      ],
+      "skuIds": [
+        "sku.AD006CNB02"
+      ]
+    },
+    {
+      "model": "aqara.lock.bzacn4",
+      "displayName": {
+        "zh-CN": "智能门锁N100 Zigbee版",
+        "en-US": "Smart Door Lock N100 Zigbee Edition"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD006"
+      ],
+      "skuIds": [
+        "sku.AD006CNB03",
+        "sku.AD006CNB04",
+        "sku.AD006CNJ01",
+        "sku.AD006CNJ02",
+        "sku.AD006CNJ03",
+        "sku.AD006CNR01",
+        "sku.AD006KZG01"
+      ]
+    },
+    {
+      "model": "aqara.lock.dacn03",
+      "displayName": {
+        "zh-CN": "全自动智能猫眼锁 H100",
+        "en-US": "Smart Peephole Door Lock H100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD019"
+      ],
+      "skuIds": [
+        "sku.AD019CNB01",
+        "sku.AD019CNJ01"
+      ]
+    },
+    {
+      "model": "aqara.lock.eicn03",
+      "displayName": {
+        "zh-CN": "智能门锁 J1",
+        "en-US": "Smart Lock J1"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "aqara.lock.wbzac1",
+      "displayName": {
+        "zh-CN": "智能摄像头门锁P100",
+        "en-US": "Smart Door Lock P100"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi",
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD010"
+      ],
+      "skuIds": [
+        "sku.AD010CNG01"
+      ]
+    },
+    {
+      "model": "lumi.lock.acn006",
+      "displayName": {
+        "zh-CN": "智能门 V100",
+        "en-US": "Smart Door V100"
+      },
+      "deviceTypesList": [
+        "DoorLock",
+        "HumanDetector",
+        "FaceScanner",
+        "MotionSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AD026"
+      ],
+      "skuIds": [
+        "sku.AD026CNG01"
+      ]
+    },
+    {
+      "model": "lumi.lock.acn02",
+      "displayName": {
+        "zh-CN": "智能门锁S2",
+        "en-US": "Smart Door Lock S2"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD002"
+      ],
+      "skuIds": [
+        "sku.AD002CNB01",
+        "sku.AD002CNB02",
+        "sku.AD002CNB03",
+        "sku.AD002CNG01",
+        "sku.AD002CNG02",
+        "sku.AD002CNG03"
+      ]
+    },
+    {
+      "model": "lumi.lock.acn03",
+      "displayName": {
+        "zh-CN": "智能门锁S2 Pro",
+        "en-US": "Smart Door Lock S2 Pro"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD003"
+      ],
+      "skuIds": [
+        "sku.AD003CNB01",
+        "sku.AD003CNB02"
+      ]
+    },
+    {
+      "model": "lumi.lock.acn04",
+      "displayName": {
+        "zh-CN": "智能门锁HL",
+        "en-US": "Smart Door Lock HL"
+      },
+      "deviceTypesList": [
+        "DoorLock"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AD005"
+      ],
+      "skuIds": [
+        "sku.AD005CNB01",
+        "sku.AD005CNB02",
+        "sku.AD005CNJ01",
+        "sku.AD005CNJ02"
+      ]
+    },
+    {
+      "model": "lumi.lock.aus001",
+      "displayName": {
+        "zh-CN": "智能门锁 B50",
+        "en-US": "Smart Door Lock B50"
+      },
+      "deviceTypesList": [],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AD063",
+        "spu.AD067"
+      ],
+      "skuIds": [
+        "sku.AD063USB01",
+        "sku.AD067USB01"
+      ]
+    }
+  ],
+  "modelCount": 21,
+  "spuCount": 17,
+  "skuCount": 40,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "LockState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "LockState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "RemoteUnlock",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "RemoteUnlock",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "RemoteUnlock",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "EnableRemoteControl",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "EnableRemoteControl",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "EnableRemoteControl",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "DoorState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "DoorLock",
+      "traitCode": "DoorState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "DoorLock",
+      "functionCode": "Camera",
+      "traitCode": "CameraActiveStatus",
+      "automationRole": "action",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 20,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "门锁类"
+      ],
+      "en-US": [
+        "Door Lock"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

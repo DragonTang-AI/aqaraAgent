@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "name": "夜间定时柔光",
+    "description": "每天 22:00 开灯并调低亮度。定时只用 time.schedule+at，禁止 cron。functionCode/endpointId 仅示意，必须以 probe writes[] 覆盖。",
+    "scope": []
+  },
+  "automations": [
+    {
+      "name": "夜间定时柔光",
+      "starters": [
+        {
+          "type": "time.schedule",
+          "at": "22:00"
+        }
+      ],
+      "actions": [
+        {
+          "type": "device.trait.write",
+          "functionCode": "Output",
+          "traitCode": "OnOff",
+          "targets": [{ "deviceId": "dev.bedroom.strip", "endpointIds": [1] }],
+          "value": true
+        },
+        {
+          "type": "device.trait.write",
+          "functionCode": "LevelControl",
+          "traitCode": "CurrentLevel",
+          "targets": [{ "deviceId": "dev.bedroom.strip", "endpointIds": [1] }],
+          "value": 20
+        }
+      ]
+    }
+  ]
+}

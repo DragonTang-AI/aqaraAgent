@@ -1,0 +1,493 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "151",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "人体传感器",
+    "en-US": "Motion Sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.motion.ac02",
+      "displayName": {
+        "zh-CN": "人体传感器 P1",
+        "en-US": "Motion Sensor P1"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS038"
+      ],
+      "skuIds": [
+        "sku.AS038CNW01",
+        "sku.AS038EUW01",
+        "sku.AS038GLW01",
+        "sku.AS038SEW01",
+        "sku.AS038USW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.acn001",
+      "displayName": {
+        "zh-CN": "人体传感器E1",
+        "en-US": "Motion Sensor E1"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS045"
+      ],
+      "skuIds": [
+        "sku.AS045CNW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.acn004",
+      "displayName": {
+        "zh-CN": "Aqara人体传感器 PR110P",
+        "en-US": "Aqara Motion Sensor PR110P"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS082"
+      ],
+      "skuIds": [
+        "sku.AS082CNW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.acn005",
+      "displayName": {
+        "zh-CN": "Aqara高精度人体传感器 PR120P",
+        "en-US": "Aqara High Precision Motion Sensor PR120P"
+      },
+      "deviceTypesList": [
+        "MotionSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS083"
+      ],
+      "skuIds": [
+        "sku.AS083CNW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.acn006",
+      "displayName": {
+        "zh-CN": "Aqara AI智能存在传感器 PR130P",
+        "en-US": "Aqara AI Smart Presence Sensor PR130P"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "LocationSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS084"
+      ],
+      "skuIds": [
+        "sku.AS084CNW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.agl001",
+      "displayName": {
+        "zh-CN": "人体场景传感器 FP2",
+        "en-US": "Presence Sensor FP2"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "HeartMonitor",
+        "SleepMonitor",
+        "BreathingMonitor",
+        "AttitudeDetector",
+        "IlluminanceSensor",
+        "LocationSensor"
+      ],
+      "requiresGateway": false,
+      "networkProtocols": [
+        "bluetooth",
+        "wifi"
+      ],
+      "spuIds": [
+        "spu.AS055",
+        "spu.AS059",
+        "spu.AT020"
+      ],
+      "skuIds": [
+        "sku.AS055EUW03",
+        "sku.AS055GLW01",
+        "sku.AS055GLW02",
+        "sku.AS055USW01",
+        "sku.AS059CNW01",
+        "sku.AS059CNW02",
+        "sku.AT020EUW01",
+        "sku.AT020GLW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.agl02",
+      "displayName": {
+        "zh-CN": "人体传感器T1",
+        "en-US": "Motion Sensor T1"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS011",
+        "spu.AS023",
+        "spu.AS068",
+        "spu.TBD",
+        "spu.XS014"
+      ],
+      "skuIds": [
+        "sku.AS011CNW01",
+        "sku.AS011KRW01",
+        "sku.AS023KRW02",
+        "sku.AS068KRW01",
+        "sku.XS014CNW01"
+      ]
+    },
+    {
+      "model": "lumi.motion.agl04",
+      "displayName": {
+        "zh-CN": "高精度人体传感器",
+        "en-US": "High Precision Motion Sensor"
+      },
+      "deviceTypesList": [
+        "MotionSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS017"
+      ],
+      "skuIds": [
+        "sku.AS017GLW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_motion.aq2",
+      "displayName": {
+        "zh-CN": "人体传感器",
+        "en-US": "Motion Sensor"
+      },
+      "deviceTypesList": [
+        "MotionSensor",
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS002",
+        "spu.AS007",
+        "spu.AS007UEW01"
+      ],
+      "skuIds": [
+        "sku.AS002CNW01",
+        "sku.AS002CNW02",
+        "sku.AS002CNW03",
+        "sku.AS007",
+        "sku.AS007CNW01",
+        "sku.AS007CNW02",
+        "sku.AS007RUW01",
+        "sku.AS007UEW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_occupy.acn1",
+      "displayName": {
+        "zh-CN": "AI 多维人在传感器 FP310",
+        "en-US": "Presence Multi-Sensor FP310"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "IlluminanceSensor",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    },
+    {
+      "model": "lumi.sensor_occupy.agl1",
+      "displayName": {
+        "zh-CN": "AI智能存在传感器 FP1E",
+        "en-US": "Presence Sensor FP1E"
+      },
+      "deviceTypesList": [
+        "OccupancySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS074"
+      ],
+      "skuIds": [
+        "sku.AS074CNW01",
+        "sku.AS074CNW02",
+        "sku.AS074GLW01",
+        "sku.AS074GLW02"
+      ]
+    },
+    {
+      "model": "lumi.sensor_occupy.agl8",
+      "displayName": {
+        "zh-CN": "AI 多维人在传感器FP300",
+        "en-US": "Presence Multi-Sensor FP300"
+      },
+      "deviceTypesList": [
+        "OccupancySensor",
+        "IlluminanceSensor",
+        "TemperatureSensor",
+        "HumiditySensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [],
+      "skuIds": []
+    }
+  ],
+  "modelCount": 12,
+  "spuCount": 18,
+  "skuCount": 35,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "MotionSensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "IlluminanceSensor",
+      "functionCode": "Illuminance",
+      "traitCode": "CurrentIlluminance",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "IlluminanceSensor",
+      "functionCode": "Illuminance",
+      "traitCode": "CurrentIlluminance",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "OccupancySensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "OccupancySensor",
+      "functionCode": "OccupancySensing",
+      "traitCode": "Occupancy",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "LocationSensor",
+      "functionCode": "Location",
+      "traitCode": "MotionDetected",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AttitudeDetector",
+      "functionCode": "AttitudeDetection",
+      "traitCode": "AttitudeDetected",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "AttitudeDetector",
+      "functionCode": "AttitudeDetection",
+      "traitCode": "AttitudeDetected",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepState",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepState",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "OnBed",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "OnBed",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepStage",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepStage",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepQuality",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "SleepMonitor",
+      "functionCode": "Sleep",
+      "traitCode": "SleepQuality",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "TemperatureSensor",
+      "functionCode": "Temperature",
+      "traitCode": "CurrentTemperature",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "HumiditySensor",
+      "functionCode": "RelativeHumidity",
+      "traitCode": "CurrentHumidity",
+      "automationRole": "starter",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "bluetooth",
+    "wifi",
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 11,
+    "notRequiredModelCount": 1,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "人体传感器"
+      ],
+      "en-US": [
+        "Motion Sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

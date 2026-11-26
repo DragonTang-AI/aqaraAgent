@@ -1,0 +1,171 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "154",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "水浸传感器",
+    "en-US": "Water Leak Sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.flood.acn001",
+      "displayName": {
+        "zh-CN": "水浸传感器E1",
+        "en-US": "Water Leak Sensor E1"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS044"
+      ],
+      "skuIds": [
+        "sku.AS044CNW01"
+      ]
+    },
+    {
+      "model": "lumi.flood.acn003",
+      "displayName": {
+        "zh-CN": "Aqara水浸传感器 PR160P",
+        "en-US": "Aqara Water Leak Sensor PR160P"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS087"
+      ],
+      "skuIds": [
+        "sku.AS087CNW01"
+      ]
+    },
+    {
+      "model": "lumi.flood.agl02",
+      "displayName": {
+        "zh-CN": "水浸传感器T1",
+        "en-US": "Water Leak Sensor T1"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS014"
+      ],
+      "skuIds": [
+        "sku.AS014CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sensor_wleak.aq1",
+      "displayName": {
+        "zh-CN": "水浸传感器",
+        "en-US": "Water Leak Sensor"
+      },
+      "deviceTypesList": [
+        "WaterLeakSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS005",
+        "spu.AS010",
+        "spu.AS036",
+        "spu.AS072",
+        "spu.AS079"
+      ],
+      "skuIds": [
+        "sku.AS005CNW01",
+        "sku.AS010CNW01",
+        "sku.AS010RUW01",
+        "sku.AS010UEW01",
+        "sku.AS036CNW01",
+        "sku.AS072GLW01",
+        "sku.AS079EUW01"
+      ]
+    }
+  ],
+  "modelCount": 4,
+  "spuCount": 8,
+  "skuCount": 10,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "WaterLeakSensor",
+      "functionCode": "WaterLeak",
+      "traitCode": "LeakState",
+      "automationRole": "starter",
+      "valueType": "Bool"
+    },
+    {
+      "deviceType": "WaterLeakSensor",
+      "functionCode": "WaterLeak",
+      "traitCode": "LeakState",
+      "automationRole": "condition",
+      "valueType": "Bool"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 4,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "水浸传感器"
+      ],
+      "en-US": [
+        "Water Leak Sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

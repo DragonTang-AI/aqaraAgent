@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "v1",
+  "kind": "ProductCategory",
+  "categoryId": "157",
+  "parentCategoryId": null,
+  "name": {
+    "zh-CN": "光照传感器",
+    "en-US": "Light sensor"
+  },
+  "description": {},
+  "models": [
+    {
+      "model": "lumi.sen_ill.acn003",
+      "displayName": {
+        "zh-CN": "Aqara光照传感器 PR180P",
+        "en-US": "Aqara Light Sensor PR180P"
+      },
+      "deviceTypesList": [
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS089"
+      ],
+      "skuIds": [
+        "sku.AS089CNW01"
+      ]
+    },
+    {
+      "model": "lumi.sen_ill.agl01",
+      "displayName": {
+        "zh-CN": "光照传感器 T1",
+        "en-US": "Light Detection Sensor T1"
+      },
+      "deviceTypesList": [
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.AS015"
+      ],
+      "skuIds": [
+        "sku.AS015GLW01"
+      ]
+    },
+    {
+      "model": "lumi.sen_ill.mgl01",
+      "displayName": {
+        "zh-CN": "米家光照传感器",
+        "en-US": "Light Detection Sensor"
+      },
+      "deviceTypesList": [
+        "IlluminanceSensor"
+      ],
+      "requiresGateway": true,
+      "networkProtocols": [
+        "zigbee"
+      ],
+      "spuIds": [
+        "spu.MS009"
+      ],
+      "skuIds": [
+        "sku.MS009CNW01"
+      ]
+    }
+  ],
+  "modelCount": 3,
+  "spuCount": 3,
+  "skuCount": 3,
+  "commonCapabilities": [
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "CurrentVoltage",
+      "automationRole": "condition",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "starter",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "Public",
+      "functionCode": "PowerSource",
+      "traitCode": "StateOfLowBat",
+      "automationRole": "condition",
+      "valueType": "Enum"
+    },
+    {
+      "deviceType": "IlluminanceSensor",
+      "functionCode": "Illuminance",
+      "traitCode": "CurrentIlluminance",
+      "automationRole": "starter",
+      "valueType": "Float"
+    },
+    {
+      "deviceType": "IlluminanceSensor",
+      "functionCode": "Illuminance",
+      "traitCode": "CurrentIlluminance",
+      "automationRole": "condition",
+      "valueType": "Float"
+    }
+  ],
+  "protocols": [
+    "zigbee"
+  ],
+  "requiresGateway": {
+    "requiredModelCount": 3,
+    "notRequiredModelCount": 0,
+    "unknownModelCount": 0
+  },
+  "typicalSpaces": [],
+  "typicalScenes": [],
+  "extensions": {
+    "supportCategoryLabels": {
+      "zh-CN": [
+        "光照传感器"
+      ],
+      "en-US": [
+        "Light sensor"
+      ]
+    },
+    "source": "supportDevices"
+  }
+}

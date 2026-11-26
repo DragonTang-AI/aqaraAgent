@@ -1,0 +1,20 @@
+# Phone network offline state
+
+This contract applies to the generated Home, Devices, and Smart tabs. Phone reachability and Studio connection status are independent. `StudioConnectStatusUpdate` errors, including 60102, do not imply that the phone is offline. A failed HTTP request alone does not change phone reachability.
+
+## Native signal
+
+The iOS host advertises `getCurrentPhoneNetworkStatus`, `subscribePhoneNetworkStatus`, and `unsubscribePhoneNetworkStatus`. Their payload is `{status:"online"|"offline"|"unknown"}` inside the existing `{code:0,data:...}` callback envelope. The subscription emits `PhoneNetworkStatusUpdate` with the same raw payload. `unknown` is the initial state until native reachability resolves. A missing method or invalid response remains `unknown`; it must not manufacture offline or online. The subscription belongs to the current WebView and stops when that page closes. The old and new Life WebView entries use the same capabilities and handler. RN's Studio socket, native Studio status, and camera/WebRTC ownership are unchanged.
+
+## Visible behavior
+
+- When status is `offline`, keep the latest loaded Studio data visible as a read-only snapshot. Show a fixed full-width banner below the top navigation: 42px high at a 390px design width; its 16px icon, 13px text, 12px gap, and underlined 44px touch target follow the Figma offline rule. Use the current theme for paint. The banner remains visible while scrolling on every tab. Leave room between navigation and heading/segment so content is not hidden.
+- A native Studio availability error 60102 shows `无法访问 Studio` in this same fixed banner slot, with the same position and content offset on Home, Devices and Smart. Phone offline takes priority if both signals are present; recovery reveals the still-active Studio error, and native Studio recovery removes the banner. Do not treat 60101 local-certificate failure, unknown status, or a failed HTTP request as this availability signal. The Home connection label continues to report the independently supplied Studio status. Retry refreshes the active tab; it does not fabricate a native connection transition.
+- Show `无法访问 Studio` as the Home connection label while the phone is offline. On recovery, return to the independently supplied local/cloud/error Studio status. Do not rewrite the underlying Studio status or its 60101/60102 interpretation.
+- Pressing `重试` requests a refresh of the active tab only. The banner remains until native reports online. An online transition hides it and refreshes the active tab once. Switching to a tab while offline may show its in-memory data or a localized unavailable state; do not start automatic pagination or prefetch while offline.
+- Network write attempts, including scenes, automations, device traits/commands, metadata and space batches, do not reach the service while offline. A tapped actionable control shows `网络异常，请重试`; do not optimistically claim success. Non-network UI navigation and tab changes remain available.
+- Preserve the last good response on failed retry. If there is no response and no correctly scoped cache, show an unavailable empty/error state. Never substitute preview data in the App. The Home session cache is keyed by confirmed Studio DID and user; do not read or store before native confirms the scope. Preview data is isolated in the preview host.
+
+## Validation
+
+For each tab and both themes, verify: online -> offline banner and status; scrolling keeps the banner in place; existing data does not disappear; a write shows the network toast and sends no write request; retry only refreshes the current tab; online transition removes the phone banner and refreshes; Studio error 60102 without phone offline shows the Studio banner in the same slot; 60101 does not; if both signals are active the phone banner wins; native Studio recovery removes its banner. Check 320px and 390px widths, safe-area top, and Smart sticky segment overlap. Native build and real reachability are verified by the App owner.
