@@ -40,6 +40,7 @@ const ICON_PNG = path.join(__dirname, 'build', 'icon.png');
 const TRAY_ICON = path.join(__dirname, 'build', 'trayTemplate.png');
 const SPLASH_HTML = path.join(__dirname, 'splash.html');
 const BRAND_SCRIPT = path.join(__dirname, 'branding', 'aqara-brand.js');
+const DSH_PRELOAD = path.join(__dirname, 'branding', 'dsh-preload.js');
 const WORDMARK_PNG = path.join(__dirname, 'build', 'aqara-wordmark.png');
 const MARK_PNG = path.join(__dirname, 'build', 'aqara-logo.png');
 const PERSONA_YML = path.join(__dirname, 'branding', 'aqara-persona.yml');
@@ -49,6 +50,14 @@ const SPLITTER_HTML = path.join(__dirname, 'workspace', 'splitter.html');
 const SPLITTER_PRELOAD = path.join(__dirname, 'workspace', 'splitter-preload.js');
 // 多项目：每个项目 = projects/<name>/ 目录（= dsh 工作区），state.json 在项目目录内
 const PROJECTS_ROOT = path.join(__dirname, 'projects');
+const PARTNERS_FILE = path.join(__dirname, 'partners.json'); // 搭子 · 技能 · 连接器 数据
+// dsh 技能目录（技能写在这里 → dsh 会实时发现并供 Agent 调用）
+const DSH_HOME_DIR = process.env.DSH_HOME || path.join(os.homedir(), '.dsh');
+const SKILLS_DIR = path.join(DSH_HOME_DIR, 'skills');
+const SKILLS_DISABLED_DIR = path.join(SKILLS_DIR, '.disabled');
+// 连接器（MCP）注册表 + 写入 dsh 的真实 patch 配置
+const CONNECTORS_FILE = path.join(__dirname, 'connectors.json');
+const MCP_PATCH_FILE = path.join(DSH_HOME_DIR, 'profiles', 'web', 'cordis.patch.yml');
 let currentProject = process.env.AQARA_PROJECT || '示例户型';
 function projectDirOf(name) { return path.join(PROJECTS_ROOT, name || currentProject); }
 function statePathOf(name) { return path.join(PROJECTS_ROOT, name || currentProject, 'state.json'); }
@@ -163,6 +172,284 @@ function startStateSync() {
     } catch (_) { return null; }
   });
 
+  // 搭子 · 技能 · 连接器：读取 / 新增搭子
+  const readPartners = () => {
+    try { return JSON.parse(fs.readFileSync(PARTNERS_FILE, 'utf8')); }
+    catch (_) { return { partners: [], skills: [], connectors: [] }; }
+  };
+  ipcMain.handle('aqara:list-partners', () => readPartners());
+  // 把「搭子」落成真实技能（写入 ~/.dsh/skills，dsh 实时发现 → Agent 真能加载）
+  function ensurePartnerSkillFile(p) {
+    const id = String(p.id || '').trim() || ('p-' + Date.now().toString(36));
+    const slug = 'aqara-partner-' + id.replace(/[^a-zA-Z0-9_-]/g, '-');
+    const dir = path.join(SKILLS_DIR, slug);
+    const file = path.join(dir, 'SKILL.md');
+    if (fs.existsSync(file)) return { skillId: slug, path: file, created: false };
+    fs.mkdirSync(dir, { recursive: true });
+    const name = p.name || id;
+    const desc = String(p.intro || name).replace(/\n/g, ' ').trim();
+    const when = ('当用户需要「' + name + '」相关的工作时').replace(/\n/g, ' ');
+    const tags = Array.isArray(p.tags) && p.tags.length ? ('## 关注点\n- ' + p.tags.join('\n- ')) : '';
+    const body = ['# ' + name, '', String(p.intro || '').trim(), '', '## 工作方式', '', String(p.prompt || ('按「' + name + '」的职责完成用户任务。')).trim(), '', tags, ''].join('\n');
+    const fm = ['---', 'name: ' + slug, 'description: ' + desc, 'whenToUse: ' + when, '---', '', body].join('\n');
+    fs.writeFileSync(file, fm);
+    return { skillId: slug, path: file, created: true };
+  }
+
+  ipcMain.handle('aqara:create-partner', (_e, p) => {
+    try {
+      const d = readPartners();
+      const name = String((p && p.name) || '').trim() || '未命名搭子';
+      const partner = {
+        id: 'p-' + Date.now().toString(36),
+        name,
+        mark: String((p && p.mark) || '').trim() || name.slice(0, 1),
+        official: false,
+        category: String((p && p.category) || '').trim() || '自定义',
+        intro: String((p && p.intro) || '').trim(),
+        tags: Array.isArray(p && p.tags) ? p.tags : [],
+        prompt: String((p && p.prompt) || '').trim(),
+      };
+      d.partners = d.partners || [];
+      d.partners.push(partner);
+      fs.writeFileSync(PARTNERS_FILE, JSON.stringify(d, null, 2));
+      // 同时落成真实技能，让 Agent 真的具备该搭子能力
+      const sk = ensurePartnerSkillFile(partner);
+      console.log('[shell] 新建搭子 →', name, '（技能', sk.skillId, '）');
+      return { ok: true, data: d, skill: sk };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+
+  // 启用搭子前，确保其技能已落到磁盘（幂等）
+  ipcMain.handle('aqara:ensure-partner-skill', (_e, id) => {
+    try {
+      const d = readPartners();
+      const p = (d.partners || []).find((x) => x.id === id);
+      if (!p) return { ok: false, reason: '搭子不存在' };
+      const sk = ensurePartnerSkillFile(p);
+      console.log('[shell] 搭子技能就绪 →', sk.skillId);
+      return { ok: true, skillId: sk.skillId, path: sk.path, created: sk.created };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+
+  // 连接器（MCP）：真实写 dsh 的 patch 配置（cordis.patch.yml），dsh 会热加载
+  const MCP_MARK_START = '# >>> aqara-mcp (auto-generated; do not edit inside)';
+  const MCP_MARK_END = '# <<< aqara-mcp';
+  const readConnectors = () => {
+    try { const d = JSON.parse(fs.readFileSync(CONNECTORS_FILE, 'utf8')); return Array.isArray(d) ? d : (d.connectors || []); }
+    catch (_) { return []; }
+  };
+  const writeConnectors = (list) => { fs.writeFileSync(CONNECTORS_FILE, JSON.stringify(list, null, 2)); };
+  const buildMcpSection = (list) => {
+    if (!list.length) return '';
+    const blocks = list.map((c) => {
+      const L = [];
+      L.push('- insert:');
+      L.push('    - id: mcp-' + c.serverName);
+      L.push("      name: '@deepseek-ai/dsh-mcp-client'");
+      L.push('      config:');
+      L.push('        serverName: ' + c.serverName);
+      if (c.transport === 'http') {
+        L.push('        transport: streamable-http');
+        L.push('        url: ' + JSON.stringify(c.url || ''));
+      } else {
+        L.push('        transport: stdio');
+        L.push('        command: ' + JSON.stringify(c.command || ''));
+        if (Array.isArray(c.args) && c.args.length) L.push('        args: [' + c.args.map((a) => JSON.stringify(String(a))).join(', ') + ']');
+      }
+      L.push('        failOnStartupError: false');
+      return L.join('\n');
+    });
+    return [MCP_MARK_START, ...blocks, MCP_MARK_END].join('\n');
+  };
+  const applyMcpPatch = (list) => {
+    let txt = '';
+    try { txt = fs.readFileSync(MCP_PATCH_FILE, 'utf8'); } catch (_) {}
+    const rest = txt.replace(/# >>> aqara-mcp[\s\S]*?# <<< aqara-mcp\n?/g, '');
+    const meaningful = rest.split('\n').map((l) => l.trim()).filter((l) => l && !l.startsWith('#')).join('\n');
+    const baseEmpty = (meaningful === '' || meaningful === '[]');
+    const section = buildMcpSection(list);
+    let out;
+    if (baseEmpty) {
+      out = (section ? ('# dsh profile patch（Aqara 连接器自动管理）\n' + section + '\n') : '[]\n');
+    } else {
+      out = rest.replace(/\n+$/, '') + '\n' + (section ? (section + '\n') : '');
+    }
+    fs.mkdirSync(path.dirname(MCP_PATCH_FILE), { recursive: true });
+    fs.writeFileSync(MCP_PATCH_FILE, out);
+    return out;
+  };
+
+  ipcMain.handle('aqara:list-connectors', () => {
+    const list = readConnectors();
+    return { ok: true, servers: list, configPath: MCP_PATCH_FILE, exists: fs.existsSync(MCP_PATCH_FILE), patch: (() => { try { return fs.readFileSync(MCP_PATCH_FILE, 'utf8'); } catch (_) { return ''; } })() };
+  });
+  ipcMain.handle('aqara:add-connector', (_e, c) => {
+    try {
+      const list = readConnectors();
+      const serverName = String((c && c.serverName) || '').trim().replace(/[^A-Za-z0-9_-]/g, '-').slice(0, 32);
+      if (!serverName) return { ok: false, reason: '请填写连接器标识（英文/数字）' };
+      if (list.some((x) => x.serverName === serverName)) return { ok: false, reason: '同名连接器已存在' };
+      const transport = (c && c.transport === 'http') ? 'http' : 'stdio';
+      const rec = {
+        id: 'cn-' + Date.now().toString(36),
+        serverName,
+        name: String((c && c.name) || serverName).trim(),
+        transport,
+        command: String((c && c.command) || '').trim(),
+        args: Array.isArray(c && c.args) ? c.args : (String((c && c.args) || '').trim() ? String(c.args).trim().split(/\s+/) : []),
+        url: String((c && c.url) || '').trim(),
+        enabled: true,
+      };
+      if (transport === 'stdio' && !rec.command) return { ok: false, reason: 'stdio 连接器需要 command' };
+      if (transport === 'http' && !rec.url) return { ok: false, reason: 'http 连接器需要 url' };
+      list.push(rec);
+      writeConnectors(list);
+      applyMcpPatch(list.filter((x) => x.enabled));
+      console.log('[shell] 新增连接器 →', serverName, '(' + transport + ')');
+      return { ok: true, servers: list, patchPath: MCP_PATCH_FILE };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:remove-connector', (_e, id) => {
+    try {
+      let list = readConnectors();
+      list = list.filter((x) => x.id !== id);
+      writeConnectors(list);
+      applyMcpPatch(list.filter((x) => x.enabled));
+      console.log('[shell] 删除连接器 →', id);
+      return { ok: true, servers: list };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:toggle-connector', (_e, id) => {
+    try {
+      const list = readConnectors();
+      const x = list.find((v) => v.id === id);
+      if (!x) return { ok: false, reason: '未找到连接器' };
+      x.enabled = !x.enabled;
+      writeConnectors(list);
+      applyMcpPatch(list.filter((v) => v.enabled));
+      console.log('[shell] 连接器', x.enabled ? '启用' : '停用', '→', x.serverName);
+      return { ok: true, servers: list };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:open-mcp-config', () => {
+    try {
+      fs.mkdirSync(path.dirname(MCP_PATCH_FILE), { recursive: true });
+      if (!fs.existsSync(MCP_PATCH_FILE)) fs.writeFileSync(MCP_PATCH_FILE, '[]\n');
+      shell.openPath(MCP_PATCH_FILE);
+    } catch (_) {}
+    return { ok: true, path: MCP_PATCH_FILE };
+  });
+  // 启动时按注册表同步一次 patch（保持磁盘与 UI 一致）
+  try { applyMcpPatch(readConnectors().filter((x) => x.enabled)); } catch (_) {}
+
+  // ---------- 真·技能管理（读写 ~/.dsh/skills，dsh 实时发现）----------
+  const parseFrontmatter = (text) => {
+    const m = text.match(/^---\s*\n([\s\S]*?)\n---/);
+    if (!m) return {};
+    const data = {};
+    m[1].split('\n').forEach((line) => {
+      const mm = line.match(/^([A-Za-z0-9_-]+)\s*:\s*(.*)$/);
+      if (mm) data[mm[1]] = mm[2].trim().replace(/^["']|["']$/g, '');
+    });
+    return data;
+  };
+  const readSkillAt = (file, id, disabled) => {
+    let data = {};
+    try { data = parseFrontmatter(fs.readFileSync(file, 'utf8')); } catch (_) {}
+    return {
+      id,
+      name: data.name || id,
+      description: data.description || '',
+      whenToUse: data.whenToUse || '',
+      path: file,
+      disabled: !!disabled,
+      modelDisabled: String(data['disable-model-invocation']) === 'true',
+      updatedAt: (() => { try { return fs.statSync(file).mtime.toISOString().slice(0, 10); } catch (_) { return ''; } })(),
+    };
+  };
+  const scanSkills = () => {
+    const out = [];
+    const scan = (dir, disabled) => {
+      let entries = [];
+      try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch (_) { return; }
+      for (const e of entries) {
+        if (e.name.startsWith('.') || e.name === 'node_modules') continue;
+        if (e.isDirectory()) {
+          const f = path.join(dir, e.name, 'SKILL.md');
+          if (fs.existsSync(f)) out.push(readSkillAt(f, e.name, disabled));
+        } else if (e.isFile() && e.name.toLowerCase().endsWith('.md')) {
+          out.push(readSkillAt(path.join(dir, e.name), e.name.replace(/\.md$/i, ''), disabled));
+        }
+      }
+    };
+    scan(SKILLS_DIR, false);
+    scan(SKILLS_DISABLED_DIR, true);
+    out.sort((a, b) => (a.disabled - b.disabled) || a.name.localeCompare(b.name));
+    return out;
+  };
+  const skillPathOf = (id, disabled) => path.join(disabled ? SKILLS_DISABLED_DIR : SKILLS_DIR, String(id));
+
+  ipcMain.handle('aqara:list-skills', () => scanSkills());
+  ipcMain.handle('aqara:reveal-skills-dir', () => { try { fs.mkdirSync(SKILLS_DIR, { recursive: true }); shell.openPath(SKILLS_DIR); } catch (_) {} return { ok: true, dir: SKILLS_DIR }; });
+  ipcMain.handle('aqara:open-skill', (_e, p) => { try { shell.showItemInFolder(String(p)); } catch (_) {} return { ok: true }; });
+  ipcMain.handle('aqara:reveal-skill', (_e, id, disabled) => { try { shell.showItemInFolder(skillPathOf(id, disabled)); } catch (_) {} return { ok: true }; });
+  ipcMain.handle('aqara:create-skill', (_e, s) => {
+    try {
+      const raw = String((s && s.name) || '').trim();
+      if (!raw) return { ok: false, reason: '请填写技能名称' };
+      const slug = raw.toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-').replace(/^-|-$/g, '') || ('skill-' + Date.now());
+      const dir = path.join(SKILLS_DIR, slug);
+      if (fs.existsSync(dir)) return { ok: false, reason: '同名技能已存在：' + slug };
+      fs.mkdirSync(dir, { recursive: true });
+      const desc = String((s && s.description) || raw).replace(/\n/g, ' ').trim();
+      const when = String((s && s.whenToUse) || '').replace(/\n/g, ' ').trim();
+      const body = String((s && s.body) || '').trim() || ('# ' + raw + '\n\n## 何时使用\n- \n\n## 步骤\n1. \n');
+      const fm = ['---', 'name: ' + slug, 'description: ' + desc, when ? ('whenToUse: ' + when) : null, '---', '', body, ''].filter((x) => x !== null).join('\n');
+      fs.writeFileSync(path.join(dir, 'SKILL.md'), fm);
+      console.log('[shell] 新建技能 →', slug);
+      return { ok: true, skills: scanSkills(), id: slug };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:import-skill', async () => {
+    try {
+      const r = await dialog.showOpenDialog({
+        title: '选择技能文件夹（需包含 SKILL.md）', properties: ['openDirectory'],
+      });
+      if (r.canceled || !r.filePaths[0]) return { ok: false, canceled: true };
+      const src = r.filePaths[0];
+      if (!fs.existsSync(path.join(src, 'SKILL.md'))) return { ok: false, reason: '该文件夹没有 SKILL.md' };
+      const name = path.basename(src);
+      const dest = path.join(SKILLS_DIR, name);
+      if (fs.existsSync(dest)) return { ok: false, reason: '同名技能已存在：' + name };
+      fs.mkdirSync(SKILLS_DIR, { recursive: true });
+      fs.cpSync(src, dest, { recursive: true });
+      console.log('[shell] 导入技能 →', name);
+      return { ok: true, skills: scanSkills(), id: name };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:set-skill-enabled', (_e, id, enabled) => {
+    try {
+      const from = skillPathOf(id, !enabled);
+      const to = skillPathOf(id, enabled ? false : true);
+      if (!fs.existsSync(from)) return { ok: false, reason: '未找到技能' };
+      fs.mkdirSync(path.dirname(to), { recursive: true });
+      fs.rmSync(to, { recursive: true, force: true });
+      fs.renameSync(from, to);
+      console.log('[shell] 技能' + (enabled ? '启用' : '停用') + ' →', id);
+      return { ok: true, skills: scanSkills() };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:delete-skill', (_e, id, disabled) => {
+    try {
+      const p = skillPathOf(id, disabled);
+      if (!fs.existsSync(p)) return { ok: false, reason: '未找到技能' };
+      fs.rmSync(p, { recursive: true, force: true });
+      console.log('[shell] 删除技能 →', id);
+      return { ok: true, skills: scanSkills() };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+
   // 轮询当前项目 state.json 的 mtime（比 fs.watch 稳：Agent 的原子写/改名也能捕捉）
   let lastMtime = -1;
   try { lastMtime = fs.statSync(statePathOf()).mtimeMs; } catch (_) {}
@@ -221,7 +508,8 @@ let dshView = null;
 let panelView = null;
 let splitterView = null;
 let panelW = 0; // 右栏实际宽度（可拖拽调整，0 表示用默认比例）
-let panelMode = 'normal'; // 预览区模式：normal(并排) / max(放大填充) / hidden(收起为窄条)
+let panelMode = 'normal'; // 预览区模式：normal(并排) / max(放大填充) / hidden(收起为窄条) / module(模块页占满主区)
+let moduleSidebarW = 56; // 模块页模式下，dsh 侧栏宽度（运行时测量）
 let tray = null;
 let quitting = false;
 
@@ -336,6 +624,14 @@ function layout() {
     panelView.setBounds({ x: 0, y: 0, width: w, height: h });
     return;
   }
+  // 模块页：保留 dsh 左栏，模块占满主区（覆盖对话区）
+  if (panelMode === 'module') {
+    setVis(dshView, true); setVis(splitterView, false); setVis(panelView, true);
+    const x = Math.max(0, Math.min(moduleSidebarW, w - 420));
+    dshView.setBounds({ x: 0, y: 0, width: w, height: h });
+    panelView.setBounds({ x, y: 0, width: w - x, height: h });
+    return;
+  }
   setVis(dshView, true); setVis(panelView, true);
 
   if (!panelW) panelW = Math.round(w * PANEL_RATIO);
@@ -358,13 +654,34 @@ function layout() {
   panelView.setBounds({ x: dshW + SPLIT_W, y: 0, width: w - dshW - SPLIT_W, height: h });
 }
 
-// 切换预览区模式（normal / max / hidden），并通知右栏更新图标与布局
+// 读取 dsh 侧栏实际宽度（模块页要对齐到侧栏右侧）
+async function measureSidebar() {
+  if (!dshView || dshView.webContents.isDestroyed()) return;
+  try {
+    const w = await dshView.webContents.executeJavaScript(
+      "(()=>{const e=document.querySelector('[class*=\"sidebarCol\"]');return e?Math.round(e.getBoundingClientRect().width):0;})()",
+    );
+    if (w && Math.abs(w - moduleSidebarW) > 1) {
+      moduleSidebarW = w;
+      if (panelMode === 'module') layout();
+    }
+  } catch (_) {}
+}
+
+// 切换预览区模式（normal / max / hidden / module），并通知右栏更新图标与布局
+let moduleTimer = null;
 function setPanelMode(m) {
-  if (['normal', 'max', 'hidden'].indexOf(m) < 0) return;
+  if (['normal', 'max', 'hidden', 'module'].indexOf(m) < 0) return;
   panelMode = m;
   layout();
   if (panelView && !panelView.webContents.isDestroyed()) {
     panelView.webContents.send('aqara:panel-mode', panelMode);
+  }
+  if (m === 'module') {
+    measureSidebar();
+    if (!moduleTimer) moduleTimer = setInterval(measureSidebar, 800);
+  } else if (moduleTimer) {
+    clearInterval(moduleTimer); moduleTimer = null;
   }
   console.log('[shell] 预览区模式 →', panelMode);
 }
@@ -400,7 +717,7 @@ async function createWindow(url) {
   win.loadURL('about:blank'); // 底层 webContents（被两个视图覆盖）
 
   const wp = { contextIsolation: true, nodeIntegration: false, sandbox: true };
-  dshView = new WebContentsView({ webPreferences: wp });
+  dshView = new WebContentsView({ webPreferences: { ...wp, preload: DSH_PRELOAD } });
   splitterView = new WebContentsView({ webPreferences: { ...wp, preload: SPLITTER_PRELOAD } });
   panelView = new WebContentsView({ webPreferences: { ...wp, preload: PANEL_PRELOAD } });
   win.contentView.addChildView(dshView);
@@ -435,7 +752,7 @@ async function createWindow(url) {
     maybeCapture();
   });
 
-  injectBranding(dshView.webContents);
+  if (!process.env.AQARA_NO_BRAND)   injectBranding(dshView.webContents);
 
   win.on('resize', layout);
   win.on('closed', () => { win = null; });
@@ -585,6 +902,13 @@ app.whenReady().then(async () => {
   ipcMain.on('aqara:split-start', startSplit);
   ipcMain.on('aqara:split-end', endSplit);
   ipcMain.on('aqara:set-panel-mode', (_e, m) => setPanelMode(m));
+  // 左栏注入的入口 → 进入「模块页」模式并打开对应标签
+  ipcMain.on('aqara:open-panel-tab', (_e, tab) => {
+    setPanelMode('module');
+    if (panelView && !panelView.webContents.isDestroyed()) {
+      panelView.webContents.send('aqara:activate-tab', String(tab || ''));
+    }
+  });
   createSplash();
   setSplashStatus('正在启动空间智能引擎…');
 

@@ -117,6 +117,43 @@
   .ctl.on .sw{background:var(--active);}
   .ctl.on .sw::after{left:18px;background:var(--active-fg);}
 
+  /* 搭子 · 技能 · 连接器 */
+  .pr-head{padding:14px 16px 0;}
+  .pr-title{font-size:15px;font-weight:800;letter-spacing:.02em;}
+  .pr-sub{font-size:11.5px;color:var(--muted);margin-top:4px;}
+  .pr-bar{display:flex;gap:8px;margin:12px 16px 0;}
+  .pr-bar input{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:8px 11px;color:var(--fg);font-size:12px;outline:none;}
+  .pr-bar input:focus{border-color:var(--line2);}
+  .pr-bar .btn{white-space:nowrap;padding:8px 12px;}
+  #pr-bar2{display:flex;gap:8px;flex:none;}
+  .pr-seg{display:flex;gap:6px;margin:12px 16px 0;}
+  .pr-seg button{font-size:12px;padding:6px 12px;border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:8px;cursor:pointer;}
+  .pr-seg button.on{background:var(--active);color:var(--active-fg);border-color:var(--active);font-weight:700;}
+  .pr-seg .sp{flex:1;}
+  .pr-cats{display:flex;flex-wrap:wrap;gap:6px;margin:12px 16px 0;}
+  .pr-grid{display:grid;grid-template-columns:1fr;gap:10px;padding:12px 16px 24px;}
+  @media (min-width:640px){ .pr-grid{grid-template-columns:1fr 1fr;} }
+  .pcard{border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:12px;display:flex;flex-direction:column;gap:9px;}
+  .pcard:hover{border-color:var(--line2);}
+  .pcard .top{display:flex;gap:10px;align-items:flex-start;}
+  .pava{width:38px;height:38px;flex:none;border-radius:10px;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:800;background:var(--panel2);}
+  .pname{font-size:13px;font-weight:800;display:flex;align-items:center;gap:6px;}
+  .pbadge{font-size:9.5px;font-weight:700;border:1px solid var(--line2);border-radius:99px;padding:1px 7px;color:var(--muted);}
+  .pbadge.mine{background:var(--active);color:var(--active-fg);border-color:var(--active);}
+  .pintro{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:3px;}
+  .ptags{display:flex;flex-wrap:wrap;gap:5px;}
+  .ptags span{font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:2px 7px;}
+  .pfoot{display:flex;gap:8px;align-items:center;}
+  .pfoot .btn{flex:1;padding:8px 10px;}
+  .pstatus{font-size:10.5px;color:var(--dim);font-family:ui-monospace,Menlo,monospace;}
+  .chip.on{background:var(--active);color:var(--active-fg);border-color:var(--active);font-weight:700;}
+  .pr-new-mask{position:absolute;inset:0;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;z-index:30;}
+  .pr-new-box{background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:16px;width:340px;max-width:88%;display:flex;flex-direction:column;gap:8px;box-shadow:0 12px 40px rgba(0,0,0,.4);}
+  .pr-new-box input,.pr-new-box textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--fg);font-size:12px;outline:none;font-family:inherit;}
+  .pr-new-box textarea{min-height:54px;resize:vertical;}
+  .pr-new-btns{display:flex;gap:8px;justify-content:flex-end;}
+  .pr-new-btns .btn{padding:8px 14px;}
+
   /* 执行中 / 完成 回填 */
   [data-send]{transition:opacity .2s, box-shadow .2s;}
   [data-send].is-sending{opacity:.45;animation:sendpulse 1s infinite;}
@@ -136,6 +173,8 @@
   .tsep{width:1px;height:18px;background:var(--line2);margin:0 2px;flex:none;}
   .tabadd.ico{font-size:14px;}
   .tabadd.ico.on{background:var(--active);color:var(--active-fg);border-color:var(--active);}
+  #btnBack{display:none;}
+  body.module #btnBack{display:flex;}
 
   /* 收起后的窄条 */
   .rail{display:none;height:100%;width:46px;flex-direction:column;align-items:center;gap:12px;
@@ -159,6 +198,7 @@
     <span class="tsep"></span>
     <button class="tabadd ico" id="btnMax" title="展开面板" aria-label="展开面板">⤢</button>
     <button class="tabadd ico" id="btnCollapse" title="收起面板" aria-label="收起面板">▤</button>
+    <button class="tabadd ico" id="btnBack" title="返回对话" aria-label="返回对话">←</button>
     <div class="menu" id="menu"></div>
     <div class="menu" id="projmenu"></div>
   </div>
@@ -196,8 +236,9 @@
 
   // ---------- 标签定义 ----------
   const DEFS = {
-    twin:    { title: '数字孪生' },
-    devices: { title: '设备' },
+    twin:     { title: '数字孪生' },
+    partners: { title: '搭子·技能·连接器' },
+    devices:  { title: '设备' },
     scenes:  { title: '场景' },
     files:   { title: '文件' },
     board:   { title: '看板' },
@@ -447,6 +488,8 @@
           </div>
         </div>`;
       init3D(panel.querySelector('#view'), panel);
+    } else if (type === 'partners') {
+      buildPartners(panel);
     } else if (type === 'devices') {
       panel.innerHTML = `<div class="pad">
         <div class="sec-title">设备点位 / DEVICES</div>
@@ -492,6 +535,334 @@
         ${(state.tasks || []).map(t => `<div class="row"><span class="dot"></span><span class="name">${t.name}</span><span class="st">${t.status}</span></div>`).join('')}
       </div>`;
     }
+  }
+
+  // ---------- 搭子 · 技能 · 连接器 ----------
+  let partnersData = null;
+  async function loadPartnersData(force) {
+    if (partnersData && !force) return partnersData;
+    try {
+      partnersData = (window.aqara && window.aqara.listPartners) ? await window.aqara.listPartners() : null;
+    } catch (_) {}
+    if (!partnersData) partnersData = { partners: [], skills: [], connectors: [] };
+    return partnersData;
+  }
+
+  function openNewPartner(panel) {
+    const wrap = document.createElement('div');
+    wrap.className = 'pr-new-mask';
+    wrap.innerHTML = `
+      <div class="pr-new-box">
+        <div class="pr-title">创建搭子</div>
+        <input id="np-name" placeholder="名称，如：影音室搭子" />
+        <input id="np-cat" placeholder="分类，如：空间设计" />
+        <textarea id="np-intro" placeholder="一句话简介"></textarea>
+        <textarea id="np-prompt" placeholder="启用后发送的指令（可选）"></textarea>
+        <div class="pr-new-btns"><div class="btn" id="np-cancel">取消</div><div class="btn primary" id="np-save">保存</div></div>
+      </div>`;
+    panel.appendChild(wrap);
+    wrap.querySelector('#np-cancel').addEventListener('click', () => wrap.remove());
+    wrap.querySelector('#np-save').addEventListener('click', async () => {
+      const name = wrap.querySelector('#np-name').value.trim();
+      if (!name) { showToast('请填写搭子名称'); return; }
+      const p = {
+        name,
+        category: wrap.querySelector('#np-cat').value.trim(),
+        intro: wrap.querySelector('#np-intro').value.trim(),
+        prompt: wrap.querySelector('#np-prompt').value.trim(),
+      };
+      let r = null;
+      try { r = (window.aqara && window.aqara.createPartner) ? await window.aqara.createPartner(p) : null; } catch (_) {}
+      if (r && r.ok) { partnersData = r.data; wrap.remove(); buildPartners(panel); showToast('✓ 已创建搭子「' + name + '」'); }
+      else showToast('创建失败，请重试');
+    });
+  }
+
+  // 真·技能：读取 ~/.dsh/skills（dsh 实时发现，Agent 即可调用）
+  let skillsData = null;
+  async function loadSkillsData(force) {
+    if (skillsData && !force) return skillsData;
+    try { skillsData = (window.aqara && window.aqara.listSkills) ? await window.aqara.listSkills() : []; } catch (_) { skillsData = []; }
+    return skillsData;
+  }
+
+  // 连接器：真实来源 = dsh 的 MCP 配置（cordis.patch.yml）
+  async function loadConnectorsData(force) {
+    let conn = null;
+    try { conn = (window.aqara && window.aqara.listConnectors) ? await window.aqara.listConnectors() : null; } catch (_) { conn = null; }
+    return conn || { servers: [], configPath: '' };
+  }
+
+  function openNewSkill(panel) {
+    const wrap = document.createElement('div');
+    wrap.className = 'pr-new-mask';
+    wrap.innerHTML = `
+      <div class="pr-new-box">
+        <div class="pr-title">创建技能 · Agent 即刻可用</div>
+        <div class="pr-sub" style="margin:0 0 2px;">将写入 ~/.dsh/skills，保存后 Agent 立即可调用</div>
+        <input id="ns-name" placeholder="名称（英文短名，如 curtain-scene）" />
+        <input id="ns-desc" placeholder="描述：这个技能做什么（必填，Agent 依此判断何时用）" />
+        <input id="ns-when" placeholder="何时使用（可选）" />
+        <textarea id="ns-body" placeholder="技能正文（Markdown）：适用场景、步骤、命令、注意事项…"></textarea>
+        <div class="pr-new-btns"><div class="btn" id="ns-cancel">取消</div><div class="btn primary" id="ns-save">保存</div></div>
+      </div>`;
+    panel.appendChild(wrap);
+    wrap.querySelector('#ns-cancel').addEventListener('click', () => wrap.remove());
+    wrap.querySelector('#ns-save').addEventListener('click', async () => {
+      const name = wrap.querySelector('#ns-name').value.trim();
+      const description = wrap.querySelector('#ns-desc').value.trim();
+      if (!name) { showToast('请填写技能名称'); return; }
+      if (!description) { showToast('请填写技能描述（Agent 依此判断何时调用）'); return; }
+      const api = window.aqara || {};
+      const r = api.createSkill ? await api.createSkill({
+        name, description,
+        whenToUse: wrap.querySelector('#ns-when').value.trim(),
+        body: wrap.querySelector('#ns-body').value,
+      }) : null;
+      if (r && r.ok) { skillsData = r.skills; wrap.remove(); buildPartners(panel); showToast('✓ 已创建技能「' + (r.id || name) + '」，Agent 可用'); }
+      else showToast((r && r.reason) || '创建失败');
+    });
+  }
+
+  function openNewConnector(panel) {
+    const wrap = document.createElement('div');
+    wrap.className = 'pr-new-mask';
+    wrap.innerHTML = `
+      <div class="pr-new-box">
+        <div class="pr-title">新增连接器 · MCP</div>
+        <div class="pr-sub" style="margin:0 0 2px;">写入 dsh 的 MCP 配置并热加载，工具以 mcp__&lt;标识&gt;__&lt;工具&gt; 暴露给 Agent</div>
+        <input id="nc-name" placeholder="显示名称，如：文件系统" />
+        <input id="nc-server" placeholder="标识 serverName（英文/数字，如 filesystem）" />
+        <select id="nc-transport" style="background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--fg);font-size:12px;outline:none;">
+          <option value="stdio">stdio（本地命令）</option>
+          <option value="http">streamable-http（远程 URL）</option>
+        </select>
+        <input id="nc-command" placeholder="stdio: command（如 npx）" />
+        <input id="nc-args" placeholder="stdio: args（空格分隔，如 -y @modelcontextprotocol/server-filesystem /tmp）" />
+        <input id="nc-url" placeholder="http: url（如 https://host/mcp）" />
+        <div class="pr-new-btns"><div class="btn" id="nc-cancel">取消</div><div class="btn primary" id="nc-save">添加</div></div>
+      </div>`;
+    panel.appendChild(wrap);
+    wrap.querySelector('#nc-cancel').addEventListener('click', () => wrap.remove());
+    wrap.querySelector('#nc-save').addEventListener('click', async () => {
+      const serverName = wrap.querySelector('#nc-server').value.trim();
+      if (!serverName) { showToast('请填写 serverName'); return; }
+      const c = {
+        name: wrap.querySelector('#nc-name').value.trim() || serverName,
+        serverName,
+        transport: wrap.querySelector('#nc-transport').value,
+        command: wrap.querySelector('#nc-command').value.trim(),
+        args: wrap.querySelector('#nc-args').value.trim(),
+        url: wrap.querySelector('#nc-url').value.trim(),
+      };
+      let r = null;
+      try { r = (window.aqara && window.aqara.addConnector) ? await window.aqara.addConnector(c) : null; } catch (_) {}
+      if (r && r.ok) {
+        wrap.remove();
+        showToast('✓ 已添加连接器「' + serverName + '」，dsh 将热加载');
+        await buildPartners(panel);
+        const seg = [...panel.querySelectorAll('#pr-seg [data-tab]')].find((b) => b.textContent === '连接器');
+        if (seg) seg.click();
+      } else showToast((r && r.reason) || '添加失败');
+    });
+  }
+
+  async function buildPartners(panel) {
+    await loadPartnersData();
+    await loadSkillsData(true);
+    let tab = 'partners', cat = '全部', q = '';
+
+    panel.innerHTML = `
+      <div class="pr-head">
+        <div class="pr-title">搭子 · 技能 · 连接器</div>
+        <div class="pr-sub">选择合拍的搭子，为空间智能扩展技能与连接能力</div>
+      </div>
+      <div class="pr-bar">
+        <input id="pr-q" placeholder="搜索名称、能力或场景" />
+        <span id="pr-bar2"></span>
+      </div>
+      <div class="pr-seg" id="pr-seg">
+        <button data-tab="partners" class="on">搭子</button>
+        <button data-tab="skills">技能</button>
+        <button data-tab="connectors">连接器</button>
+        <span class="sp"></span>
+        <span class="pstatus" id="pr-count"></span>
+      </div>
+      <div class="pr-cats" id="pr-cats"></div>
+      <div class="pr-grid" id="pr-grid"></div>`;
+
+    const $ = (s) => panel.querySelector(s);
+    const $grid = $('#pr-grid'), $cats = $('#pr-cats'), $seg = $('#pr-seg'), $q = $('#pr-q'), $count = $('#pr-count'), $bar2 = $('#pr-bar2');
+
+    const srcOf = () => {
+      const d = partnersData || {};
+      return (tab === 'partners' ? d.partners : tab === 'connectors' ? d.connectors : []) || [];
+    };
+
+    function renderBar() {
+      if (tab === 'skills') {
+        $bar2.innerHTML = '<div class="btn" id="pr-upload">上传技能</div><div class="btn primary" id="pr-newskill">创建技能</div>';
+        $('#pr-upload').addEventListener('click', uploadSkill);
+        $('#pr-newskill').addEventListener('click', () => openNewSkill(panel));
+      } else if (tab === 'partners') {
+        $bar2.innerHTML = '<div class="btn primary" id="pr-new">创建搭子</div>';
+        $('#pr-new').addEventListener('click', () => openNewPartner(panel));
+      } else {
+        $bar2.innerHTML = '<div class="btn" id="pr-addconn">新增连接器</div><div class="btn" id="pr-mcpcfg">MCP 配置</div>';
+        $('#pr-addconn').addEventListener('click', () => openNewConnector(panel));
+        $('#pr-mcpcfg').addEventListener('click', () => { if (window.aqara && window.aqara.openMcpConfig) window.aqara.openMcpConfig(); });
+      }
+    }
+
+    function renderCats() {
+      const set = new Set(['全部']);
+      srcOf().forEach((x) => { if (x.category) set.add(x.category); });
+      $cats.innerHTML = [...set].map((c) => `<span class="chip ${c === cat ? 'on' : ''}" data-cat="${c}">${c}</span>`).join('');
+      $cats.querySelectorAll('[data-cat]').forEach((el) => el.addEventListener('click', () => { cat = el.getAttribute('data-cat'); render(); }));
+    }
+
+    function useItem(id) {
+      const x = srcOf().find((v) => v.id === id);
+      if (!x) return;
+      const proj = (state && state.project && state.project.name) || '当前项目';
+      const cmd = x.prompt || ('请按照「' + x.name + '」的方式完成当前任务。');
+      // 先把搭子落成真实技能（Agent 真能加载），再发真实指令
+      (async () => {
+        const api = window.aqara || {};
+        let skillId = '';
+        try { const r = api.ensurePartnerSkill ? await api.ensurePartnerSkill(x.id) : null; if (r && r.ok) skillId = r.skillId; } catch (_) {}
+        if (api.send) {
+          const extra = skillId ? ('\n【已装载技能】' + skillId + '（如需要可调用该技能）') : '';
+          api.send('【工作区上下文】项目：' + proj + '\n【搭子上下文】使用搭子：' + x.name + extra + '\n【指令】' + cmd);
+          showToast(skillId ? ('→ 「' + x.name + '」技能已就绪，已发送给 Agent') : ('→ 已发送「' + x.name + '」给 Agent'));
+        }
+      })();
+    }
+
+    function renderCards() {
+      const kw = q.toLowerCase();
+      const items = srcOf().filter((x) => {
+        if (cat !== '全部' && x.category !== cat) return false;
+        if (!kw) return true;
+        return ((x.name || '') + (x.intro || '') + (x.tags || []).join('')).toLowerCase().includes(kw);
+      });
+      $count.textContent = items.length + ' 项';
+      if (!items.length) { $grid.innerHTML = '<div class="sec-title">暂无内容 / EMPTY</div>'; return; }
+      $grid.innerHTML = items.map((x) => {
+        const badge = x.official ? '<span class="pbadge">官方</span>' : '<span class="pbadge mine">我的</span>';
+        const tags = (x.tags || []).map((t) => `<span>${t}</span>`).join('');
+        const foot = tab === 'connectors'
+          ? `<span class="pstatus">${x.status || '未启用'}</span><div class="btn" data-use="${x.id}">${x.status === '已启用' ? '停用' : '启用'}</div>`
+          : `<div class="btn primary" data-use="${x.id}">启用对话</div>`;
+        return `<div class="pcard">
+          <div class="top"><div class="pava">${x.mark || (x.name || '?').slice(0, 1)}</div>
+            <div><div class="pname">${x.name} ${badge}</div><div class="pintro">${x.intro || ''}</div></div></div>
+          <div class="ptags">${tags}</div>
+          <div class="pfoot">${foot}</div>
+        </div>`;
+      }).join('');
+      $grid.querySelectorAll('[data-use]').forEach((b) => b.addEventListener('click', () => useItem(b.getAttribute('data-use'))));
+    }
+
+    async function renderSkills() {
+      const list = await loadSkillsData(true);
+      const kw = q.toLowerCase();
+      const items = list.filter((x) => !kw || ((x.name || '') + (x.description || '')).toLowerCase().includes(kw));
+      $count.textContent = items.length + ' 项';
+      if (!items.length) { $grid.innerHTML = '<div class="sec-title">还没有技能 · 点右上「创建技能」或「上传技能」</div>'; return; }
+      $grid.innerHTML = items.map((x) => {
+        const badge = x.disabled ? '<span class="pbadge">已停用</span>' : '<span class="pbadge mine">已启用</span>';
+        const meta = `<span>${x.id}</span>${x.updatedAt ? ('<span>' + x.updatedAt + '</span>') : ''}`;
+        return `<div class="pcard">
+          <div class="top"><div class="pava">${(x.name || '?').slice(0, 1)}</div>
+            <div><div class="pname">${x.name} ${badge}</div><div class="pintro">${x.description || '（无描述）'}</div></div></div>
+          <div class="ptags">${meta}</div>
+          <div class="pfoot">
+            <div class="btn" data-act="toggle" data-id="${x.id}" data-dis="${x.disabled ? 1 : 0}">${x.disabled ? '启用' : '停用'}</div>
+            <div class="btn" data-act="open" data-path="${x.path}">打开</div>
+            <div class="btn" data-act="del" data-id="${x.id}" data-dis="${x.disabled ? 1 : 0}">删除</div>
+          </div>
+        </div>`;
+      }).join('');
+      $grid.querySelectorAll('[data-act]').forEach((b) => b.addEventListener('click', () => skillAction(b)));
+    }
+
+    async function skillAction(b) {
+      const api = window.aqara || {};
+      const act = b.getAttribute('data-act');
+      if (act === 'open') { if (api.openSkill) api.openSkill(b.getAttribute('data-path')); return; }
+      const id = b.getAttribute('data-id');
+      const dis = b.getAttribute('data-dis') === '1';
+      if (act === 'toggle') {
+        const r = api.setSkillEnabled ? await api.setSkillEnabled(id, dis) : null;
+        if (r && r.ok) { skillsData = r.skills; showToast((dis ? '已启用' : '已停用') + '「' + id + '」'); await render(); }
+        else showToast((r && r.reason) || '操作失败');
+      } else if (act === 'del') {
+        const r = api.deleteSkill ? await api.deleteSkill(id, dis) : null;
+        if (r && r.ok) { skillsData = r.skills; showToast('已删除「' + id + '」'); await render(); }
+        else showToast((r && r.reason) || '删除失败');
+      }
+    }
+
+    async function uploadSkill() {
+      const api = window.aqara || {};
+      const r = api.importSkill ? await api.importSkill() : null;
+      if (r && r.ok) { skillsData = r.skills; showToast('✓ 已导入技能「' + r.id + '」'); await render(); }
+      else if (r && !r.canceled) showToast(r.reason || '导入失败');
+    }
+
+    async function renderConnectors() {
+      const data = await loadConnectorsData(true);
+      const list = (data && data.servers) || [];
+      $count.textContent = list.length + ' 项';
+      if (!list.length) {
+        $grid.innerHTML = '<div class="sec-title">还没有连接器</div>' +
+          '<div class="pcard"><div class="pintro">连接器 = 真实的 MCP 服务器。新增后会写入 dsh 的 MCP 配置并热加载，工具会以 <b>mcp__&lt;名称&gt;__&lt;工具&gt;</b> 提供给 Agent。</div>' +
+          '<div class="pfoot"><div class="btn primary" data-add="1">新增连接器</div></div></div>';
+        $grid.querySelectorAll('[data-add]').forEach((b) => b.addEventListener('click', () => openNewConnector(panel)));
+        return;
+      }
+      $grid.innerHTML = list.map((x) => {
+        const target = x.transport === 'http' ? (x.url || '') : ((x.command || '') + ' ' + (x.args || []).join(' ')).trim();
+        const badge = x.enabled ? '<span class="pbadge mine">已启用</span>' : '<span class="pbadge">已停用</span>';
+        return `<div class="pcard">
+          <div class="top"><div class="pava">${(x.serverName || '?').slice(0, 1)}</div>
+            <div><div class="pname">${x.name || x.serverName} ${badge}</div>
+              <div class="pintro">${x.transport || ''} · ${target || '—'}</div></div></div>
+          <div class="ptags"><span>mcp__${x.serverName}__*</span></div>
+          <div class="pfoot">
+            <div class="btn" data-toggle="${x.id}">${x.enabled ? '停用' : '启用'}</div>
+            <div class="btn" data-del="${x.id}">删除</div>
+          </div>
+        </div>`;
+      }).join('');
+      $grid.querySelectorAll('[data-toggle]').forEach((b) => b.addEventListener('click', async () => {
+        const r = (window.aqara && window.aqara.toggleConnector) ? await window.aqara.toggleConnector(b.getAttribute('data-toggle')) : null;
+        if (r && r.ok) { showToast('已更新连接器'); await render(); } else showToast((r && r.reason) || '操作失败');
+      }));
+      $grid.querySelectorAll('[data-del]').forEach((b) => b.addEventListener('click', async () => {
+        const r = (window.aqara && window.aqara.removeConnector) ? await window.aqara.removeConnector(b.getAttribute('data-del')) : null;
+        if (r && r.ok) { showToast('已删除连接器'); await render(); } else showToast((r && r.reason) || '删除失败');
+      }));
+    }
+
+    async function render() {
+      if (tab === 'partners') renderCats(); else { $cats.innerHTML = ''; cat = '全部'; }
+      if (tab === 'skills') await renderSkills();
+      else if (tab === 'connectors') await renderConnectors();
+      else renderCards();
+    }
+
+    $seg.querySelectorAll('[data-tab]').forEach((b) => b.addEventListener('click', () => {
+      tab = b.getAttribute('data-tab'); cat = '全部';
+      $seg.querySelectorAll('[data-tab]').forEach((x) => x.classList.toggle('on', x === b));
+      renderBar();
+      render();
+    }));
+    $q.addEventListener('input', () => { q = $q.value.trim(); render(); });
+
+    renderBar();
+    render();
   }
 
   // ---------- 3D ----------
@@ -1023,6 +1394,7 @@
     function applyMode(m) {
       mode = m || 'normal';
       document.body.classList.toggle('collapsed', mode === 'hidden');
+      document.body.classList.toggle('module', mode === 'module');
       if (btnMax) {
         const isMax = mode === 'max';
         btnMax.classList.toggle('on', isMax);
@@ -1043,6 +1415,8 @@
     if (railOpen) railOpen.addEventListener('click', () => {
       if (api.setPanelMode) api.setPanelMode('normal');
     });
+    const btnBack = document.getElementById('btnBack');
+    if (btnBack) btnBack.addEventListener('click', () => { if (api.setPanelMode) api.setPanelMode('normal'); });
     if (api.onPanelMode) api.onPanelMode(applyMode);
     applyMode('normal');
   })();
@@ -1072,6 +1446,7 @@
     } catch (_) {}
     loadProjects();
     addTab('twin', true);
+    addTab('partners', false);
     addTab('devices', false);
     addTab('files', false);
     renderCtx();
@@ -1081,6 +1456,14 @@
         state = s;
         renderAll();
         showToast('⟳ 工作区已更新（state.json 变化）');
+      });
+    }
+    // 左栏入口 → 激活/新建对应标签
+    if (window.aqara && window.aqara.onActivateTab) {
+      window.aqara.onActivateTab((type) => {
+        if (!DEFS[type]) return;
+        const t = tabs.find((x) => x.type === type);
+        if (t) activateTab(t.id); else addTab(type, true);
       });
     }
   })();

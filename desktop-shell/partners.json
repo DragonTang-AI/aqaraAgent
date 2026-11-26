@@ -1,0 +1,99 @@
+{
+  "partners": [
+    {
+      "id": "space-plan",
+      "name": "空间方案搭子",
+      "mark": "方",
+      "official": true,
+      "category": "空间设计",
+      "intro": "根据户型与需求，产出整套空间方案：设备选型、功能分区与点位建议。",
+      "tags": ["方案完整", "点位清晰", "可落地"],
+      "prompt": "请为当前户型生成一份空间方案，包含设备选型、功能分区与点位设计，并说明依据。"
+    },
+    {
+      "id": "lighting-scene",
+      "name": "灯光场景搭子",
+      "mark": "灯",
+      "official": true,
+      "category": "空间设计",
+      "intro": "围绕回家、观影、睡眠等场景，设计全屋灯光的分组、色温与亮度方案。",
+      "tags": ["氛围把控", "色温敏感", "场景化"],
+      "prompt": "请基于当前空间设计一套灯光场景（回家/观影/睡眠/起夜），给出分组、色温与亮度建议。"
+    },
+    {
+      "id": "device-point",
+      "name": "设备点位搭子",
+      "mark": "位",
+      "official": true,
+      "category": "设备与点位",
+      "intro": "结合户型与生活习惯，给出传感器、开关、摄像头的点位与安装高度建议。",
+      "tags": ["点位专业", "覆盖无死角", "安装可行"],
+      "prompt": "请结合当前户型做设备点位设计，说明每类设备的位置、安装高度与理由。"
+    },
+    {
+      "id": "inspection",
+      "name": "全屋巡检搭子",
+      "mark": "检",
+      "official": true,
+      "category": "售后运维",
+      "intro": "对全屋设备做一次巡检，列出异常项、影响范围与处理建议，支持持续跟踪。",
+      "tags": ["责任清晰", "闭环意识", "风险敏感"],
+      "prompt": "请对全屋设备做一次巡检，列出异常项、影响范围与处理建议，并给出优先级。"
+    },
+    {
+      "id": "wiring",
+      "name": "布线施工搭子",
+      "mark": "线",
+      "official": false,
+      "category": "设备与点位",
+      "intro": "根据点位方案整理强弱电布线、施工顺序与注意事项，方便现场交底。",
+      "tags": ["规范严谨", "施工导向", "交底清晰"],
+      "prompt": "请根据当前点位方案整理布线施工建议：强弱电走线、施工顺序与现场注意事项。"
+    },
+    {
+      "id": "client-report",
+      "name": "客户汇报搭子",
+      "mark": "报",
+      "official": true,
+      "category": "交付与汇报",
+      "intro": "把技术方案整理成客户看得懂的汇报材料，突出价值、体验与预算。",
+      "tags": ["表达克制", "重点突出", "面向客户"],
+      "prompt": "请把当前方案整理成一份给客户汇报的材料，突出价值、体验与预算，语言通俗。"
+    },
+    {
+      "id": "twin",
+      "name": "数字孪生搭子",
+      "mark": "孪",
+      "official": true,
+      "category": "空间设计",
+      "intro": "从平面图或模型生成可交互的空间数字孪生，支持 3D / 平面 / 漫游查看。",
+      "tags": ["建模意识", "结构准确", "可交互"],
+      "prompt": "请基于当前户型生成可交互的数字孪生，包含房间结构、门窗与设备点位。"
+    },
+    {
+      "id": "after-sales",
+      "name": "售后服务搭子",
+      "mark": "服",
+      "official": false,
+      "category": "售后运维",
+      "intro": "针对客户反馈的异常现象做排查，给出原因、处理步骤与沟通话术。",
+      "tags": ["耐心细致", "话术得体", "可追溯"],
+      "prompt": "请针对客户反馈的现象做排查，给出可能原因、处理步骤与沟通话术。"
+    }
+  ],
+  "skills": [
+    { "id": "sk-floorplan", "name": "户型识别", "mark": "识", "official": true, "intro": "识别平面图中的房间、墙体与门窗，转成结构化数据。", "tags": ["结构解析"] },
+    { "id": "sk-render", "name": "效果图生成", "mark": "渲", "official": true, "intro": "根据风格与空间生成效果图，支持多方案对比。", "tags": ["风格化"] },
+    { "id": "sk-pointmap", "name": "点位图生成", "mark": "图", "official": true, "intro": "把设备点位整理成标准化点位图，可直接用于交底。", "tags": ["标准化"] },
+    { "id": "sk-quote", "name": "报价单生成", "mark": "价", "official": true, "intro": "按选型清单生成报价单，支持分项与汇总。", "tags": ["可核算"] },
+    { "id": "sk-automation", "name": "自动化编排", "mark": "自", "official": false, "intro": "把触发条件与动作编排成自动化场景，支持条件组合。", "tags": ["流程化"] },
+    { "id": "sk-draw", "name": "图纸导出", "mark": "出", "official": true, "intro": "导出 CAD / PDF 图纸，便于施工与归档。", "tags": ["可交付"] }
+  ],
+  "connectors": [
+    { "id": "cn-browser", "name": "浏览器", "mark": "览", "official": true, "intro": "打开网页、检索资料、与页面交互。", "tags": ["网页"], "status": "未启用" },
+    { "id": "cn-feishu", "name": "飞书", "mark": "飞", "official": true, "intro": "读写飞书文档、日程与消息。", "tags": ["协作"], "status": "未启用" },
+    { "id": "cn-mail", "name": "邮箱", "mark": "邮", "official": true, "intro": "收发邮件、整理附件。", "tags": ["沟通"], "status": "未启用" },
+    { "id": "cn-calendar", "name": "日历", "mark": "历", "official": true, "intro": "查看与创建日程、安排上门时间。", "tags": ["时间"], "status": "未启用" },
+    { "id": "cn-files", "name": "本地文件", "mark": "件", "official": true, "intro": "读取与整理本地资料库中的文件。", "tags": ["文件"], "status": "已启用" }
+  ]
+}

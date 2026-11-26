@@ -53,6 +53,53 @@
     document.documentElement.classList.toggle('aqara-light', isLight());
   };
 
+  // 左侧入口：视觉上是侧栏里的一行（对齐 dsh 侧栏、随折叠/展开自适应），
+  // 但它是独立浮层（不动 React 管理的 DOM），放在「设置」上方空位，不遮挡任何图标。
+  const NAV_ICON = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+
+  const ensureNavStyle = () => {
+    if (document.getElementById('aqara-nav-style')) return;
+    const st = document.createElement('style');
+    st.id = 'aqara-nav-style';
+    st.textContent = [
+      '#aqara-nav{position:fixed;z-index:2147482000;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;}',
+      '#aqara-nav button{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;padding:8px 10px;border:none;background:transparent;border-radius:8px;cursor:pointer;font:inherit;font-size:12.5px;text-align:left;color:#c9c9c9;}',
+      '#aqara-nav button:hover{background:rgba(127,127,127,.18);}',
+      '#aqara-nav .an-ic{width:18px;height:18px;flex:none;display:flex;align-items:center;justify-content:center;}',
+      '#aqara-nav .an-lb{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}',
+      '#aqara-nav.collapsed button{justify-content:center;padding:8px 0;}',
+      '#aqara-nav.collapsed .an-lb{display:none;}',
+      'html.aqara-light #aqara-nav button{color:#333;}',
+    ].join('\n');
+    document.head.appendChild(st);
+  };
+
+  const ensureNav = () => {
+    ensureNavStyle();
+    let box = document.getElementById('aqara-nav');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'aqara-nav';
+      box.innerHTML = '<button type="button" title="搭子 · 技能 · 连接器"><span class="an-ic">' + NAV_ICON + '</span><span class="an-lb">搭子 · 技能 · 连接器</span></button>';
+      box.addEventListener('click', () => { if (window.aqaraNav) window.aqaraNav.open('partners'); });
+      document.body.appendChild(box);
+    }
+    // 对齐到 dsh 侧栏：宽度随折叠/展开变化，位置放在「设置」上方空位
+    const col = document.querySelector('[class*="sidebarCol"]');
+    if (!col) return;
+    const cr = col.getBoundingClientRect();
+    const collapsed = !!document.querySelector('[class*="MbFrua_collapsed"]');
+    const sa = document.querySelector('[class*="MbFrua_settingsArea"]');
+    const sr = sa ? sa.getBoundingClientRect() : null;
+    const w = collapsed ? 40 : Math.max(120, cr.width - 16);
+    const left = collapsed ? 8 : (cr.left + 8);
+    const top = sr ? (sr.top - 42) : (window.innerHeight - 92);
+    box.classList.toggle('collapsed', collapsed);
+    box.style.left = left + 'px';
+    box.style.top = Math.max(cr.top + 60, top) + 'px';
+    box.style.width = w + 'px';
+  };
+
   // 文案：欢迎语 + 预览徽标（仅改文本内容，不增删节点）
   const swapTexts = () => {
     const walk = (el) => {
@@ -70,7 +117,7 @@
   };
 
   const apply = () => {
-    try { setTitle(); ensureStyle(); applyThemeClass(); swapTexts(); } catch (_) {}
+    try { setTitle(); ensureStyle(); applyThemeClass(); ensureNav(); swapTexts(); } catch (_) {}
   };
 
   apply();

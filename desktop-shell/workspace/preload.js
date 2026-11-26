@@ -21,6 +21,26 @@ contextBridge.exposeInMainWorld('aqara', {
   loadModel: (name) => ipcRenderer.invoke('aqara:load-model', name),
   // 读取场景清单（灯光/窗帘/开关 34 通道）
   loadManifest: (name) => ipcRenderer.invoke('aqara:load-manifest', name),
+  // 搭子 · 技能 · 连接器
+  listPartners: () => ipcRenderer.invoke('aqara:list-partners'),
+  createPartner: (p) => ipcRenderer.invoke('aqara:create-partner', p),
+  ensurePartnerSkill: (id) => ipcRenderer.invoke('aqara:ensure-partner-skill', id),
+  // 连接器（真实 MCP 配置）
+  listConnectors: () => ipcRenderer.invoke('aqara:list-connectors'),
+  openMcpConfig: () => ipcRenderer.invoke('aqara:open-mcp-config'),
+  addConnector: (c) => ipcRenderer.invoke('aqara:add-connector', c),
+  removeConnector: (id) => ipcRenderer.invoke('aqara:remove-connector', id),
+  toggleConnector: (id) => ipcRenderer.invoke('aqara:toggle-connector', id),
+  // 真·技能管理
+  listSkills: () => ipcRenderer.invoke('aqara:list-skills'),
+  createSkill: (s) => ipcRenderer.invoke('aqara:create-skill', s),
+  importSkill: () => ipcRenderer.invoke('aqara:import-skill'),
+  setSkillEnabled: (id, enabled) => ipcRenderer.invoke('aqara:set-skill-enabled', id, enabled),
+  deleteSkill: (id, disabled) => ipcRenderer.invoke('aqara:delete-skill', id, disabled),
+  openSkill: (p) => ipcRenderer.invoke('aqara:open-skill', p),
+  revealSkillsDir: () => ipcRenderer.invoke('aqara:reveal-skills-dir'),
+  // 左栏入口 → 激活指定标签页
+  onActivateTab: (cb) => { ipcRenderer.on('aqara:activate-tab', (_e, t) => { try { cb(t); } catch (_) {} }); },
   // 预览区模式：normal(并排) / max(放大填充) / hidden(收起为窄条)
   setPanelMode: (m) => ipcRenderer.send('aqara:set-panel-mode', String(m || '')),
   onPanelMode: (cb) => { ipcRenderer.on('aqara:panel-mode', (_e, m) => { try { cb(m); } catch (_) {} }); },
