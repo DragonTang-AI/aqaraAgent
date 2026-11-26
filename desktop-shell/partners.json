@@ -1,6 +1,16 @@
 {
   "partners": [
     {
+      "id": "space-twin",
+      "name": "3D 空间生成搭子",
+      "mark": "3D",
+      "official": true,
+      "category": "空间设计",
+      "intro": "上传户型图或家里的照片，用 Blender 搭出可查看的 3D 空间，并导出 GLB 到数字孪生。",
+      "tags": ["图纸建模", "照片还原", "可交付GLB"],
+      "prompt": "请使用技能 blender-space-twin，结合资料库中我上传的户型图/照片，生成 Blender 3D 空间并导出 GLB 到 library/generated，然后告诉我如何在右侧「数字孪生 → 模型」里查看。"
+    },
+    {
       "id": "space-plan",
       "name": "空间方案搭子",
       "mark": "方",

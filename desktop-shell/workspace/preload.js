@@ -53,6 +53,20 @@ contextBridge.exposeInMainWorld('aqara', {
   libraryReindex: () => ipcRenderer.invoke('aqara:library-reindex'),
   librarySemanticSearch: (q) => ipcRenderer.invoke('aqara:library-semantic-search', q),
   libraryVecIndex: () => ipcRenderer.invoke('aqara:library-vec-index'),
+  // 项目上下文总线
+  getContext: (name) => ipcRenderer.invoke('aqara:get-context', name),
+  // 凭据中心（加密）+ 适配层
+  credStatus: () => ipcRenderer.invoke('aqara:cred-status'),
+  saveCredentials: (c) => ipcRenderer.invoke('aqara:save-credentials', c),
+  clearCredentials: () => ipcRenderer.invoke('aqara:clear-credentials'),
+  adapterCall: (method, params) => ipcRenderer.invoke('aqara:adapter-call', method, params),
+  // Blender 连接器
+  blenderStatus: () => ipcRenderer.invoke('aqara:blender-status'),
+  blenderInstall: () => ipcRenderer.invoke('aqara:blender-install'),
+  blenderOpen: () => ipcRenderer.invoke('aqara:blender-open'),
+  // 数字孪生：生成的模型
+  listGenerated: () => ipcRenderer.invoke('aqara:list-generated'),
+  loadGenerated: (name) => ipcRenderer.invoke('aqara:load-generated', name),
   // 扫码上传（临时 HTTP + 二维码）
   qrStart: () => ipcRenderer.invoke('aqara:qr-start'),
   qrStop: () => ipcRenderer.invoke('aqara:qr-stop'),

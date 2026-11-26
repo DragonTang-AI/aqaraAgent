@@ -502,6 +502,7 @@
             <button id="btnCeil">顶吊</button>
             <button id="btnDay">☀︎ 白天</button>
             <button id="btnDev">设备</button>
+            <button id="btnModel">模型</button>
           </div>
           <div class="param" id="param">
             <div class="ph">房间参数 · <span id="p-name">未选</span></div>
@@ -706,6 +707,48 @@
     });
   }
 
+  async function openCredModal(panel) {
+    const s = (window.aqara && window.aqara.credStatus) ? await window.aqara.credStatus() : null;
+    const wrap = document.createElement('div');
+    wrap.className = 'pr-new-mask';
+    wrap.innerHTML =
+      '<div class="pr-new-box">' +
+        '<div class="pr-title">Aqara 云接入凭据</div>' +
+        '<div class="pr-sub" style="margin:0 0 2px;">系统钥匙串加密存储：' + (s && s.available ? '可用' : '不可用') + '</div>' +
+        '<select id="cr-kind" style="background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--fg);font-size:12px;outline:none;">' +
+          '<option value="openapi">OpenAPI（直连）</option>' +
+          '<option value="mcp">MCP（由连接器承载）</option>' +
+        '</select>' +
+        '<input id="cr-base" placeholder="Base URL，如 https://api.aqara.com" value="' + (s ? s.baseUrl : '') + '" />' +
+        '<input id="cr-region" placeholder="区域 Region，如 CN" value="' + (s ? s.region : '') + '" />' +
+        '<input id="cr-org" placeholder="组织 / 项目 OrgId（可选）" value="' + (s ? s.orgId : '') + '" />' +
+        '<input id="cr-appkey" placeholder="AppKey' + (s && s.appKeyMasked ? ('（当前 ' + s.appKeyMasked + '，留空保留）') : '') + '" />' +
+        '<input id="cr-token" type="password" placeholder="Token / 访问令牌' + (s && s.tokenMasked ? ('（当前 ' + s.tokenMasked + '，留空保留）') : '') + '" />' +
+        '<div class="pr-new-btns"><div class="btn" id="cr-cancel">取消</div><div class="btn primary" id="cr-save">保存</div></div>' +
+      '</div>';
+    panel.appendChild(wrap);
+    wrap.querySelector('#cr-kind').value = (s && s.kind) || 'openapi';
+    wrap.querySelector('#cr-cancel').addEventListener('click', () => wrap.remove());
+    wrap.querySelector('#cr-save').addEventListener('click', async () => {
+      const c = {
+        kind: wrap.querySelector('#cr-kind').value,
+        baseUrl: wrap.querySelector('#cr-base').value.trim(),
+        region: wrap.querySelector('#cr-region').value.trim(),
+        orgId: wrap.querySelector('#cr-org').value.trim(),
+        appKey: wrap.querySelector('#cr-appkey').value.trim(),
+        token: wrap.querySelector('#cr-token').value.trim(),
+      };
+      const r = (window.aqara && window.aqara.saveCredentials) ? await window.aqara.saveCredentials(c) : null;
+      if (r && r.ok) {
+        wrap.remove();
+        showToast('✓ 凭据已加密保存');
+        await buildPartners(panel);
+        const seg = [...panel.querySelectorAll('#pr-seg [data-tab]')].find((b) => b.textContent === '连接器');
+        if (seg) seg.click();
+      } else showToast((r && r.reason) || '保存失败');
+    });
+  }
+
   async function buildPartners(panel) {
     await loadPartnersData();
     await loadSkillsData(true);
@@ -854,27 +897,60 @@
       const data = await loadConnectorsData(true);
       const list = (data && data.servers) || [];
       $count.textContent = list.length + ' 项';
+      const cred = (window.aqara && window.aqara.credStatus) ? await window.aqara.credStatus() : null;
+      const cfg = !!(cred && cred.configured);
+      const bl = (window.aqara && window.aqara.blenderStatus) ? await window.aqara.blenderStatus() : null;
+      const blInstalled = !!(bl && bl.installed);
+      const blAddon = !!(bl && bl.addonInstalled);
+      const blBridge = !!(bl && bl.bridge);
+      const blenderCard = '<div class="pcard">' +
+        '<div class="top"><div class="pava">Bl</div>' +
+        '<div><div class="pname">Blender ' + (blInstalled ? '<span class="pbadge mine">已检测到</span>' : '<span class="pbadge">未检测到</span>') + ' ' + (blAddon ? '<span class="pbadge mine">插件已装</span>' : '<span class="pbadge">插件未装</span>') + '</div>' +
+        '<div class="pintro">' + (blInstalled ? ('版本 ' + (bl.version || '?') + ' · ' + (bl.appPath || '')) : '未检测到 Blender，请先安装') + '</div>' +
+        '<div class="pintro" style="margin-top:2px;">网桥：' + (blBridge ? ('已连接' + (bl.bridgeVersion ? ('（Blender ' + bl.bridgeVersion + '）') : '')) : '未连接 · 打开 Blender 并启用插件「Aqara MCP Bridge」') + '</div></div></div>' +
+        '<div class="pfoot">' +
+        (blInstalled ? '<div class="btn primary" data-bl-install="1">' + (blAddon ? '重新安装插件' : '安装连接器') + '</div>' : '') +
+        (blInstalled ? '<div class="btn" data-bl-open="1">打开 Blender</div>' : '') +
+        '<div class="btn" data-bl-refresh="1">刷新</div>' +
+        '</div></div>';
+      let html = blenderCard + '<div class="pcard">' +
+        '<div class="top"><div class="pava">Aq</div>' +
+        '<div><div class="pname">Aqara 云接入 ' + (cfg ? '<span class="pbadge mine">已配置</span>' : '<span class="pbadge">未配置</span>') + '</div>' +
+        '<div class="pintro">' + (cfg ? ((cred.kind || 'openapi') + ' · ' + cred.baseUrl) : '配置 OpenAPI 凭据（系统加密存储），供 Agent 查询 / 控制真实设备') + '</div></div></div>' +
+        '<div class="pfoot"><div class="btn primary" data-cred="1">' + (cfg ? '修改凭据' : '配置凭据') + '</div>' +
+        (cfg ? '<div class="btn" data-cred-clear="1">清除</div>' : '') + '</div></div>';
       if (!list.length) {
-        $grid.innerHTML = '<div class="sec-title">还没有连接器</div>' +
-          '<div class="pcard"><div class="pintro">连接器 = 真实的 MCP 服务器。新增后会写入 dsh 的 MCP 配置并热加载，工具会以 <b>mcp__&lt;名称&gt;__&lt;工具&gt;</b> 提供给 Agent。</div>' +
+        html += '<div class="sec-title">尚未配置 MCP 连接器</div>' +
+          '<div class="pcard"><div class="pintro">连接器 = 真实的 MCP 服务器。新增后会写入 dsh 的 MCP 配置并热加载，工具以 <b>mcp__&lt;名称&gt;__&lt;工具&gt;</b> 提供给 Agent。</div>' +
           '<div class="pfoot"><div class="btn primary" data-add="1">新增连接器</div></div></div>';
-        $grid.querySelectorAll('[data-add]').forEach((b) => b.addEventListener('click', () => openNewConnector(panel)));
-        return;
+      } else {
+        html += list.map((x) => {
+          const target = x.transport === 'http' ? (x.url || '') : ((x.command || '') + ' ' + (x.args || []).join(' ')).trim();
+          const badge = x.enabled ? '<span class="pbadge mine">已启用</span>' : '<span class="pbadge">已停用</span>';
+          return '<div class="pcard"><div class="top"><div class="pava">' + (x.serverName || '?').slice(0, 1) + '</div>' +
+            '<div><div class="pname">' + (x.name || x.serverName) + ' ' + badge + '</div>' +
+            '<div class="pintro">' + (x.transport || '') + ' · ' + (target || '—') + '</div></div></div>' +
+            '<div class="ptags"><span>mcp__' + x.serverName + '__*</span></div>' +
+            '<div class="pfoot"><div class="btn" data-toggle="' + x.id + '">' + (x.enabled ? '停用' : '启用') + '</div>' +
+            '<div class="btn" data-del="' + x.id + '">删除</div></div></div>';
+        }).join('');
       }
-      $grid.innerHTML = list.map((x) => {
-        const target = x.transport === 'http' ? (x.url || '') : ((x.command || '') + ' ' + (x.args || []).join(' ')).trim();
-        const badge = x.enabled ? '<span class="pbadge mine">已启用</span>' : '<span class="pbadge">已停用</span>';
-        return `<div class="pcard">
-          <div class="top"><div class="pava">${(x.serverName || '?').slice(0, 1)}</div>
-            <div><div class="pname">${x.name || x.serverName} ${badge}</div>
-              <div class="pintro">${x.transport || ''} · ${target || '—'}</div></div></div>
-          <div class="ptags"><span>mcp__${x.serverName}__*</span></div>
-          <div class="pfoot">
-            <div class="btn" data-toggle="${x.id}">${x.enabled ? '停用' : '启用'}</div>
-            <div class="btn" data-del="${x.id}">删除</div>
-          </div>
-        </div>`;
-      }).join('');
+      $grid.innerHTML = html;
+      $grid.querySelectorAll('[data-add]').forEach((b) => b.addEventListener('click', () => openNewConnector(panel)));
+      $grid.querySelectorAll('[data-bl-install]').forEach((b) => b.addEventListener('click', async () => {
+        showToast('正在安装 Blender 插件…');
+        const r = (window.aqara && window.aqara.blenderInstall) ? await window.aqara.blenderInstall() : null;
+        if (r && r.ok) showToast('✓ 插件已安装；请在 Blender「偏好设置 → 插件」启用「Aqara MCP Bridge」');
+        else showToast((r && r.reason) || '安装失败');
+        await render();
+      }));
+      $grid.querySelectorAll('[data-bl-open]').forEach((b) => b.addEventListener('click', () => { if (window.aqara && window.aqara.blenderOpen) window.aqara.blenderOpen(); }));
+      $grid.querySelectorAll('[data-bl-refresh]').forEach((b) => b.addEventListener('click', () => render()));
+      $grid.querySelectorAll('[data-cred]').forEach((b) => b.addEventListener('click', () => openCredModal(panel)));
+      $grid.querySelectorAll('[data-cred-clear]').forEach((b) => b.addEventListener('click', async () => {
+        const r = (window.aqara && window.aqara.clearCredentials) ? await window.aqara.clearCredentials() : null;
+        if (r && r.ok) { showToast('已清除凭据'); await render(); }
+      }));
       $grid.querySelectorAll('[data-toggle]').forEach((b) => b.addEventListener('click', async () => {
         const r = (window.aqara && window.aqara.toggleConnector) ? await window.aqara.toggleConnector(b.getAttribute('data-toggle')) : null;
         if (r && r.ok) { showToast('已更新连接器'); await render(); } else showToast((r && r.reason) || '操作失败');
@@ -1456,6 +1532,8 @@
         const open = devctlEl.classList.toggle('open');
         bdev.classList.toggle('on', open);
       });
+      const bmodel = panel.querySelector('#btnModel');
+      if (bmodel) bmodel.addEventListener('click', openModelMenu);
       const phEl = panel.querySelector('#p-h');
       if (phEl) phEl.addEventListener('input', () => {
         wallH = parseFloat(phEl.value);
@@ -1608,6 +1686,50 @@
       console.log('[3D] 设备控制已就绪：', ctrls.length, '路（灯光/窗帘/开关）');
     }
 
+    // 加载资料库生成的 GLB（Blender 产出）到数字孪生
+    let modelRoots = [];
+    async function loadGeneratedModel(name) {
+      const buf = (window.aqara && window.aqara.loadGenerated) ? await window.aqara.loadGenerated(name) : null;
+      if (!buf) { showToast('读取模型失败：' + name); return; }
+      const ab = buf.buffer ? buf.buffer.slice(buf.byteOffset, buf.byteOffset + buf.byteLength) : buf;
+      new THREE.GLTFLoader().parse(ab, '', (g) => {
+        const root = g.scene || (g.scenes && g.scenes[0]);
+        root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
+        const bb = new THREE.Box3();
+        root.updateMatrixWorld(true);
+        root.traverse((o) => { if (o.isMesh) bb.expandByObject(o); });
+        if (bb.isEmpty()) bb.setFromObject(root);
+        const c = bb.getCenter(new THREE.Vector3());
+        const size = bb.getSize(new THREE.Vector3());
+        root.position.x -= c.x; root.position.z -= c.z; root.position.y -= bb.min.y;
+        modelRoots.forEach((r) => { r.visible = false; });
+        scene.add(root); modelRoots.push(root);
+        usingGlb = true;
+        glbTarget.set(0, Math.min(size.y * 0.45, 1.4), 0);
+        glbFit = Math.hypot(size.x, size.z) * 1.08;
+        radius = glbFit;
+        applyCam();
+        showToast('✓ 已加载模型 ' + name);
+      }, () => showToast('模型解析失败'));
+    }
+    function openModelMenu() {
+      const wrap = document.createElement('div');
+      wrap.className = 'pr-new-mask';
+      wrap.innerHTML = '<div class="pr-new-box"><div class="pr-title">资料库生成的模型</div>' +
+        '<div id="mm" class="pstatus" style="max-height:260px;overflow:auto;"></div>' +
+        '<div class="pr-new-btns"><div class="btn" id="mm-cancel">关闭</div></div></div>';
+      panel.appendChild(wrap);
+      wrap.querySelector('#mm-cancel').addEventListener('click', () => wrap.remove());
+      (async () => {
+        const r = (window.aqara && window.aqara.listGenerated) ? await window.aqara.listGenerated() : null;
+        const files = (r && r.ok) ? r.files : [];
+        const box = wrap.querySelector('#mm');
+        if (!files.length) { box.innerHTML = '<div class="pintro">还没有生成的 GLB。让「3D 空间生成搭子」先跑一次，导出到 library/generated。</div>'; return; }
+        box.innerHTML = files.map((f) => '<div class="lib-hit" data-f="' + f + '"><div class="lib-hit-main"><div class="lib-hit-name">' + f + '</div></div></div>').join('');
+        box.querySelectorAll('[data-f]').forEach((el) => el.addEventListener('click', () => { wrap.remove(); loadGeneratedModel(el.getAttribute('data-f')); }));
+      })();
+    }
+
     // 加载设计师真实 GLB 场景（home.glb）：成功则替代程序化场景
     (async () => {
       const buf = await loadGlb('home.glb');
@@ -1625,6 +1747,7 @@
           const size = bb.getSize(new THREE.Vector3());
           g2.position.x -= c.x; g2.position.z -= c.z; g2.position.y -= bb.min.y;
           scene.add(g2);
+          modelRoots.push(g2);
           shells.visible = false; walls.visible = false; ceilingGroup.visible = false;
           models.visible = false; deviceGroup.visible = false;
           labelSprites.forEach((s) => { s.visible = false; });

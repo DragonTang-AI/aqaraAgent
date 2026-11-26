@@ -16,7 +16,7 @@
  * ---------------------------------------------------------------------------
  */
 
-const { app, BrowserWindow, WebContentsView, dialog, shell, Tray, Menu, nativeImage, ipcMain, screen } = require('electron');
+const { app, BrowserWindow, WebContentsView, dialog, shell, Tray, Menu, nativeImage, ipcMain, screen, safeStorage } = require('electron');
 const { spawn } = require('node:child_process');
 const fs = require('node:fs');
 const os = require('node:os');
@@ -60,9 +60,51 @@ const SKILLS_DISABLED_DIR = path.join(SKILLS_DIR, '.disabled');
 const CONNECTORS_FILE = path.join(__dirname, 'connectors.json');
 const MCP_PATCH_FILE = path.join(DSH_HOME_DIR, 'profiles', 'web', 'cordis.patch.yml');
 // 资料库（真实文件目录）
-const LIBRARY_DIR = path.join(__dirname, 'library');
 const LIB_IMG_EXT = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.svg', '.heic']);
 const LIB_DOC_EXT = new Set(['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx', '.txt', '.md', '.json', '.csv']);
+// 资料库按项目独立：<projectDir>/library
+const LEGACY_LIBRARY_DIR = path.join(__dirname, 'library');
+const libraryDir = (name) => path.join(projectDirOf(name), 'library');
+function migrateLegacyLibrary() {  try {
+    if (!fs.existsSync(LEGACY_LIBRARY_DIR)) return;
+    const names = fs.readdirSync(LEGACY_LIBRARY_DIR).filter((n) => !n.startsWith('.'));
+    if (!names.length) return;
+    const dst = libraryDir();
+    fs.mkdirSync(dst, { recursive: true });
+    for (const n of names) {
+      const s = path.join(LEGACY_LIBRARY_DIR, n);
+      const d = path.join(dst, n);
+      if (fs.existsSync(d)) continue;
+      try { fs.renameSync(s, d); } catch (_) { try { fs.copyFileSync(s, d); } catch (_) {} }
+    }
+    console.log('[shell] 旧资料库已迁移到项目：', dst);
+  } catch (_) {}
+}
+
+// 安装随应用内置的技能到 ~/.dsh/skills（不覆盖已有，避免覆盖用户修改）
+function installBundledSkills() {
+  try {
+    const srcRoot = path.join(__dirname, 'skills');
+    if (!fs.existsSync(srcRoot)) return;
+    fs.mkdirSync(SKILLS_DIR, { recursive: true });
+    for (const d of fs.readdirSync(srcRoot, { withFileTypes: true })) {
+      if (!d.isDirectory()) continue;
+      const src = path.join(srcRoot, d.name);
+      if (!fs.existsSync(path.join(src, 'SKILL.md'))) continue;
+      const dest = path.join(SKILLS_DIR, d.name);
+      if (fs.existsSync(dest)) continue;
+      fs.cpSync(src, dest, { recursive: true });
+      console.log('[shell] 内置技能已安装 →', d.name);
+    }
+  } catch (e) { console.error('[shell] 安装内置技能失败:', e && e.message); }
+}
+// 凭据中心（系统加密存储）
+const SECURE_DIR = path.join(__dirname, 'secure');
+const CRED_FILE = path.join(SECURE_DIR, 'credentials.enc');
+// Blender 连接器
+const BLENDER_SUPPORT = path.join(os.homedir(), 'Library', 'Application Support', 'Blender');
+const BLENDER_ADDON_SRC = path.join(__dirname, 'connectors', 'blender-addon');
+const BLENDER_MCP_SCRIPT = path.join(__dirname, 'connectors', 'blender-mcp.js');
 let currentProject = process.env.AQARA_PROJECT || '示例户型';
 function projectDirOf(name) { return path.join(PROJECTS_ROOT, name || currentProject); }
 function statePathOf(name) { return path.join(PROJECTS_ROOT, name || currentProject, 'state.json'); }
@@ -149,6 +191,7 @@ function startStateSync() {
     lastMtime = -1;
     sendState(name);
     switchDshWorkspace(name);
+    touchContext();
     console.log('[shell] 切换项目 →', name);
     return { ok: true, current: name };
   });
@@ -159,6 +202,7 @@ function startStateSync() {
     fs.mkdirSync(projectDirOf(n), { recursive: true });
     fs.writeFileSync(statePathOf(n), JSON.stringify(defaultState(n), null, 2));
     registerDshWorkspace(projectDirOf(n), n);
+    try { buildProjectContext(n); } catch (_) {}
     console.log('[shell] 新建项目 →', n);
     return { ok: true, projects: listProjects() };
   });
@@ -311,6 +355,7 @@ function startStateSync() {
       list.push(rec);
       writeConnectors(list);
       applyMcpPatch(list.filter((x) => x.enabled));
+      touchContext();
       console.log('[shell] 新增连接器 →', serverName, '(' + transport + ')');
       return { ok: true, servers: list, patchPath: MCP_PATCH_FILE };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -321,6 +366,7 @@ function startStateSync() {
       list = list.filter((x) => x.id !== id);
       writeConnectors(list);
       applyMcpPatch(list.filter((x) => x.enabled));
+      touchContext();
       console.log('[shell] 删除连接器 →', id);
       return { ok: true, servers: list };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -333,6 +379,7 @@ function startStateSync() {
       x.enabled = !x.enabled;
       writeConnectors(list);
       applyMcpPatch(list.filter((v) => v.enabled));
+      touchContext();
       console.log('[shell] 连接器', x.enabled ? '启用' : '停用', '→', x.serverName);
       return { ok: true, servers: list };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -345,8 +392,174 @@ function startStateSync() {
     } catch (_) {}
     return { ok: true, path: MCP_PATCH_FILE };
   });
+  // ---------- 项目上下文总线（生成给 Agent 读取的清单）----------
+  const contextFilePath = (name) => path.join(projectDirOf(name), '.aqara-context.md');
+  function buildProjectContext(name) {
+    const nm = name || currentProject;
+    const st = readState(nm) || {};
+    let libFiles = [];
+    try { libFiles = fs.readdirSync(libraryDir(nm)).filter((n) => !n.startsWith('.')); } catch (_) {}
+    const skills = scanSkills().filter((s) => !s.disabled).map((s) => s.id);
+    const conns = readConnectors().filter((c) => c.enabled).map((c) => c.serverName);
+    let model = null;
+    try {
+      const mp = path.join(__dirname, 'workspace', 'models', 'home.manifest.json');
+      if (fs.existsSync(mp)) { const m = JSON.parse(fs.readFileSync(mp, 'utf8')); model = { file: 'home.glb', controls: (m.controls || []).length }; }
+    } catch (_) {}
+    const proj = st.project || { name: nm };
+    const rooms = (st.rooms || []).length, devices = (st.devices || []).length, scenes = (st.scenes || []).length;
+    const md = [
+      '# Aqara 项目上下文（自动生成，供 Agent 读取）', '',
+      '- 项目：' + (proj.name || nm),
+      '- 更新：' + new Date().toISOString(),
+      '- 房间数：' + rooms + ' ｜ 设备数：' + devices + ' ｜ 场景数：' + scenes,
+      model ? ('- 数字孪生：' + model.file + '（可控通道 ' + model.controls + '）') : '- 数字孪生：（无）', '',
+      '## 资料库（本项目）',
+      libFiles.length ? libFiles.map((n) => '- library/' + n).join('\n') : '- （空）', '',
+      '## 已启用技能',
+      skills.length ? skills.map((s) => '- ' + s).join('\n') : '- （无）', '',
+      '## 连接器（MCP）',
+      conns.length ? conns.map((c) => '- ' + c).join('\n') : '- （无）', '',
+      '## 使用说明',
+      'Agent 可直接读取本文件了解当前项目的全部资料与可用能力；资料库文件位于 library/ 目录，可直接读取。', '',
+    ].join('\n');
+    try { fs.writeFileSync(contextFilePath(nm), md); } catch (_) {}
+    return { project: proj.name || nm, rooms, devices, scenes, library: libFiles, skills, connectors: conns, model, path: contextFilePath(nm) };
+  }
+  const touchContext = () => { try { buildProjectContext(); } catch (_) {} };
+  ipcMain.handle('aqara:get-context', (_e, name) => { try { return Object.assign({ ok: true }, buildProjectContext(name)); } catch (e) { return { ok: false, reason: e && e.message }; } });
+
+  // ---------- 凭据中心（系统加密存储）+ 适配层调用（含写操作确认/审计）----------
+  const credAvailable = () => { try { return safeStorage.isEncryptionAvailable(); } catch (_) { return false; } };
+  const readCred = () => {
+    try {
+      if (!fs.existsSync(CRED_FILE)) return null;
+      const b64 = fs.readFileSync(CRED_FILE, 'utf8').trim();
+      if (!b64 || !credAvailable()) return null;
+      return JSON.parse(safeStorage.decryptString(Buffer.from(b64, 'base64')));
+    } catch (_) { return null; }
+  };
+  const writeCred = (obj) => {
+    if (!credAvailable()) throw new Error('系统加密不可用，无法保存凭据');
+    fs.mkdirSync(SECURE_DIR, { recursive: true });
+    fs.writeFileSync(CRED_FILE, safeStorage.encryptString(JSON.stringify(obj)).toString('base64'), 'utf8');
+  };
+  const maskVal = (s) => { const v = String(s || ''); return v ? (v.length <= 4 ? '••••' : (v.slice(0, 2) + '••••' + v.slice(-2))) : ''; };
+  const credSummary = () => {
+    const c = readCred();
+    return {
+      available: credAvailable(),
+      configured: !!(c && c.baseUrl && c.token),
+      kind: c ? (c.kind || 'openapi') : 'openapi',
+      baseUrl: c ? (c.baseUrl || '') : '',
+      region: c ? (c.region || '') : '',
+      orgId: c ? (c.orgId || '') : '',
+      appKeyMasked: maskVal(c && c.appKey),
+      tokenMasked: maskVal(c && c.token),
+    };
+  };
+  ipcMain.handle('aqara:cred-status', () => ({ ok: true, ...credSummary() }));
+  ipcMain.handle('aqara:save-credentials', (_e, c) => {
+    try {
+      const prev = readCred() || {};
+      const next = {
+        kind: String((c && c.kind) || prev.kind || 'openapi'),
+        baseUrl: (String((c && c.baseUrl) || '').trim() || prev.baseUrl || ''),
+        region: (String((c && c.region) || '').trim() || prev.region || ''),
+        orgId: (String((c && c.orgId) || '').trim() || prev.orgId || ''),
+        appKey: String((c && c.appKey) || prev.appKey || '').trim(),
+        token: String((c && c.token) || prev.token || '').trim(),
+        paths: (c && c.paths) || prev.paths || {},
+      };
+      if (!next.baseUrl || !next.token) return { ok: false, reason: 'baseUrl 与 token 必填' };
+      writeCred(next);
+      console.log('[shell] 凭据已加密保存');
+      return { ok: true, ...credSummary() };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:clear-credentials', () => { try { fs.rmSync(CRED_FILE, { force: true }); return { ok: true }; } catch (e) { return { ok: false, reason: e && e.message }; } });
+
+  const auditLog = (entry) => {
+    try { fs.appendFileSync(path.join(projectDirOf(), 'audit.log'), JSON.stringify(Object.assign({ ts: new Date().toISOString() }, entry)) + '\n'); } catch (_) {}
+  };
+  const WRITE_METHODS = new Set(['controlDevice', 'executeScene']);
+  ipcMain.handle('aqara:adapter-call', async (_e, method, params) => {
+    try {
+      const cred = readCred();
+      const { createAdapter } = require(path.join(__dirname, 'adapters', 'index.js'));
+      const adapter = createAdapter(cred);
+      if (!adapter) return { ok: false, reason: 'not_configured', message: '未配置 Aqara 接入凭据' };
+      if (typeof adapter[method] !== 'function') return { ok: false, reason: 'bad_method' };
+      if (WRITE_METHODS.has(method) && !(params && params.confirm)) {
+        return { ok: false, reason: 'need_confirm', message: '该操作会改动真实设备，请确认后执行', method, params };
+      }
+      const data = await adapter[method](params && params.id, params);
+      if (WRITE_METHODS.has(method)) auditLog({ method, params, ok: true });
+      return { ok: true, data };
+    } catch (e) {
+      if (WRITE_METHODS.has(method)) auditLog({ method, params, ok: false, error: e && e.message });
+      return { ok: false, reason: 'error', message: e && e.message };
+    }
+  });
+
+  // ---------- Blender 连接器：检测 / 安装 / 状态 / 打开 ----------
+  const detectBlender = () => {
+    const apps = ['/Applications/Blender.app', path.join(os.homedir(), 'Applications', 'Blender.app')];
+    const appPath = apps.find((p) => fs.existsSync(p)) || null;
+    let versions = [];
+    try {
+      versions = fs.readdirSync(BLENDER_SUPPORT, { withFileTypes: true })
+        .filter((d) => d.isDirectory() && /^\d+\.\d+/.test(d.name)).map((d) => d.name)
+        .sort((a, b) => (parseFloat(b) || 0) - (parseFloat(a) || 0));
+    } catch (_) {}
+    const version = versions[0] || '';
+    const addonsDir = version ? path.join(BLENDER_SUPPORT, version, 'scripts', 'addons') : '';
+    const addonInstalled = addonsDir ? fs.existsSync(path.join(addonsDir, 'aqara_mcp_bridge', '__init__.py')) : false;
+    return { installed: !!appPath, appPath, version, versions, addonsDir, addonInstalled };
+  };
+  ipcMain.handle('aqara:blender-status', async () => {
+    const d = detectBlender();
+    let bridge = false, bridgeVersion = '';
+    try {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 1200);
+      const r = await fetch('http://127.0.0.1:9887/ping', { signal: ctrl.signal });
+      clearTimeout(t);
+      const j = await r.json();
+      bridge = !!(j && j.ok);
+      bridgeVersion = (j && j.blender) || '';
+    } catch (_) {}
+    return Object.assign({ ok: true, bridge, bridgeVersion }, d);
+  });
+  ipcMain.handle('aqara:blender-install', () => {
+    try {
+      const d = detectBlender();
+      if (!d.appPath) return { ok: false, reason: '未检测到 Blender，请确认已安装到「应用程序」' };
+      if (!d.addonsDir) return { ok: false, reason: '未找到 Blender 用户目录，请先打开一次 Blender 以生成配置' };
+      fs.mkdirSync(d.addonsDir, { recursive: true });
+      const dest = path.join(d.addonsDir, 'aqara_mcp_bridge');
+      fs.rmSync(dest, { recursive: true, force: true });
+      fs.cpSync(BLENDER_ADDON_SRC, dest, { recursive: true });
+      const list = readConnectors();
+      if (!list.some((x) => x.serverName === 'blender')) {
+        list.push({ id: 'cn-' + Date.now().toString(36), serverName: 'blender', name: 'Blender', transport: 'stdio', command: REAL_NODE, args: [BLENDER_MCP_SCRIPT], url: '', enabled: true });
+        writeConnectors(list);
+        applyMcpPatch(list.filter((x) => x.enabled));
+        touchContext();
+      }
+      console.log('[shell] Blender 插件已安装 →', dest);
+      return { ok: true, dest, connector: 'blender' };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:blender-open', () => {
+    try { const d = detectBlender(); if (d.appPath) shell.openPath(d.appPath); return { ok: !!d.appPath }; }
+    catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+
   // 启动时按注册表同步一次 patch（保持磁盘与 UI 一致）
   try { applyMcpPatch(readConnectors().filter((x) => x.enabled)); } catch (_) {}
+  // 首次生成项目上下文
+  try { buildProjectContext(); } catch (_) {}
 
   // ---------- 资料库（真实文件）----------
   const walkLibrary = () => {
@@ -373,11 +586,11 @@ function startStateSync() {
         });
       }
     };
-    walk(LIBRARY_DIR, '');
+    walk(libraryDir(), '');
     out.sort((a, b) => b.mtime - a.mtime);
     return out;
   };
-  const libAbs = (rel) => path.join(LIBRARY_DIR, String(rel || '').replace(/\.\.(\/|\\)/g, ''));
+  const libAbs = (rel) => path.join(libraryDir(), String(rel || '').replace(/\.\.(\/|\\)/g, ''));
 
   // 语义向量检索（本地：中文按字/双字切分 + TF-IDF 加权 + 余弦相似度）
   const VEC_DIM = 1024;
@@ -482,11 +695,11 @@ function startStateSync() {
   };
 
   ipcMain.handle('aqara:list-library', () => {
-    try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); } catch (_) {}
+    try { fs.mkdirSync(libraryDir(), { recursive: true }); } catch (_) {}
     const files = walkLibrary();
     return {
       ok: true,
-      dir: LIBRARY_DIR,
+      dir: libraryDir(),
       files,
       uploads: files.filter((f) => !f.isGenerated).length,
       generated: files.filter((f) => f.isGenerated).length,
@@ -514,19 +727,19 @@ function startStateSync() {
     try {
       const r = await dialog.showOpenDialog({ title: '上传到资料库', properties: ['openFile', 'multiSelections'] });
       if (r.canceled || !r.filePaths.length) return { ok: false, canceled: true };
-      fs.mkdirSync(LIBRARY_DIR, { recursive: true });      for (const src of r.filePaths) {
+      fs.mkdirSync(libraryDir(), { recursive: true });      for (const src of r.filePaths) {
         let name = path.basename(src);
-        let dest = path.join(LIBRARY_DIR, name);
+        let dest = path.join(libraryDir(), name);
         if (fs.existsSync(dest)) {
           const base = name.replace(/\.[^.]+$/, '');
           const ext = path.extname(name);
           name = base + '-' + Date.now().toString(36) + ext;
-          dest = path.join(LIBRARY_DIR, name);
+          dest = path.join(libraryDir(), name);
         }
         fs.copyFileSync(src, dest);
       }
       console.log('[shell] 资料库导入', r.filePaths.length, '个文件');
-      libIndex = null; vecIndex = null;
+      libIndex = null; vecIndex = null; touchContext();
       return { ok: true, files: walkLibrary() };
     } catch (e) { return { ok: false, reason: e && e.message }; }
   });
@@ -542,9 +755,9 @@ function startStateSync() {
     } catch (_) { return null; }
   });
   ipcMain.handle('aqara:open-library-item', (_e, rel) => { try { shell.openPath(libAbs(rel)); } catch (_) {} return { ok: true }; });
-  ipcMain.handle('aqara:reveal-library', () => { try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); shell.openPath(LIBRARY_DIR); } catch (_) {} return { ok: true, dir: LIBRARY_DIR }; });
+  ipcMain.handle('aqara:reveal-library', () => { try { fs.mkdirSync(libraryDir(), { recursive: true }); shell.openPath(libraryDir()); } catch (_) {} return { ok: true, dir: libraryDir() }; });
   ipcMain.handle('aqara:delete-library-item', (_e, rel) => {
-    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); libIndex = null; vecIndex = null; return { ok: true, files: walkLibrary() }; }
+    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); libIndex = null; vecIndex = null; touchContext(); return { ok: true, files: walkLibrary() }; }
     catch (e) { return { ok: false, reason: e && e.message }; }
   });
   // 把选中的资料库文件复制进当前项目工作区（Agent 可读）→ 返回工作区相对路径
@@ -562,6 +775,20 @@ function startStateSync() {
       }
       return { ok: true, copied };
     } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+
+  // 数字孪生：加载资料库生成的 GLB（library/generated）
+  const generatedDir = () => path.join(libraryDir(), 'generated');
+  ipcMain.handle('aqara:list-generated', () => {
+    try {
+      const dir = generatedDir();
+      const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter((n) => n.toLowerCase().endsWith('.glb')) : [];
+      return { ok: true, files, dir };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:load-generated', (_e, name) => {
+    try { return fs.readFileSync(path.join(generatedDir(), path.basename(String(name || '')))); }
+    catch (_) { return null; }
   });
 
   // ---------- 扫码上传：临时 HTTP 服务 + 二维码（手机扫码上传到资料库）----------
@@ -636,12 +863,12 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
               const m = /boundary=(.+)$/.exec(req.headers['content-type'] || '');
               const boundary = m ? m[1].replace(/^"|"$/g, '') : '';
               const files = boundary ? parseMultipart(buf, boundary) : [];
-              fs.mkdirSync(LIBRARY_DIR, { recursive: true });
+              fs.mkdirSync(libraryDir(), { recursive: true });
               const saved = [];
               for (const f of files) {
                 let name = f.name || ('upload-' + Date.now() + '.bin');
-                let dest = path.join(LIBRARY_DIR, name);
-                if (fs.existsSync(dest)) { const b = name.replace(/\.[^.]+$/, ''), ext = path.extname(name); name = b + '-' + Date.now().toString(36) + ext; dest = path.join(LIBRARY_DIR, name); }
+                let dest = path.join(libraryDir(), name);
+                if (fs.existsSync(dest)) { const b = name.replace(/\.[^.]+$/, ''), ext = path.extname(name); name = b + '-' + Date.now().toString(36) + ext; dest = path.join(libraryDir(), name); }
                 fs.writeFileSync(dest, f.data); saved.push(name);
               }
               console.log('[shell] 扫码上传', saved.length, '个文件');
@@ -729,6 +956,7 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
       const body = String((s && s.body) || '').trim() || ('# ' + raw + '\n\n## 何时使用\n- \n\n## 步骤\n1. \n');
       const fm = ['---', 'name: ' + slug, 'description: ' + desc, when ? ('whenToUse: ' + when) : null, '---', '', body, ''].filter((x) => x !== null).join('\n');
       fs.writeFileSync(path.join(dir, 'SKILL.md'), fm);
+      touchContext();
       console.log('[shell] 新建技能 →', slug);
       return { ok: true, skills: scanSkills(), id: slug };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -746,6 +974,7 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
       if (fs.existsSync(dest)) return { ok: false, reason: '同名技能已存在：' + name };
       fs.mkdirSync(SKILLS_DIR, { recursive: true });
       fs.cpSync(src, dest, { recursive: true });
+      touchContext();
       console.log('[shell] 导入技能 →', name);
       return { ok: true, skills: scanSkills(), id: name };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -758,6 +987,7 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
       fs.mkdirSync(path.dirname(to), { recursive: true });
       fs.rmSync(to, { recursive: true, force: true });
       fs.renameSync(from, to);
+      touchContext();
       console.log('[shell] 技能' + (enabled ? '启用' : '停用') + ' →', id);
       return { ok: true, skills: scanSkills() };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -767,6 +997,7 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
       const p = skillPathOf(id, disabled);
       if (!fs.existsSync(p)) return { ok: false, reason: '未找到技能' };
       fs.rmSync(p, { recursive: true, force: true });
+      touchContext();
       console.log('[shell] 删除技能 →', id);
       return { ok: true, skills: scanSkills() };
     } catch (e) { return { ok: false, reason: e && e.message }; }
@@ -781,6 +1012,7 @@ button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;ba
     if (mtime === lastMtime) return;
     lastMtime = mtime;
     if (sendState()) {
+      touchContext();
       console.log('[shell] 工作区数据已更新 → 通知右栏重渲染');
       if (process.env.AQARA_CAPTURE) {
         panelView.webContents.capturePage().then((img) => {
@@ -1138,6 +1370,8 @@ async function waitForCompletion() {
 function wireAgentBridge() {
   ipcMain.on('aqara:send', (_e, text) => {
     const t = String(text || '').trim();
+    // 任何向 Agent 自动发送的动作，先切回对话视图，避免用户不知道发生了什么
+    if (panelMode !== 'normal') setPanelMode('normal');
     if (!t || !dshView || dshView.webContents.isDestroyed()) return;
     const code = `(() => {
       try {
@@ -1220,6 +1454,8 @@ app.whenReady().then(async () => {
   createTray();
   startThemeSync();
   startStateSync();
+  migrateLegacyLibrary();
+  installBundledSkills();
   wireAgentBridge();
   ipcMain.on('aqara:split-start', startSplit);
   ipcMain.on('aqara:split-end', endSplit);

@@ -10,3 +10,13 @@ out/
 # 本地环境
 .env
 .env.local
+
+# 项目运行时数据（用户资料、自动生成的上下文）
+desktop-shell/projects/*/library/
+desktop-shell/projects/*/.aqara-context.md
+desktop-shell/projects/*/audit.log
+# 凭据（加密存储，绝不入库）
+desktop-shell/secure/
+
+# 运行时连接器注册表（含本机路径）
+desktop-shell/connectors.json
