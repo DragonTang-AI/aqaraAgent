@@ -21,6 +21,7 @@ const { spawn } = require('node:child_process');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
+const http = require('node:http');
 
 app.setName('Aqara 空间智能');
 
@@ -58,6 +59,10 @@ const SKILLS_DISABLED_DIR = path.join(SKILLS_DIR, '.disabled');
 // 连接器（MCP）注册表 + 写入 dsh 的真实 patch 配置
 const CONNECTORS_FILE = path.join(__dirname, 'connectors.json');
 const MCP_PATCH_FILE = path.join(DSH_HOME_DIR, 'profiles', 'web', 'cordis.patch.yml');
+// 资料库（真实文件目录）
+const LIBRARY_DIR = path.join(__dirname, 'library');
+const LIB_IMG_EXT = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp', '.svg', '.heic']);
+const LIB_DOC_EXT = new Set(['.pdf', '.doc', '.docx', '.ppt', '.pptx', '.xls', '.xlsx', '.txt', '.md', '.json', '.csv']);
 let currentProject = process.env.AQARA_PROJECT || '示例户型';
 function projectDirOf(name) { return path.join(PROJECTS_ROOT, name || currentProject); }
 function statePathOf(name) { return path.join(PROJECTS_ROOT, name || currentProject, 'state.json'); }
@@ -342,6 +347,203 @@ function startStateSync() {
   });
   // 启动时按注册表同步一次 patch（保持磁盘与 UI 一致）
   try { applyMcpPatch(readConnectors().filter((x) => x.enabled)); } catch (_) {}
+
+  // ---------- 资料库（真实文件）----------
+  const walkLibrary = () => {
+    const out = [];
+    const walk = (dir, rel) => {
+      let entries = [];
+      try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch (_) { return; }
+      for (const e of entries) {
+        if (e.name.startsWith('.')) continue;
+        const abs = path.join(dir, e.name);
+        const r = rel ? (rel + '/' + e.name) : e.name;
+        if (e.isDirectory()) { walk(abs, r); continue; }
+        let st = null; try { st = fs.statSync(abs); } catch (_) {}
+        const ext = path.extname(e.name).toLowerCase();
+        out.push({
+          name: e.name,
+          rel: r,
+          size: st ? st.size : 0,
+          mtime: st ? st.mtimeMs : 0,
+          date: st ? new Date(st.mtime).toISOString().slice(0, 10) : '',
+          kind: LIB_IMG_EXT.has(ext) ? 'image' : (LIB_DOC_EXT.has(ext) ? 'doc' : 'other'),
+          ext: ext.replace('.', ''),
+          isGenerated: r.startsWith('generated/'),
+        });
+      }
+    };
+    walk(LIBRARY_DIR, '');
+    out.sort((a, b) => b.mtime - a.mtime);
+    return out;
+  };
+  const libAbs = (rel) => path.join(LIBRARY_DIR, String(rel || '').replace(/\.\.(\/|\\)/g, ''));
+
+  ipcMain.handle('aqara:list-library', () => {
+    try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); } catch (_) {}
+    const files = walkLibrary();
+    return {
+      ok: true,
+      dir: LIBRARY_DIR,
+      files,
+      uploads: files.filter((f) => !f.isGenerated).length,
+      generated: files.filter((f) => f.isGenerated).length,
+    };
+  });
+  ipcMain.handle('aqara:import-library', async () => {
+    try {
+      const r = await dialog.showOpenDialog({ title: '上传到资料库', properties: ['openFile', 'multiSelections'] });
+      if (r.canceled || !r.filePaths.length) return { ok: false, canceled: true };
+      fs.mkdirSync(LIBRARY_DIR, { recursive: true });
+      for (const src of r.filePaths) {
+        let name = path.basename(src);
+        let dest = path.join(LIBRARY_DIR, name);
+        if (fs.existsSync(dest)) {
+          const base = name.replace(/\.[^.]+$/, '');
+          const ext = path.extname(name);
+          name = base + '-' + Date.now().toString(36) + ext;
+          dest = path.join(LIBRARY_DIR, name);
+        }
+        fs.copyFileSync(src, dest);
+      }
+      console.log('[shell] 资料库导入', r.filePaths.length, '个文件');
+      return { ok: true, files: walkLibrary() };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  ipcMain.handle('aqara:library-thumb', (_e, rel) => {
+    try {
+      const abs = libAbs(rel);
+      const img = nativeImage.createFromPath(abs);
+      if (img.isEmpty()) return null;
+      const size = img.getSize();
+      const w = Math.min(480, size.width || 480);
+      const small = img.resize({ width: w });
+      return small.toDataURL();
+    } catch (_) { return null; }
+  });
+  ipcMain.handle('aqara:open-library-item', (_e, rel) => { try { shell.openPath(libAbs(rel)); } catch (_) {} return { ok: true }; });
+  ipcMain.handle('aqara:reveal-library', () => { try { fs.mkdirSync(LIBRARY_DIR, { recursive: true }); shell.openPath(LIBRARY_DIR); } catch (_) {} return { ok: true, dir: LIBRARY_DIR }; });
+  ipcMain.handle('aqara:delete-library-item', (_e, rel) => {
+    try { fs.rmSync(libAbs(rel), { recursive: true, force: true }); return { ok: true, files: walkLibrary() }; }
+    catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+  // 把选中的资料库文件复制进当前项目工作区（Agent 可读）→ 返回工作区相对路径
+  ipcMain.handle('aqara:library-to-chat', (_e, rels) => {
+    try {
+      const dstDir = path.join(projectDirOf(), 'library');
+      fs.mkdirSync(dstDir, { recursive: true });
+      const copied = [];
+      for (const rel of (Array.isArray(rels) ? rels : [])) {
+        const src = libAbs(rel);
+        if (!fs.existsSync(src)) continue;
+        const name = path.basename(src);
+        fs.copyFileSync(src, path.join(dstDir, name));
+        copied.push('library/' + name);
+      }
+      return { ok: true, copied };
+    } catch (e) { return { ok: false, reason: e && e.message }; }
+  });
+
+  // ---------- 扫码上传：临时 HTTP 服务 + 二维码（手机扫码上传到资料库）----------
+  let qrServer = null, qrToken = '', qrUrl = '';
+  const lanIp = () => {
+    const ifs = os.networkInterfaces();
+    for (const k of Object.keys(ifs)) for (const a of (ifs[k] || [])) if (a && a.family === 'IPv4' && !a.internal) return a.address;
+    return '127.0.0.1';
+  };
+  const qrSvg = (text) => {
+    const QRCode = require(path.join(__dirname, 'vendor', 'qrcode', 'index.js'));
+    const ECL = require(path.join(__dirname, 'vendor', 'qrcode', 'QRErrorCorrectLevel.js'));
+    const q = new QRCode(-1, ECL.M);
+    q.addData(text); q.make();
+    const n = q.getModuleCount(), quiet = 4, scale = 6, size = (n + quiet * 2) * scale;
+    let rects = '';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) rects += '<rect x="' + ((c + quiet) * scale) + '" y="' + ((r + quiet) * scale) + '" width="' + scale + '" height="' + scale + '"/>';
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="' + size + '" height="' + size + '" viewBox="0 0 ' + size + ' ' + size + '" shape-rendering="crispEdges"><rect width="' + size + '" height="' + size + '" fill="#fff"/><g fill="#000">' + rects + '</g></svg>';
+  };
+  const UPLOAD_PAGE = (token) => `<!DOCTYPE html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>上传到 Aqara 资料库</title>
+<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;background:#f5f5f5;color:#111;padding:24px}
+.card{background:#fff;border-radius:16px;padding:22px;max-width:520px;margin:0 auto;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+h1{font-size:18px;margin:0 0 6px}.hint{font-size:13px;color:#777;margin:0 0 18px}
+input[type=file]{width:100%;padding:14px;border:1.5px dashed #ccc;border-radius:12px;background:#fafafa;font-size:13px;box-sizing:border-box}
+button{margin-top:14px;width:100%;padding:13px;border:none;border-radius:12px;background:#111;color:#fff;font-size:15px;font-weight:700}
+.sel{margin-top:12px;font-size:12px;color:#666;word-break:break-all}</style></head>
+<body><div class="card"><h1>上传到 Aqara 资料库</h1><p class="hint">选择照片或文件，上传后会出现在桌面端「资料库」。</p>
+<form method="post" enctype="multipart/form-data" action="/u/${token}/upload">
+<input type="file" name="files" multiple accept="image/*,.pdf,.doc,.docx,.txt,.md,.json,.csv,.ppt,.pptx,.xls,.xlsx" onchange="document.getElementById('sel').textContent=this.files.length+' 个文件已选择'">
+<button type="submit">上传</button></form><div class="sel" id="sel"></div></div></body></html>`;
+  const parseMultipart = (buf, boundary) => {
+    const out = [];
+    const delim = Buffer.from('--' + boundary);
+    let start = buf.indexOf(delim);
+    while (start !== -1) {
+      const after = start + delim.length;
+      if (buf[after] === 0x2d && buf[after + 1] === 0x2d) break;
+      const partStart = after + 2;
+      const next = buf.indexOf(delim, partStart);
+      if (next === -1) break;
+      let part = buf.slice(partStart, next);
+      if (part.length >= 2 && part[part.length - 2] === 0x0d && part[part.length - 1] === 0x0a) part = part.slice(0, part.length - 2);
+      const he = part.indexOf('\r\n\r\n');
+      if (he !== -1) {
+        const head = part.slice(0, he).toString('utf8');
+        const body = part.slice(he + 4);
+        const fn = /filename="([^"]*)"/.exec(head);
+        if (fn && fn[1]) out.push({ name: path.basename(decodeURIComponent(fn[1])), data: body });
+      }
+      start = next;
+    }
+    return out;
+  };
+  const stopQrServer = () => { try { if (qrServer) qrServer.close(); } catch (_) {} qrServer = null; };
+  ipcMain.handle('aqara:qr-start', async () => {
+    stopQrServer();
+    qrToken = Math.random().toString(36).slice(2, 10);
+    return await new Promise((resolve) => {
+      const server = http.createServer((req, res) => {
+        const u = new URL(req.url, 'http://x');
+        const p = u.pathname;
+        const base = '/u/' + qrToken;
+        if (req.method === 'GET' && p === base) {
+          res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' }); res.end(UPLOAD_PAGE(qrToken)); return;
+        }
+        if (req.method === 'POST' && p === base + '/upload') {
+          const chunks = [];
+          req.on('data', (c) => chunks.push(c));
+          req.on('end', () => {
+            try {
+              const buf = Buffer.concat(chunks);
+              const m = /boundary=(.+)$/.exec(req.headers['content-type'] || '');
+              const boundary = m ? m[1].replace(/^"|"$/g, '') : '';
+              const files = boundary ? parseMultipart(buf, boundary) : [];
+              fs.mkdirSync(LIBRARY_DIR, { recursive: true });
+              const saved = [];
+              for (const f of files) {
+                let name = f.name || ('upload-' + Date.now() + '.bin');
+                let dest = path.join(LIBRARY_DIR, name);
+                if (fs.existsSync(dest)) { const b = name.replace(/\.[^.]+$/, ''), ext = path.extname(name); name = b + '-' + Date.now().toString(36) + ext; dest = path.join(LIBRARY_DIR, name); }
+                fs.writeFileSync(dest, f.data); saved.push(name);
+              }
+              console.log('[shell] 扫码上传', saved.length, '个文件');
+              if (panelView && !panelView.webContents.isDestroyed()) panelView.webContents.send('aqara:library-uploaded', { files: saved });
+              res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+              res.end('<!DOCTYPE html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><body style="font-family:-apple-system,sans-serif;padding:36px;text-align:center"><div style="font-size:44px">✅</div><h2>上传成功</h2><p style="color:#666">' + saved.length + ' 个文件已加入资料库</p><p style="color:#999;font-size:12px">可直接关闭此页</p></body>');
+            } catch (e) { res.writeHead(500); res.end('upload failed'); }
+          });
+          return;
+        }
+        res.writeHead(404); res.end('not found');
+      });
+      server.on('error', () => resolve({ ok: false, reason: '无法启动上传服务' }));
+      server.listen(0, '0.0.0.0', () => {
+        qrServer = server;
+        const port = server.address().port;
+        qrUrl = 'http://' + lanIp() + ':' + port + '/u/' + qrToken;
+        resolve({ ok: true, url: qrUrl, svg: qrSvg(qrUrl), ip: lanIp(), port });
+      });
+    });
+  });
+  ipcMain.handle('aqara:qr-stop', () => { stopQrServer(); return { ok: true }; });
 
   // ---------- 真·技能管理（读写 ~/.dsh/skills，dsh 实时发现）----------
   const parseFrontmatter = (text) => {

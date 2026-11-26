@@ -56,13 +56,14 @@
   // 左侧入口：视觉上是侧栏里的一行（对齐 dsh 侧栏、随折叠/展开自适应），
   // 但它是独立浮层（不动 React 管理的 DOM），放在「设置」上方空位，不遮挡任何图标。
   const NAV_ICON = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4h12M2 8h12M2 12h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>';
+  const LIB_ICON = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h2.6l1.2 1.5h5.2A1.5 1.5 0 0 1 14 6v6.5A1.5 1.5 0 0 1 12.5 14h-9A1.5 1.5 0 0 1 2 12.5v-8Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>';
 
   const ensureNavStyle = () => {
     if (document.getElementById('aqara-nav-style')) return;
     const st = document.createElement('style');
     st.id = 'aqara-nav-style';
     st.textContent = [
-      '#aqara-nav{position:fixed;z-index:2147482000;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;}',
+      '#aqara-nav{position:fixed;z-index:2147482000;display:flex;flex-direction:column;gap:2px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;}',
       '#aqara-nav button{display:flex;align-items:center;gap:10px;width:100%;box-sizing:border-box;padding:8px 10px;border:none;background:transparent;border-radius:8px;cursor:pointer;font:inherit;font-size:12.5px;text-align:left;color:#c9c9c9;}',
       '#aqara-nav button:hover{background:rgba(127,127,127,.18);}',
       '#aqara-nav .an-ic{width:18px;height:18px;flex:none;display:flex;align-items:center;justify-content:center;}',
@@ -80,11 +81,16 @@
     if (!box) {
       box = document.createElement('div');
       box.id = 'aqara-nav';
-      box.innerHTML = '<button type="button" title="搭子 · 技能 · 连接器"><span class="an-ic">' + NAV_ICON + '</span><span class="an-lb">搭子 · 技能 · 连接器</span></button>';
-      box.addEventListener('click', () => { if (window.aqaraNav) window.aqaraNav.open('partners'); });
+      box.innerHTML =
+        '<button type="button" data-tab="partners" title="搭子 · 技能 · 连接器"><span class="an-ic">' + NAV_ICON + '</span><span class="an-lb">搭子 · 技能 · 连接器</span></button>' +
+        '<button type="button" data-tab="library" title="资料库"><span class="an-ic">' + LIB_ICON + '</span><span class="an-lb">资料库</span></button>';
+      box.addEventListener('click', (e) => {
+        const b = e.target.closest('button');
+        if (b && window.aqaraNav) window.aqaraNav.open(b.getAttribute('data-tab'));
+      });
       document.body.appendChild(box);
     }
-    // 对齐到 dsh 侧栏：宽度随折叠/展开变化，位置放在「设置」上方空位
+    // 对齐到 dsh 侧栏：宽度随折叠/展开变化，位置放在「设置」上方空位（两行）
     const col = document.querySelector('[class*="sidebarCol"]');
     if (!col) return;
     const cr = col.getBoundingClientRect();
@@ -93,7 +99,7 @@
     const sr = sa ? sa.getBoundingClientRect() : null;
     const w = collapsed ? 40 : Math.max(120, cr.width - 16);
     const left = collapsed ? 8 : (cr.left + 8);
-    const top = sr ? (sr.top - 42) : (window.innerHeight - 92);
+    const top = sr ? (sr.top - 82) : (window.innerHeight - 132);
     box.classList.toggle('collapsed', collapsed);
     box.style.left = left + 'px';
     box.style.top = Math.max(cr.top + 60, top) + 'px';

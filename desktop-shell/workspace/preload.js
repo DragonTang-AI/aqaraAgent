@@ -41,6 +41,18 @@ contextBridge.exposeInMainWorld('aqara', {
   revealSkillsDir: () => ipcRenderer.invoke('aqara:reveal-skills-dir'),
   // 左栏入口 → 激活指定标签页
   onActivateTab: (cb) => { ipcRenderer.on('aqara:activate-tab', (_e, t) => { try { cb(t); } catch (_) {} }); },
+  // 资料库（真实文件）
+  listLibrary: () => ipcRenderer.invoke('aqara:list-library'),
+  importLibrary: () => ipcRenderer.invoke('aqara:import-library'),
+  libraryThumb: (rel) => ipcRenderer.invoke('aqara:library-thumb', rel),
+  openLibraryItem: (rel) => ipcRenderer.invoke('aqara:open-library-item', rel),
+  revealLibrary: () => ipcRenderer.invoke('aqara:reveal-library'),
+  deleteLibraryItem: (rel) => ipcRenderer.invoke('aqara:delete-library-item', rel),
+  libraryToChat: (rels) => ipcRenderer.invoke('aqara:library-to-chat', rels),
+  // 扫码上传（临时 HTTP + 二维码）
+  qrStart: () => ipcRenderer.invoke('aqara:qr-start'),
+  qrStop: () => ipcRenderer.invoke('aqara:qr-stop'),
+  onLibraryUploaded: (cb) => { ipcRenderer.on('aqara:library-uploaded', (_e, d) => { try { cb(d); } catch (_) {} }); },
   // 预览区模式：normal(并排) / max(放大填充) / hidden(收起为窄条)
   setPanelMode: (m) => ipcRenderer.send('aqara:set-panel-mode', String(m || '')),
   onPanelMode: (cb) => { ipcRenderer.on('aqara:panel-mode', (_e, m) => { try { cb(m); } catch (_) {} }); },

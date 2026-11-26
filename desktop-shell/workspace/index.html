@@ -154,6 +154,33 @@
   .pr-new-btns{display:flex;gap:8px;justify-content:flex-end;}
   .pr-new-btns .btn{padding:8px 14px;}
 
+  /* 资料库 */
+  .lib{display:flex;height:100%;min-height:0;}
+  .lib-side{width:190px;flex:none;border-right:1px solid var(--line);padding:12px 8px;background:var(--panel2);}
+  .lib-side-item{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:8px;font-size:12.5px;cursor:pointer;color:var(--muted);margin-bottom:4px;}
+  .lib-side-item:hover{background:var(--chip);}
+  .lib-side-item.on{background:var(--active);color:var(--active-fg);font-weight:700;}
+  .lib-side-item .n{font-family:ui-monospace,Menlo,monospace;font-size:11px;opacity:.85;}
+  .lib-main{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0;}
+  .lib-top{display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);}
+  .lib-top input{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--fg);font-size:12px;outline:none;}
+  .lib-top .btn{white-space:nowrap;padding:8px 12px;}
+  .lib-groups{flex:1;overflow:auto;padding:10px 16px 90px;}
+  .lib-g{font-size:13.5px;font-weight:800;margin:14px 0 10px;}
+  .lib-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px;}
+  .lib-card{position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--panel);cursor:pointer;}
+  .lib-card:hover{border-color:var(--line2);}
+  .lib-card.sel{outline:2px solid var(--active);}
+  .lib-thumb{width:100%;height:108px;object-fit:cover;display:block;background:var(--panel2);}
+  .lib-ext{width:100%;height:108px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:var(--muted);background:var(--panel2);letter-spacing:.06em;}
+  .lib-name{font-size:11px;padding:6px 8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .lib-ck{position:absolute;top:6px;left:6px;width:18px;height:18px;border-radius:5px;border:1.5px solid #fff;background:rgba(0,0,0,.35);z-index:2;box-shadow:0 1px 4px rgba(0,0,0,.35);}
+  .lib-card.sel .lib-ck{background:var(--active);border-color:var(--active);}
+  .lib-bar{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:none;gap:8px;align-items:center;background:var(--active);color:var(--active-fg);border-radius:99px;padding:8px 12px;font-size:12px;z-index:40;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+  .lib-bar.show{display:flex;}
+  .lib-bar .btn{border:none;padding:6px 10px;font-size:12px;}
+  .lib-bar .btn.ghost{background:transparent;color:inherit;}
+
   /* 执行中 / 完成 回填 */
   [data-send]{transition:opacity .2s, box-shadow .2s;}
   [data-send].is-sending{opacity:.45;animation:sendpulse 1s infinite;}
@@ -238,6 +265,7 @@
   const DEFS = {
     twin:     { title: '数字孪生' },
     partners: { title: '搭子·技能·连接器' },
+    library:  { title: '资料库' },
     devices:  { title: '设备' },
     scenes:  { title: '场景' },
     files:   { title: '文件' },
@@ -490,6 +518,8 @@
       init3D(panel.querySelector('#view'), panel);
     } else if (type === 'partners') {
       buildPartners(panel);
+    } else if (type === 'library') {
+      buildLibrary(panel);
     } else if (type === 'devices') {
       panel.innerHTML = `<div class="pad">
         <div class="sec-title">设备点位 / DEVICES</div>
@@ -863,6 +893,169 @@
 
     renderBar();
     render();
+  }
+
+  // ---------- 资料库（真实文件）----------
+  let libRefreshFn = null;
+  async function buildLibrary(panel) {
+    let data = { files: [], uploads: 0, generated: 0 };
+    let sub = 'uploads', q = '';
+    const sel = new Set();
+
+    panel.innerHTML = `
+      <div class="lib">
+        <div class="lib-side">
+          <div class="lib-side-item on" data-sub="uploads">上传历史 <span class="n" id="lib-n1">0</span></div>
+          <div class="lib-side-item" data-sub="generated">生成资产 <span class="n" id="lib-n2">0</span></div>
+        </div>
+        <div class="lib-main">
+          <div class="lib-top">
+            <input id="lib-q" placeholder="搜索资料" />
+            <div class="btn" id="lib-open-dir">打开目录</div>
+            <div class="btn" id="lib-qr">扫码上传</div>
+            <div class="btn primary" id="lib-upload">本地上传</div>
+          </div>
+          <div class="lib-groups" id="lib-groups"></div>
+        </div>
+        <div class="lib-bar" id="lib-bar">
+          <span id="lib-sel">已选 0</span>
+          <div class="btn ghost" id="lib-clear">清空</div>
+          <div class="btn" id="lib-tosend" style="background:#fff;color:#111;">加入对话</div>
+        </div>
+      </div>`;
+
+    const $ = (s) => panel.querySelector(s);
+    const $groups = $('#lib-groups'), $bar = $('#lib-bar'), $sel = $('#lib-sel');
+
+    async function load() {
+      const r = (window.aqara && window.aqara.listLibrary) ? await window.aqara.listLibrary() : null;
+      if (r && r.ok) data = r;
+      $('#lib-n1').textContent = data.uploads || 0;
+      $('#lib-n2').textContent = data.generated || 0;
+    }
+
+    function current() {
+      let files = data.files || [];
+      files = files.filter((f) => (sub === 'generated' ? f.isGenerated : !f.isGenerated));
+      if (q) { const k = q.toLowerCase(); files = files.filter((f) => f.name.toLowerCase().includes(k)); }
+      return files;
+    }
+
+    function updateBar() {
+      $sel.textContent = '已选 ' + sel.size;
+      $bar.classList.toggle('show', sel.size > 0);
+    }
+
+    async function render() {
+      const files = current();
+      if (!files.length) {
+        $groups.innerHTML = '<div class="sec-title">还没有文件 · 点右上「本地上传」</div>';
+        return;
+      }
+      const groups = {};
+      for (const f of files) { const d = f.date || '未标注'; (groups[d] = groups[d] || []).push(f); }
+      const dates = Object.keys(groups).sort((a, b) => (a < b ? 1 : -1));
+      let html = '';
+      for (const d of dates) {
+        const list = groups[d];
+        const label = /^\d{4}-\d{2}-\d{2}$/.test(d) ? (d.slice(0, 4) + '年' + parseInt(d.slice(5, 7), 10) + '月' + parseInt(d.slice(8, 10), 10) + '日') : d;
+        html += `<div class="lib-g">${label} <span style="font-size:11px;color:var(--dim);font-weight:400;">(${list.length})</span></div><div class="lib-grid">`;
+        for (const f of list) {
+          const selCls = sel.has(f.rel) ? ' sel' : '';
+          html += `<div class="lib-card${selCls}" data-rel="${f.rel}">
+            <div class="lib-ck"></div>
+            <div data-thumb="${f.rel}" data-kind="${f.kind}" data-ext="${f.ext}"></div>
+            <div class="lib-name" title="${f.name}">${f.name}</div>
+          </div>`;
+        }
+        html += '</div>';
+      }
+      $groups.innerHTML = html;
+
+      $groups.querySelectorAll('[data-thumb]').forEach(async (slot) => {
+        const rel = slot.getAttribute('data-thumb');
+        if (slot.getAttribute('data-kind') === 'image') {
+          try {
+            const durl = window.aqara && window.aqara.libraryThumb ? await window.aqara.libraryThumb(rel) : null;
+            if (durl) { slot.innerHTML = '<img class="lib-thumb" src="' + durl + '">'; return; }
+          } catch (_) {}
+        }
+        slot.innerHTML = '<div class="lib-ext">' + (slot.getAttribute('data-ext') || 'FILE').toUpperCase().slice(0, 4) + '</div>';
+      });
+
+      // 点击：勾选框=选择；图片=打开
+      $groups.querySelectorAll('.lib-card').forEach((card) => {
+        const rel = card.getAttribute('data-rel');
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.lib-ck')) {
+            if (sel.has(rel)) { sel.delete(rel); card.classList.remove('sel'); }
+            else { sel.add(rel); card.classList.add('sel'); }
+            updateBar();
+            return;
+          }
+          if (window.aqara && window.aqara.openLibraryItem) window.aqara.openLibraryItem(rel);
+        });
+      });
+    }
+
+    panel.querySelectorAll('.lib-side-item').forEach((el) => el.addEventListener('click', () => {
+      sub = el.getAttribute('data-sub');
+      panel.querySelectorAll('.lib-side-item').forEach((x) => x.classList.toggle('on', x === el));
+      sel.clear(); updateBar(); render();
+    }));
+    $('#lib-q').addEventListener('input', () => { q = $('#lib-q').value.trim(); render(); });
+    $('#lib-upload').addEventListener('click', async () => {
+      const r = (window.aqara && window.aqara.importLibrary) ? await window.aqara.importLibrary() : null;
+      if (r && r.ok) { await load(); await render(); showToast('✓ 已上传到资料库'); }
+      else if (r && !r.canceled) showToast(r.reason || '上传失败');
+    });
+    $('#lib-open-dir').addEventListener('click', () => { if (window.aqara && window.aqara.revealLibrary) window.aqara.revealLibrary(); });
+    $('#lib-qr').addEventListener('click', () => openQrUpload(panel));
+    $('#lib-clear').addEventListener('click', () => { sel.clear(); updateBar(); render(); });
+    $('#lib-tosend').addEventListener('click', async () => {
+      if (!sel.size) return;
+      const r = (window.aqara && window.aqara.libraryToChat) ? await window.aqara.libraryToChat([...sel]) : null;
+      if (r && r.ok) {
+        const proj = (state && state.project && state.project.name) || '当前项目';
+        if (window.aqara && window.aqara.send) {
+          window.aqara.send('【工作区上下文】项目：' + proj + '\n【资料库上下文】已加入资料库文件：' + r.copied.join('、') + '\n【指令】请参考这些资料库文件完成任务。');
+        }
+        showToast('→ 已将 ' + r.copied.length + ' 个文件加入对话（Agent 可读）');
+        sel.clear(); updateBar(); render();
+      } else showToast((r && r.reason) || '操作失败');
+    });
+
+    await load();
+    await render();
+    // 供「扫码上传」完成时刷新
+    libRefreshFn = async () => { await load(); await render(); };
+  }
+
+  // 扫码上传：生成二维码 + 打开上传服务
+  async function openQrUpload(panel) {
+    const r = await ((window.aqara && window.aqara.qrStart) ? window.aqara.qrStart() : null);
+    if (!r || !r.ok) { showToast((r && r.reason) || '无法生成二维码'); return; }
+    const wrap = document.createElement('div');
+    wrap.className = 'pr-new-mask';
+    wrap.innerHTML =
+      '<div class="pr-new-box" style="width:360px;text-align:center;">' +
+        '<div class="pr-title">扫码上传</div>' +
+        '<div class="pr-sub" style="margin:0 0 8px;">用手机扫描二维码，选择文件上传到资料库</div>' +
+        '<div style="background:#fff;border-radius:12px;padding:12px;display:inline-block;">' + r.svg + '</div>' +
+        '<div class="pstatus" style="word-break:break-all;margin-top:8px;">' + r.url + '</div>' +
+        '<div class="pr-new-btns" style="justify-content:center;margin-top:10px;">' +
+          '<div class="btn" id="qr-copy">复制链接</div>' +
+          '<div class="btn primary" id="qr-done">完成</div>' +
+        '</div>' +
+        '<div class="pr-sub" style="margin-top:8px;">手机与电脑需在同一 Wi‑Fi；关闭本窗口即停止接收</div>' +
+      '</div>';
+    panel.appendChild(wrap);
+    const close = () => { wrap.remove(); if (window.aqara && window.aqara.qrStop) window.aqara.qrStop(); };
+    wrap.querySelector('#qr-done').addEventListener('click', close);
+    wrap.querySelector('#qr-copy').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(r.url); showToast('已复制链接'); } catch (_) { showToast(r.url); }
+    });
+    wrap.addEventListener('click', (e) => { if (e.target === wrap) close(); });
   }
 
   // ---------- 3D ----------
@@ -1464,6 +1657,14 @@
         if (!DEFS[type]) return;
         const t = tabs.find((x) => x.type === type);
         if (t) activateTab(t.id); else addTab(type, true);
+      });
+    }
+    // 手机扫码上传完成 → 刷新资料库
+    if (window.aqara && window.aqara.onLibraryUploaded) {
+      window.aqara.onLibraryUploaded((d) => {
+        if (libRefreshFn) libRefreshFn();
+        const n = (d && d.files) ? d.files.length : 0;
+        showToast('📱 手机上传完成' + (n ? '（' + n + ' 个文件）' : ''));
       });
     }
   })();
