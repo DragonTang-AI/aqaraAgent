@@ -556,10 +556,111 @@ function startStateSync() {
     catch (e) { return { ok: false, reason: e && e.message }; }
   });
 
+  // ---------- Studio（本地直连：登录/设备/状态订阅/控制）----------
+  let studioAdapter = null;
+  let studioInfo = { connected: false, baseUrl: '', hostId: '', devices: 0, lastError: '', wsEvents: 0 };
+  ipcMain.handle('aqara:studio-status', () => Object.assign({ ok: true }, studioInfo));
+  const mergeStudioDevices = (list) => {
+    try {
+      const sp = path.join(projectDirOf(), 'state.json');
+      const st = JSON.parse(fs.readFileSync(sp, 'utf8'));
+      const byId = new Map((st.devices || []).map((d) => [d.deviceId || d.name, d]));
+      for (const d of list) {
+        const key = d.deviceId || d.deviceName || d.name;
+        const cur = byId.get(key) || {};
+        const room = (d.space && d.space.name) || d.roomName || d.room || cur.room;
+        const st = (d.state === true) ? 'ON' : (d.state === false) ? 'OFF' : (d.online === false ? 'offline' : (cur.status || 'ONLINE'));
+        byId.set(key, Object.assign({}, cur, {
+          deviceId: d.deviceId, name: d.deviceName || d.name || cur.name,
+          room, model: d.model || cur.model, status: st,
+        }));
+      }
+      st.devices = [...byId.values()];
+      st.ui = Object.assign({}, st.ui, { focus: 'devices' });
+      fs.writeFileSync(sp, JSON.stringify(st, null, 2));
+    } catch (_) {}
+  };
+  async function connectStudio(c) {
+    try {
+      const { createStudioAdapter } = require(path.join(__dirname, 'adapters', 'studio.js'));
+      studioAdapter = createStudioAdapter({ baseUrl: c && c.baseUrl, account: c && c.account, password: c && c.password, token: c && c.token, clientId: c && c.clientId });
+      const r = await studioAdapter.login();
+      const devs = await studioAdapter.listDevices();
+      const list = Array.isArray(devs) ? devs : ((devs && devs.list) || []);
+      mergeStudioDevices(list);
+      studioInfo = { connected: true, baseUrl: (c && c.baseUrl) || '', hostId: r.hostId || '', devices: list.length, lastError: '', wsEvents: 0 };
+      try {
+        studioAdapter.connectWs((msg) => {
+          studioInfo.wsEvents = (studioInfo.wsEvents || 0) + 1;
+          if (msg.type === 'TraitValueUpdate') {
+            const items = (msg.data && (msg.data.list || msg.data.items)) || [];
+            try {
+              const sp = path.join(projectDirOf(), 'state.json');
+              const st = JSON.parse(fs.readFileSync(sp, 'utf8'));
+              items.forEach((it) => { const d = (st.devices || []).find((x) => x.deviceId === it.deviceId); if (d) d.status = String(it.value); });
+              fs.writeFileSync(sp, JSON.stringify(st, null, 2));
+            } catch (_) {}
+          }
+        });
+      } catch (_) {}
+      try { if (c && c.token) writeCred({ kind: 'studio', baseUrl: c.baseUrl, token: c.token, clientId: c.clientId || '' }); } catch (_) {}
+      console.log('[shell] Studio 已连接', studioInfo.baseUrl, '设备', list.length);
+      return Object.assign({ ok: true }, studioInfo);
+    } catch (e) {
+      studioInfo = { connected: false, baseUrl: (c && c.baseUrl) || '', hostId: '', devices: 0, lastError: e && e.message };
+      return Object.assign({ ok: true }, studioInfo);
+    }
+  }
+  ipcMain.handle('aqara:studio-connect', (_e, c) => connectStudio(c));
+  // 设备开关：自动解析功能点（Output/OnOff），带审计
+  const defCache = new Map();
+  async function findOnOffTrait(deviceId) {
+    if (defCache.has(deviceId)) return defCache.get(deviceId);
+    let spec = null;
+    try {
+      const defs = await studioAdapter.getDeviceDefinitions(deviceId);
+      for (const it of defs) {
+        for (const ep of (it.endpoints || [])) {
+          for (const f of (ep.functions || [])) {
+            const cmds = (f.commands || []).map((c) => c.commandCode);
+            if (f.functionCode === 'Output' && (cmds.includes('On') || cmds.includes('Off') || cmds.includes('Toggle'))) {
+              spec = { endpointId: ep.endpointId, functionCode: 'Output', traitCode: 'OnOff' };
+            }
+          }
+        }
+      }
+    } catch (_) {}
+    defCache.set(deviceId, spec);
+    return spec;
+  }
+  ipcMain.handle('aqara:studio-toggle', async (_e, p) => {
+    try {
+      if (!studioAdapter) return { ok: false, reason: '未连接 Studio' };
+      const spec = await findOnOffTrait(p && p.deviceId);
+      if (!spec) return { ok: false, reason: '该设备不支持开关控制（未找到 Output/OnOff 功能点）' };
+      const data = await studioAdapter.controlDevice(p.deviceId, Object.assign({}, spec, { value: !!(p && p.on) }));
+      auditLog({ method: 'studio.toggle', params: { deviceId: p.deviceId, on: !!(p && p.on) }, ok: data.ok });
+      return { ok: true, result: data };
+    } catch (e) {
+      auditLog({ method: 'studio.toggle', params: p, ok: false, error: e && e.message });
+      return { ok: false, reason: e && e.message };
+    }
+  });
+  ipcMain.handle('aqara:studio-control', async (_e, p) => {
+    try {
+      if (!studioAdapter) return { ok: false, reason: '未连接 Studio' };
+      const data = await studioAdapter.controlDevice(p && p.deviceId, p || {});
+      auditLog({ method: 'studio.control', params: p, ok: true });
+      return { ok: true, data };
+    } catch (e) { auditLog({ method: 'studio.control', params: p, ok: false, error: e && e.message }); return { ok: false, reason: e && e.message }; }
+  });
+
   // 启动时按注册表同步一次 patch（保持磁盘与 UI 一致）
   try { applyMcpPatch(readConnectors().filter((x) => x.enabled)); } catch (_) {}
   // 首次生成项目上下文
   try { buildProjectContext(); } catch (_) {}
+  // 若已保存 Studio 凭据 → 启动自动重连
+  try { const cr = readCred(); if (cr && cr.kind === 'studio' && cr.baseUrl && cr.token) connectStudio({ baseUrl: cr.baseUrl, token: cr.token, clientId: cr.clientId }); } catch (_) {}
 
   // ---------- 资料库（真实文件）----------
   const walkLibrary = () => {

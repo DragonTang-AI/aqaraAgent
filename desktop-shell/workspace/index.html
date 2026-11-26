@@ -52,6 +52,8 @@
   .row{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-bottom:7px;background:var(--panel);}
   .dot{width:7px;height:7px;border-radius:50%;background:var(--fg);flex:none;box-shadow:0 0 8px currentColor;opacity:.85;}
   .row .name{font-size:13px;flex:1;} .row .loc{font-size:11px;color:var(--muted);} .row .st{font-size:10.5px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;}
+  .row .tgl{flex:none;font-size:10.5px;border:1px solid var(--line2);border-radius:6px;padding:2px 9px;cursor:pointer;color:var(--muted);}
+  .row .tgl:hover{background:var(--chip);color:var(--fg);}
   .chips{display:flex;flex-wrap:wrap;gap:6px;}
   .chip{font-size:11.5px;border:1px solid var(--line);border-radius:99px;padding:5px 11px;color:var(--fg);background:var(--panel);cursor:pointer;}
   .chip:hover{border-color:var(--line2);}
@@ -533,8 +535,29 @@
     } else if (type === 'devices') {
       panel.innerHTML = `<div class="pad">
         <div class="sec-title">设备点位 / DEVICES</div>
-        ${(state.devices || []).map(d => { const extra = [d.room, d.model, (d.qty ? ('×' + d.qty) : '')].filter(Boolean).join(' · '); const msg = '查看并说明「' + d.name + '」当前状态' + (d.model ? ('（型号 ' + d.model + '）') : ''); return `<div class="row" data-send="${msg}"><span class="dot"></span><span class="name">${d.name}</span><span class="loc">${extra}</span><span class="st">${d.status || ''}</span></div>`; }).join('')}
+        ${(state.devices || []).map(d => {
+          const extra = [d.room, d.model, (d.qty ? ('×' + d.qty) : '')].filter(Boolean).join(' · ');
+          const msg = '查看并说明「' + d.name + '」当前状态' + (d.model ? ('（型号 ' + d.model + '）') : '');
+          const isOn = String(d.status || '').toUpperCase() === 'ON';
+          const tgl = d.deviceId ? `<span class="tgl" data-tgl="${d.deviceId}" data-on="${isOn ? 1 : 0}">${isOn ? '关' : '开'}</span>` : '';
+          return `<div class="row" data-send="${msg}"><span class="dot"></span><span class="name">${d.name}</span><span class="loc">${extra}</span><span class="st">${d.status || ''}</span>${tgl}</div>`;
+        }).join('')}
       </div>`;
+      panel.querySelectorAll('[data-tgl]').forEach((el) => el.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        const id = el.getAttribute('data-tgl');
+        const on = el.getAttribute('data-on') !== '1';
+        if (!window.confirm((on ? '开启' : '关闭') + '该设备？（会对真实设备下发控制）')) return;
+        const r = (window.aqara && window.aqara.studioToggle) ? await window.aqara.studioToggle({ deviceId: id, on }) : null;
+        if (r && r.ok && r.result && r.result.ok) {
+          const d = (state.devices || []).find((x) => x.deviceId === id); if (d) d.status = on ? 'ON' : 'OFF';
+          showToast('✓ 已' + (on ? '开启' : '关闭'));
+          activateTab(activeId, true);
+        } else {
+          const f = r && r.result && r.result.failures && r.result.failures[0];
+          showToast('✗ ' + ((r && r.reason) || (f && f.message) || '控制失败'));
+        }
+      }));
     } else if (type === 'scenes') {
       panel.innerHTML = `<div class="pad">
         <div class="sec-title">场景 / SCENES</div>
@@ -749,6 +772,33 @@
     });
   }
 
+  async function openStudioModal(panel) {
+    const st = (window.aqara && window.aqara.studioStatus) ? await window.aqara.studioStatus() : null;
+    const wrap = document.createElement('div');
+    wrap.className = 'pr-new-mask';
+    wrap.innerHTML =
+      '<div class="pr-new-box">' +
+        '<div class="pr-title">连接 Studio（局域网直连）</div>' +
+        '<div class="pr-sub" style="margin:0 0 2px;">直连 Studio 空间运行时（本地模式，端口 8088）</div>' +
+        '<input id="st-base" placeholder="Studio 地址，如 http://10.11.53.200:8088" value="' + (st && st.baseUrl ? st.baseUrl : '') + '" />' +
+        '<input id="st-token" placeholder="Access Token（atk_...，推荐）" />' +
+        '<input id="st-account" placeholder="或：Studio 本地账号" />' +
+        '<input id="st-pass" type="password" placeholder="或：Studio 本地密码" />' +
+        '<div class="pr-new-btns"><div class="btn" id="st-cancel">取消</div><div class="btn primary" id="st-go">连接</div></div>' +
+        '<div class="pstatus" id="st-msg"></div>' +
+      '</div>';
+    panel.appendChild(wrap);
+    wrap.querySelector('#st-cancel').addEventListener('click', () => wrap.remove());
+    wrap.querySelector('#st-go').addEventListener('click', async () => {
+      const c = { baseUrl: wrap.querySelector('#st-base').value.trim(), token: wrap.querySelector('#st-token').value.trim(), account: wrap.querySelector('#st-account').value.trim(), password: wrap.querySelector('#st-pass').value };
+      if (!c.baseUrl || (!c.token && (!c.account || !c.password))) { wrap.querySelector('#st-msg').textContent = '请填写地址，并至少提供 Token 或账号+密码'; return; }
+      wrap.querySelector('#st-msg').textContent = '连接中…';
+      const r = (window.aqara && window.aqara.studioConnect) ? await window.aqara.studioConnect(c) : null;
+      if (r && r.connected) { showToast('✓ Studio 已连接（设备 ' + r.devices + '）'); wrap.remove(); await render(); }
+      else wrap.querySelector('#st-msg').textContent = '✗ ' + ((r && r.lastError) || '连接失败');
+    });
+  }
+
   async function buildPartners(panel) {
     await loadPartnersData();
     await loadSkillsData(true);
@@ -913,7 +963,17 @@
         (blInstalled ? '<div class="btn" data-bl-open="1">打开 Blender</div>' : '') +
         '<div class="btn" data-bl-refresh="1">刷新</div>' +
         '</div></div>';
-      let html = blenderCard + '<div class="pcard">' +
+      const st = (window.aqara && window.aqara.studioStatus) ? await window.aqara.studioStatus() : null;
+      const stOn = !!(st && st.connected);
+      const studioCard = '<div class="pcard">' +
+        '<div class="top"><div class="pava">St</div>' +
+        '<div><div class="pname">Studio ' + (stOn ? '<span class="pbadge mine">已连接</span>' : '<span class="pbadge">未连接</span>') + '</div>' +
+        '<div class="pintro">' + (stOn ? ((st.baseUrl || '') + ' · 设备 ' + (st.devices || 0) + (st.hostId ? (' · host ' + st.hostId) : '')) : '连接局域网 Studio（空间运行时：设备状态 / 控制 / 入网）') + '</div>' +
+        (st && st.lastError ? '<div class="pintro" style="color:#c0392b;">' + st.lastError + '</div>' : '') +
+        '</div></div>' +
+        '<div class="pfoot"><div class="btn primary" data-studio="1">' + (stOn ? '重新连接' : '配置并连接') + '</div>' +
+        '<div class="btn" data-studio-refresh="1">刷新</div></div></div>';
+      let html = studioCard + blenderCard + '<div class="pcard">' +
         '<div class="top"><div class="pava">Aq</div>' +
         '<div><div class="pname">Aqara 云接入 ' + (cfg ? '<span class="pbadge mine">已配置</span>' : '<span class="pbadge">未配置</span>') + '</div>' +
         '<div class="pintro">' + (cfg ? ((cred.kind || 'openapi') + ' · ' + cred.baseUrl) : '配置 OpenAPI 凭据（系统加密存储），供 Agent 查询 / 控制真实设备') + '</div></div></div>' +
@@ -946,6 +1006,8 @@
       }));
       $grid.querySelectorAll('[data-bl-open]').forEach((b) => b.addEventListener('click', () => { if (window.aqara && window.aqara.blenderOpen) window.aqara.blenderOpen(); }));
       $grid.querySelectorAll('[data-bl-refresh]').forEach((b) => b.addEventListener('click', () => render()));
+      $grid.querySelectorAll('[data-studio]').forEach((b) => b.addEventListener('click', () => openStudioModal(panel)));
+      $grid.querySelectorAll('[data-studio-refresh]').forEach((b) => b.addEventListener('click', () => render()));
       $grid.querySelectorAll('[data-cred]').forEach((b) => b.addEventListener('click', () => openCredModal(panel)));
       $grid.querySelectorAll('[data-cred-clear]').forEach((b) => b.addEventListener('click', async () => {
         const r = (window.aqara && window.aqara.clearCredentials) ? await window.aqara.clearCredentials() : null;

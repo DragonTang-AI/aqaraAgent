@@ -64,6 +64,11 @@ contextBridge.exposeInMainWorld('aqara', {
   blenderStatus: () => ipcRenderer.invoke('aqara:blender-status'),
   blenderInstall: () => ipcRenderer.invoke('aqara:blender-install'),
   blenderOpen: () => ipcRenderer.invoke('aqara:blender-open'),
+  // Studio（本地直连）
+  studioStatus: () => ipcRenderer.invoke('aqara:studio-status'),
+  studioConnect: (c) => ipcRenderer.invoke('aqara:studio-connect', c),
+  studioControl: (p) => ipcRenderer.invoke('aqara:studio-control', p),
+  studioToggle: (p) => ipcRenderer.invoke('aqara:studio-toggle', p),
   // 数字孪生：生成的模型
   listGenerated: () => ipcRenderer.invoke('aqara:list-generated'),
   loadGenerated: (name) => ipcRenderer.invoke('aqara:load-generated', name),
